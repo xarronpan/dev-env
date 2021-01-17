@@ -1,0 +1,970 @@
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/.gitignore
+pyh2cimtools/chat.py
+pyh2cimtools/chat_direct.py
+pyh2cimtools/chatroom.py
+pyh2cimtools/cloud_token.py
+pyh2cimtools/flood.py
+pyh2cimtools/gen.sh
+pyh2cimtools/gen_chatroom_history.py
+pyh2cimtools/gen_history.py
+pyh2cimtools/group.py
+pyh2cimtools/group_direct.py
+pyh2cimtools/history.py
+pyh2cimtools/memstore_direct.py
+pyh2cimtools/msg.py
+pyh2cimtools/pull.py
+pyh2cimtools/pull_direct.py
+pyh2cimtools/signal.py
+pyh2cimtools/user.py
+pyh2cimtools/.idea/
+pyh2cimtools/.idea/.gitignore
+pyh2cimtools/.idea/misc.xml
+pyh2cimtools/.idea/modules.xml
+pyh2cimtools/.idea/pyh2cimtools.iml
+pyh2cimtools/.idea/vcs.xml
+pyh2cimtools/.idea/inspectionProfiles/
+pyh2cimtools/.idea/inspectionProfiles/profiles_settings.xml
+pyh2cimtools/converters/
+pyh2cimtools/lib/
+pyh2cimtools/lib/djb.c
+pyh2cimtools/lib/djb.so
+pyh2cimtools/pbcim/
+pyh2cimtools/pbcim/__init__.py
+pyh2cimtools/pbcim/__init__.pyc
+pyh2cimtools/pbcim/ap_pb2.py
+pyh2cimtools/pbcim/ap_pb2_grpc.py
+pyh2cimtools/pbcim/buddy_pb2.py
+pyh2cimtools/pbcim/buddy_pb2.pyc
+pyh2cimtools/pbcim/buddy_pb2_grpc.py
+pyh2cimtools/pbcim/callback_pb2.py
+pyh2cimtools/pbcim/callback_pb2_grpc.py
+pyh2cimtools/pbcim/chat_list_pb2.py
+pyh2cimtools/pbcim/chat_list_pb2.pyc
+pyh2cimtools/pbcim/chat_list_pb2_grpc.py
+pyh2cimtools/pbcim/chat_pb2.py
+pyh2cimtools/pbcim/chat_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2_grpc.py
+pyh2cimtools/pbcim/chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/cim_imsync_pb2.py
+pyh2cimtools/pbcim/cim_imsync_pb2_grpc.py
+pyh2cimtools/pbcim/cim_msg_delete_pb2.py
+pyh2cimtools/pbcim/cim_msg_delete_pb2_grpc.py
+pyh2cimtools/pbcim/cloud_token_pb2.py
+pyh2cimtools/pbcim/cloud_token_pb2.pyc
+pyh2cimtools/pbcim/cloud_token_pb2_grpc.py
+pyh2cimtools/pbcim/cloud_token_pb2_grpc.pyc
+pyh2cimtools/pbcim/girgir_test_pb2.py
+pyh2cimtools/pbcim/girgir_test_pb2.pyc
+pyh2cimtools/pbcim/girgir_test_pb2_grpc.py
+pyh2cimtools/pbcim/group_pb2.py
+pyh2cimtools/pbcim/group_pb2.pyc
+pyh2cimtools/pbcim/group_pb2_grpc.py
+pyh2cimtools/pbcim/group_pb2_grpc.pyc
+pyh2cimtools/pbcim/group_prop_pb2.py
+pyh2cimtools/pbcim/group_prop_pb2_grpc.py
+pyh2cimtools/pbcim/hago_online_pb2.py
+pyh2cimtools/pbcim/hago_online_pb2_grpc.py
+pyh2cimtools/pbcim/history_pb2.py
+pyh2cimtools/pbcim/history_pb2.pyc
+pyh2cimtools/pbcim/history_pb2_grpc.py
+pyh2cimtools/pbcim/im_internal_pb2.py
+pyh2cimtools/pbcim/im_internal_pb2_grpc.py
+pyh2cimtools/pbcim/im_pb2.py
+pyh2cimtools/pbcim/im_pb2.pyc
+pyh2cimtools/pbcim/im_pb2_grpc.py
+pyh2cimtools/pbcim/keyword_pb2.py
+pyh2cimtools/pbcim/keyword_pb2_grpc.py
+pyh2cimtools/pbcim/location_kv_pb2.py
+pyh2cimtools/pbcim/location_kv_pb2_grpc.py
+pyh2cimtools/pbcim/mem_store_pb2.py
+pyh2cimtools/pbcim/mem_store_pb2.pyc
+pyh2cimtools/pbcim/mem_store_pb2_grpc.py
+pyh2cimtools/pbcim/mem_store_pb2_grpc.pyc
+pyh2cimtools/pbcim/msg_pb2.py
+pyh2cimtools/pbcim/msg_pb2.pyc
+pyh2cimtools/pbcim/msg_pb2_grpc.py
+pyh2cimtools/pbcim/notify_pb2.py
+pyh2cimtools/pbcim/notify_pb2.pyc
+pyh2cimtools/pbcim/notify_pb2_grpc.py
+pyh2cimtools/pbcim/onlinemgr_pb2.py
+pyh2cimtools/pbcim/onlinemgr_pb2_grpc.py
+pyh2cimtools/pbcim/ospush_pb2.py
+pyh2cimtools/pbcim/ospush_pb2_grpc.py
+pyh2cimtools/pbcim/pdc_pb2.py
+pyh2cimtools/pbcim/pdc_pb2_grpc.py
+pyh2cimtools/pbcim/proxy_pb2.py
+pyh2cimtools/pbcim/proxy_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2_grpc.py
+pyh2cimtools/pbcim/proxy_pb2_grpc.pyc
+pyh2cimtools/pbcim/pull_pb2.py
+pyh2cimtools/pbcim/pull_pb2.pyc
+pyh2cimtools/pbcim/pull_pb2_grpc.py
+pyh2cimtools/pbcim/pull_pb2_grpc.pyc
+pyh2cimtools/pbcim/push_pb2.py
+pyh2cimtools/pbcim/push_pb2_grpc.py
+pyh2cimtools/pbcim/service_pb2.py
+pyh2cimtools/pbcim/service_pb2_grpc.py
+pyh2cimtools/pbcim/signal_pb2.py
+pyh2cimtools/pbcim/signal_pb2.pyc
+pyh2cimtools/pbcim/signal_pb2_grpc.py
+pyh2cimtools/pbcim/store_pb2.py
+pyh2cimtools/pbcim/store_pb2.pyc
+pyh2cimtools/pbcim/store_pb2_grpc.py
+pyh2cimtools/pbcim/sync_buddy_pb2.py
+pyh2cimtools/pbcim/sync_buddy_pb2_grpc.py
+pyh2cimtools/pbcim/sync_chat_pb2.py
+pyh2cimtools/pbcim/sync_chat_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.py
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/sync_group_pb2.py
+pyh2cimtools/pbcim/sync_group_pb2_grpc.py
+pyh2cimtools/pbcim/user_pb2.py
+pyh2cimtools/pbcim/user_pb2.pyc
+pyh2cimtools/pbcim/user_pb2_grpc.py
+pyh2cimtools/pbcim/user_pb2_grpc.pyc
+pyh2cimtools/proto/
+pyh2cimtools/proto/ap.proto
+pyh2cimtools/proto/buddy.proto
+pyh2cimtools/proto/callback.proto
+pyh2cimtools/proto/chat.proto
+pyh2cimtools/proto/chat_list.proto
+pyh2cimtools/proto/cim_imsync.proto
+pyh2cimtools/proto/cim_msg_delete.proto
+pyh2cimtools/proto/cloud_token.proto
+pyh2cimtools/proto/girgir_test.proto
+pyh2cimtools/proto/group.proto
+pyh2cimtools/proto/group_prop.proto
+pyh2cimtools/proto/hago_online.proto
+pyh2cimtools/proto/history.proto
+pyh2cimtools/proto/im.proto
+pyh2cimtools/proto/im_internal.proto
+pyh2cimtools/proto/keyword.proto
+pyh2cimtools/proto/location_kv.proto
+pyh2cimtools/proto/mem_store.proto
+pyh2cimtools/proto/msg.proto
+pyh2cimtools/proto/notify.proto
+pyh2cimtools/proto/onlinemgr.proto
+pyh2cimtools/proto/ospush.proto
+pyh2cimtools/proto/pdc.proto
+pyh2cimtools/proto/proxy.proto
+pyh2cimtools/proto/pull.proto
+pyh2cimtools/proto/push.proto
+pyh2cimtools/proto/service.proto
+pyh2cimtools/proto/signal.proto
+pyh2cimtools/proto/store.proto
+pyh2cimtools/proto/sync_buddy.proto
+pyh2cimtools/proto/sync_chat.proto
+pyh2cimtools/proto/sync_group.proto
+pyh2cimtools/proto/user.proto
+
+sent 402,314 bytes  received 2,948 bytes  270,174.67 bytes/sec
+total size is 3,938,587  speedup is 9.72
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/pbcim/
+pyh2cimtools/pbcim/ap_pb2_grpc.py
+pyh2cimtools/pbcim/buddy_pb2_grpc.py
+pyh2cimtools/pbcim/callback_pb2_grpc.py
+pyh2cimtools/pbcim/chat_list_pb2_grpc.py
+pyh2cimtools/pbcim/chat_pb2_grpc.py
+pyh2cimtools/pbcim/cim_imsync_pb2_grpc.py
+pyh2cimtools/pbcim/cim_msg_delete_pb2_grpc.py
+pyh2cimtools/pbcim/cloud_token_pb2_grpc.py
+pyh2cimtools/pbcim/girgir_test_pb2_grpc.py
+pyh2cimtools/pbcim/group_pb2_grpc.py
+pyh2cimtools/pbcim/group_prop_pb2_grpc.py
+pyh2cimtools/pbcim/hago_online_pb2_grpc.py
+pyh2cimtools/pbcim/history_pb2_grpc.py
+pyh2cimtools/pbcim/im_internal_pb2_grpc.py
+pyh2cimtools/pbcim/im_pb2_grpc.py
+pyh2cimtools/pbcim/keyword_pb2_grpc.py
+pyh2cimtools/pbcim/location_kv_pb2_grpc.py
+pyh2cimtools/pbcim/mem_store_pb2_grpc.py
+pyh2cimtools/pbcim/msg_pb2_grpc.py
+pyh2cimtools/pbcim/notify_pb2_grpc.py
+pyh2cimtools/pbcim/onlinemgr_pb2_grpc.py
+pyh2cimtools/pbcim/ospush_pb2_grpc.py
+pyh2cimtools/pbcim/pdc_pb2_grpc.py
+pyh2cimtools/pbcim/proxy_pb2_grpc.py
+pyh2cimtools/pbcim/pull_pb2_grpc.py
+pyh2cimtools/pbcim/push_pb2_grpc.py
+pyh2cimtools/pbcim/service_pb2_grpc.py
+pyh2cimtools/pbcim/signal_pb2_grpc.py
+pyh2cimtools/pbcim/store_pb2_grpc.py
+pyh2cimtools/pbcim/sync_buddy_pb2_grpc.py
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.py
+pyh2cimtools/pbcim/sync_group_pb2_grpc.py
+pyh2cimtools/pbcim/user_pb2_grpc.py
+
+sent 15,565 bytes  received 6,180 bytes  14,496.67 bytes/sec
+total size is 3,938,587  speedup is 181.13
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+sending incremental file list
+
+sent 4,579 bytes  received 23 bytes  9,204.00 bytes/sec
+total size is 3,938,587  speedup is 855.84
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+sending incremental file list
+pyh2cimtools/pbcim/
+pyh2cimtools/pbcim/__init__.pyc
+pyh2cimtools/pbcim/buddy_pb2.pyc
+pyh2cimtools/pbcim/chat_list_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/cloud_token_pb2.pyc
+pyh2cimtools/pbcim/group_pb2.pyc
+pyh2cimtools/pbcim/history_pb2.pyc
+pyh2cimtools/pbcim/im_pb2.pyc
+pyh2cimtools/pbcim/msg_pb2.pyc
+pyh2cimtools/pbcim/notify_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2_grpc.pyc
+pyh2cimtools/pbcim/pull_pb2.pyc
+pyh2cimtools/pbcim/signal_pb2.pyc
+pyh2cimtools/pbcim/store_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/user_pb2.pyc
+
+sent 28,456 bytes  received 8,545 bytes  24,667.33 bytes/sec
+total size is 3,938,587  speedup is 106.45
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+sending incremental file list
+
+sent 4,579 bytes  received 23 bytes  3,068.00 bytes/sec
+total size is 3,938,587  speedup is 855.84
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+pyh2cimtools/pbcim/
+pyh2cimtools/pbcim/__init__.pyc
+pyh2cimtools/pbcim/buddy_pb2.pyc
+pyh2cimtools/pbcim/chat_list_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/cloud_token_pb2.pyc
+pyh2cimtools/pbcim/group_pb2.pyc
+pyh2cimtools/pbcim/history_pb2.pyc
+pyh2cimtools/pbcim/im_pb2.pyc
+pyh2cimtools/pbcim/msg_pb2.pyc
+pyh2cimtools/pbcim/notify_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2_grpc.pyc
+pyh2cimtools/pbcim/pull_pb2.pyc
+pyh2cimtools/pbcim/signal_pb2.pyc
+pyh2cimtools/pbcim/store_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/user_pb2.pyc
+
+sent 30,460 bytes  received 8,667 bytes  26,084.67 bytes/sec
+total size is 3,938,497  speedup is 100.66
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+
+sent 4,633 bytes  received 141 bytes  3,182.67 bytes/sec
+total size is 3,938,497  speedup is 824.99
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+pyh2cimtools/pbcim/
+pyh2cimtools/pbcim/__init__.pyc
+pyh2cimtools/pbcim/buddy_pb2.pyc
+pyh2cimtools/pbcim/chat_list_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/cloud_token_pb2.pyc
+pyh2cimtools/pbcim/group_pb2.pyc
+pyh2cimtools/pbcim/history_pb2.pyc
+pyh2cimtools/pbcim/im_pb2.pyc
+pyh2cimtools/pbcim/msg_pb2.pyc
+pyh2cimtools/pbcim/notify_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2_grpc.pyc
+pyh2cimtools/pbcim/pull_pb2.pyc
+pyh2cimtools/pbcim/signal_pb2.pyc
+pyh2cimtools/pbcim/store_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/user_pb2.pyc
+
+sent 28,855 bytes  received 8,667 bytes  25,014.67 bytes/sec
+total size is 3,938,497  speedup is 104.97
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/pbcim/
+pyh2cimtools/pbcim/__init__.pyc
+pyh2cimtools/pbcim/buddy_pb2.pyc
+pyh2cimtools/pbcim/chat_list_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/cloud_token_pb2.pyc
+pyh2cimtools/pbcim/group_pb2.pyc
+pyh2cimtools/pbcim/history_pb2.pyc
+pyh2cimtools/pbcim/im_pb2.pyc
+pyh2cimtools/pbcim/msg_pb2.pyc
+pyh2cimtools/pbcim/notify_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2_grpc.pyc
+pyh2cimtools/pbcim/pull_pb2.pyc
+pyh2cimtools/pbcim/signal_pb2.pyc
+pyh2cimtools/pbcim/store_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/user_pb2.pyc
+
+sent 28,471 bytes  received 8,548 bytes  24,679.33 bytes/sec
+total size is 3,938,497  speedup is 106.39
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+sending incremental file list
+
+sent 4,591 bytes  received 23 bytes  3,076.00 bytes/sec
+total size is 3,938,497  speedup is 853.60
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat_direct.py
+
+sent 6,614 bytes  received 129 bytes  4,495.33 bytes/sec
+total size is 3,938,450  speedup is 584.08
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/.gitignore
+pyh2cimtools/chat.py
+pyh2cimtools/chat_direct.py
+pyh2cimtools/chatroom.py
+pyh2cimtools/cloud_token.py
+pyh2cimtools/flood.py
+pyh2cimtools/gen.sh
+pyh2cimtools/gen_chatroom_history.py
+pyh2cimtools/gen_history.py
+pyh2cimtools/group.py
+pyh2cimtools/group_direct.py
+pyh2cimtools/history.py
+pyh2cimtools/memstore_direct.py
+pyh2cimtools/msg.py
+pyh2cimtools/pull.py
+pyh2cimtools/pull_direct.py
+pyh2cimtools/signal.py
+pyh2cimtools/user.py
+pyh2cimtools/.idea/
+pyh2cimtools/.idea/.gitignore
+pyh2cimtools/.idea/misc.xml
+pyh2cimtools/.idea/modules.xml
+pyh2cimtools/.idea/pyh2cimtools.iml
+pyh2cimtools/.idea/vcs.xml
+pyh2cimtools/.idea/inspectionProfiles/
+pyh2cimtools/.idea/inspectionProfiles/profiles_settings.xml
+pyh2cimtools/converters/
+pyh2cimtools/lib/
+pyh2cimtools/lib/djb.c
+pyh2cimtools/lib/djb.so
+pyh2cimtools/pbcim/
+pyh2cimtools/pbcim/__init__.py
+pyh2cimtools/pbcim/__init__.pyc
+pyh2cimtools/pbcim/ap_pb2.py
+pyh2cimtools/pbcim/ap_pb2_grpc.py
+pyh2cimtools/pbcim/buddy_pb2.py
+pyh2cimtools/pbcim/buddy_pb2.pyc
+pyh2cimtools/pbcim/buddy_pb2_grpc.py
+pyh2cimtools/pbcim/callback_pb2.py
+pyh2cimtools/pbcim/callback_pb2_grpc.py
+pyh2cimtools/pbcim/chat_list_pb2.py
+pyh2cimtools/pbcim/chat_list_pb2.pyc
+pyh2cimtools/pbcim/chat_list_pb2_grpc.py
+pyh2cimtools/pbcim/chat_pb2.py
+pyh2cimtools/pbcim/chat_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2_grpc.py
+pyh2cimtools/pbcim/chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/cim_imsync_pb2.py
+pyh2cimtools/pbcim/cim_imsync_pb2_grpc.py
+pyh2cimtools/pbcim/cim_msg_delete_pb2.py
+pyh2cimtools/pbcim/cim_msg_delete_pb2_grpc.py
+pyh2cimtools/pbcim/cloud_token_pb2.py
+pyh2cimtools/pbcim/cloud_token_pb2.pyc
+pyh2cimtools/pbcim/cloud_token_pb2_grpc.py
+pyh2cimtools/pbcim/cloud_token_pb2_grpc.pyc
+pyh2cimtools/pbcim/girgir_test_pb2.py
+pyh2cimtools/pbcim/girgir_test_pb2.pyc
+pyh2cimtools/pbcim/girgir_test_pb2_grpc.py
+pyh2cimtools/pbcim/group_pb2.py
+pyh2cimtools/pbcim/group_pb2.pyc
+pyh2cimtools/pbcim/group_pb2_grpc.py
+pyh2cimtools/pbcim/group_pb2_grpc.pyc
+pyh2cimtools/pbcim/group_prop_pb2.py
+pyh2cimtools/pbcim/group_prop_pb2_grpc.py
+pyh2cimtools/pbcim/hago_online_pb2.py
+pyh2cimtools/pbcim/hago_online_pb2_grpc.py
+pyh2cimtools/pbcim/history_pb2.py
+pyh2cimtools/pbcim/history_pb2.pyc
+pyh2cimtools/pbcim/history_pb2_grpc.py
+pyh2cimtools/pbcim/im_internal_pb2.py
+pyh2cimtools/pbcim/im_internal_pb2_grpc.py
+pyh2cimtools/pbcim/im_pb2.py
+pyh2cimtools/pbcim/im_pb2.pyc
+pyh2cimtools/pbcim/im_pb2_grpc.py
+pyh2cimtools/pbcim/keyword_pb2.py
+pyh2cimtools/pbcim/keyword_pb2_grpc.py
+pyh2cimtools/pbcim/location_kv_pb2.py
+pyh2cimtools/pbcim/location_kv_pb2_grpc.py
+pyh2cimtools/pbcim/mem_store_pb2.py
+pyh2cimtools/pbcim/mem_store_pb2.pyc
+pyh2cimtools/pbcim/mem_store_pb2_grpc.py
+pyh2cimtools/pbcim/mem_store_pb2_grpc.pyc
+pyh2cimtools/pbcim/msg_pb2.py
+pyh2cimtools/pbcim/msg_pb2.pyc
+pyh2cimtools/pbcim/msg_pb2_grpc.py
+pyh2cimtools/pbcim/notify_pb2.py
+pyh2cimtools/pbcim/notify_pb2.pyc
+pyh2cimtools/pbcim/notify_pb2_grpc.py
+pyh2cimtools/pbcim/onlinemgr_pb2.py
+pyh2cimtools/pbcim/onlinemgr_pb2_grpc.py
+pyh2cimtools/pbcim/ospush_pb2.py
+pyh2cimtools/pbcim/ospush_pb2_grpc.py
+pyh2cimtools/pbcim/pdc_pb2.py
+pyh2cimtools/pbcim/pdc_pb2_grpc.py
+pyh2cimtools/pbcim/proxy_pb2.py
+pyh2cimtools/pbcim/proxy_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2_grpc.py
+pyh2cimtools/pbcim/proxy_pb2_grpc.pyc
+pyh2cimtools/pbcim/pull_pb2.py
+pyh2cimtools/pbcim/pull_pb2.pyc
+pyh2cimtools/pbcim/pull_pb2_grpc.py
+pyh2cimtools/pbcim/pull_pb2_grpc.pyc
+pyh2cimtools/pbcim/push_pb2.py
+pyh2cimtools/pbcim/push_pb2_grpc.py
+pyh2cimtools/pbcim/service_pb2.py
+pyh2cimtools/pbcim/service_pb2_grpc.py
+pyh2cimtools/pbcim/signal_pb2.py
+pyh2cimtools/pbcim/signal_pb2.pyc
+pyh2cimtools/pbcim/signal_pb2_grpc.py
+pyh2cimtools/pbcim/store_pb2.py
+pyh2cimtools/pbcim/store_pb2.pyc
+pyh2cimtools/pbcim/store_pb2_grpc.py
+pyh2cimtools/pbcim/sync_buddy_pb2.py
+pyh2cimtools/pbcim/sync_buddy_pb2_grpc.py
+pyh2cimtools/pbcim/sync_chat_pb2.py
+pyh2cimtools/pbcim/sync_chat_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.py
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/sync_group_pb2.py
+pyh2cimtools/pbcim/sync_group_pb2_grpc.py
+pyh2cimtools/pbcim/user_pb2.py
+pyh2cimtools/pbcim/user_pb2.pyc
+pyh2cimtools/pbcim/user_pb2_grpc.py
+pyh2cimtools/pbcim/user_pb2_grpc.pyc
+pyh2cimtools/proto/
+pyh2cimtools/proto/ap.proto
+pyh2cimtools/proto/buddy.proto
+pyh2cimtools/proto/callback.proto
+pyh2cimtools/proto/chat.proto
+pyh2cimtools/proto/chat_list.proto
+pyh2cimtools/proto/cim_imsync.proto
+pyh2cimtools/proto/cim_msg_delete.proto
+pyh2cimtools/proto/cloud_token.proto
+pyh2cimtools/proto/girgir_test.proto
+pyh2cimtools/proto/group.proto
+pyh2cimtools/proto/group_prop.proto
+pyh2cimtools/proto/hago_online.proto
+pyh2cimtools/proto/history.proto
+pyh2cimtools/proto/im.proto
+pyh2cimtools/proto/im_internal.proto
+pyh2cimtools/proto/keyword.proto
+pyh2cimtools/proto/location_kv.proto
+pyh2cimtools/proto/mem_store.proto
+pyh2cimtools/proto/msg.proto
+pyh2cimtools/proto/notify.proto
+pyh2cimtools/proto/onlinemgr.proto
+pyh2cimtools/proto/ospush.proto
+pyh2cimtools/proto/pdc.proto
+pyh2cimtools/proto/proxy.proto
+pyh2cimtools/proto/pull.proto
+pyh2cimtools/proto/push.proto
+pyh2cimtools/proto/service.proto
+pyh2cimtools/proto/signal.proto
+pyh2cimtools/proto/store.proto
+pyh2cimtools/proto/sync_buddy.proto
+pyh2cimtools/proto/sync_chat.proto
+pyh2cimtools/proto/sync_group.proto
+pyh2cimtools/proto/user.proto
+
+sent 402,305 bytes  received 2,948 bytes  162,101.20 bytes/sec
+total size is 3,938,450  speedup is 9.72
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+sending incremental file list
+pyh2cimtools/pbcim/
+pyh2cimtools/pbcim/__init__.pyc
+pyh2cimtools/pbcim/ap_pb2.py
+pyh2cimtools/pbcim/ap_pb2_grpc.py
+pyh2cimtools/pbcim/buddy_pb2.py
+pyh2cimtools/pbcim/buddy_pb2.pyc
+pyh2cimtools/pbcim/buddy_pb2_grpc.py
+pyh2cimtools/pbcim/callback_pb2.py
+pyh2cimtools/pbcim/callback_pb2_grpc.py
+pyh2cimtools/pbcim/chat_list_pb2.py
+pyh2cimtools/pbcim/chat_list_pb2.pyc
+pyh2cimtools/pbcim/chat_list_pb2_grpc.py
+pyh2cimtools/pbcim/chat_pb2.py
+pyh2cimtools/pbcim/chat_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2_grpc.py
+pyh2cimtools/pbcim/chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/cim_imsync_pb2.py
+pyh2cimtools/pbcim/cim_imsync_pb2_grpc.py
+pyh2cimtools/pbcim/cim_msg_delete_pb2.py
+pyh2cimtools/pbcim/cim_msg_delete_pb2_grpc.py
+pyh2cimtools/pbcim/cloud_token_pb2.py
+pyh2cimtools/pbcim/cloud_token_pb2.pyc
+pyh2cimtools/pbcim/cloud_token_pb2_grpc.py
+pyh2cimtools/pbcim/girgir_test_pb2.py
+pyh2cimtools/pbcim/girgir_test_pb2_grpc.py
+pyh2cimtools/pbcim/group_pb2.py
+pyh2cimtools/pbcim/group_pb2.pyc
+pyh2cimtools/pbcim/group_pb2_grpc.py
+pyh2cimtools/pbcim/group_prop_pb2.py
+pyh2cimtools/pbcim/group_prop_pb2_grpc.py
+pyh2cimtools/pbcim/hago_online_pb2.py
+pyh2cimtools/pbcim/hago_online_pb2_grpc.py
+pyh2cimtools/pbcim/history_pb2.py
+pyh2cimtools/pbcim/history_pb2.pyc
+pyh2cimtools/pbcim/history_pb2_grpc.py
+pyh2cimtools/pbcim/im_internal_pb2.py
+pyh2cimtools/pbcim/im_internal_pb2_grpc.py
+pyh2cimtools/pbcim/im_pb2.py
+pyh2cimtools/pbcim/im_pb2.pyc
+pyh2cimtools/pbcim/im_pb2_grpc.py
+pyh2cimtools/pbcim/keyword_pb2.py
+pyh2cimtools/pbcim/keyword_pb2_grpc.py
+pyh2cimtools/pbcim/location_kv_pb2.py
+pyh2cimtools/pbcim/location_kv_pb2_grpc.py
+pyh2cimtools/pbcim/mem_store_pb2.py
+pyh2cimtools/pbcim/mem_store_pb2_grpc.py
+pyh2cimtools/pbcim/msg_pb2.py
+pyh2cimtools/pbcim/msg_pb2.pyc
+pyh2cimtools/pbcim/msg_pb2_grpc.py
+pyh2cimtools/pbcim/notify_pb2.py
+pyh2cimtools/pbcim/notify_pb2.pyc
+pyh2cimtools/pbcim/notify_pb2_grpc.py
+pyh2cimtools/pbcim/onlinemgr_pb2.py
+pyh2cimtools/pbcim/onlinemgr_pb2_grpc.py
+pyh2cimtools/pbcim/ospush_pb2.py
+pyh2cimtools/pbcim/ospush_pb2_grpc.py
+pyh2cimtools/pbcim/pdc_pb2.py
+pyh2cimtools/pbcim/pdc_pb2_grpc.py
+pyh2cimtools/pbcim/proxy_pb2.py
+pyh2cimtools/pbcim/proxy_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2_grpc.py
+pyh2cimtools/pbcim/proxy_pb2_grpc.pyc
+pyh2cimtools/pbcim/pull_pb2.py
+pyh2cimtools/pbcim/pull_pb2.pyc
+pyh2cimtools/pbcim/pull_pb2_grpc.py
+pyh2cimtools/pbcim/push_pb2.py
+pyh2cimtools/pbcim/push_pb2_grpc.py
+pyh2cimtools/pbcim/service_pb2.py
+pyh2cimtools/pbcim/service_pb2_grpc.py
+pyh2cimtools/pbcim/signal_pb2.py
+pyh2cimtools/pbcim/signal_pb2.pyc
+pyh2cimtools/pbcim/signal_pb2_grpc.py
+pyh2cimtools/pbcim/store_pb2.py
+pyh2cimtools/pbcim/store_pb2.pyc
+pyh2cimtools/pbcim/store_pb2_grpc.py
+pyh2cimtools/pbcim/sync_buddy_pb2.py
+pyh2cimtools/pbcim/sync_buddy_pb2_grpc.py
+pyh2cimtools/pbcim/sync_chat_pb2.py
+pyh2cimtools/pbcim/sync_chat_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.py
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/sync_group_pb2.py
+pyh2cimtools/pbcim/sync_group_pb2_grpc.py
+pyh2cimtools/pbcim/user_pb2.py
+pyh2cimtools/pbcim/user_pb2.pyc
+pyh2cimtools/pbcim/user_pb2_grpc.py
+
+sent 54,887 bytes  received 32,791 bytes  58,452.00 bytes/sec
+total size is 3,938,450  speedup is 44.92
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+sending incremental file list
+
+sent 4,595 bytes  received 23 bytes  9,236.00 bytes/sec
+total size is 3,938,450  speedup is 852.85
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+
+sent 4,975 bytes  received 141 bytes  3,410.67 bytes/sec
+total size is 3,938,451  speedup is 769.83
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+
+sent 4,635 bytes  received 141 bytes  9,552.00 bytes/sec
+total size is 3,938,451  speedup is 824.63
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+sending incremental file list
+pyh2cimtools/pbcim/
+pyh2cimtools/pbcim/__init__.pyc
+pyh2cimtools/pbcim/buddy_pb2.pyc
+pyh2cimtools/pbcim/chat_list_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/cloud_token_pb2.pyc
+pyh2cimtools/pbcim/group_pb2.pyc
+pyh2cimtools/pbcim/history_pb2.pyc
+pyh2cimtools/pbcim/im_pb2.pyc
+pyh2cimtools/pbcim/msg_pb2.pyc
+pyh2cimtools/pbcim/notify_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2_grpc.pyc
+pyh2cimtools/pbcim/pull_pb2.pyc
+pyh2cimtools/pbcim/signal_pb2.pyc
+pyh2cimtools/pbcim/store_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/user_pb2.pyc
+
+sent 28,470 bytes  received 8,545 bytes  24,676.67 bytes/sec
+total size is 3,938,451  speedup is 106.40
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+sending incremental file list
+
+sent 4,593 bytes  received 23 bytes  3,077.33 bytes/sec
+total size is 3,938,451  speedup is 853.22
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+sending incremental file list
+
+sent 4,593 bytes  received 23 bytes  3,077.33 bytes/sec
+total size is 3,938,451  speedup is 853.22
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+sending incremental file list
+
+sent 4,593 bytes  received 23 bytes  3,077.33 bytes/sec
+total size is 3,938,451  speedup is 853.22
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+
+sent 4,722 bytes  received 141 bytes  3,242.00 bytes/sec
+total size is 3,938,552  speedup is 809.90
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+sending incremental file list
+
+sent 4,593 bytes  received 23 bytes  9,232.00 bytes/sec
+total size is 3,938,552  speedup is 853.24
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+sending incremental file list
+
+sent 4,593 bytes  received 23 bytes  3,077.33 bytes/sec
+total size is 3,938,552  speedup is 853.24
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+
+sent 4,755 bytes  received 141 bytes  3,264.00 bytes/sec
+total size is 3,938,639  speedup is 804.46
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+
+sent 4,755 bytes  received 141 bytes  3,264.00 bytes/sec
+total size is 3,938,661  speedup is 804.47
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+
+sent 4,755 bytes  received 141 bytes  3,264.00 bytes/sec
+total size is 3,938,670  speedup is 804.47
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+
+sent 4,750 bytes  received 141 bytes  9,782.00 bytes/sec
+total size is 3,938,666  speedup is 805.29
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+
+sent 4,635 bytes  received 141 bytes  9,552.00 bytes/sec
+total size is 3,938,666  speedup is 824.68
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+pyh2cimtools/pbcim/
+pyh2cimtools/pbcim/__init__.pyc
+pyh2cimtools/pbcim/buddy_pb2.pyc
+pyh2cimtools/pbcim/chat_list_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/cloud_token_pb2.pyc
+pyh2cimtools/pbcim/group_pb2.pyc
+pyh2cimtools/pbcim/history_pb2.pyc
+pyh2cimtools/pbcim/im_pb2.pyc
+pyh2cimtools/pbcim/msg_pb2.pyc
+pyh2cimtools/pbcim/notify_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2_grpc.pyc
+pyh2cimtools/pbcim/pull_pb2.pyc
+pyh2cimtools/pbcim/signal_pb2.pyc
+pyh2cimtools/pbcim/store_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/user_pb2.pyc
+
+sent 28,634 bytes  received 8,667 bytes  24,867.33 bytes/sec
+total size is 3,938,667  speedup is 105.59
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+pyh2cimtools/pbcim/
+pyh2cimtools/pbcim/__init__.pyc
+pyh2cimtools/pbcim/buddy_pb2.pyc
+pyh2cimtools/pbcim/chat_list_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/cloud_token_pb2.pyc
+pyh2cimtools/pbcim/group_pb2.pyc
+pyh2cimtools/pbcim/history_pb2.pyc
+pyh2cimtools/pbcim/im_pb2.pyc
+pyh2cimtools/pbcim/msg_pb2.pyc
+pyh2cimtools/pbcim/notify_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2_grpc.pyc
+pyh2cimtools/pbcim/pull_pb2.pyc
+pyh2cimtools/pbcim/signal_pb2.pyc
+pyh2cimtools/pbcim/store_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/user_pb2.pyc
+
+sent 28,633 bytes  received 8,667 bytes  24,866.67 bytes/sec
+total size is 3,938,666  speedup is 105.59
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+sending incremental file list
+pyh2cimtools/pbcim/
+pyh2cimtools/pbcim/__init__.pyc
+pyh2cimtools/pbcim/buddy_pb2.pyc
+pyh2cimtools/pbcim/chat_list_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/cloud_token_pb2.pyc
+pyh2cimtools/pbcim/group_pb2.pyc
+pyh2cimtools/pbcim/history_pb2.pyc
+pyh2cimtools/pbcim/im_pb2.pyc
+pyh2cimtools/pbcim/msg_pb2.pyc
+pyh2cimtools/pbcim/notify_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2_grpc.pyc
+pyh2cimtools/pbcim/pull_pb2.pyc
+pyh2cimtools/pbcim/signal_pb2.pyc
+pyh2cimtools/pbcim/store_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/user_pb2.pyc
+
+sent 28,472 bytes  received 8,545 bytes  24,678.00 bytes/sec
+total size is 3,938,666  speedup is 106.40
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+sending incremental file list
+
+sent 4,595 bytes  received 23 bytes  9,236.00 bytes/sec
+total size is 3,938,666  speedup is 852.89
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+
+sent 4,773 bytes  received 141 bytes  9,828.00 bytes/sec
+total size is 3,938,720  speedup is 801.53
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+
+sent 4,773 bytes  received 141 bytes  3,276.00 bytes/sec
+total size is 3,938,720  speedup is 801.53
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+
+sent 4,637 bytes  received 141 bytes  3,185.33 bytes/sec
+total size is 3,938,720  speedup is 824.34
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+pyh2cimtools/pbcim/
+pyh2cimtools/pbcim/__init__.pyc
+pyh2cimtools/pbcim/buddy_pb2.pyc
+pyh2cimtools/pbcim/chat_list_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/cloud_token_pb2.pyc
+pyh2cimtools/pbcim/group_pb2.pyc
+pyh2cimtools/pbcim/history_pb2.pyc
+pyh2cimtools/pbcim/im_pb2.pyc
+pyh2cimtools/pbcim/msg_pb2.pyc
+pyh2cimtools/pbcim/notify_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2_grpc.pyc
+pyh2cimtools/pbcim/pull_pb2.pyc
+pyh2cimtools/pbcim/signal_pb2.pyc
+pyh2cimtools/pbcim/store_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/user_pb2.pyc
+
+sent 28,652 bytes  received 8,667 bytes  74,638.00 bytes/sec
+total size is 3,938,722  speedup is 105.54
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+pyh2cimtools/pbcim/
+pyh2cimtools/pbcim/__init__.pyc
+pyh2cimtools/pbcim/buddy_pb2.pyc
+pyh2cimtools/pbcim/chat_list_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/cloud_token_pb2.pyc
+pyh2cimtools/pbcim/group_pb2.pyc
+pyh2cimtools/pbcim/history_pb2.pyc
+pyh2cimtools/pbcim/im_pb2.pyc
+pyh2cimtools/pbcim/msg_pb2.pyc
+pyh2cimtools/pbcim/notify_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2_grpc.pyc
+pyh2cimtools/pbcim/pull_pb2.pyc
+pyh2cimtools/pbcim/signal_pb2.pyc
+pyh2cimtools/pbcim/store_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/user_pb2.pyc
+
+sent 28,654 bytes  received 8,667 bytes  24,880.67 bytes/sec
+total size is 3,938,720  speedup is 105.54
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/.git/ CREATE index.lock
+sending incremental file list
+pyh2cimtools/pbcim/
+pyh2cimtools/pbcim/__init__.pyc
+pyh2cimtools/pbcim/buddy_pb2.pyc
+pyh2cimtools/pbcim/chat_list_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2.pyc
+pyh2cimtools/pbcim/chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/cloud_token_pb2.pyc
+pyh2cimtools/pbcim/group_pb2.pyc
+pyh2cimtools/pbcim/history_pb2.pyc
+pyh2cimtools/pbcim/im_pb2.pyc
+pyh2cimtools/pbcim/msg_pb2.pyc
+pyh2cimtools/pbcim/notify_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2.pyc
+pyh2cimtools/pbcim/proxy_pb2_grpc.pyc
+pyh2cimtools/pbcim/pull_pb2.pyc
+pyh2cimtools/pbcim/signal_pb2.pyc
+pyh2cimtools/pbcim/store_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2.pyc
+pyh2cimtools/pbcim/sync_chat_pb2_grpc.pyc
+pyh2cimtools/pbcim/user_pb2.pyc
+
+sent 28,472 bytes  received 8,545 bytes  14,806.80 bytes/sec
+total size is 3,938,720  speedup is 106.40
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/pyh2cimtools/ CREATE 4913
+sending incremental file list
+pyh2cimtools/
+pyh2cimtools/chat.py
+
+sent 4,773 bytes  received 141 bytes  3,276.00 bytes/sec
+total size is 3,938,722  speedup is 801.53
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.

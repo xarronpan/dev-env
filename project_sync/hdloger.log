@@ -1,0 +1,308 @@
+sending incremental file list
+
+sent 9,219 bytes  received 68 bytes  18,574.00 bytes/sec
+total size is 10,669,784  speedup is 1,148.89
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/ CREATE tags
+sending incremental file list
+hdloger/
+hdloger/tags
+
+sent 9,285 bytes  received 6,534 bytes  31,638.00 bytes/sec
+total size is 11,811,914  speedup is 746.69
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/ DELETE tags
+sending incremental file list
+hdloger/
+
+sent 9,223 bytes  received 71 bytes  6,196.00 bytes/sec
+total size is 10,669,784  speedup is 1,148.03
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/ CREATE tags
+sending incremental file list
+hdloger/
+hdloger/tags
+
+sent 16,160 bytes  received 6,534 bytes  45,388.00 bytes/sec
+total size is 10,743,174  speedup is 473.39
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/ MODIFY tags
+sending incremental file list
+hdloger/tags
+
+sent 9,281 bytes  received 717 bytes  6,665.33 bytes/sec
+total size is 10,743,174  speedup is 1,074.53
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/ MODIFY tags
+sending incremental file list
+hdloger/tags
+
+sent 9,281 bytes  received 717 bytes  19,996.00 bytes/sec
+total size is 10,743,174  speedup is 1,074.53
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/ DELETE tags
+sending incremental file list
+hdloger/
+hdloger/tags
+
+sent 9,286 bytes  received 720 bytes  6,670.67 bytes/sec
+total size is 10,743,174  speedup is 1,073.67
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/ DELETE tags
+sending incremental file list
+hdloger/
+
+sent 9,223 bytes  received 71 bytes  3,717.60 bytes/sec
+total size is 10,669,784  speedup is 1,148.03
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/ CREATE tags
+sending incremental file list
+hdloger/
+hdloger/tags
+
+sent 9,284 bytes  received 720 bytes  20,008.00 bytes/sec
+total size is 10,743,174  speedup is 1,073.89
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/ DELETE tags
+sending incremental file list
+hdloger/
+hdloger/tags
+
+sent 9,285 bytes  received 720 bytes  20,010.00 bytes/sec
+total size is 10,743,174  speedup is 1,073.78
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/ DELETE tags
+sending incremental file list
+hdloger/
+
+sent 9,222 bytes  received 71 bytes  18,586.00 bytes/sec
+total size is 10,669,784  speedup is 1,148.15
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/ CREATE tags
+sending incremental file list
+hdloger/
+hdloger/tags
+
+sent 9,286 bytes  received 720 bytes  20,012.00 bytes/sec
+total size is 10,743,174  speedup is 1,073.67
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/ MODIFY tags
+sending incremental file list
+hdloger/tags
+
+sent 9,283 bytes  received 717 bytes  20,000.00 bytes/sec
+total size is 10,743,174  speedup is 1,074.32
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/ DELETE tags
+sending incremental file list
+hdloger/
+hdloger/tags
+
+sent 9,286 bytes  received 720 bytes  6,670.67 bytes/sec
+total size is 10,743,174  speedup is 1,073.67
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,284 bytes  received 724 bytes  6,672.00 bytes/sec
+total size is 10,743,174  speedup is 1,073.46
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,290 bytes  received 724 bytes  6,676.00 bytes/sec
+total size is 10,743,174  speedup is 1,072.82
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,288 bytes  received 724 bytes  20,024.00 bytes/sec
+total size is 10,743,174  speedup is 1,073.03
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,286 bytes  received 720 bytes  4,002.40 bytes/sec
+total size is 10,743,174  speedup is 1,073.67
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,290 bytes  received 724 bytes  6,676.00 bytes/sec
+total size is 10,743,174  speedup is 1,072.82
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,288 bytes  received 724 bytes  20,024.00 bytes/sec
+total size is 10,743,174  speedup is 1,073.03
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,286 bytes  received 720 bytes  6,670.67 bytes/sec
+total size is 10,743,174  speedup is 1,073.67
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,286 bytes  received 720 bytes  6,670.67 bytes/sec
+total size is 10,743,174  speedup is 1,073.67
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,290 bytes  received 724 bytes  6,676.00 bytes/sec
+total size is 10,743,174  speedup is 1,072.82
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,288 bytes  received 724 bytes  20,024.00 bytes/sec
+total size is 10,743,174  speedup is 1,073.03
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,290 bytes  received 724 bytes  6,676.00 bytes/sec
+total size is 10,743,174  speedup is 1,072.82
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,290 bytes  received 724 bytes  6,676.00 bytes/sec
+total size is 10,743,174  speedup is 1,072.82
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,288 bytes  received 724 bytes  20,024.00 bytes/sec
+total size is 10,743,174  speedup is 1,073.03
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,290 bytes  received 724 bytes  6,676.00 bytes/sec
+total size is 10,743,174  speedup is 1,072.82
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,289 bytes  received 724 bytes  20,026.00 bytes/sec
+total size is 10,743,174  speedup is 1,072.92
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,286 bytes  received 724 bytes  6,673.33 bytes/sec
+total size is 10,743,174  speedup is 1,073.24
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,290 bytes  received 724 bytes  6,676.00 bytes/sec
+total size is 10,743,174  speedup is 1,072.82
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,290 bytes  received 724 bytes  6,676.00 bytes/sec
+total size is 10,743,174  speedup is 1,072.82
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+hdloger/.git/index
+hdloger/.git/objects/a1/6078666a3ea1515d2d3a6174f00e9d5ac09d67
+
+sent 10,024 bytes  received 916 bytes  2,431.11 bytes/sec
+total size is 10,743,153  speedup is 982.01
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,280 bytes  received 720 bytes  6,666.67 bytes/sec
+total size is 10,743,153  speedup is 1,074.32
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/panxiangrong/git/hdloger/.git/ CREATE index.lock
+sending incremental file list
+hdloger/tags
+hdloger/.git/
+
+sent 9,284 bytes  received 724 bytes  20,016.00 bytes/sec
+total size is 10,743,153  speedup is 1,073.46
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
