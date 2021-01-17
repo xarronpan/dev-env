@@ -1,0 +1,3 @@
+Bundle 'junegunn/fzf'
+Bundle 'junegunn/fzf.vim'
+Bundle 'yuttie/comfortable-motion.vim'

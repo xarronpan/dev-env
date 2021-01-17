@@ -1,0 +1,37 @@
+"plugin configureg
+let NERDTreeQuitOnOpen=0
+let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:indent_guides_enable_on_vim_startup = 0
+let g:ycm_always_populate_location_list = 1
+let g:airline#extensions#ycm#enabled = 1
+let g:airline#extensions#ycm#error_symbol = 'E:'
+let g:airline#extensions#ycm#warning_symbol = 'W:'
+let g:signify_priority = 5
+
+"key mappings configure
+let mapleader = ","
+inoremap jj <Esc>
+nnoremap <leader>gd :YcmCompleter GoTo<CR>
+nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>fi :YcmCompleter FixIt<CR>
+nnoremap <leader>gi :YcmCompleter GoToImplementation<CR>
+nnoremap <leader>doc :YcmCompleter GetDoc<CR>
+nmap s <Plug>(easymotion-s)
+nmap t <Plug>(easymotion-s2)
+
+"colors cofigure
+let g:solarized_termcolors=256
+color solarized
+highlight YcmWarningLine guibg=#ffffcc
+highlight YcmWarningSign guibg=#ffffcc
+highlight YcmWarningSection guibg=#ffffcc
+
+"vim setting configure
+set ttymouse=xterm2
+set expandtab softtabstop=2 tabstop=2 shiftwidth=2
+set undodir=~/.vim/undodir
+set undofile
+
+"abbrevate command configure
+cnoreabbrev GAck Gcd <bar> Ack!
+cnoreabbrev GAg Gcd <bar> Ag
