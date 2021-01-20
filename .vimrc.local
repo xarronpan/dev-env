@@ -1,12 +1,44 @@
-"plugin configureg
+"plugin settings
 let NERDTreeQuitOnOpen=0
 let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:indent_guides_enable_on_vim_startup = 0
-let g:ycm_always_populate_location_list = 1
 let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#ycm#error_symbol = 'E:'
 let g:airline#extensions#ycm#warning_symbol = 'W:'
 let g:signify_priority = 5
+let g:ycm_always_populate_location_list = 1
+highlight YcmWarningLine guibg=#ffffcc
+highlight YcmWarningSign guibg=#ffffcc
+highlight YcmWarningSection guibg=#ffffcc
+let g:comfortable_motion_no_default_key_mappings = 1
+
+"vim setting configure
+set ttymouse=xterm2
+set expandtab softtabstop=2 tabstop=2 shiftwidth=2
+set undodir=~/.vim/undodir
+set undofile
+set showcmd
+let g:solarized_termcolors=256
+color solarized
+
+function! s:p(...)
+  let preview_args = get(g:, 'fzf_preview_window', ['right', 'ctrl-/'])
+  if empty(preview_args)
+    return { 'options': ['--preview-window', 'hidden'] }
+  endif
+
+  " For backward-compatiblity
+  if type(preview_args) == type('')
+    let preview_args = [preview_args]
+  endif
+  return call('fzf#vim#with_preview', extend(copy(a:000), preview_args))
+endfunction
+
+"abbrevate command configure
+command! -bang -nargs=* FAg call fzf#vim#ag(expand('<cword>'),s:p(),<bang>0)''
+command! -bang -nargs=* FBLines call fzf#vim#buffer_lines(expand('<cword>'), <bang>0)
+cnoreabbrev GAck Gcd <bar> Ack!
+cnoreabbrev GAg Gcd <bar> FAg
 
 "key mappings configure
 let mapleader = ","
@@ -17,22 +49,9 @@ nnoremap <leader>fi :YcmCompleter FixIt<CR>
 nnoremap <leader>gi :YcmCompleter GoToImplementation<CR>
 nnoremap <leader>doc :YcmCompleter GetDoc<CR>
 nmap s <Plug>(easymotion-s)
-nmap t <Plug>(easymotion-s2)
-
-"colors cofigure
-let g:solarized_termcolors=256
-color solarized
-highlight YcmWarningLine guibg=#ffffcc
-highlight YcmWarningSign guibg=#ffffcc
-highlight YcmWarningSection guibg=#ffffcc
-
-"vim setting configure
-set ttymouse=xterm2
-set expandtab softtabstop=2 tabstop=2 shiftwidth=2
-set undodir=~/.vim/undodir
-set undofile
-set showcmd
-
-"abbrevate command configure
-cnoreabbrev GAck Gcd <bar> Ack!
-cnoreabbrev GAg Gcd <bar> Ag
+nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
+nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
+nnoremap <silent> <C-f> :GFiles<CR>
+nnoremap <silent> <C-t> :BTags<CR>
+nnoremap <silent> <C-a> :Gcd <bar> FAg<CR>
+nnoremap <silent> <C-l> :FBLines<CR>
