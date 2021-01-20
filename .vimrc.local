@@ -31,6 +31,7 @@ set ttymouse=xterm2
 set expandtab softtabstop=2 tabstop=2 shiftwidth=2
 set undodir=~/.vim/undodir
 set undofile
+set showcmd
 
 "abbrevate command configure
 cnoreabbrev GAck Gcd <bar> Ack!
