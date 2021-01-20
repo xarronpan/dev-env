@@ -55,3 +55,7 @@ nnoremap <silent> <C-f> :GFiles<CR>
 nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-a> :Gcd <bar> FAg<CR>
 nnoremap <silent> <C-l> :FBLines<CR>
+
+if filereadable("./.workspace.vim")
+  source ./.workspace.vim
+endif
