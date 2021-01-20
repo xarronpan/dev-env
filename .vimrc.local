@@ -44,7 +44,7 @@ cnoreabbrev GAg Gcd <bar> FAg
 let mapleader = ","
 inoremap jj <Esc>
 nnoremap <leader>gd :YcmCompleter GoTo<CR>
-nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>gr :YcmCompleter GoToReferences<CR>:q<CR>:copen<CR>
 nnoremap <leader>fi :YcmCompleter FixIt<CR>
 nnoremap <leader>gi :YcmCompleter GoToImplementation<CR>
 nnoremap <leader>doc :YcmCompleter GetDoc<CR>
@@ -57,5 +57,5 @@ nnoremap <silent> <C-a> :Gcd <bar> FAg<CR>
 nnoremap <silent> <C-l> :FBLines<CR>
 
 if filereadable("./.workspace.vim")
-  source ./.workspace.vim
+   source ./.workspace.vim
 endif
