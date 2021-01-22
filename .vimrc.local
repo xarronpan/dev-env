@@ -13,6 +13,9 @@ highlight YcmWarningSection guibg=#ffffcc
 let g:comfortable_motion_no_default_key_mappings = 1
 let g:gutentags_ctags_executable = 'ctags-universal'
 let g:asyncrun_open = 8
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=Black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=Black
 
 "vim setting configure
 set ttymouse=xterm2
