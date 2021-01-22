@@ -11,6 +11,7 @@ highlight YcmWarningLine guibg=#ffffcc
 highlight YcmWarningSign guibg=#ffffcc
 highlight YcmWarningSection guibg=#ffffcc
 let g:comfortable_motion_no_default_key_mappings = 1
+let g:gutentags_ctags_executable = 'ctags-universal'
 
 "vim setting configure
 set ttymouse=xterm2
