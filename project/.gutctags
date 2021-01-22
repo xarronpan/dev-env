@@ -1,0 +1,9 @@
+--exclude=third-party/* 
+--exclude=build/* 
+--exclude=.cache/* 
+--exclude=.vscode/* 
+--exclude=.git/* 
+--exclude=.gitignore/* 
+--exclude=.gitmodules/* 
+--languages=C,C++,Protobuf
+-R
