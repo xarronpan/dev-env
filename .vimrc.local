@@ -16,6 +16,7 @@ let g:asyncrun_open = 8
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=Black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=Black
+let g:cpp_class_decl_highlight = 1
 
 "vim setting configure
 set ttymouse=xterm2
@@ -23,7 +24,7 @@ set expandtab softtabstop=2 tabstop=2 shiftwidth=2
 set undodir=~/.vim/undodir
 set undofile
 set showcmd
-let g:solarized_termcolors=256
+let g:solarized_termcolors=16
 color solarized
 
 function! s:p(...)
