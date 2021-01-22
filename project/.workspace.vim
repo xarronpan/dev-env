@@ -1,3 +1,5 @@
+set expandtab softtabstop=4 tabstop=4 shiftwidth=4
+
 autocmd BufWritePost * silent !(
       \ cd ~/projects/zixia &&
       \ rsync -avz --delete --exclude=".*" 
@@ -11,7 +13,6 @@ autocmd BufWritePost * silent !(
 function! s:BuildCmd(app)
   let l:cmd = "ssh -t 14.116.173.152 \"cd projects/zixia;./build.sh " . a:app .";exit\""
   call asyncrun#run('',{},l:cmd)
-  execute 'copen'
 endfunction
 
 command! -bang -nargs=1 Build call s:BuildCmd(<q-args>)

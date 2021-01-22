@@ -12,6 +12,7 @@ highlight YcmWarningSign guibg=#ffffcc
 highlight YcmWarningSection guibg=#ffffcc
 let g:comfortable_motion_no_default_key_mappings = 1
 let g:gutentags_ctags_executable = 'ctags-universal'
+let g:asyncrun_open = 8
 
 "vim setting configure
 set ttymouse=xterm2
@@ -36,10 +37,11 @@ function! s:p(...)
 endfunction
 
 "abbrevate command configure
-command! -bang -nargs=* FAg call fzf#vim#ag(expand('<cword>'),s:p(),<bang>0)''
+command! -bang -nargs=* FAg call fzf#vim#ag(expand('<cword>'),s:p(),<bang>0)
 command! -bang -nargs=* FBLines call fzf#vim#buffer_lines(expand('<cword>'), <bang>0)
 cnoreabbrev GAck Gcd <bar> Ack!
-cnoreabbrev GAg Gcd <bar> FAg
+cnoreabbrev GAg Gcd <bar> Ag
+cnoreabbrev AR AsyncRun
 
 "key mappings configure
 let mapleader = ","
