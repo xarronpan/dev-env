@@ -8,3 +8,10 @@ autocmd BufWritePost * silent !(
       \ . 14.116.173.152:~/projects/zixia
       \ >> .rsync.log 2>&1 &)
 
+function! s:BuildCmd(app)
+  let l:cmd = "ssh -t 14.116.173.152 \"cd projects/zixia;./build.sh " . a:app .";exit\""
+  call asyncrun#run('',{},l:cmd)
+  execute 'copen'
+endfunction
+
+command! -bang -nargs=1 Build call s:BuildCmd(<q-args>)
