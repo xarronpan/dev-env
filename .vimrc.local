@@ -20,6 +20,8 @@ let g:cpp_class_scope_highlight = 1
 let cpp_no_cpp14 = 1
 let cpp_no_cpp17 = 1
 let cpp_no_cpp20 = 1
+let g:protodefprotogetter = '~/.vim/bundle/vim-protodef/pullproto.pl'
+let g:disable_protodef_sorting = 1
 
 "vim setting configure
 set ttymouse=xterm2
@@ -65,6 +67,8 @@ nnoremap <silent> <C-f> :GFiles<CR>
 nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-a> :Gcd <bar> FAg<CR>
 nnoremap <silent> <C-l> :FBLines<CR>
+nnoremap <leader>zfs :set foldmethod=syntax<CR>
+nnoremap <leader>zfi :set foldmethod=indent<CR>
 
 if filereadable("./.workspace.vim")
    source ./.workspace.vim
