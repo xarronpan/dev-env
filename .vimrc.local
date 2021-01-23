@@ -31,7 +31,6 @@ set undofile
 set showcmd
 let g:solarized_termcolors=16
 color solarized
-set pastetoggle=<C-z>
 
 function! s:p(...)
   let preview_args = get(g:, 'fzf_preview_window', ['right', 'ctrl-/'])
@@ -52,6 +51,8 @@ command! -bang -nargs=* FBLines call fzf#vim#buffer_lines(expand('<cword>'), <ba
 cnoreabbrev GAck Gcd <bar> Ack!
 cnoreabbrev GAg Gcd <bar> Ag
 cnoreabbrev AR AsyncRun
+cnoreabbrev BM Bookmark
+cnoreabbrev EBM EditBookmarks
 
 "key mappings configure
 let mapleader = ","
