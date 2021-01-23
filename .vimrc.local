@@ -69,6 +69,8 @@ nnoremap <silent> <C-a> :Gcd <bar> FAg<CR>
 nnoremap <silent> <C-l> :FBLines<CR>
 nnoremap <leader>zfs :set foldmethod=syntax<CR>
 nnoremap <leader>zfi :set foldmethod=indent<CR>
+map <C-e> :Gcd <bar> NERDTreeTabsToggle<CR>
+nmap <leader>nt :Gcd <bar> NERDTreeFind<CR>
 
 if filereadable("./.workspace.vim")
    source ./.workspace.vim
