@@ -31,6 +31,7 @@ set undofile
 set showcmd
 let g:solarized_termcolors=16
 color solarized
+set pastetoggle=<C-z>
 
 function! s:p(...)
   let preview_args = get(g:, 'fzf_preview_window', ['right', 'ctrl-/'])
