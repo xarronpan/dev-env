@@ -57,6 +57,7 @@ cnoreabbrev EBM EditBookmarks
 "key mappings configure
 let mapleader = ","
 inoremap jj <Esc>
+nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <leader>gr :YcmCompleter GoToReferences<CR>:q<CR>:copen<CR>
 nnoremap <leader>fi :YcmCompleter FixIt<CR>
