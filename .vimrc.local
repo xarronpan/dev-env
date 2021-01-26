@@ -76,10 +76,6 @@ map <C-e> :Gcd <bar> NERDTreeTabsToggle<CR>
 nmap <leader>nt :Gcd <bar> NERDTreeFind<CR>
 nnoremap <leader>pt :PreviewTag<CR>
 nnoremap <leader>pc :PreviewClose<CR>
-noremap <m-u> :PreviewScroll -1<cr>
-noremap <m-d> :PreviewScroll +1<cr>
-inoremap <m-u> <c-\><c-o>:PreviewScroll -1<cr>
-inoremap <m-d> <c-\><c-o>:PreviewScroll +1<cr>
 
 if filereadable("./.workspace.vim")
    source ./.workspace.vim
