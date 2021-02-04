@@ -53,6 +53,12 @@ cnoreabbrev GAg Gcd <bar> Ag
 cnoreabbrev AR AsyncRun
 cnoreabbrev BM Bookmark
 cnoreabbrev EBM EditBookmarks
+"add slash
+cnoreabbrev AS s/$/\//
+"add back slash
+cnoreabbrev ABS s/$/\\/
+"remove trailing space
+cnoreabbrev RTS s/\v[ ]+$//
 
 "key mappings configure
 let mapleader = ","
