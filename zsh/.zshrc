@@ -55,11 +55,12 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-#antigen theme agnoster
+antigen theme agnoster
 
 # Tell Antigen that you're done.
 antigen apply
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=4"
+bindkey '^j' autosuggest-accept
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
