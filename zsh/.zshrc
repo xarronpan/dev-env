@@ -36,6 +36,7 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+ANTIGEN_CACHE=false
 source ~/.zsh/antigen/antigen.zsh
 
 #Load the oh-my-zsh's library.
@@ -55,7 +56,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen theme robbyrussell
+antigen theme af-magic
 
 # Tell Antigen that you're done.
 antigen apply
@@ -65,4 +66,4 @@ source ~/.fzf-tab-completion/zsh/fzf-zsh-completion.sh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=23"
 bindkey '^j' autosuggest-accept
-bindkey '^I' fzf_completion
+bindkey '^O' fzf_completion
