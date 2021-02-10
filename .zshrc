@@ -54,6 +54,7 @@ antigen bundle colored-man-pages
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle hlissner/zsh-autopair
 
 # Load the theme.
 antigen theme af-magic
