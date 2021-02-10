@@ -67,3 +67,5 @@ source ~/.fzf-tab-completion/zsh/fzf-zsh-completion.sh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=23"
 bindkey '^j' autosuggest-accept
 bindkey '^O' fzf_completion
+
+export PATH=$PATH:~/bin
