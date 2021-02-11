@@ -53,6 +53,7 @@ antigen use oh-my-zsh
 antigen bundle extract
 
 # External bundle.
+antigen-bundle Tarrasch/zsh-bd
 antigen bundle zlsun/solarized-man
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle joel-porquet/zsh-dircolors-solarized.git
