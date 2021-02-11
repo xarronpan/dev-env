@@ -37,6 +37,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 ANTIGEN_CACHE=false
+VIM_MODE_VICMD_KEY='^k'
 source ~/.zsh/antigen/antigen.zsh
 
 #Load the oh-my-zsh's library.
@@ -54,12 +55,12 @@ antigen bundle extract
 # External bundle.
 antigen bundle zlsun/solarized-man
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle hlissner/zsh-autopair
 antigen bundle joel-porquet/zsh-dircolors-solarized.git
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle softmoth/zsh-vim-mode
+antigen bundle hlissner/zsh-autopair
 
 # Load the theme.
-#antigen theme af-magic
 antigen theme ys
 
 # Tell Antigen that you're done.
