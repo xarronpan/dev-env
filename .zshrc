@@ -68,6 +68,7 @@ antigen apply
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.fzf-tab-completion/zsh/fzf-zsh-completion.sh
+eval "$(fasd --init auto)"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=23"
 bindkey '^j' autosuggest-accept
