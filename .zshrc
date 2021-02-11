@@ -48,17 +48,19 @@ antigen use oh-my-zsh
 #antigen bundle pip
 #antigen bundle lein
 #antigen bundle command-not-found
+#antigen bundle colored-man-pages
 antigen bundle extract
-antigen bundle colored-man-pages
 
 # External bundle.
+antigen bundle zlsun/solarized-man
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle hlissner/zsh-autopair
 antigen bundle joel-porquet/zsh-dircolors-solarized.git
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen theme af-magic
+#antigen theme af-magic
+antigen theme ys
 
 # Tell Antigen that you're done.
 antigen apply
