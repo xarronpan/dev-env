@@ -51,10 +51,11 @@ antigen use oh-my-zsh
 antigen bundle extract
 antigen bundle colored-man-pages
 
-# Syntax highlighting bundle.
+# External bundle.
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle hlissner/zsh-autopair
+antigen bundle joel-porquet/zsh-dircolors-solarized.git
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
 antigen theme af-magic
@@ -68,5 +69,6 @@ source ~/.fzf-tab-completion/zsh/fzf-zsh-completion.sh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=23"
 bindkey '^j' autosuggest-accept
 bindkey '^O' fzf_completion
+setupsolarized dircolors.ansi-dark
 
 export PATH=$PATH:~/bin
