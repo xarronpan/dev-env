@@ -17,3 +17,6 @@ sudo apt-get install fd-find
 sudo add-apt-repository ppa:aacebedo/fasd
 sudo apt-get update
 sudo apt-get install fasd
+
+git clone https://github.com/cyrus-and/gdb-dashboard.git ~/.gdb-dashboard
+cp ~/.gdb-dashboard/.gdbinit ~/
