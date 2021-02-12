@@ -76,3 +76,4 @@ bindkey '^O' fzf_completion
 setupsolarized dircolors.ansi-dark
 
 export PATH=$PATH:~/bin
+export LESS="-F -X $LESS"
