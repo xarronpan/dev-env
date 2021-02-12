@@ -37,7 +37,6 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 ANTIGEN_CACHE=false
-VIM_MODE_VICMD_KEY='\ej'
 source ~/.zsh/antigen/antigen.zsh
 
 #Load the oh-my-zsh's library.
@@ -70,6 +69,7 @@ antigen apply
 source ~/.fzf-tab-completion/zsh/fzf-zsh-completion.sh
 eval "$(fasd --init auto)"
 
+VIM_MODE_VICMD_KEY='\ej'
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=23"
 bindkey '^j' autosuggest-accept
 bindkey '^O' fzf_completion
