@@ -60,7 +60,7 @@ antigen bundle softmoth/zsh-vim-mode
 antigen bundle hlissner/zsh-autopair
 
 # Load the theme.
-antigen theme ys
+antigen theme alanpeabody
 
 # Tell Antigen that you're done.
 antigen apply
