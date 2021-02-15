@@ -15,4 +15,4 @@ Bundle 'xarronpan/vim-preview-enhance'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'tmux-plugins/vim-tmux-focus-events'
 Bundle 'roxma/vim-tmux-clipboard'
-
+Bundle 'sgur/vim-textobj-parameter'
