@@ -20,3 +20,5 @@ sudo apt-get install fasd
 
 git clone https://github.com/cyrus-and/gdb-dashboard.git ~/.gdb-dashboard
 cp ~/.gdb-dashboard/.gdbinit ~/
+
+git clone https://github.com/hchbaw/zce.zsh.git ~/.zce

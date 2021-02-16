@@ -68,10 +68,13 @@ antigen apply
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.fzf-tab-completion/zsh/fzf-zsh-completion.sh
 eval "$(fasd --init auto)"
+source ~/.zce/zce.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=23"
 bindkey '^j' autosuggest-accept
 bindkey '^O' fzf_completion
+zstyle ':zce:*' bg 'fg=23'
+bindkey '^s' zce
 setupsolarized dircolors.ansi-dark
 
 export PATH=$PATH:~/bin
