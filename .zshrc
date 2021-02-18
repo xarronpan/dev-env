@@ -70,9 +70,10 @@ eval "$(fasd --init auto)"
 source ~/.zce/zce.zsh
 
 VIM_MODE_VICMD_KEY='\ej'
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=23"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
 bindkey '^O' fzf_completion
-zstyle ':zce:*' bg 'fg=23'
+zstyle ':zce:*' bg 'fg=241'
+zstyle ':zce:*' fg 'fg=160,bold'
 bindkey '^j' zce
 setupsolarized dircolors.ansi-dark
 
