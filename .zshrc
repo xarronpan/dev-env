@@ -37,7 +37,6 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 ANTIGEN_CACHE=false
-VIM_MODE_VICMD_KEY='^k'
 source ~/.zsh/antigen/antigen.zsh
 
 #Load the oh-my-zsh's library.
@@ -70,11 +69,11 @@ source ~/.fzf-tab-completion/zsh/fzf-zsh-completion.sh
 eval "$(fasd --init auto)"
 source ~/.zce/zce.zsh
 
+VIM_MODE_VICMD_KEY='\ej'
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=23"
-bindkey '^j' autosuggest-accept
 bindkey '^O' fzf_completion
 zstyle ':zce:*' bg 'fg=23'
-bindkey '^s' zce
+bindkey '^j' zce
 setupsolarized dircolors.ansi-dark
 
 export PATH=$PATH:~/bin
