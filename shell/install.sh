@@ -24,3 +24,8 @@ cp ~/.gdb-dashboard/.gdbinit ~/
 git clone https://github.com/hchbaw/zce.zsh.git ~/.zce
 
 sudo apt install gawk
+sudo apt-get install axel
+
+mkdir -p ~/tmp && cd ~/tmp
+axel -n 10 https://github.com/sharkdp/bat/releases/download/v0.17.1/bat_0.17.1_amd64.deb
+sudo dpkg -i bat_0.17.1_amd64.deb
