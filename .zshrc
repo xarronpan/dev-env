@@ -77,6 +77,6 @@ zstyle ':zce:*' fg 'fg=160,bold'
 bindkey '^j' zce
 setupsolarized dircolors.ansi-dark
 
-export BAT_THEME='Solarized (light)'
+export BAT_THEME='Solarized (dark)'
 export PATH=$PATH:~/bin
 export LESS="-F -X $LESS"
