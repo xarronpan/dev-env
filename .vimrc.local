@@ -90,7 +90,12 @@ endfunc
 
 "abbrevate command configure
 command! -bang -nargs=* FAg call fzf#vim#ag(expand('<cword>'),s:p(),<bang>0)
-command! -bang -nargs=* FBLines call fzf#vim#buffer_lines(expand('<cword>'), <bang>0)
+command! -bang -nargs=* FBLines
+      \ call fzf#vim#buffer_lines(expand('<cword>'),
+      \     fzf_preview#p(<bang>0, {'placeholder': fzf#shellescape(expand('%')) . ':{1}',
+      \                 'options': '--preview-window +{1}-/2'}),
+      \     <bang>0)
+
 cnoreabbrev GAck Gcd <bar> Ack!
 cnoreabbrev GAg Gcd <bar> Ag
 cnoreabbrev AR AsyncRun
@@ -120,7 +125,9 @@ nnoremap <silent> <C-f> :GFiles<CR>
 nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-a> :Gcd <bar> FAg<CR>
 nnoremap <silent> <C-l> :FBLines<CR>
-nnoremap <silent> <C-k> :CtrlPMRU<CR>
+nnoremap <silent> <C-k> :History<CR>
+nnoremap <leader>pq :FZFQuickFix<CR>
+nnoremap <leader>pl :FZFLocList<CR>
 nnoremap <leader>zfs :set foldmethod=syntax<CR>
 nnoremap <leader>zfi :set foldmethod=indent<CR>
 map <C-e> :Gcd <bar> NERDTreeTabsToggle<CR>
