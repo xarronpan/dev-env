@@ -22,6 +22,11 @@ let cpp_no_cpp17 = 1
 let cpp_no_cpp20 = 1
 let g:protodefprotogetter = '~/.vim/bundle/vim-protodef/pullproto.pl'
 let g:disable_protodef_sorting = 1
+let g:rainbow_conf = {
+\   'separately': {
+\       'cmake': 0,
+\   }
+\}
 
 "vim setting configure
 set ttymouse=xterm2
