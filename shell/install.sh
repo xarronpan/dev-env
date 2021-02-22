@@ -29,3 +29,6 @@ sudo apt-get install axel
 mkdir -p ~/tmp && cd ~/tmp
 axel -n 10 https://github.com/sharkdp/bat/releases/download/v0.17.1/bat_0.17.1_amd64.deb
 sudo dpkg -i bat_0.17.1_amd64.deb
+
+wget https://github.com/dandavison/delta/releases/download/0.6.0/git-delta_0.6.0_amd64.deb
+sudo dpkg -i git-delta_0.6.0_amd64.deb
