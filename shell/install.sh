@@ -23,7 +23,6 @@ cp ~/.gdb-dashboard/.gdbinit ~/
 
 git clone https://github.com/hchbaw/zce.zsh.git ~/.zce
 
-sudo apt install gawk
 sudo apt-get install axel
 
 mkdir -p ~/tmp && cd ~/tmp
