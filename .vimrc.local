@@ -131,9 +131,9 @@ nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
 nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
 nnoremap <silent> <C-f> :GFiles<CR>
 nnoremap <silent> <C-t> :BTags<CR>
-nnoremap <silent> <C-a> :Gcd <bar> FAg<CR>
+nnoremap <silent> <C-g> :Gcd <bar> FAg<CR>
 nnoremap <silent> <C-l> :FBLines<CR>
-nnoremap <silent> <C-k> :History<CR>
+nnoremap <silent> <C-h> :History<CR>
 nnoremap <leader>pq :FZFQuickFix<CR>
 nnoremap <leader>pl :FZFLocList<CR>
 nnoremap <leader>zfs :set foldmethod=syntax<CR>
