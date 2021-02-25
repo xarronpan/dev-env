@@ -10,8 +10,8 @@ let g:ycm_always_populate_location_list = 1
 highlight ycmwarningline guibg=#ffffcc
 highlight ycmwarningsign guibg=#ffffcc
 highlight ycmwarningsection guibg=#ffffcc
-let g:ycm_key_invoke_completion = '<c-z>'
-noremap <c-z> <NOP>
+let g:ycm_key_invoke_completion = '<c-v>'
+noremap <c-v> <NOP>
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:comfortable_motion_no_default_key_mappings = 1
 let g:gutentags_ctags_executable = 'ctags-universal'
