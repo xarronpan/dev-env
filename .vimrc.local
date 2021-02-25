@@ -119,8 +119,13 @@ cnoreabbrev RTS s/\v[ ]+$//
 "key mappings configure
 let mapleader = ","
 inoremap jj <Esc>
-nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 call Terminal_MetaMode(0)
+nnoremap <leader>lo :lopen<CR>
+nnoremap <leader>lc :lclose<CR>
+nnoremap <leader>lp :FZFLocList<CR>
+nnoremap <leader>qo :copen<CR>
+nnoremap <leader>qc :cclose<CR>
+nnoremap <leader>qp :FZFQuickFix<CR>
 nnoremap <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <leader>gr :YcmCompleter GoToReferences<CR>:q<CR>:copen<CR>
 nnoremap <leader>fi :YcmCompleter FixIt<CR>
@@ -134,8 +139,6 @@ nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-g> :Gcd <bar> FAg<CR>
 nnoremap <silent> <C-l> :FBLines<CR>
 nnoremap <silent> <C-h> :History<CR>
-nnoremap <leader>pq :FZFQuickFix<CR>
-nnoremap <leader>pl :FZFLocList<CR>
 nnoremap <leader>zfs :set foldmethod=syntax<CR>
 nnoremap <leader>zfi :set foldmethod=indent<CR>
 map <C-e> :Gcd <bar> NERDTreeTabsToggle<CR>
