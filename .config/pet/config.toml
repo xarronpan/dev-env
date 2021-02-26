@@ -1,0 +1,12 @@
+[General]
+  snippetfile = "/home/panxiangrong/.config/pet/snippet.toml"
+  editor = "vim"
+  column = 40
+  selectcmd = "fzf"
+
+[Gist]
+  file_name = "pet-snippet.toml"
+  access_token = "443c6bdeccb3390593ae9503412d618f6bdf9f81"
+  gist_id = "ae8023245efe6b5a4d261445a503e175"
+  public = false
+  auto_sync = false
