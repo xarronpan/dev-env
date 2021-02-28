@@ -1,6 +1,6 @@
 Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
-Bundle 'chengzeyi/fzf-preview.vim'
+Bundle 'xarronpan/fzf-preview.vim'
 Bundle 'yuttie/comfortable-motion.vim'
 Bundle 'vim-scripts/ZoomWin.git'
 Bundle 'ludovicchabant/vim-gutentags'

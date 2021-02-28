@@ -12,7 +12,6 @@ highlight ycmwarningsign guibg=#ffffcc
 highlight ycmwarningsection guibg=#ffffcc
 let g:ycm_key_invoke_completion = '<c-v>'
 noremap <c-v> <NOP>
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:comfortable_motion_no_default_key_mappings = 1
 let g:gutentags_ctags_executable = 'ctags-universal'
 let g:asyncrun_open = 8
@@ -105,7 +104,7 @@ command! -bang -nargs=* FBLines
       \     <bang>0)
 
 cnoreabbrev GAck Gcd <bar> Ack!
-cnoreabbrev GAg Gcd <bar> Ag
+cnoreabbrev GAg Gcd <bar> Ag!
 cnoreabbrev AR AsyncRun
 cnoreabbrev BM Bookmark
 cnoreabbrev EBM EditBookmarks
@@ -122,10 +121,10 @@ inoremap jj <Esc>
 call Terminal_MetaMode(0)
 nnoremap <leader>lo :lopen<CR>
 nnoremap <leader>lc :lclose<CR>
-nnoremap <leader>lp :FZFLocList<CR>
+nnoremap <leader>lp :FZFLocList!<CR>
 nnoremap <leader>qo :copen<CR>
 nnoremap <leader>qc :cclose<CR>
-nnoremap <leader>qp :FZFQuickFix<CR>
+nnoremap <leader>qp :FZFQuickFix!<CR>
 nnoremap <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <leader>gr :YcmCompleter GoToReferences<CR>:q<CR>:copen<CR>
 nnoremap <leader>fi :YcmCompleter FixIt<CR>
@@ -136,8 +135,8 @@ nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
 nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
 nnoremap <silent> <C-f> :GFiles<CR>
 nnoremap <silent> <C-t> :BTags<CR>
-nnoremap <silent> <C-g> :Gcd <bar> FAg<CR>
-nnoremap <silent> <C-l> :FBLines<CR>
+nnoremap <silent> <C-g> :Gcd <bar> FAg!<CR>
+nnoremap <silent> <C-l> :FBLines!<CR>
 nnoremap <silent> <C-h> :History<CR>
 nnoremap <leader>zfs :set foldmethod=syntax<CR>
 nnoremap <leader>zfi :set foldmethod=indent<CR>
