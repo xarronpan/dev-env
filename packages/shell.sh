@@ -34,3 +34,5 @@ sudo dpkg -i git-delta_0.6.0_amd64.deb
 
 git clone  https://github.com/facebook/PathPicker.git ~/.PathPicker
 ln -s ~/.PathPicker/fpp ~/bin/fpp
+
+sudo apt-get install diffstat
