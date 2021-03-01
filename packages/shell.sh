@@ -36,5 +36,4 @@ git clone  https://github.com/facebook/PathPicker.git ~/.PathPicker
 ln -s ~/.PathPicker/fpp ~/bin/fpp
 
 sudo apt-get install diffstat
-sudo apt-get install multitail
 sudo apt-get install sshfs
