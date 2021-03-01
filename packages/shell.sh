@@ -31,3 +31,6 @@ sudo dpkg -i bat_0.17.1_amd64.deb
 
 wget https://github.com/dandavison/delta/releases/download/0.6.0/git-delta_0.6.0_amd64.deb
 sudo dpkg -i git-delta_0.6.0_amd64.deb
+
+git clone  https://github.com/facebook/PathPicker.git ~/.PathPicker
+ln -s ~/.PathPicker/fpp ~/bin/fpp
