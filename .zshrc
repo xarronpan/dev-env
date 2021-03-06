@@ -119,8 +119,9 @@ _gen_fzf_default_opts() {
 _gen_fzf_default_opts
 
 export BAT_THEME='Solarized (dark)'
-export PATH=$PATH:~/bin
 export LESS="-F -X $LESS"
+export PATH=$PATH:~/bin
+export PATH="/home/panxiangrong/.git-fuzzy/bin:$PATH"
 
 alias cv="tput cnorm"
 
