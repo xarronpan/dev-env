@@ -39,3 +39,6 @@ sudo apt-get install diffstat
 sudo apt-get install sshfs
 
 git clone https://github.com/bigH/git-fuzzy.git ~/.git-fuzzy
+
+sudo curl https://sh.rustup.rs -sSf | sh
+cargo install exa
