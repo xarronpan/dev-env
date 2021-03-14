@@ -29,6 +29,8 @@ let g:rainbow_conf = {
 \       'cmake': 0,
 \   }
 \}
+let g:winresizer_start_key = '<C-Z>'
+
 
 "vim setting configure
 set ttymouse=xterm2
