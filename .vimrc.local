@@ -30,7 +30,7 @@ let g:rainbow_conf = {
 \   }
 \}
 let g:winresizer_start_key = '<C-Z>'
-
+let g:go_def_mapping_enabled = 0
 
 "vim setting configure
 set ttymouse=xterm2
@@ -131,6 +131,8 @@ nnoremap <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <leader>gr :YcmCompleter GoToReferences<CR>:q<CR>:copen<CR>
 nnoremap <leader>fi :YcmCompleter FixIt<CR>
 nnoremap <leader>gi :YcmCompleter GoToImplementation<CR>
+nnoremap <leader>gt :YcmCompleter GoToType<CR>
+nnoremap <leader>et :YcmCompleter GetType<CR>
 nnoremap <leader>doc :YcmCompleter GetDoc<CR>
 nmap s <Plug>(easymotion-s)
 nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
@@ -140,12 +142,14 @@ nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-g> :Gcd <bar> FAg!<CR>
 nnoremap <silent> <C-l> :FBLines!<CR>
 nnoremap <silent> <C-h> :History<CR>
+nnoremap <silent> <C-c> :Commands<CR>
 nnoremap <leader>zfs :set foldmethod=syntax<CR>
 nnoremap <leader>zfi :set foldmethod=indent<CR>
 map <C-e> :Gcd <bar> NERDTreeTabsToggle<CR>
 nmap <leader>nt :Gcd <bar> NERDTreeFind<CR>
 nnoremap <leader>pt :PreviewTag<CR>
 nnoremap <leader>pc :PreviewClose<CR>
+au FileType go nmap <Leader>gd :YcmCompleter GoTo<CR>
 
 if filereadable("./.workspace.vim")
    source ./.workspace.vim
