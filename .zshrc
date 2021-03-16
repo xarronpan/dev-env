@@ -127,3 +127,5 @@ alias cv="tput cnorm"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[[ -s "/home/panxiangrong/.gvm/scripts/gvm" ]] && source "/home/panxiangrong/.gvm/scripts/gvm"
