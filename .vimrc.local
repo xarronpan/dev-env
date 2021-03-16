@@ -33,6 +33,7 @@ let g:winresizer_start_key = '<C-Z>'
 let g:go_def_mapping_enabled = 0
 let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
+let g:go_list_height = 10
 
 "vim setting configure
 set ttymouse=xterm2
@@ -152,6 +153,8 @@ nmap <leader>nt :Gcd <bar> NERDTreeFind<CR>
 nnoremap <leader>pt :PreviewTag<CR>
 nnoremap <leader>pc :PreviewClose<CR>
 au FileType go nmap <Leader>gd :YcmCompleter GoTo<CR>
+au FileType go nmap <leader>goi <Plug>(go-implements)
+au FileType go nmap <leader>god <Plug>(go-describe)
 
 if filereadable("./.workspace.vim")
    source ./.workspace.vim
