@@ -106,15 +106,22 @@ endfunc
 
 
 "abbrevate command configure
-command! -bang -nargs=* FAg call fzf#vim#ag(expand('<cword>'),s:p(),<bang>0)
-command! -bang -nargs=* FBLines
+command! -bang -nargs=* CWAg call fzf#vim#ag(expand('<cword>'),s:p(),<bang>0)
+command! -bang -nargs=* CWBLines
       \ call fzf#vim#buffer_lines(expand('<cword>'),
+      \     fzf_preview#p(<bang>0, {'placeholder': fzf#shellescape(expand('%')) . ':{1}',
+      \                 'options': '--preview-window +{1}-/2'}),
+      \     <bang>0)
+
+command! -bang -nargs=* FSFZFBLines
+      \ call fzf#vim#buffer_lines(<q-args>,
       \     fzf_preview#p(<bang>0, {'placeholder': fzf#shellescape(expand('%')) . ':{1}',
       \                 'options': '--preview-window +{1}-/2'}),
       \     <bang>0)
 
 cnoreabbrev GAck Gcd <bar> Ack!
 cnoreabbrev GAg Gcd <bar> Ag!
+cnoreabbrev BL FSFZFBLines!
 cnoreabbrev AR AsyncRun
 cnoreabbrev BM Bookmark
 cnoreabbrev EBM EditBookmarks
@@ -142,13 +149,15 @@ nnoremap <leader>gi :YcmCompleter GoToImplementation<CR>
 nnoremap <leader>gt :YcmCompleter GoToType<CR>
 nnoremap <leader>et :YcmCompleter GetType<CR>
 nnoremap <leader>doc :YcmCompleter GetDoc<CR>
+nnoremap <leader>h: :History:<CR>
+nnoremap <leader>h/ :History/<CR>
 nmap s <Plug>(easymotion-s)
 nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
 nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
 nnoremap <silent> <C-f> :GFiles<CR>
 nnoremap <silent> <C-t> :BTags<CR>
-nnoremap <silent> <C-g> :Gcd <bar> FAg!<CR>
-nnoremap <silent> <C-l> :FBLines!<CR>
+nnoremap <silent> <C-g> :Gcd <bar> CWAg!<CR>
+nnoremap <silent> <C-l> :CWBLines!<CR>
 nnoremap <silent> <C-h> :History<CR>
 nnoremap <silent> <C-c> :Commands<CR>
 nnoremap <leader>zfs :set foldmethod=syntax<CR>
