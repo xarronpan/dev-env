@@ -10,6 +10,7 @@ let g:ycm_always_populate_location_list = 1
 highlight ycmwarningline guibg=#ffffcc
 highlight ycmwarningsign guibg=#ffffcc
 highlight ycmwarningsection guibg=#ffffcc
+let g:ycm_auto_hover = ''
 let g:ycm_key_invoke_completion = '<c-a>'
 noremap <c-a> <NOP>
 let g:comfortable_motion_no_default_key_mappings = 1
@@ -146,7 +147,7 @@ nnoremap <leader>fi :YcmCompleter FixIt<CR>
 nnoremap <leader>gi :YcmCompleter GoToImplementation<CR>
 nnoremap <leader>gt :YcmCompleter GoToType<CR>
 nnoremap <leader>et :YcmCompleter GetType<CR>
-nnoremap <leader>doc :YcmCompleter GetDoc<CR>
+nnoremap <leader>do :YcmCompleter GetDoc<CR>
 nnoremap <leader>h: :History:<CR>
 nnoremap <leader>h/ :History/<CR>
 nmap <leader><tab> <plug>(fzf-maps-n)
