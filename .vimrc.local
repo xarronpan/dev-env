@@ -46,8 +46,8 @@ let g:solarized_termcolors=16
 color solarized
 autocmd BufEnter *.go call timer_start(50, { tid -> execute('setlocal nolist') })
 autocmd BufEnter *.go call timer_start(50, { tid -> execute('setlocal nospell') })
-autocmd BufEnter *.py call timer_start(50, { tid -> execute('setlocal nolist') })
 autocmd BufEnter *.py call timer_start(50, { tid -> execute('setlocal nospell') })
+autocmd BufEnter *.proto call timer_start(50, { tid -> execute('setlocal nospell') })
 
 function! s:p(...)
   let preview_args = get(g:, 'fzf_preview_window', ['right', 'ctrl-/'])
