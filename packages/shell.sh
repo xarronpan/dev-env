@@ -44,3 +44,4 @@ sudo curl https://sh.rustup.rs -sSf | sh
 cargo install exa
 
 sudo apt-get install socat
+suod pip install ranger-fm
