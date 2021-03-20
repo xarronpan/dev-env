@@ -67,7 +67,6 @@ antigen bundle softmoth/zsh-vim-mode
 antigen bundle hlissner/zsh-autopair
 
 # Load the theme.
-#antigen theme mh
 antigen theme romkatv/powerlevel10k
 
 # Tell Antigen that you're done.
@@ -129,6 +128,8 @@ export TLDR_CODE='red'
 export TLDR_PARAM='blue'
 
 alias cv="tput cnorm"
+alias t="trans"
+alias tz="trans :zh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
