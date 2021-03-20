@@ -122,6 +122,11 @@ export BAT_THEME='Solarized (dark)'
 export LESS="-F -X $LESS"
 export PATH=$PATH:~/bin
 export PATH="/home/panxiangrong/.git-fuzzy/bin:$PATH"
+export TLDR_HEADER='magenta bold underline'
+export TLDR_QUOTE='italic'
+export TLDR_DESCRIPTION='green'
+export TLDR_CODE='red'
+export TLDR_PARAM='blue'
 
 alias cv="tput cnorm"
 
