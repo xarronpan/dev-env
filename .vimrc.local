@@ -124,6 +124,7 @@ cnoreabbrev BL FSFZFBLines!
 cnoreabbrev AR AsyncRun
 cnoreabbrev BM Bookmark
 cnoreabbrev EBM EditBookmarks
+cnoreabbrev TL Translate
 "add slash
 cnoreabbrev AS s/$/\//
 "add back slash
@@ -148,6 +149,12 @@ nnoremap <leader>gi :YcmCompleter GoToImplementation<CR>
 nnoremap <leader>gt :YcmCompleter GoToType<CR>
 nnoremap <leader>et :YcmCompleter GetType<CR>
 nnoremap <leader>do :YcmCompleter GetDoc<CR>
+nnoremap <silent> <C-f> :GFiles<CR>
+nnoremap <silent> <C-t> :BTags<CR>
+nnoremap <silent> <C-g> :Gcd <bar> CWAg!<CR>
+nnoremap <silent> <C-l> :CWBLines!<CR>
+nnoremap <silent> <C-h> :History<CR>
+nnoremap <silent> <C-c> :Commands<CR>
 nnoremap <leader>h: :History:<CR>
 nnoremap <leader>h/ :History/<CR>
 nmap <leader><tab> <plug>(fzf-maps-n)
@@ -160,12 +167,6 @@ inoremap <expr> <c-x><c-r> fzf#vim#complete('cat ~/.zsh_history\|cut -c 16-\|tac
 nmap s <Plug>(easymotion-s)
 nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
 nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
-nnoremap <silent> <C-f> :GFiles<CR>
-nnoremap <silent> <C-t> :BTags<CR>
-nnoremap <silent> <C-g> :Gcd <bar> CWAg!<CR>
-nnoremap <silent> <C-l> :CWBLines!<CR>
-nnoremap <silent> <C-h> :History<CR>
-nnoremap <silent> <C-c> :Commands<CR>
 nnoremap <leader>zfs :set foldmethod=syntax<CR>
 nnoremap <leader>zfi :set foldmethod=indent<CR>
 map <C-e> :Gcd <bar> NERDTreeTabsToggle<CR>
