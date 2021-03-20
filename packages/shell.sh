@@ -25,13 +25,6 @@ git clone https://github.com/hchbaw/zce.zsh.git ~/.zce
 
 sudo apt-get install axel
 
-mkdir -p ~/tmp && cd ~/tmp
-axel -n 10 https://github.com/sharkdp/bat/releases/download/v0.17.1/bat_0.17.1_amd64.deb
-sudo dpkg -i bat_0.17.1_amd64.deb
-
-wget https://github.com/dandavison/delta/releases/download/0.6.0/git-delta_0.6.0_amd64.deb
-sudo dpkg -i git-delta_0.6.0_amd64.deb
-
 git clone  https://github.com/facebook/PathPicker.git ~/.PathPicker
 ln -s ~/.PathPicker/fpp ~/bin/fpp
 
@@ -44,4 +37,15 @@ sudo curl https://sh.rustup.rs -sSf | sh
 cargo install exa
 
 sudo apt-get install socat
-suod pip install ranger-fm
+sudo pip install ranger-fm
+
+mkdir -p ~/tmp && cd ~/tmp
+axel -n 10 https://github.com/sharkdp/bat/releases/download/v0.17.1/bat_0.17.1_amd64.deb
+sudo dpkg -i bat_0.17.1_amd64.deb
+
+wget https://github.com/dandavison/delta/releases/download/0.6.0/git-delta_0.6.0_amd64.deb
+sudo dpkg -i git-delta_0.6.0_amd64.deb
+
+wget git.io/trans
+mv trans ~/bin
+chmod +x trans ~/bin/trans
