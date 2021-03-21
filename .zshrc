@@ -126,7 +126,9 @@ export TLDR_QUOTE='italic'
 export TLDR_DESCRIPTION='green'
 export TLDR_CODE='red'
 export TLDR_PARAM='blue'
+export CHTSH_QUERY_OPTIONS="style=monokai"
 
+alias cht="cht.sh --shell"
 alias cv="tput cnorm"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

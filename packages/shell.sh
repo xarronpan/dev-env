@@ -12,6 +12,9 @@ mkdir -p ~/bin
 curl -o ~/bin/tldr https://raw.githubusercontent.com/raylee/tldr/master/tldr
 chmod +x ~/bin/tldr
 
+curl https://cht.sh/:cht.sh > ~/bin/cht.sh
+chmod +x ~/bin/cht.sh
+
 sudo apt-get install fd-find
 
 sudo add-apt-repository ppa:aacebedo/fasd
