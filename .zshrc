@@ -128,6 +128,7 @@ export TLDR_DESCRIPTION='green'
 export TLDR_CODE='red'
 export TLDR_PARAM='blue'
 export CHTSH_QUERY_OPTIONS="style=monokai"
+export TZ='Asia/Shanghai'
 
 alias cht="cht.sh --shell"
 alias cv="tput cnorm"
