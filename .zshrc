@@ -124,9 +124,9 @@ export PATH=$PATH:~/bin
 export PATH="/home/panxiangrong/.git-fuzzy/bin:$PATH"
 export TLDR_HEADER='magenta bold underline'
 export TLDR_QUOTE='italic'
-export TLDR_DESCRIPTION='green'
-export TLDR_CODE='blue'
-export TLDR_PARAM='blue'
+export TLDR_DESCRIPTION='gray'
+export TLDR_CODE='green'
+export TLDR_PARAM='green'
 #export CHTSH_QUERY_OPTIONS="style=monokai"
 export CHTSH_QUERY_OPTIONS="style=solarized-dark"
 export TZ='Asia/Shanghai'
