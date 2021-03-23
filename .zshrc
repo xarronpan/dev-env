@@ -80,7 +80,7 @@ source ~/.zce/zce.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
 ZSH_HIGHLIGHT_STYLES[comment]=fg=241
 bindkey '^O' fzf_completion
-zstyle ':zce:*' bg 'fg=241'
+zstyle ':zce:*' bg 'fg=11'
 zstyle ':zce:*' fg 'fg=1,bold'
 bindkey '^s' zce
 setupsolarized dircolors.ansi-dark
