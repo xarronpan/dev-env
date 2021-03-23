@@ -127,7 +127,8 @@ export TLDR_QUOTE='italic'
 export TLDR_DESCRIPTION='green'
 export TLDR_CODE='blue'
 export TLDR_PARAM='blue'
-export CHTSH_QUERY_OPTIONS="style=monokai"
+#export CHTSH_QUERY_OPTIONS="style=monokai"
+export CHTSH_QUERY_OPTIONS="style=solarized-dark"
 export TZ='Asia/Shanghai'
 
 alias cht="cht.sh --shell"
