@@ -49,6 +49,11 @@ sudo dpkg -i bat_0.17.1_amd64.deb
 wget https://github.com/dandavison/delta/releases/download/0.6.0/git-delta_0.6.0_amd64.deb
 sudo dpkg -i git-delta_0.6.0_amd64.deb
 
+mkdir -p "$(bat --config-dir)/themes"
+cd "$(bat --config-dir)/themes"
+git clone https://github.com/xarronpan/bat-solarized.git
+bat cache --build
+
 wget git.io/trans
 mv trans ~/bin
 chmod +x trans ~/bin/trans
