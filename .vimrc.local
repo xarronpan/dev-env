@@ -126,6 +126,7 @@ cnoreabbrev BM Bookmark
 cnoreabbrev EBM EditBookmarks
 cnoreabbrev TL Translate
 cnoreabbrev YR YcmCompleter RefactorRename
+cnoreabbrev YF YcmCompleter Format
 "add slash
 cnoreabbrev AS s/$/\//
 "add back slash
