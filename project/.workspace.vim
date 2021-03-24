@@ -15,4 +15,5 @@ function! s:BuildCmd(app)
   call asyncrun#run('',{},l:cmd)
 endfunction
 
-command! -bang -nargs=1 Build call s:BuildCmd(<q-args>)
+command! -bang -nargs=1 DoBuild call s:BuildCmd(<q-args>)
+cnoreabbrev Build Gcd <bar> DoBuild
