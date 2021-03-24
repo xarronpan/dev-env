@@ -42,7 +42,7 @@ set ttymouse=xterm2
 set expandtab softtabstop=2 tabstop=2 shiftwidth=2
 set undodir=~/.vim/undodir
 set undofile
-"set showcmd
+set showcmd
 let g:solarized_termcolors=16
 color solarized
 autocmd BufEnter *.go call timer_start(10, { tid -> execute('setlocal nolist') })
