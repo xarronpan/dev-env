@@ -36,6 +36,8 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_list_height = 10
+let g:far#source = 'ag'
+let g:far#enable_undo = 1
 
 "vim setting configure
 set ttymouse=xterm2
