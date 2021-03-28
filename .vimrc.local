@@ -122,6 +122,7 @@ command! -bang -nargs=* FSFZFBLines
 
 cnoreabbrev GAck Gcd <bar> Ack!
 cnoreabbrev GAg Gcd <bar> Ag!
+cnoreabbrev RO bdelete <bar> edit #
 cnoreabbrev BL FSFZFBLines!
 cnoreabbrev AR AsyncRun
 cnoreabbrev BM Bookmark
