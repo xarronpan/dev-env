@@ -118,6 +118,14 @@ _gen_fzf_default_opts() {
 }
 _gen_fzf_default_opts
 
+function dirdiff()
+{
+  # Shell-escape each path:
+  DIR1=$(printf '%q' "$1"); shift
+  DIR2=$(printf '%q' "$1"); shift
+  vim $@ -c "DirDiff $DIR1 $DIR2"
+}
+
 export BAT_THEME='Solarized'
 export LESS="-F -X $LESS"
 export PATH=$PATH:~/bin
