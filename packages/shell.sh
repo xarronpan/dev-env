@@ -28,10 +28,6 @@ git clone https://github.com/hchbaw/zce.zsh.git ~/.zce
 
 sudo apt-get install axel
 
-git clone  https://github.com/facebook/PathPicker.git ~/.PathPicker
-ln -s ~/.PathPicker/fpp ~/bin/fpp
-
-sudo apt-get install diffstat
 sudo apt-get install sshfs
 
 git clone https://github.com/bigH/git-fuzzy.git ~/.git-fuzzy
