@@ -129,6 +129,7 @@ cnoreabbrev GAg Gcd <bar> Ag!
 cnoreabbrev RO bdelete <bar> edit #
 cnoreabbrev BL FSFZFBLines!
 cnoreabbrev AR AsyncRun
+cnoreabbrev TR VtrSendCommandToRunner!
 cnoreabbrev BM Bookmark
 cnoreabbrev EBM EditBookmarks
 cnoreabbrev TL Translate
