@@ -39,6 +39,7 @@ let g:go_list_height = 10
 let g:far#source = 'ag'
 let g:far#enable_undo = 1
 let g:context_enabled = 0
+let g:context_add_mappings = 0
 let g:nrrw_rgn_incr = 60
 let g:nrrw_rgn_hl = 'Search'
 
