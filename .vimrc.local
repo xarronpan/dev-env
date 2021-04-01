@@ -135,6 +135,7 @@ cnoreabbrev TL Translate
 cnoreabbrev YR YcmCompleter RefactorRename
 cnoreabbrev YF YcmCompleter Format
 cnoreabbrev CT ContextToggle
+cnoreabbrev LD Linediff
 "add slash
 cnoreabbrev AS s/$/\//
 "add back slash
