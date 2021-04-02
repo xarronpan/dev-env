@@ -42,6 +42,7 @@ let g:context_enabled = 0
 let g:context_add_mappings = 0
 let g:nrrw_rgn_incr = 60
 let g:nrrw_rgn_hl = 'Search'
+let g:VtrClearBeforeSend = 0
 
 "vim setting configure
 set ttymouse=xterm2
@@ -130,6 +131,8 @@ cnoreabbrev RO bdelete <bar> edit #
 cnoreabbrev BL FSFZFBLines!
 cnoreabbrev AR AsyncRun
 cnoreabbrev TR VtrSendCommandToRunner!
+cnoreabbrev TRL VtrSendLinesToRunner!
+cnoreabbrev TA VtrAttachToPane
 cnoreabbrev BM Bookmark
 cnoreabbrev EBM EditBookmarks
 cnoreabbrev TL Translate
