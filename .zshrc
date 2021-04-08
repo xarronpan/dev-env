@@ -117,6 +117,7 @@ _gen_fzf_default_opts() {
   #"
 }
 _gen_fzf_default_opts
+export FZF_DEFAULT_OPTS="--bind=alt-j:preview-down,alt-k:preview-up $FZF_DEFAULT_OPTS"
 
 function dirdiff()
 {
