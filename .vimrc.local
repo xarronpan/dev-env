@@ -54,6 +54,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Ignored'   :'.',
                 \ 'Clean'     :'c',
                 \ 'Unknown'   :'#'}
+let g:rooter_patterns = ['.git', '.root', '.svn']
 
 "vim setting configure
 set ttymouse=xterm2
@@ -136,9 +137,8 @@ command! -bang -nargs=* FSFZFBLines
       \                 'options': '--preview-window +{1}-/2'}),
       \     <bang>0)
 
-cnoreabbrev GAck Gcd <bar> Ack!
-cnoreabbrev GAg Gcd <bar> Ag!
-cnoreabbrev RO bdelete <bar> edit #
+cnoreabbrev GAck Rooter <bar> Ack!
+cnoreabbrev GAg Rooter <bar> Ag!
 cnoreabbrev BL FSFZFBLines!
 cnoreabbrev AR AsyncRun
 cnoreabbrev TR VtrSendCommandToRunner!
@@ -150,7 +150,11 @@ cnoreabbrev TL Translate
 cnoreabbrev YR YcmCompleter RefactorRename
 cnoreabbrev YF YcmCompleter Format
 cnoreabbrev CT ContextToggle
+cnoreabbrev DT DimInactiveToggle
+cnoreabbrev SW Scratch
 cnoreabbrev LD Linediff
+cnoreabbrev BD diffthis
+cnoreabbrev PR Rooter
 "add slash
 cnoreabbrev AS s/$/\//
 "add back slash
@@ -175,9 +179,9 @@ nnoremap <leader>gi :YcmCompleter GoToImplementation<CR>
 nnoremap <leader>gt :YcmCompleter GoToType<CR>
 nnoremap <leader>et :YcmCompleter GetType<CR>
 nnoremap <leader>do :YcmCompleter GetDoc<CR>
-nnoremap <silent> <C-f> :GFiles<CR>
+nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
 nnoremap <silent> <C-t> :BTags<CR>
-nnoremap <silent> <C-g> :Gcd <bar> CWAg!<CR>
+nnoremap <silent> <C-g> :Rooter <bar> CWAg!<CR>
 nnoremap <silent> <C-l> :CWBLines!<CR>
 nnoremap <silent> <C-h> :History<CR>
 nnoremap <silent> <C-c> :Commands<CR>
@@ -195,8 +199,8 @@ nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
 nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
 nnoremap <leader>zfs :set foldmethod=syntax<CR>
 nnoremap <leader>zfi :set foldmethod=indent<CR>
-map <C-e> :Gcd <bar> NERDTreeTabsToggle<CR>
-nmap <leader>nt :Gcd <bar> NERDTreeFind<CR>
+map <C-e> :Rooter <bar> NERDTreeTabsToggle<CR>
+nmap <leader>nt :Rooter <bar> NERDTreeFind<CR>
 nnoremap <leader>pt :PreviewTag<CR>
 nnoremap <leader>pc :PreviewClose<CR>
 au FileType go nmap <Leader>gd :YcmCompleter GoTo<CR>
