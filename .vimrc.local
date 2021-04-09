@@ -155,6 +155,7 @@ cnoreabbrev SW Scratch
 cnoreabbrev LD Linediff
 cnoreabbrev BD diffthis
 cnoreabbrev PR Rooter
+cnoreabbrev CF CtrlSF
 "add slash
 cnoreabbrev AS s/$/\//
 "add back slash
