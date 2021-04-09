@@ -43,6 +43,17 @@ let g:context_add_mappings = 0
 let g:nrrw_rgn_incr = 60
 let g:nrrw_rgn_hl = 'Search'
 let g:VtrClearBeforeSend = 0
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'m',
+                \ 'Staged'    :'+',
+                \ 'Untracked' :'?',
+                \ 'Renamed'   :'r',
+                \ 'Unmerged'  :'!',
+                \ 'Deleted'   :'-',
+                \ 'Dirty'     :'d',
+                \ 'Ignored'   :'.',
+                \ 'Clean'     :'c',
+                \ 'Unknown'   :'#'}
 
 "vim setting configure
 set ttymouse=xterm2
