@@ -55,6 +55,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Clean'     :'c',
                 \ 'Unknown'   :'#'}
 let g:rooter_patterns = ['.git', '.root', '.svn']
+let g:ctrlsf_auto_preview = 1
 
 "vim setting configure
 set ttymouse=xterm2
@@ -150,12 +151,12 @@ cnoreabbrev TL Translate
 cnoreabbrev YR YcmCompleter RefactorRename
 cnoreabbrev YF YcmCompleter Format
 cnoreabbrev CT ContextToggle
-cnoreabbrev DT DimInactiveToggle
 cnoreabbrev SW Scratch
 cnoreabbrev LD Linediff
 cnoreabbrev BD diffthis
 cnoreabbrev PR Rooter
-cnoreabbrev CF CtrlSF
+cnoreabbrev CF Rooter <bar> CtrlSF
+cnoreabbrev FAR Rooter <bar> Far
 "add slash
 cnoreabbrev AS s/$/\//
 "add back slash
