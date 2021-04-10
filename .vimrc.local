@@ -138,8 +138,8 @@ command! -bang -nargs=* FSFZFBLines
       \                 'options': '--preview-window +{1}-/2'}),
       \     <bang>0)
 
-cnoreabbrev GAck Rooter <bar> Ack!
-cnoreabbrev GAg Rooter <bar> Ag!
+cnoreabbrev ACK Rooter <bar> Ack!
+cnoreabbrev AG Rooter <bar> Ag!
 cnoreabbrev BL FSFZFBLines!
 cnoreabbrev AR AsyncRun
 cnoreabbrev TR VtrSendCommandToRunner!
