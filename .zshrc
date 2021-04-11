@@ -142,6 +142,7 @@ export TZ='Asia/Shanghai'
 
 alias cht="cht.sh --shell"
 alias cv="tput cnorm"
+alias gh="group-hosts"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
