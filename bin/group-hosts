@@ -1,6 +1,8 @@
 #!/bin/bash
 
-ENV=`ls ~/.inventory|fzf-tmux`
+HEADER='choose from ansible inventory:'
+
+ENV=`ls ~/.inventory|fzf-tmux --prompt='envs>' --header="$HEADER"`
 if [ -z "$ENV" ]; then
   exit 0
 fi
@@ -8,7 +10,7 @@ GROUP_IDS=`ansible-inventory -i ~/.inventory/$ENV --list| \
   jq -r '.|keys| join(" ")'| \
   xargs -n 1| \
   grep -v 'all\|_meta'| \
-  fzf-tmux -m`
+  fzf-tmux -m --prompt='groups>' --header="$HEADER"`
 if [ -z "$GROUP_IDS" ]; then
   exit 0
 fi
