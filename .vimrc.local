@@ -170,6 +170,10 @@ cnoreabbrev RTS s/\v[ ]+$//
 let mapleader = ","
 inoremap jj <Esc>
 call Terminal_MetaMode(0)
+noremap <M-u> <C-w>p<C-u><C-w>p
+noremap <M-d> <C-w>p<C-d><C-w>p
+noremap <M-j> <C-w>p5<C-e><C-w>p
+noremap <M-k> <C-w>p5<C-y><C-w>p
 nnoremap <leader>lo :lopen<CR>
 nnoremap <leader>lc :lclose<CR>
 nnoremap <leader>lp :FZFLocList!<CR>
