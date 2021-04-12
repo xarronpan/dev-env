@@ -152,11 +152,9 @@ export TLDR_QUOTE='italic'
 export TLDR_DESCRIPTION='gray'
 export TLDR_CODE='green'
 export TLDR_PARAM='green'
-#export CHTSH_QUERY_OPTIONS="style=monokai"
 export CHTSH_QUERY_OPTIONS="style=solarized-dark"
 export TZ='Asia/Shanghai'
 
-alias cht="cht.sh --shell"
 alias cv="tput cnorm"
 alias gh="group-hosts"
 alias sa="$HOME/.tmux-butler/scripts/snippetdb put"
