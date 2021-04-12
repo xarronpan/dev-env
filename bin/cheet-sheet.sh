@@ -20,9 +20,9 @@ case $SECTION in
   golang )
     bat ~/cheatsheets/languages/golang.go ;;
   python )
-    mdless ~/cheatsheets/languages/python.md ;;
+    glow -p ~/cheatsheets/languages/python.md ;;
   vim-script )
-    mdless ~/cheatsheets/languages/vimscript.md ;;
+    glow -p ~/cheatsheets/languages/vimscript.md ;;
   gdb )
     bat ~/cheatsheets/tools/gdb.txt ;;
   git )

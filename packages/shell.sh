@@ -45,6 +45,9 @@ sudo dpkg -i bat_0.17.1_amd64.deb
 wget https://github.com/dandavison/delta/releases/download/0.6.0/git-delta_0.6.0_amd64.deb
 sudo dpkg -i git-delta_0.6.0_amd64.deb
 
+wget https://github.com/charmbracelet/glow/releases/download/v1.4.1/glow_1.4.1_linux_amd64.deb
+sudo dpkg -i glow_1.4.1_linux_amd64.deb
+
 mkdir -p "$(bat --config-dir)/themes"
 cd "$(bat --config-dir)/themes"
 git clone https://github.com/xarronpan/bat-solarized.git
