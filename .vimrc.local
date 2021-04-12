@@ -56,6 +56,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Unknown'   :'#'}
 let g:rooter_patterns = ['.git', '.root', '.svn']
 let g:ctrlsf_auto_preview = 1
+let g:ctrlsf_selected_line_hl = ''
 
 "vim setting configure
 set ttymouse=xterm2
@@ -67,6 +68,7 @@ let g:solarized_termcolors=16
 color solarized
 autocmd BufEnter *.go call timer_start(10, { tid -> execute('setlocal nolist') })
 autocmd BufEnter * call timer_start(10, { tid -> execute('setlocal nospell') })
+autocmd BufEnter * call timer_start(10, { tid -> execute('hi MatchParen cterm=none ctermbg=none ctermfg=red') })
 
 function! s:p(...)
   let preview_args = get(g:, 'fzf_preview_window', ['right', 'ctrl-/'])
