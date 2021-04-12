@@ -24,9 +24,9 @@ class z(Command):
     @staticmethod
     def _get_directories(*args):
         import subprocess
-        output = subprocess.check_output(["fasd", "-dl"] + list(args), universal_newlines=True)
+        output = subprocess.check_output(["fasd", "-dlR"] + list(args), universal_newlines=True)
         dirs = output.strip().split("\n")
-        dirs.sort(reverse=True)  # Listed in ascending frecency
+        #dirs.sort(reverse=True)  # Listed in ascending frecency
         return dirs
 
 class fzf_select(Command):
