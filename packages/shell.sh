@@ -53,3 +53,6 @@ bat cache --build
 wget git.io/trans
 mv trans ~/bin
 chmod +x trans ~/bin/trans
+
+git clone https://github.com/skywind3000/awesome-cheatsheets ~/cheatsheets
+sudo gem install mdless
