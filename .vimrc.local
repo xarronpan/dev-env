@@ -198,6 +198,7 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 inoremap <expr> <c-x><c-r> fzf#vim#complete('cat ~/.zsh_history\|cut -c 16-\|tac')
 nmap s <Plug>(easymotion-overwin-f)
 nmap <leader>l <Plug>(easymotion-overwin-line)
+nmap <leader>w <Plug>(easymotion-overwin-w)
 nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
 nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
 nnoremap <leader>zfs :set foldmethod=syntax<CR>
