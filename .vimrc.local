@@ -125,6 +125,20 @@ function! Terminal_MetaMode(mode)
   endif
 endfunc
 
+function! TabMessage(cmd)
+  redir => message
+  silent execute a:cmd
+  redir END
+  if empty(message)
+    echoerr "no output"
+  else
+    " use "new" instead of "tabnew" below if you prefer split windows instead of tabs
+    tabnew
+    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
+    silent put=message
+  endif
+endfunction
+command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
 
 "abbrevate command configure
 command! -bang -nargs=* CWAg call fzf#vim#ag(expand('<cword>'),s:p(),<bang>0)
@@ -161,6 +175,7 @@ cnoreabbrev DD DirDiff
 cnoreabbrev PR Rooter
 cnoreabbrev CF Rooter <bar> CtrlSF
 cnoreabbrev FAR Rooter <bar> Far
+cnoreabbrev TM TabMessage
 "add slash
 cnoreabbrev AS s/$/\//
 "add back slash
