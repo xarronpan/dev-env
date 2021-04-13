@@ -57,6 +57,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 let g:rooter_patterns = ['.git', '.root', '.svn']
 let g:ctrlsf_auto_preview = 1
 let g:ctrlsf_selected_line_hl = ''
+let g:fzf_mru_relative = 1
 
 "vim setting configure
 set ttymouse=xterm2
@@ -215,10 +216,11 @@ nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
 nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-g> :Rooter <bar> CWAg!<CR>
 nnoremap <silent> <C-b> :CWBLines!<CR>
-nnoremap <silent> <C-i> :History<CR>
+nnoremap <silent> <C-i> :Rooter <bar> FZFMru<CR>
 nnoremap <silent> <C-c> :Commands<CR>
-nnoremap <leader>h: :History:<CR>
-nnoremap <leader>h/ :History/<CR>
+nnoremap <leader>h :History<CR>
+nnoremap <leader>: :History:<CR>
+nnoremap <leader>/ :History/<CR>
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
