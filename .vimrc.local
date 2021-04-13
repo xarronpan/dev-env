@@ -177,6 +177,9 @@ cnoreabbrev PR Rooter
 cnoreabbrev CF Rooter <bar> CtrlSF
 cnoreabbrev FAR Rooter <bar> Far
 cnoreabbrev TM TabMessage
+cnoreabbrev VSA VSSplitAbove
+cnoreabbrev VSB VSSplitBelow
+
 "add slash
 cnoreabbrev AS s/$/\//
 "add back slash
