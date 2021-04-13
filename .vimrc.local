@@ -142,7 +142,8 @@ command! -bang -nargs=* FSFZFBLines
 
 cnoreabbrev ACK Rooter <bar> Ack!
 cnoreabbrev AG Rooter <bar> Ag!
-cnoreabbrev BL FSFZFBLines!
+cnoreabbrev FB FSFZFBLines!
+cnoreabbrev FW Windows
 cnoreabbrev AR AsyncRun
 cnoreabbrev TR VtrSendCommandToRunner!
 cnoreabbrev TRL VtrSendLinesToRunner!
@@ -154,8 +155,9 @@ cnoreabbrev YR YcmCompleter RefactorRename
 cnoreabbrev YF YcmCompleter Format
 cnoreabbrev CT ContextToggle
 cnoreabbrev SW Scratch
-cnoreabbrev LD Linediff
-cnoreabbrev BD diffthis
+cnoreabbrev DL Linediff
+cnoreabbrev DB diffthis
+cnoreabbrev DD DirDiff
 cnoreabbrev PR Rooter
 cnoreabbrev CF Rooter <bar> CtrlSF
 cnoreabbrev FAR Rooter <bar> Far
@@ -174,6 +176,9 @@ noremap <M-u> <C-w>p<C-u><C-w>p
 noremap <M-d> <C-w>p<C-d><C-w>p
 noremap <M-j> <C-w>p5<C-e><C-w>p
 noremap <M-k> <C-w>p5<C-y><C-w>p
+nnoremap <leader>t :tabnew<CR>
+nnoremap <silent> <C-j> gT
+nnoremap <silent> <C-k> gt
 nnoremap <leader>lo :lopen<CR>
 nnoremap <leader>lc :lclose<CR>
 nnoremap <leader>lp :FZFLocList!<CR>
