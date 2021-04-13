@@ -187,13 +187,17 @@ cnoreabbrev RTS s/\v[ ]+$//
 let mapleader = ","
 inoremap jj <Esc>
 call Terminal_MetaMode(0)
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
 noremap <M-u> <C-w>p<C-u><C-w>p
 noremap <M-d> <C-w>p<C-d><C-w>p
 noremap <M-j> <C-w>p5<C-e><C-w>p
 noremap <M-k> <C-w>p5<C-y><C-w>p
 nnoremap <leader>t :tabnew<CR>
-nnoremap <silent> <C-j> gT
-nnoremap <silent> <C-k> gt
+nnoremap <S-Tab> gT
+nnoremap <Tab> gt
 nnoremap <leader>lo :lopen<CR>
 nnoremap <leader>lc :lclose<CR>
 nnoremap <leader>lp :FZFLocList!<CR>
@@ -210,8 +214,8 @@ nnoremap <leader>do :YcmCompleter GetDoc<CR>
 nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
 nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-g> :Rooter <bar> CWAg!<CR>
-nnoremap <silent> <C-l> :CWBLines!<CR>
-nnoremap <silent> <C-h> :History<CR>
+nnoremap <silent> <C-b> :CWBLines!<CR>
+nnoremap <silent> <C-i> :History<CR>
 nnoremap <silent> <C-c> :Commands<CR>
 nnoremap <leader>h: :History:<CR>
 nnoremap <leader>h/ :History/<CR>
