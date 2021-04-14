@@ -200,8 +200,7 @@ noremap <M-j> <C-w>p5<C-e><C-w>p
 noremap <M-k> <C-w>p5<C-y><C-w>p
 nnoremap <leader>t :tabnew<CR>
 nnoremap <leader>n :enew<CR>
-nnoremap <S-Tab> gT
-nnoremap <Tab> gt
+nnoremap <Tab> :FZFMru<CR>
 nnoremap <leader>lo :lopen<CR>
 nnoremap <leader>lc :lclose<CR>
 nnoremap <leader>lp :FZFLocList!<CR>
@@ -219,7 +218,6 @@ nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
 nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-g> :Rooter <bar> CWAg!<CR>
 nnoremap <silent> <C-b> :CWBLines!<CR>
-nnoremap <silent> <C-i> :Rooter <bar> FZFMru<CR>
 nnoremap <silent> <C-c> :Commands<CR>
 nnoremap <leader>h :History<CR>
 nnoremap <leader>b :Buffers<CR>

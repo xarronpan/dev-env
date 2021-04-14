@@ -1,7 +1,7 @@
 Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
 Bundle 'xarronpan/fzf-preview.vim'
-Bundle 'pbogut/fzf-mru.vim'
+Bundle 'xarronpan/fzf-mru.vim'
 Bundle 'yuttie/comfortable-motion.vim'
 Bundle 'ludovicchabant/vim-gutentags'
 Bundle 'skywind3000/asyncrun.vim'
