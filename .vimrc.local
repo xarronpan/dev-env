@@ -62,7 +62,7 @@ let g:rooter_manual_only = 1
 let g:which_key_use_floating_win = 0
 let g:multi_cursor_use_default_mapping=0
 let g:VM_Extend_hl = 'Visual'
-let g:VM_highlight_matches = 'hi! link Search PmenuSel'
+let g:VM_highlight_matches = 'hi! link Search MatchParen'
 
 "vim setting configure
 set ttymouse=xterm2
