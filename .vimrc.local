@@ -63,6 +63,8 @@ let g:which_key_use_floating_win = 0
 let g:multi_cursor_use_default_mapping=0
 let g:VM_Extend_hl = 'Visual'
 let g:VM_highlight_matches = 'hi! link Search MatchParen'
+let g:lt_location_list_toggle_map = '<leader>ll'
+let g:lt_quickfix_list_toggle_map = '<leader>qq'
 
 "vim setting configure
 set ttymouse=xterm2
@@ -205,12 +207,6 @@ noremap <M-j> <C-w>p5<C-e><C-w>p
 noremap <M-k> <C-w>p5<C-y><C-w>p
 nnoremap <silent> <leader>t :tabnew<CR>
 nnoremap <silent> <leader>n :enew<CR>
-nnoremap <silent> <leader>lo :lopen<CR>
-nnoremap <silent> <leader>lc :lclose<CR>
-nnoremap <silent> <leader>lp :FZFLocList!<CR>
-nnoremap <silent> <leader>qo :copen<CR>
-nnoremap <silent> <leader>qc :cclose<CR>
-nnoremap <silent> <leader>qp :FZFQuickFix!<CR>
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>:q<CR>:copen<CR>
 nnoremap <silent> <leader>fi :YcmCompleter FixIt<CR>
@@ -229,6 +225,8 @@ nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>W :Windows<CR>
 nnoremap <silent> <leader>: :History:<CR>
 nnoremap <silent> <leader>/ :History/<CR>
+nnoremap <silent> <leader>L :FZFLocList!<CR>
+nnoremap <silent> <leader>Q :FZFQuickFix!<CR>
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
