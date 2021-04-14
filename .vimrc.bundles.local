@@ -16,7 +16,7 @@ Bundle 'xarronpan/vim-preview-enhance'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'tmux-plugins/vim-tmux-focus-events'
 Bundle 'roxma/vim-tmux-clipboard'
-Bundle 'sgur/vim-textobj-parameter'
+Bundle "wellle/targets.vim"
 Bundle 'justinmk/vim-dirvish'
 Bundle 'pboettch/vim-cmake-syntax'
 Bundle 'tommcdo/vim-exchange'
