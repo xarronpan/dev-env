@@ -200,7 +200,7 @@ noremap <M-j> <C-w>p5<C-e><C-w>p
 noremap <M-k> <C-w>p5<C-y><C-w>p
 nnoremap <leader>t :tabnew<CR>
 nnoremap <leader>n :enew<CR>
-nnoremap <Tab> :FZFMru<CR>
+nnoremap <Tab> :Rooter<bar>FZFMru<CR>
 nnoremap <leader>lo :lopen<CR>
 nnoremap <leader>lc :lclose<CR>
 nnoremap <leader>lp :FZFLocList!<CR>
