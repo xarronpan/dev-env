@@ -44,13 +44,13 @@ let g:nrrw_rgn_incr = 60
 let g:nrrw_rgn_hl = 'Search'
 let g:VtrClearBeforeSend = 0
 let g:NERDTreeGitStatusIndicatorMapCustom = {
-                \ 'Modified'  :'m',
+                \ 'Modified'  :'!',
                 \ 'Staged'    :'+',
                 \ 'Untracked' :'?',
                 \ 'Renamed'   :'r',
-                \ 'Unmerged'  :'!',
+                \ 'Unmerged'  :'@',
                 \ 'Deleted'   :'-',
-                \ 'Dirty'     :'d',
+                \ 'Dirty'     :'!',
                 \ 'Ignored'   :'.',
                 \ 'Clean'     :'c',
                 \ 'Unknown'   :'#'}
