@@ -247,9 +247,9 @@ nmap <leader>nt :Rooter <bar> NERDTreeFind<CR>
 nnoremap <leader>pt :PreviewTag<CR>
 nnoremap <leader>pc :PreviewClose<CR>
 nnoremap <silent> <leader> :WhichKey ','<CR>
-nnoremap <silent> c :WhichKey 'c'<CR>
-nnoremap <silent> d :WhichKey 'd'<CR>
-nnoremap <silent> y :WhichKey 'y'<CR>
+"nnoremap <silent> c :WhichKey 'c'<CR>
+"nnoremap <silent> d :WhichKey 'd'<CR>
+"nnoremap <silent> y :WhichKey 'y'<CR>
 au FileType go nmap <Leader>gd :YcmCompleter GoTo<CR>
 au FileType go nmap <leader>goi <Plug>(go-implements)
 au FileType go nmap <leader>god <Plug>(go-describe)
