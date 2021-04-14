@@ -158,7 +158,6 @@ command! -bang -nargs=* FSFZFBLines
 cnoreabbrev ACK Rooter <bar> Ack!
 cnoreabbrev AG Rooter <bar> Ag!
 cnoreabbrev FB FSFZFBLines!
-cnoreabbrev FW Windows
 cnoreabbrev AR AsyncRun
 cnoreabbrev TR VtrSendCommandToRunner!
 cnoreabbrev TRL VtrSendLinesToRunner!
@@ -200,6 +199,7 @@ noremap <M-d> <C-w>p<C-d><C-w>p
 noremap <M-j> <C-w>p5<C-e><C-w>p
 noremap <M-k> <C-w>p5<C-y><C-w>p
 nnoremap <leader>t :tabnew<CR>
+nnoremap <leader>n :enew<CR>
 nnoremap <S-Tab> gT
 nnoremap <Tab> gt
 nnoremap <leader>lo :lopen<CR>
@@ -222,6 +222,8 @@ nnoremap <silent> <C-b> :CWBLines!<CR>
 nnoremap <silent> <C-i> :Rooter <bar> FZFMru<CR>
 nnoremap <silent> <C-c> :Commands<CR>
 nnoremap <leader>h :History<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>W :Windows<CR>
 nnoremap <leader>: :History:<CR>
 nnoremap <leader>/ :History/<CR>
 nmap <leader><tab> <plug>(fzf-maps-n)
