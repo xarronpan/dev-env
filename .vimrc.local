@@ -59,6 +59,7 @@ let g:ctrlsf_auto_preview = 1
 let g:ctrlsf_selected_line_hl = ''
 let g:fzf_mru_relative = 1
 let g:rooter_manual_only = 1
+let g:which_key_use_floating_win = 0
 
 "vim setting configure
 set ttymouse=xterm2
@@ -199,32 +200,32 @@ noremap <M-u> <C-w>p<C-u><C-w>p
 noremap <M-d> <C-w>p<C-d><C-w>p
 noremap <M-j> <C-w>p5<C-e><C-w>p
 noremap <M-k> <C-w>p5<C-y><C-w>p
-nnoremap <leader>t :tabnew<CR>
-nnoremap <leader>n :enew<CR>
-nnoremap <Tab> :Rooter<bar>FZFMru<CR>
-nnoremap <leader>lo :lopen<CR>
-nnoremap <leader>lc :lclose<CR>
-nnoremap <leader>lp :FZFLocList!<CR>
-nnoremap <leader>qo :copen<CR>
-nnoremap <leader>qc :cclose<CR>
-nnoremap <leader>qp :FZFQuickFix!<CR>
-nnoremap <leader>gd :YcmCompleter GoTo<CR>
-nnoremap <leader>gr :YcmCompleter GoToReferences<CR>:q<CR>:copen<CR>
-nnoremap <leader>fi :YcmCompleter FixIt<CR>
-nnoremap <leader>gi :YcmCompleter GoToImplementation<CR>
-nnoremap <leader>gt :YcmCompleter GoToType<CR>
-nnoremap <leader>et :YcmCompleter GetType<CR>
-nnoremap <leader>do :YcmCompleter GetDoc<CR>
+nnoremap <silent> <leader>t :tabnew<CR>
+nnoremap <silent> <leader>n :enew<CR>
+nnoremap <silent> <Tab> :Rooter<bar>FZFMru<CR>
+nnoremap <silent> <leader>lo :lopen<CR>
+nnoremap <silent> <leader>lc :lclose<CR>
+nnoremap <silent> <leader>lp :FZFLocList!<CR>
+nnoremap <silent> <leader>qo :copen<CR>
+nnoremap <silent> <leader>qc :cclose<CR>
+nnoremap <silent> <leader>qp :FZFQuickFix!<CR>
+nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
+nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>:q<CR>:copen<CR>
+nnoremap <silent> <leader>fi :YcmCompleter FixIt<CR>
+nnoremap <silent> <leader>gi :YcmCompleter GoToImplementation<CR>
+nnoremap <silent> <leader>gt :YcmCompleter GoToType<CR>
+nnoremap <silent> <leader>et :YcmCompleter GetType<CR>
+nnoremap <silent> <leader>do :YcmCompleter GetDoc<CR>
 nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
 nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-g> :Rooter <bar> CWAg!<CR>
 nnoremap <silent> <C-b> :CWBLines!<CR>
 nnoremap <silent> <C-c> :Commands<CR>
-nnoremap <leader>h :History<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>W :Windows<CR>
-nnoremap <leader>: :History:<CR>
-nnoremap <leader>/ :History/<CR>
+nnoremap <silent> <leader>h :History<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>W :Windows<CR>
+nnoremap <silent> <leader>: :History:<CR>
+nnoremap <silent> <leader>/ :History/<CR>
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
@@ -245,6 +246,10 @@ map <C-e> :Rooter <bar> NERDTreeTabsToggle<CR>
 nmap <leader>nt :Rooter <bar> NERDTreeFind<CR>
 nnoremap <leader>pt :PreviewTag<CR>
 nnoremap <leader>pc :PreviewClose<CR>
+nnoremap <silent> <leader> :WhichKey ','<CR>
+nnoremap <silent> c :WhichKey 'c'<CR>
+nnoremap <silent> d :WhichKey 'd'<CR>
+nnoremap <silent> y :WhichKey 'y'<CR>
 au FileType go nmap <Leader>gd :YcmCompleter GoTo<CR>
 au FileType go nmap <leader>goi <Plug>(go-implements)
 au FileType go nmap <leader>god <Plug>(go-describe)
