@@ -845,9 +845,9 @@ vim +BundleInstall! +BundleClean +q
 这是因为vim自带的书签能力太弱，甚至没有标签的展现，以及标签的内容标注，当内容较多是根本无法进行管理。并且没有对标签进行持久化的能力
 
 命令:
-mi增加一个书签，并且对书签的内容进行标注
-mc删除标签
-ma列出全部的标签
+<leader>mi增加一个书签，并且对书签的内容进行标注
+<leader>mc删除标签
+<leader>ma列出全部的标签
 当几个项目中的标签数据很多时，可以增加关键字来进行分组。这个插件已经与ctrl-p插件进行了集成，在进入ctrl-p中，再按下ctrl-f，会见到标签的选择
 此时就可以根据标签的特征来进行过滤，搜索
 
@@ -1309,7 +1309,7 @@ https://github.com/xarronpan/fzf-mru.vim
 
 命令：
 
-Tab  启动mru查找文件进行编辑
+<leader>r  启动mru查找文件进行编辑
 
 
 
@@ -1338,4 +1338,19 @@ n 选定下一个光标，N 回退一个光标，q 跳过一个光标。当光�
 
 
 具体可见: https://github.com/terryma/vim-multiple-cursors
+
+(42) vim-cutlass && vim-yoink
+https://github.com/svermeulen/vim-yoink
+https://github.com/svermeulen/vim-cutlass
+
+vim默认的行为，是当进行d，x，s操作的时候，会将相应的内容拷贝到clipboard中
+但是在绝大多数的场景下，这种行为都是错误的，导致需要使用clipboard的内容非常麻烦
+为了解决这个问题 vim-cutlass 插件配置一个新的动作m，只有m的动作等价于原来的d操作
+d、x、s操作都不会更改缓冲区
+vim-yoink插件支持ring paste buffer，每次p后键入下面的命令，就会循环地获取paste buffer中的东西
+
+命令:
+<M+n> 获取上一个paste buffer的内容
+<M+p> 获取下一个paste buffer的内容
+
 
