@@ -76,7 +76,7 @@ let g:solarized_termcolors=16
 color solarized
 autocmd BufEnter *.go call timer_start(10, { tid -> execute('setlocal nolist') })
 autocmd BufEnter * call timer_start(10, { tid -> execute('setlocal nospell') })
-autocmd BufEnter * call timer_start(10, { tid -> execute('hi MatchParen cterm=none ctermbg=none ctermfg=red') })
+autocmd BufEnter * call timer_start(10, { tid -> execute('hi MatchParen cterm=underline ctermbg=none ctermfg=red') })
 
 function! s:p(...)
   let preview_args = get(g:, 'fzf_preview_window', ['right', 'ctrl-/'])
