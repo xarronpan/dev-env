@@ -65,6 +65,12 @@ let g:VM_Extend_hl = 'Visual'
 let g:VM_highlight_matches = 'hi! link Search MatchParen'
 let g:lt_location_list_toggle_map = '<leader>ll'
 let g:lt_quickfix_list_toggle_map = '<leader>qq'
+let g:AutoPairsShortcutToggle = ''
+let g:AutoPairsShortcutFastWrap = ''
+let g:AutoPairsShortcutJump = ''
+let g:AutoPairsShortcutBackInsert = ''
+let g:yoinkIncludeDeleteOperations = 1
+let g:bookmark_no_default_key_mappings = 1
 
 "vim setting configure
 set ttymouse=xterm2
@@ -263,7 +269,7 @@ nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-g> :Rooter <bar> CWAg!<CR>
 nnoremap <silent> <C-b> :CWBLines!<CR>
 nnoremap <silent> <C-c> :Commands<CR>
-nnoremap <silent> <leader>m :Rooter<bar>FZFMru<CR>
+nnoremap <silent> <leader>r :Rooter<bar>FZFMru<CR>
 nnoremap <silent> <leader>h :History<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>W :Windows<CR>
@@ -292,6 +298,24 @@ nmap <leader>nt :Rooter <bar> NERDTreeFind<CR>
 nnoremap <leader>pt :PreviewTag<CR>
 nnoremap <leader>pc :PreviewClose<CR>
 nnoremap <silent> <leader> :WhichKey ','<CR>
+nmap <M-n> <plug>(YoinkPostPasteSwapBack)
+nmap <M-p> <plug>(YoinkPostPasteSwapForward)
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
+nnoremap m d
+xnoremap m d
+nnoremap mm dd
+nnoremap M D
+nmap <leader>mm <Plug>BookmarkToggle
+nmap <leader>mi <Plug>BookmarkAnnotate
+nmap <leader>ma <Plug>BookmarkShowAll
+nmap <leader>mn <Plug>BookmarkNext
+nmap <leader>mp <Plug>BookmarkPrev
+nmap <leader>mc <Plug>BookmarkClear
+nmap <leader>mx <Plug>BookmarkClearAll
+nmap <leader>mkk <Plug>BookmarkMoveUp
+nmap <leader>mjj <Plug>BookmarkMoveDown
+nmap <leader>mg <Plug>BookmarkMoveToLine
 
 au FileType go nmap <Leader>gd :YcmCompleter GoTo<CR>
 au FileType go nmap <leader>goi <Plug>(go-implements)
