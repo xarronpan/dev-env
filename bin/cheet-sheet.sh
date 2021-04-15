@@ -16,21 +16,21 @@ case $SECTION in
   cht )
     cht.sh --shell;;
   bash )
-    bat --style=plain ~/cheatsheets/languages/bash.sh ;;
+    vim -M ~/cheatsheets/languages/bash.sh ;;
   golang )
-    bat --style=plain ~/cheatsheets/languages/golang.go ;;
+    vim -M ~/cheatsheets/languages/golang.go ;;
   python )
-    glow -p ~/cheatsheets/languages/python.md ;;
+    vim -M ~/cheatsheets/languages/python.md ;;
   vim-script )
-    glow -p ~/cheatsheets/languages/vimscript.md ;;
+    vim -M ~/cheatsheets/languages/vimscript.md ;;
   gdb )
-    bat --style=plain ~/cheatsheets/tools/gdb.txt ;;
+    vim -M ~/cheatsheets/tools/gdb.txt ;;
   git )
-    bat --style=plain ~/cheatsheets/tools/git.txt ;;
+    vim -M ~/cheatsheets/tools/git.txt ;;
   tmux )
-    bat --style=plain ~/cheatsheets/tools/tmux.txt ;;
+    vim -M ~/cheatsheets/tools/tmux.txt ;;
   vim )
-    bat --style=plain ~/cheatsheets/editors/vim.txt ;;
+    vim -M ~/cheatsheets/editors/vim.txt ;;
   *)
     exit0 ;;
 esac
