@@ -1353,4 +1353,12 @@ vim-yoink插件支持ring paste buffer，每次p后键入下面的命令，就�
 <M+n> 获取上一个paste buffer的内容
 <M+p> 获取下一个paste buffer的内容
 
+(43) vim-textobj-comment
+https://github.com/glts/vim-textobj-comment
+这个插件添加了很实用的注释text-obj
+
+用法：
+dic 删除comment内部的内容
+dac 删除整个comment的内容
+
 
