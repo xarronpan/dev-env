@@ -1377,4 +1377,7 @@ https://github.com/rhysd/clever-f.vim
 使用方式: 
 比如fa 之后，再按f，则会重复fa的动作，再按F，则会重复执行Fa
 
-
+(45) gcmt/taboo.vim
+这个插件支持对tab进行rename，就与在使用tmux中，通过名字来区分任务一样
+命令:
+:RT newtabname   将当前tab的名称调整成newtabname
