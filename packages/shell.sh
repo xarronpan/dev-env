@@ -58,3 +58,4 @@ mv trans ~/bin
 chmod +x trans ~/bin/trans
 
 git clone https://github.com/skywind3000/awesome-cheatsheets ~/cheatsheets
+git clone git clone https://github.com/xarronpan/dev-env ~/notes

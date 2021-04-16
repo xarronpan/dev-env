@@ -215,7 +215,20 @@ cat $VAR         //没有参数，等待输入输出
 cat “$VAR”      //有参数，为空，所以cat返回找不到文件
 
 
+14 split string
 
+IN="bla@some.com;john@home.com"
+arrIN=(${IN//;/ })
+echo ${arrIN[1]}                  # Output: john@home.com
+上面句子的含义是将IN中的;都替换成space，然后使用一个通过space分隔的字符串来构造数组
+如果IN本身就是space分隔的话，上面的代码可以写成:
+
+IN="bla@some.com john@home.com"
+arrIN=($IN)
+echo ${arrIN[1]}                  # Output: john@home.com
+
+具体可以参考
+https://stackoverflow.com/questions/918886/how-do-i-split-a-string-on-a-delimiter-in-bash
 
 
 
