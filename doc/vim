@@ -541,6 +541,7 @@ ctrl+w + = 以等高的方式调整目前的窗口布局
 gt 跳转到下个tab
 
 gT 跳转到上个tab
+ngt 跳转到第n个tab
 
 
 
