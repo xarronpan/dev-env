@@ -30,7 +30,7 @@ let g:rainbow_conf = {
 \       'cmake': 0,
 \   },
 \}
-let g:winresizer_start_key = '<C-Z>'
+let g:winresizer_start_key = '<C-X>'
 let g:go_def_mapping_enabled = 0
 let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
@@ -78,6 +78,7 @@ set expandtab softtabstop=2 tabstop=2 shiftwidth=2
 set undodir=~/.vim/undodir
 set undofile
 set showcmd
+set lazyredraw
 let g:solarized_termcolors=16
 color solarized
 autocmd BufEnter *.go call timer_start(10, { tid -> execute('setlocal nolist') })
