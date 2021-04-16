@@ -261,7 +261,7 @@ https://github.com/iggredible/Learn-Vim/blob/master/ch17_fold.md
 
 s 启动easy motion，找一个字符
 
-<leader> + w 使用easy motion跳转到附近的单词开始。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动作共用
+<leader> + w 使用easy motion跳转到附近的单词开始。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动作共用。在中文的文档中进行浏览编辑时，这个动作尤其有用
 
 <leader> + l 使用easy motion跳转到某行。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动作共用
 
@@ -1368,5 +1368,12 @@ https://github.com/glts/vim-textobj-comment
 用法：
 dic 删除comment内部的内容
 dac 删除整个comment的内容
+
+(44) clever-f.vim
+https://github.com/rhysd/clever-f.vim
+这个插件主要解决目前, 键被用于leader键，而f，t等键的前后向搜索功能不能使用的问题
+而且这个插件给定的key-binding也比; , 键要好用
+使用方式: 
+比如fa 之后，再按f，则会重复fa的动作，再按F，则会重复执行Fa
 
 
