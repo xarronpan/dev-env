@@ -1381,3 +1381,8 @@ https://github.com/rhysd/clever-f.vim
 这个插件支持对tab进行rename，就与在使用tmux中，通过名字来区分任务一样
 命令:
 :RT newtabname   将当前tab的名称调整成newtabname
+
+(46) vim-textobj-space
+https://github.com/saihoooooooo/vim-textobj-space
+用法:
+diS 删除所有连续的空格
