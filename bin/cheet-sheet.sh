@@ -18,7 +18,7 @@ case $SECTION in
   bash )
     vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' ~/cheatsheets/languages/bash.sh ;;
   golang )
-    vim -M ~/cheatsheets/languages/golang.go ;;
+    vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetGolangCheatSheetFold(v:lnum)' ~/cheatsheets/languages/golang.go ;;
   python )
     vim -M ~/cheatsheets/languages/python.md ;;
   vim-script )

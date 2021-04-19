@@ -181,6 +181,15 @@ function! GetShellCheatSheetFold(lnum)
   return '1'
 endfunction
 
+function! GetGolangCheatSheetFold(lnum)
+  if getline(a:lnum) =~? '\v^.+\*\*\*\*\*.+$'
+    if getline(a:lnum + 1) =~? '\v^.*\* .+$'
+      return '0'
+    endif
+  endif
+  return '1'
+endfunction
+
 cnoreabbrev ACK Rooter <bar> Ack!
 cnoreabbrev AG Rooter <bar> Ag!
 cnoreabbrev FB FSFZFBLines!
