@@ -16,7 +16,7 @@ case $SECTION in
   cht )
     cht.sh --shell;;
   bash )
-    vim -M ~/cheatsheets/languages/bash.sh ;;
+    vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' ~/cheatsheets/languages/bash.sh ;;
   golang )
     vim -M ~/cheatsheets/languages/golang.go ;;
   python )
@@ -24,13 +24,13 @@ case $SECTION in
   vim-script )
     vim -M ~/cheatsheets/languages/vimscript.md ;;
   gdb )
-    vim -M ~/cheatsheets/tools/gdb.txt ;;
+    vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' ~/cheatsheets/tools/gdb.txt ;;
   git )
-    vim -M ~/cheatsheets/tools/git.txt ;;
+    vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' ~/cheatsheets/tools/git.txt ;;
   tmux )
-    vim -M ~/cheatsheets/tools/tmux.txt ;;
+    vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' ~/cheatsheets/tools/tmux.txt ;;
   vim )
-    vim -M ~/cheatsheets/editors/vim.txt ;;
+    vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' ~/cheatsheets/editors/vim.txt ;;
   *)
     exit0 ;;
 esac
