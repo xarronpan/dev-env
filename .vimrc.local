@@ -73,6 +73,7 @@ let g:yoinkIncludeDeleteOperations = 1
 let g:bookmark_no_default_key_mappings = 1
 let g:taboo_tab_format = '  %N:%f  '
 let g:taboo_renamed_tab_format = '  %N:%l  '
+let g:vim_markdown_folding_style_pythonic = 1
 
 "vim setting configure
 set ttymouse=xterm2
