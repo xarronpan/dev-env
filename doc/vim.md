@@ -1,74 +1,33 @@
 vim的权威教程请参考： https://github.com/iggredible/Learn-Vim
-
+# 配置
+## vim
 在ubuntu 20.04上，以spf13为基础，配置下面的命令。参考说明安装  https://github.com/spf13/spf13-vim
 
-存在的问题包括
-
-(1) nerdtree的配置不符合多数ide的使用习惯:
-
- 每次打开文件tree组件都会消失，执行 echo 'let NERDTreeQuitOnOpen=0' >> ~/.vimrc.local 将配置增加到 .vimrc.local 个性化配置当中
-
-
-(2) ack.vim 插件对应的搜索程序没有安装，需要手动安装：
-
-sudo apt install silversearcher-ag
-
-
-(3) 安装 universal-ctags, tagbar插件需要对应的符号信息。注意tagbar会自动生成tags，不需要人为生成
-
-sudo apt install universal-ctags
-
-
-注意Ag，Ack等程序的搜索结果中会包括tags产生的文件，所以需要在项目目录下配置一个 .ignore 文件
-
-.ignore文件中的内容写入:
-
-tags
-
-将生成的tag文件给排除在Ag，Ack的搜索结果之外
-
-
-(3) vim的个性化配置: 这个配置可以上传到git，进行配置
+vim的个性化配置: 这个配置可以上传到git，进行配置
 在 ~/.vimrc.local 中增加下面配置。目前这个配置可以在 https://github.com/xarronpan/dev-env.git 上访问到
-
-
 
 解释:
 上面包括了不少youcompleteme的命令，后续安装youcompleteme的文档中会进行解释
-
 其中 ACK，AG的作用是创建一个命令的别名。默认Ack，Ag的行为都是搜索当前打开的文件目录下的文件，所以很难用。
-
 Rooter的作用是转到当前git的根目录下 (以及其他可以自定义的项目根目录)。
 set undofile 会开启 persist undo的功能。set undodir 设置undo log存放的位置。 ~/.vim/undodir 需要提前创建好，否则persist undo就不会能够正常工作。
-
 persist undo + undo tree插件，对于一些临时性的脚本，可以做到能够随时恢复文件版本的轻量级存储方案。undo log的信息可以自己进行清理
-
 g:signify_priority设置 vim signify 插件的展现优先级。否则当与youcomplete同时使用时，这个插件的内容会覆盖youcompleteme的语法错误提示，导致语法错误提示功能无法正常使用
-
 set ttymouse=xterm2 则用于在vim中支持鼠标的拖拽功能。当这个功能打开时，我们可以直接使用鼠标来改变vim各个窗体的大小，非常方便
-
 定义的FAg命令，以及FBLines命令，只是使用了 extend('<cword>') 命令获取当前光标下的字符串作为输入字符串调用fzf的Ag以及BLines函数。这样子做是模仿了Ack的行为
-
 加载 .workspace.vim 的目的是为了加载一些项目专用的配置。比如项目的ctags生成脚本，项目tab的设置等，都是项目专用的。
 
-
+nerdtree的配置不符合多数ide的使用习惯:
+每次打开文件tree组件都会消失，执行 echo 'let NERDTreeQuitOnOpen=0' >> ~/.vimrc.local 将配置增加到 .vimrc.local 个性化配置当中
 
 在 ~/.vimrc.before.local 中增加下面配置
-
 let g:spf13_no_fastTabs = 1
-
 (spf13默认将HLM给remap了，这项配置是用于恢复该配置的)
 
-
-
-配置secrut crt，使得
-
-(1) 鼠标的滚动时间能够发送到远端，这样子 confortable motion插件就可以使用鼠标互动键来滚动vim中的代码
-
+##secrut crt
+鼠标的滚动事件需要发送到远端，这样子 confortable motion插件就可以使用鼠标互动键来滚动vim中的代码
 SessionOptions → Terminal  勾选 Send Scroll wheel event to remote
-
 vim在xterm下的行为，可以参考下面这篇文章。鼠标的中间可以用于黏贴
-
 https://zhuanlan.zhihu.com/p/38477934
 
 
@@ -400,6 +359,8 @@ vim scp://<target_host>/<dest_dir>/
 
 ### 符号列表导航:tagbar 插件
 <leader> +tt 打开/关闭tagbar
+这个插件需要安装 universal-ctags, tagbar插件需要对应的符号信息。注意tagbar会自动生成tags，不需要人为生成
+sudo apt install universal-ctags
 
 ## 搜索
 ### 基础搜索
@@ -472,6 +433,12 @@ https://github.com/lfv89/vim-interestingwords
 ### grep搜索:ack插件
 ACK keyword filepath
 也同样可以通过AG来做。但是ACK命令的优势在于可以指定需要进行查找的文件目录 (这个目录是相对于项目的根目录的)
+ack.vim 插件对应的搜索程序没有安装，需要手动安装：
+sudo apt install silversearcher-ag
+注意Ag，Ack等程序的搜索结果中会包括tags产生的文件，所以需要在项目目录下配置一个 .ignore 文件
+.ignore文件中的内容写入:
+tags
+将生成的tag文件给排除在Ag，Ack的搜索结果之外
 
 ### 综合搜索:ctrlp插件
 ctrlp最为重要的功能是mru搜索能力。在编写代码进行代码导航时，最为有用的就是这个功能。目前已经绑定了ctrl+k来进行导航 (fzf中不存在这样子的功能)
@@ -792,6 +759,8 @@ vim +BundleInstall! +BundleClean +q
 
 ## tags管理
  使用ludovicchabant/vim-gutentags自动生成和管理ctags
+ 这个插件需要安装 universal-ctags, tagbar插件需要对应的符号信息。注意tagbar会自动生成tags，不需要人为生成
+ sudo apt install universal-ctags
 
 ##文档生成
 使用vim-scripts/DoxygenToolkit.vim 来增加对c/c++/python生成doxygen风格文档的功能
