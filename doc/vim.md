@@ -113,12 +113,12 @@ gt 跳转到下个tab
 gT 跳转到上个tab
 ngt 跳转到第n个tab
 
-### gcmt/taboo.vim 插件
+### tab重命名支持:gcmt/taboo.vim 插件
 这个插件支持对tab进行rename，就与在使用tmux中，通过名字来区分任务一样
 命令:
 :RT newtabname   将当前tab的名称调整成newtabname
 
-### winresizer插件
+### 简化窗体大小调整:winresizer插件
 使用‘simeji/winresizer’ 插件来调整vim的窗体大小
 键入ctrl+x 进入窗体调整模式，hjkl用于调整当前获得焦点的窗口
 键入e间后可以调整窗体调整模式。其中window move的模式可以用于调整窗体的位置
@@ -286,12 +286,12 @@ http://vimcasts.org/episodes/using-vims-named-registers/
 更多寄存器使用说明可以见
 https://github.com/iggredible/Learn-Vim/blob/master/ch08_registers.md
 
-### vim-tmux-clipboard插件
+### tmux clipboard集成:vim-tmux-clipboard插件
 使用roxma/vim-tmux-clipboard 插件来将 tmux，vim的剪切板来打通
 在tmux中copy的东西，在vim中通过在normal mode下键入 “”p 即可拷贝
 在vi中y的东西，在tmux中ctrl + ]即可拷贝出来
 
-### vim-cutlass && vim-yoink插件
+### ring clipboard && 删除行为修正:vim-cutlass && vim-yoink插件
 https://github.com/svermeulen/vim-yoink
 https://github.com/svermeulen/vim-cutlass
 vim默认的行为，是当进行d，x，s操作的时候，会将相应的内容拷贝到clipboard中
@@ -348,7 +348,7 @@ linux内置的书签功能太弱，因而目前使用了bookmark插件。
 此时就可以根据标签的特征来进行过滤，搜索
 
 ##文件导航
-### nerdtree 插件
+### 目录树导航: nerdtree 插件
 <C+e> toggle Nerdtree 作为文件树导航
 在Nerdtree的窗口中输入?，会触发帮助。再输入?，帮助会消失
 Nerdtree 输入o，会打开一个窗口buffer打开文件，并且不会关闭Nerdtree
@@ -364,7 +364,7 @@ Nerdtree 输入m，会触发一个menu，上面有各种各样的文件操作可
 在nerdtree中预览文件
 在nerdtree中移动光标，按go，则光标不会移动到被打开的buffer中，可以用于在文件中进行预览
 
-### vim-dirvish 插件
+### 本地文件导航:vim-dirvish 插件
 nerdtree更加适用与浏览整个项目的目录结构，而vim-dirvish则更加使用于浏览当前文件目录附近的文件。
 一个典型的用法是在一个独立的窗口中 (:enew命令)，或者是一个split窗口中 (:vnew)，通过 vim-dirvish 来打开插件
 vim-dirvish是netrw的替代品，但是更加强大。最重要的功能是vim-dirvish可以通过x键来选定对应的文件到arglist中。可以说是vim arglist的能力补全
@@ -382,7 +382,7 @@ x: 将文件加入arglist
 .: 将当前文件加入Shdo脚本中进行执行
 p: preview当前文件
 
-### ranger 插件
+### 本地文件预览导航:ranger 插件
 https://github.com/francoiscabrol/ranger.vim
 <leader> + f即可在vim中启用ranger来寻找要打开的文件。从各个方面来讲都秒杀vim-dirvish插件。
 所以在一般情况下需要在vim中寻找非项目中的文件时，直接使用这个插件打开ranger来访问即可
@@ -398,7 +398,7 @@ vim scp://<target_host>/<dest_dir>/
 :Exp
 启动netrw来对远程文件进行访问
 
-### tagbar 插件
+### 符号列表导航:tagbar 插件
 <leader> +tt 打开/关闭tagbar
 
 ## 搜索
@@ -406,7 +406,7 @@ vim scp://<target_host>/<dest_dir>/
 在本文件中搜索: shift+*, n , N，/ ，？
 目前按 <esc> + <esc>, 或者unimpair插件的yoh命令，会取消找到目标的高亮
 
-### fzf.vim 插件
+### 综合搜索:fzf.vim 插件
 #### 安装
 首先需要安装fzf，以及fzf默认官方的vim插件，然后才能安装fzf.vim
 https://github.com/junegunn/fzf.vim
@@ -456,24 +456,24 @@ vim +BundleInstall! +BundleClean +q
 <c+x><c+k> 使用linux本地的词典进行fzf补全。最大的用途是避免忘了英文单词的拼写时，不需要离开终端就能找到你需要的东西
 <c+x><c+l> 对当前输入的字符串为前缀的vim已经打开的文件行进行fzf补全。当需要跨文件去拷贝命令行时，这个命令可能会派上用场
 
-### fzf-mru.vim插件
+### mru文件列表:fzf-mru.vim插件
 https://github.com/xarronpan/fzf-mru.vim
 这个插件实现了一个基于项目的mru。这正是开发项目代码所急需的
 命令:
 <leader>r  启动mru查找文件进行编辑
 
-### vim-interestingwords插件
+### 关键词高亮:vim-interestingwords插件
 这个插件支持在阅读，review代码的时候，同时对n个不同的word进行高亮，秒杀vim内置的高亮功能
 https://github.com/lfv89/vim-interestingwords
 使用方式:
 <leader> +k 高亮一个word
 <leader> + K 取消全部的高亮
 
-### ack插件
+### grep搜索:ack插件
 ACK keyword filepath
 也同样可以通过AG来做。但是ACK命令的优势在于可以指定需要进行查找的文件目录 (这个目录是相对于项目的根目录的)
 
-### ctrlp插件
+### 综合搜索:ctrlp插件
 ctrlp最为重要的功能是mru搜索能力。在编写代码进行代码导航时，最为有用的就是这个功能。目前已经绑定了ctrl+k来进行导航 (fzf中不存在这样子的功能)
 ctrlp中选择完成后打开一个垂直分屏, 使用 ctrl+v
 ctrlp中选择完成后打开一个tab, 使用 ctrl+t
@@ -513,9 +513,8 @@ ctrlsf会产生一个类似与sublime的查找输出，并且最为重要的功�
 在搜索结果窗口中，p是preview结果
 ctrl+j, ctrl+k  是在搜索结果中上移，下移
 
-
 ## 文本转换
-### surround插件
+### 括号配对编辑:surround插件
 surround增强了括号的处理能力，其命令与文本对象的编辑能力很像，常用的包括
 cs"' 成对将“修改为‘
 ds" 成对删除"
@@ -525,12 +524,11 @@ vS" 首先触发visual模式 (v是普通的visual模式，V是行式的visual模
 具体可见:
 https://github.com/tpope/vim-surround
 
-### 注释，反注释
-使用nerdcommender来进行注释，反注释
+### 注释，反注释:nerdcommender插件
 <leader>cc 对于选定的区域增加注释
 <leader>cu 对于选定的区域反注释
 
-### multi visual插件
+### 多光标操作:multi visual插件
 https://github.com/mg979/vim-visual-multi
 mult visual是multi cursor插件的加强版，基本上秒杀multi cursor插件
 <c-n>会以当前光标下面的文本为模本，进入multi visual模式，进行文本搜索。
@@ -542,7 +540,7 @@ n 选定下一个光标，N 回退一个光标，q 跳过一个光标。当光�
 <c+方向键> 则会类似与列模式一样选定多行，并且进入normal模式进行编辑
 按esc键将会退出multi visual模式
 
-### abolish插件
+### 变量名转换:abolish插件
 spf13中安装了 abolish插件，特别适用的是下标与驼峰式的名字的自动替换
 crs： 转成下划线形式
 crm: 转成首字母大写形式
@@ -555,7 +553,7 @@ cr-: 与crs相同，但是单次以-相连
 具体可以参考
 https://github.com/tpope/vim-abolish
 
-### vim-exchange 插件
+### 交换文本: vim-exchange 插件
 使用tommcdo/vim-exchange插件来交换对象
 https://github.com/tommcdo/vim-exchange
 cxx 交换两行。首先在第一行中键入cxx，然后再另外一行中键入cxx，则两行会被交换
@@ -571,8 +569,7 @@ cx(textobj), 比如cxiw。现在在第一个文本对象中输入cxtextobj1，�
 选定文本后，采用< >可以减少，增加缩进。排版时使用这个键比采用列模式要来得方便
 http://yyq123.blogspot.com/2010/10/vim-indent.html
 
-### 按操作符对齐
-直接使用tabular插件
+### 按操作符对齐:tabular插件
 按 = 号，: 号对齐
 假设需要按=号进行对齐，则visual模式下选定需要对齐的文本，然后输入
 :Tab /=
@@ -594,7 +591,7 @@ https://github.com/iggredible/Learn-Vim/blob/master/ch06_insert_mode.md
 u: undo
 ctrl+r : redo
 
-### autopair插件
+### 输入自动配对括号:autopair插件
 autopair: 随便按一个 括号，进入配对模式。然后按 括号的结束符，结束配对
 按一个括号进入配对模式后，按 space，再输入字符，则自动括号两边自动对齐。然后按 括号的结束符，结束配对
 https://github.com/jiangmiao/auto-pairs
@@ -604,7 +601,7 @@ vim默认搜索命令/ , 替换命令s// 所使用的正则表达式与Perl标�
 为了解决这个问题，在进行使用正则时，统一增加一个\v前缀，则会与其他语言的正则保持一致
 
 ## git
-### fugitive插件
+### git gui集成:fugitive插件
 :Gcd 是当前命令执行的当前目录变成git的根目录
   这个功能是fugitive插件提供的最重要的功能之一。因为很多的命令都是基于文本当前的buffer所在目录作为相对目录进行执行的。
   Gcd用于将这些命令的目录转移到git根目录，也就是通常所说的项目根目录下，因而会更加有用
@@ -651,11 +648,11 @@ global command可以通过一个 g/pattern1/,/pattern2/的模式选定 pattern1,
 global command的详细介绍可以参考下面的文档:
 https://github.com/iggredible/Learn-Vim/blob/master/ch13_the_global_command.md
 
-### 异步命令
+### 异步命令+quickfix集成: asyncrun.vim插件
 使用 skywind3000/asyncrun.vim 将quick-fix window与外部命令进行集成
 常用命令: AR youcommand
 
-### 修正命令执行目录/rooter插件
+### 修正命令执行目录:rooter插件
 https://github.com/airblade/vim-rooter
 这个插件非常重要，提供了改变被执行命令当前执行目录的能力。
 用户可以自定义项目根目录的特征。
@@ -663,7 +660,7 @@ https://github.com/airblade/vim-rooter
 命令：
 : PR | Files   在项目根目录下执行fzf的Files命令
 
-### tmux集成/vim-tmux-runner插件
+### tmux集成:vim-tmux-runner插件
 https://github.com/christoomey/vim-tmux-runner
 这个插件主要的功能在于在vim中不需要失去focus，就能在vi的窗口下创建一个tmux pane，执行shell 命令
 这种命令的主要用途，在于我们在vim中进行编辑，需要输入一些信息，而这些信息的来源需要通过命令行才能获得
@@ -765,7 +762,7 @@ guru中包括了很多动态分析的代码分析能力，比如GoCallees，GoCa
 此外，只要引用的库代码中有使用cgo的话，则不能正常进行编译，所以这类动态分析的功能目前基本不可用。
 而且guru官方已经不会再继续进行更新，全都替换成了gopls。所以这些功能都避免去使用即可。使用全局的代码搜索，其实也能很快将这些东西给分析出来
 
-### ultisnips
+### 代码模板: ultisnips 插件
  spf13中已经安装了ultisnips 以及 ultisnap 的snippet仓库。当我们数据的字符串中包括了 snippet的关键字时，ycm的菜单中就会给出带有 <snip> 字样的提示
 在选中该菜单之后，在输入 ctrl + j，则会将snapit的文本加载到代码编辑器中。
 通过 ctrl+j ctrl+k 可以在snapit的不同参数中移动，编写需要的逻辑
@@ -776,7 +773,7 @@ https://vimzijun.net/2016/10/30/ultisnip/
 
 在vi中输入: UltiSnipsEdit，即可在一个编辑窗口中编辑自动以的snips
 
-### vim-protodef
+### 生成桩代码: vim-protodef 插件
 使用vim-protodef插件，通过头文件的定义，自动生成cpp文件中的函数定义，避免重复体力劳动
 https://github.com/derekwyatt/vim-protodef 
 在 .vimrc.bundles.local 中增加:
@@ -802,7 +799,7 @@ vim +BundleInstall! +BundleClean +q
    在函数行中输入名: Dox即可生成文档
 
 ## 效率插件
-### a.vim插件
+### h/c/cpp/cc文件快速切换:a.vim插件
 使用vim-scripts/a.vim ，支持在头文件与源文件之间快速切换，打开窗口进行编辑
 常用命令:
 :A      在头文件，目标文件间跳转
@@ -810,7 +807,7 @@ vim +BundleInstall! +BundleClean +q
 具体可见
 https://github.com/vim-scripts/a.vim
 
-### vim-preview插件
+### tag预览:vim-preview插件
 使用'xarronpan/vim-preview-enhance'来增加在preview window中查看当前函数定义的功能
 这个功能的主要用途的在阅读代码的时候避免眼睛的跳转，能够同时查看两屏的代码
 
@@ -819,7 +816,7 @@ https://github.com/vim-scripts/a.vim
 <leaser>pc 关闭preview window
 如果需要滚屏查看preview windows下的内容，可以直接使用鼠标滚屏
 
-### vim-unimpaired插件
+### 补充命令:vim-unimpaired插件
 使用 tpope/vim-unimpaired 插件，就不用在记住一堆的成对的命令
 [op （或者 [op 以及 yop命令）然后进行 黏贴，则退出insert模式之后，会自动退出paste模式。不再需要麻烦的set paste，set nopaste
 yon toggle set number
@@ -832,7 +829,7 @@ yoh toggle 搜索高亮
 由于命令较多，可以通过: h unimpaired 命令来查看所有的东西。一般而言，如果发现成对的命令，可以实现unimpaired的模式，看是否能够工作。
 尽可能少地手动输入命令。太慢了。
 
-### vim-matchup插件
+### 符号配对:vim-matchup插件
 mathcup插件是matchit的加强版。主要好用的功能包括：
 嵌套符号除了支持（）[] {} 等符号外，也支持语言的关键字
 di%  删除嵌套括号或者语言关键字中的内容。不包括嵌套符。比起内置的di( , di{ 等text-obj，一方面需要记忆的符号更少，另外一方面支持语言关键字，是vim内置text-obj所不能比拟的。
@@ -843,13 +840,13 @@ da% 删除嵌套括号或者语言关键字中的内容。包括嵌套符
 [2% 往外跳出两层当前的嵌套括号。跳掉嵌套括号的开始
 ]% 往外跳出当前的嵌套括号。跳掉嵌套括号的结束
 
-### 翻译/vim-translator插件
+### 翻译:vim-translator插件
 直接可以在编辑器中，遇到不认识的单词直接启动翻译，而不需要到浏览器中进行操作，加快工作流程
 https://github.com/voldikss/vim-translator
 命令：
 TL  可以在normal模式或者在visual模式下执行。会在status line中给出翻译信息。目前只有英文到中文的翻译运行得比较稳定
 
-### 草稿窗口/scratch.vim 插件
+### 草稿窗口:scratch.vim 插件
 这个插件用于启动一个草稿窗口
 草稿窗口可以用于存放临时需要进行记录的内容。这点在编写需要反复进行拷贝黏贴的代码时特别有用。虽然这个功能也可以通过拷贝寄存器来实现，
 但是草稿窗口中的内容还是可以进行进一步编辑的。
