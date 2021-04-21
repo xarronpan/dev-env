@@ -165,7 +165,7 @@ ca( 修改括号内所有内容，包括括号
 
 https://zhuanlan.zhihu.com/p/24387751
 
-###vim-textobj-parameter插件
+### vim-textobj-parameter插件
 使用sgur/vim-textobj-parameter 插件来支持扩展text object的能力
 https://github.com/wellle/targets.vim
 扩展的能力其实不多：
@@ -179,17 +179,17 @@ dia
 daa 
 删除函数的参数，i，a与di", da" 的含义类似
 
-###vim-textobj-uri插件
+### vim-textobj-uri插件
 使用 jceb/vim-textobj-uri 增加url text object
 diu: 删除uri中的东西
 dau: 删除uri中的东西
 
-###vim-textobj-variable-segment插件
+### vim-textobj-variable-segment插件
 (22) 使用 jceb/vim-textobj-variable-segment 增加 变量名分段 text object
 div: 删除一段变量名。变量名可以是下划线，或者是驼峰式的格式
 dav: 删除一段变量名，包括下划线。变量名可以是下划线，或者是驼峰式的格式
 
-###vim-textobj-indent插件
+### vim-textobj-indent插件
 sfp13内置的插件  https://github.com/kana/vim-textobj-indent
 
 能够按代码缩进来选择代码块。这个插件的主要用途是用于类似Python代码的选择处理
@@ -222,7 +222,7 @@ ctrl + shirt + v，具体可以参考下面链接 https://askubuntu.com/question
 可以通过 unimpaired 插件的 [op 命令来缓解从系统缓冲区拷贝到vim中的多行数据不对齐的问题
 出现这个问题的主要原因，是vim中对于来自keyboard的输入，都会默认打开自动indent的功能。而set paste的作用，也只是关闭自动indent的功能而已。
 
-###从vi中选择文本到系统缓冲区
+### 从vi中选择文本到系统缓冲区
 目前我们是打开了vi的mouse模式以及tmux的mouse模式，所以当我们使用鼠标在vi的buffer中进行选择时，默认是使用vi的visual模式来选择文本。
 当我们希望去选择文本到系统的clipboard时，按shilft键，同时使用鼠标在vi的buffer中进行选择，即可在secure_crt中将vi的buffer中的数据拷贝到系统缓冲区中。 
 有时当我们做了tmux的分屏或者vi的分屏时，上面的工作方式会选择整行，因而不能正确工作。此时我们通过 Alt+Shift加鼠标，可以选择一个矩形区域。这样子就在很大程度上缓解了分屏拷贝黏贴时的效率问题
@@ -306,7 +306,7 @@ linux内置的书签功能太弱，因而目前使用了bookmark插件。
 当几个项目中的标签数据很多时，可以增加关键字来进行分组。这个插件已经与ctrl-p插件进行了集成，在进入ctrl-p中，再按下ctrl-f，会见到标签的选择
 此时就可以根据标签的特征来进行过滤，搜索
 
-##文件导航
+## 文件导航
 ### 目录树导航: nerdtree 插件
 <C+e> toggle Nerdtree 作为文件树导航
 在Nerdtree的窗口中输入?，会触发帮助。再输入?，帮助会消失
@@ -528,7 +528,7 @@ X 在visual模式下进行交换。 首先使用visual模式对于第一个对�
 cx(textobj), 比如cxiw。现在在第一个文本对象中输入cxtextobj1，然后移动到另外对象中，输入cxtextobj2，则两个对象会交换
 
 ## 代码格式
-### 自动缩进
+### 缩进提示
 缩进提示: <leader>ig
 
 ### 自动缩进
@@ -762,7 +762,7 @@ vim +BundleInstall! +BundleClean +q
  这个插件需要安装 universal-ctags, tagbar插件需要对应的符号信息。注意tagbar会自动生成tags，不需要人为生成
  sudo apt install universal-ctags
 
-##文档生成
+## 文档生成
 使用vim-scripts/DoxygenToolkit.vim 来增加对c/c++/python生成doxygen风格文档的功能
 命令:
    在函数行中输入名: Dox即可生成文档
