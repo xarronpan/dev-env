@@ -72,73 +72,140 @@ vim在xterm下的行为，可以参考下面这篇文章。鼠标的中间可以
 https://zhuanlan.zhihu.com/p/38477934
 
 
+# 常用功能
 
-常用快捷键:
-
-vim上的基础操作，请参考: https://github.com/iggredible/Learn-Vim/blob/master/ch05_moving_in_file.md
+## buffer/window/tab 管理
+在vim中，窗口和buffer是不同的概念。真正进行编辑的是buffer，而window是buffer的view
+所以窗口被关闭了，但是buffer是不会被关闭的。但是buffer被关闭，则窗口也要跟着一起关闭
+https://github.com/iggredible/Learn-Vim/blob/master/ch02_buffers_windows_tabs.md
 
 打开新buffer
-
 :enew 在新窗口中打开一个empty buffer。下一步通过-命令来选择需要打开的文件。见dirvish插件的描述
-
 :vnew 在新的垂直窗口中打开一个empty buffer。下一步通过-命令来选择需要打开的文件。见dirvish插件的描述
+:tabnew 创建一个新的tab，并且创建一个新的buffer
+
+垂直打开若干个文件
+vim -O file1.txt file2.txt
+
+水平打开若干个文件
+vim -o file1.txt file2.txt
+
+切换buffer: :bn, :bN, :b number 详见 https://stackoverflow.com/questions/102384/using-vims-tabs-like-buffers
+切换tab可以直接上鼠标进行切换, 或者键入ngt来命令来进行切换
+
+垂直打开窗口
+ctrl+w + v
+
+水平打开窗口
+ctrl+w + S
+
+关闭当前窗口
+ctrl+w + C
+
+全屏使用下面两个命令来实现
+ctrl+w + | 垂直伸展到最大
+ctrl+w + _ 水平伸展到最大
+垂直加水平伸展就基本等于全屏了
+退出全部使用下面的命令来实现
+ctrl+w + = 以等高的方式调整目前的窗口布局
+gt 跳转到下个tab
+gT 跳转到上个tab
+ngt 跳转到第n个tab
+
 
 normal mode下面键入K，能够以当前光标单词为key去搜索vim的help文档。在阅读vimrc的时候，就不需要反复到web页面上去阅读插件的文档。
 
 
 
-在项目中全局搜索
-
-ACK keyword filepath
-
-也同样可以通过AG来做。但是ACK命令的优势在于可以指定需要进行查找的文件目录 (这个目录是相对于项目的根目录的)
-
-
-
-光标移动操作
-
+## 光标移动操作
+### 内置光标移动
+vim上的基础操作，请参考: https://github.com/iggredible/Learn-Vim/blob/master/ch05_moving_in_file.md
 fa 光标向前跳到a字符, 在按；重复fa这个动作，再按，重复Fa这个动作 (目前,操作已经被remap掉了，但是可以在tmux的vi copy mode下使用这个键进行拷贝)
-
 Fa 光标向后跳到a字符，在按；重复fa这个动作，再按，重复Fa这个动作 (目前,操作已经被remap掉了，但是可以在tmux的vi copy mode下使用这个键进行拷贝)
-
 0 找到行头
-
 w 跳到下个单词开始
-
 e 跳到下个单词结束
-
 b 跳到上个单词开始
-
 W 下个以space分割的单词开始
-
 E 下个以space分割的单词结束
-
 B 上个以space分割的单词开始
 
+### easymositon光标移动
 
+s 启动easy motion，找一个字符, 并跳转到对应的位置中
+<leader> + w 使用easy motion跳转到附近的单词开始。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动作共用。在中文的文档中进行浏览编辑时，这个动作尤其有用
+<leader> + l 使用easy motion跳转到某行。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动作共用
+<leader> <leader> + w 使用easy motion后向跳转到附近的单词开始 (与vim w的定义相同)。 这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
+<leader> <leader> + b 使用easy motion前向跳转到附近的单词结束 (与vim b的定义相同) 。 这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
+<leader> <leader> + e 使用easy motion后向跳转到附近的单词结束 (与vim b的定义相同) 。 这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
+<leader> <leader> + j使用easy motion后向跳转到某行 (与vim j的定义相同)。这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
+<leader> <leader> + k 使用easy motion后向跳转到某行 (与vim k的定义相同)。这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
 
-vim动作语法
-
+## vim动作语法
+### 内置动作语法
 dfa 光标向前跳到a字符之间的字符，并且删除包括a之间的内容
-
 dFa 光标向后跳到a字符之间的字符，并且删除包括a之间的内容
-
 dta 光标向前跳到a字符之间的字符，并且删除不包括a之间的内容
-
 dTa 光标向后跳到a字符之间的字符，并且删除不包括a之间的内容
-
 !}column -t -s "|" 在当前光标位置到段落结束之间，执行shell命令替换当前文档。！号表示执行外部的shell命令，} 表示范围是到段落结束，column -t -s "|" 表示要执行的shell命令
-
 这段命令全部需要在normal模式下面输入才能正常工作。问题是由于没有回显，我们并不知道normal模式下输入的命令是否是正确的。
-
 目前的一个方法是在shell终端上编辑好之后，再通过鼠标在vi的normal模式下一次给黏贴过去
-
 另外一个方案则是使用set showcmd，此时当一个normal mode的命令没有完成执行前，在屏幕的右下角会有一个字符串显式你已经输入过的字符串
-
 当时目前vi是不支持编辑normal 模式下的命令的。所以最简单的方式是在其他地方先调试好，再一并输入进来
-
 详细可以参考: https://github.com/iggredible/Learn-Vim/blob/master/ch04_vim_grammar.md
 
+### easymotion 增强vim动作语法
+d <leader> <leader> + e 后向删除到某个单词的结束，通过easy motion来定位具体的位置
+d <leader> <leader> + b 前向删除到某个单词的结束，通过easy motion来定位具体的位置
+d <leader> <leader> + j 后向删除都某行，通过easy motion来具体的位置
+d <leader> <leader> + k 前向删除都某行，通过easy motion来具体的位置
+d <leader><leader>+ fa 往后删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
+d <leader><leader>+ Fa 往前删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
+d <leader><leader>+ ta 往后删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(不包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
+d <leader><leader>+ Ta 往前删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(不包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
+从上面的例子可以看出，easy motion除了支持s键以外，所以以 <leader><leader>开头的键，都是支持vi的默认动作的，比如f，F，t，a，w，b间，也就是可以在vi的所有支持的动词加名词的动作中，都加入easy motion
+的支持。<leader><leader>+vim光标跳转键，除了扩展了vim的移动光标的所有能力了，也极大加强了vim选择textobj的能力。这个动作键可以和vim中的所有编辑动作(d,c,s，以及插件所支持的编辑动作)相互结合使用
+
+## vim文本对象
+
+diw 删除光标所在单词
+ciw 修改光标所在单词
+di(  删除括号内所有内容
+d2i(  删除两层括号内所有内容，这个命令可以避免移动光标就可以进行编辑
+ci(  修改括号内所有内容
+da( 删除括号内所有内容，包括括号
+ca( 修改括号内所有内容，包括括号
+这里的( 也可以应用于 类似'{', '"', 等必备的标签，以及html标签
+具体可见:
+
+https://zhuanlan.zhihu.com/p/24387751
+
+sfp13内置的插件  https://github.com/kana/vim-textobj-indent
+
+能够按代码缩进来选择代码块。这个插件的主要用途是用于类似Python代码的选择处理
+ii 选择与当前光标对应的行具有相同缩进的最小缩进块。即从光标所在的行，上下分别开始搜索所有缩进小于当前行缩进的行。当找到第一个空行，即停止
+ai 选择与当前光标对应的行具有相同缩进的最大缩进块。即从光标所在的行，上下分别开始搜索所有缩进小于行缩进的行。
+
+https://github.com/terryma/vim-expand-region插件能够快速扩展当前文本对象范围
+'+' 从当前光标位置扩大visual选择范围 
+'-' 从当前光标位置减小visual选择范围 
+
+## 剪切板交互管理
+### 拷贝系统剪切板到vim中:
+ctrl + shirt + v，具体可以参考下面链接 https://askubuntu.com/questions/256782/how-to-copy-paste-contents-in-the-vi-editor
+从系统缓存区拷贝到vim会出现缩进正常的问题。
+可以通过命令:set paste 进入paste模式，先进行黏贴，
+然后通过命令:set nopaste 退出paste模式
+可以通过 unimpaired 插件的 [op 命令来缓解从系统缓冲区拷贝到vim中的多行数据不对齐的问题
+出现这个问题的主要原因，是vim中对于来自keyboard的输入，都会默认打开自动indent的功能。而set paste的作用，也只是关闭自动indent的功能而已。
+
+###从vi中选择文本到系统缓冲区
+目前我们是打开了vi的mouse模式以及tmux的mouse模式，所以当我们使用鼠标在vi的buffer中进行选择时，默认是使用vi的visual模式来选择文本。
+当我们希望去选择文本到系统的clipboard时，按shilft键，同时使用鼠标在vi的buffer中进行选择，即可在secure_crt中将vi的buffer中的数据拷贝到系统缓冲区中。 
+有时当我们做了tmux的分屏或者vi的分屏时，上面的工作方式会选择整行，因而不能正确工作。此时我们通过 Alt+Shift加鼠标，可以选择一个矩形区域。这样子就在很大程度上缓解了分屏拷贝黏贴时的效率问题
+另外一个方式就是将tmux，vi全屏，然后在将vim的number给关掉，在使用shift的方式来拷贝。有时当我们需要进行选择的文本在tmux或者vi中跨了一行时 (但不是完整的一样)，适合采用这种方法。
+
+## 避免重复操作
 重复命令
 . normal命令可以重复上一个输入的命令。这个命令可以大量缩减需要键入的键数量。比如说 de 删除第一个单词，然后 .就会再执行一次de
   又比如crc将单次变成了canmel case，然后移动到下一个需要处理的单词，再键入. , 则对应的单词也会变成 canmel case
@@ -148,46 +215,43 @@ qa 开始录入vi的命令到寄存器a
 q  结束录入宏
 10@a 在光标当前位置重复a中的命令10次
 
+## folding
+zf 选定一段文本之后，添加一个fold，用于排除代码中不相关的信息，方便阅读代码
+zd 删除fold
+zD 递归删除fold
+zo 打开被折叠的行
+zc 关闭被折叠的行
+za toggle被折叠的行
+zR 打开所有被折叠的行
+zM 关闭所有被折叠的行
 
+https://github.com/iggredible/Learn-Vim/blob/master/ch17_fold.md
+
+<leader>zfs 在当前文件 使用 set foldmethod=syntax 创建fold，适用于C++，golang这类文件
+<leader>zfi 在当前文件 使用 set foldmethod=indent 创建fold，适用于Python这类文件
+
+## 书签
+### 内置书签功能
 书签: 用于在重要的代码中打标记，然后可以在不同的位置上方便地跳转阅读理解代码
-
 mA 在当前光标所在位置打标签，并且命名为A。A是全局书签，可以跨多个不同的buffer
-
 'A 去到A所在的位置
-
 : marks  命令marks，用于输出当前的所有书签。
-
 linux内置的书签功能太弱，因而目前使用了bookmark插件。
 
-
-拷贝系统剪切板到vim中:
-ctrl + shirt + v，具体可以参考下面链接 https://askubuntu.com/questions/256782/how-to-copy-paste-contents-in-the-vi-editor
-从系统缓存区拷贝到vim会出现缩进正常的问题。
-可以通过命令:set paste 进入paste模式，先进行黏贴，
-然后通过命令:set nopaste 退出paste模式
-
-可以通过 unimpaired 插件的 [op 命令来缓解从系统缓冲区拷贝到vim中的多行数据不对齐的问题
-
-出现这个问题的主要原因，是vim中对于来自keyboard的输入，都会默认打开自动indent的功能。而set paste的作用，也只是关闭自动indent的功能而已。
-
-
-
-从vi中选择文本到系统缓冲区
-目前我们是打开了vi的mouse模式以及tmux的mouse模式，所以当我们使用鼠标在vi的buffer中进行选择时，默认是使用vi的visual模式来选择文本。
-
-当我们希望去选择文本到系统的clipboard时，按shilft键，同时使用鼠标在vi的buffer中进行选择，即可在secure_crt中将vi的buffer中的数据拷贝到系统缓冲区中。 
-
-有时当我们做了tmux的分屏或者vi的分屏时，上面的工作方式会选择整行，因而不能正确工作。此时我们通过 Alt+Shift加鼠标，可以选择一个矩形区域。这样子就在很大程度上缓解了分屏拷贝黏贴时的效率问题
-
-另外一个方式就是将tmux，vi全屏，然后在将vim的number给关掉，在使用shift的方式来拷贝。有时当我们需要进行选择的文本在tmux或者vi中跨了一行时 (但不是完整的一样)，适合采用这种方法。
+### vim-bookmark插件
+应使用MattesGroeger/vim-bookmarks来替代vim自带的书签能力。
+这是因为vim自带的书签能力太弱，甚至没有标签的展现，以及标签的内容标注，当内容较多是根本无法进行管理。并且没有对标签进行持久化的能力
+命令:
+<leader>mi增加一个书签，并且对书签的内容进行标注
+<leader>mc删除标签
+<leader>ma列出全部的标签
+当几个项目中的标签数据很多时，可以增加关键字来进行分组。这个插件已经与ctrl-p插件进行了集成，在进入ctrl-p中，再按下ctrl-f，会见到标签的选择
+此时就可以根据标签的特征来进行过滤，搜索
 
 
 
 <注> leader键在上述的配置中是 ','
 
-u: undo
-
-ctrl+r : redo
 
 
 page up: ctrl+u
@@ -201,369 +265,163 @@ jump backward: ctrl+i
 
 % 调转到嵌套 {} 的末尾。sfp13上面安装了matct-it插件，能够识别代码中的关键字，从而跳转到代码块的结束
 
-<leader> +tt 打开/关闭tagbar
-
-
-
+##文件导航
+### nerdtree 插件
 <C+e> toggle Nerdtree 作为文件树导航
-
 在Nerdtree的窗口中输入?，会触发帮助。再输入?，帮助会消失
-
 Nerdtree 输入o，会打开一个窗口buffer打开文件，并且不会关闭Nerdtree
-
 Nerdtree 输入回车，会打开一个窗口buffer打开文件，并且会关闭Nerdtree
-
 Nerdtree 输入i，会打开一个垂直分屏窗口buffer打开文件，并且不会关闭Nerdtree
-
 Nerdtree 输入t，会按tab的方式打开一个窗口buffer
-
 Nerdtree 输入m，会触发一个menu，上面有各种各样的文件操作可以选择
-
 <leader>nt  以当前打开的buffer，打开nerdtree，并且将光标移动到nerdtree上。用于快速定位被打开文件相同目录/附近目录的文件。
-
 <leader>tt  打开符号导航toolbar
-
 在nerdtree中，选定了一个文件之后，在命令行输入BM(Bookmark命令)，则会创建这个文件的书签，并且能够输入文本进行标注
-
 则在nerdtree的导航栏中，就会有BM的列表，其打开方式与普通文件的打开方式相同。BookMark的功能在于能够对于一系列相关的文件给予快捷的访问方式
-
 避免反复在文件中寻找代码位置。这种功能与vim-bookmarks一起，在阅读熟悉新的代码时，能够大幅减低大脑所需要承担的压力
-
 在nerdtree中预览文件
-
 在nerdtree中移动光标，按go，则光标不会移动到被打开的buffer中，可以用于在文件中进行预览
 
+### vim-dirvish 插件
+nerdtree更加适用与浏览整个项目的目录结构，而vim-dirvish则更加使用于浏览当前文件目录附近的文件。
+一个典型的用法是在一个独立的窗口中 (:enew命令)，或者是一个split窗口中 (:vnew)，通过 vim-dirvish 来打开插件
+vim-dirvish是netrw的替代品，但是更加强大。最重要的功能是vim-dirvish可以通过x键来选定对应的文件到arglist中。可以说是vim arglist的能力补全
+此外  vim-dirvish的buffer可以与普通vim buffer一样被编辑。比如通过d键来对buffer进行修改，或者g等命令进行filger，然后通过virtual选定需要的文件，键入.键来进行Shdo脚本允许。Shdo脚本与xargs类似，就是以 {} 符号作为占位符执行shell命令
+而每个占位符表示的则是被选中的文件。有点类似与fzf的能力，但是fzf中则没有目录树的能力。但是不具备单独选择文件的能力，所以比fpp，fzf这类工具的能力还是要差一些，主要有用还是加入arglist的能力
 
+命令:
+-：在当前文件所在目录打开dirvish
 
-zf 选定一段文本之后，添加一个fold，用于排除代码中不相关的信息，方便阅读代码
+在drivish buffer中的命令:
+g? : 显式命令帮助
+gq : 返回启动drivish的文件
+enter: 在当前buffer中打开dirvish选中文件, 或者进入子目录中
+x: 将文件加入arglist
+.: 将当前文件加入Shdo脚本中进行执行
+p: preview当前文件
 
-zd 删除fold
+### ranger 插件
+https://github.com/francoiscabrol/ranger.vim
+<leader> + f即可在vim中启用ranger来寻找要打开的文件。从各个方面来讲都秒杀vim-dirvish插件。
+所以在一般情况下需要在vim中寻找非项目中的文件时，直接使用这个插件打开ranger来访问即可
 
-zD 递归删除fold
+### tagbar 插件
+<leader> +tt 打开/关闭tagbar
 
-zo 打开被折叠的行
-
-zc 关闭被折叠的行
-
-za toggle被折叠的行
-
-zR 打开所有被折叠的行
-
-zM 关闭所有被折叠的行
-
-https://github.com/iggredible/Learn-Vim/blob/master/ch17_fold.md
-
-<leader>zfs 在当前文件 使用 set foldmethod=syntax 创建fold，适用于C++，golang这类文件
-
-<leader>zfi 在当前文件 使用 set foldmethod=indent 创建fold，适用于Python这类文件
-
-
-
-s 启动easy motion，找一个字符
-
-<leader> + w 使用easy motion跳转到附近的单词开始。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动作共用。在中文的文档中进行浏览编辑时，这个动作尤其有用
-
-<leader> + l 使用easy motion跳转到某行。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动作共用
-
-<leader> <leader> + w 使用easy motion后向跳转到附近的单词开始 (与vim w的定义相同)。 这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
-
-<leader> <leader> + b 使用easy motion前向跳转到附近的单词结束 (与vim b的定义相同) 。 这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
-
-<leader> <leader> + e 使用easy motion后向跳转到附近的单词结束 (与vim b的定义相同) 。 这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
-
-<leader> <leader> + j使用easy motion后向跳转到某行 (与vim j的定义相同)。这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
-
-<leader> <leader> + k 使用easy motion后向跳转到某行 (与vim k的定义相同)。这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
-
-d <leader> <leader> + e 后向删除到某个单词的结束，通过easy motion来定位具体的位置
-
-d <leader> <leader> + b 前向删除到某个单词的结束，通过easy motion来定位具体的位置
-
-d <leader> <leader> + j 后向删除都某行，通过easy motion来具体的位置
-
-d <leader> <leader> + k 前向删除都某行，通过easy motion来具体的位置
-
-d <leader><leader>+ fa 往后删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
-
-d <leader><leader>+ Fa 往前删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
-
-d <leader><leader>+ ta 往后删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(不包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
-
-d <leader><leader>+ Ta 往前删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(不包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
-
-从上面的例子可以看出，easy motion除了支持s键以外，所以以 <leader><leader>开头的键，都是支持vi的默认动作的，比如f，F，t，a，w，b间，也就是可以在vi的所有支持的动词加名词的动作中，都加入easy motion
-
-的支持。<leader><leader>+vim光标跳转键，除了扩展了vim的移动光标的所有能力了，也极大加强了vim选择textobj的能力。这个动作键可以和vim中的所有编辑动作(d,c,s，以及插件所支持的编辑动作)相互结合使用
-
-
+## 搜索
+### 基础搜索
 在本文件中搜索: shift+*, n , N，/ ，？
+目前按 <esc> + <esc>, 或者unimpair插件的yoh命令，会取消找到目标的高亮
 
-目前按 <esc> + <esc> 会取消找到目标的高亮
+### ack插件
+ACK keyword filepath
+也同样可以通过AG来做。但是ACK命令的优势在于可以指定需要进行查找的文件目录 (这个目录是相对于项目的根目录的)
 
-在文本中进行替换，一般是:s//命令
-
-spf13中安装了 abolish插件，特别适用的是下标与驼峰式的名字的自动替换
-
-crs： 转成下划线形式
-
-crm: 转成首字母大写形式
-
-crc: 转成驼峰形式，与crm相同，只是首字母小写
-
-cru: 转成大写形式
-
-cr-: 与crs相同，但是单次以-相连
-
-此外还支持单次间以 . <space>相连的功能，只是一般写代码的时候用不上
-
-目前这个功能只支持在当期光标所在单词上面执行。若需要在多个不同的单词上面执行，则需要visual-multi插件的支持
-
-
-
-另外这个插件还支持相似词的替换功能，当有较为复杂的相似词要替换时，普通的正则表达式也不一定能够简单地工作，此时使用该替换功能能够简单工作
-
-具体可以参考
-
-https://github.com/tpope/vim-abolish
-
-
-切换buffer: :bn, :bN, :b number 详见 https://stackoverflow.com/questions/102384/using-vims-tabs-like-buffers
-
-切换tab可以直接上鼠标进行切换
-
-
-spf13的快捷键定义如下：
-https://blog.csdn.net/BjarneCpp/article/details/80608706
-
+### ctrlp插件
 ctrlp最为重要的功能是mru搜索能力。在编写代码进行代码导航时，最为有用的就是这个功能。目前已经绑定了ctrl+k来进行导航 (fzf中不存在这样子的功能)
-
 ctrlp中选择完成后打开一个垂直分屏, 使用 ctrl+v
-
 ctrlp中选择完成后打开一个tab, 使用 ctrl+t
-
 ctrlp切换搜索模式 ctrl+f，其中mru是most recent used文件的意思，用于寻找最近打开过的文件
 
+## 文本替换
+在文本中进行替换，一般是:s//命令
 
 
+## 文本转换
+### abolish插件
+spf13中安装了 abolish插件，特别适用的是下标与驼峰式的名字的自动替换
+crs： 转成下划线形式
+crm: 转成首字母大写形式
+crc: 转成驼峰形式，与crm相同，只是首字母小写
+cru: 转成大写形式
+cr-: 与crs相同，但是单次以-相连
+此外还支持单次间以 . <space>相连的功能，只是一般写代码的时候用不上
+目前这个功能只支持在当期光标所在单词上面执行。若需要在多个不同的单词上面执行，则需要visual-multi插件的支持
+另外这个插件还支持相似词的替换功能，当有较为复杂的相似词要替换时，普通的正则表达式也不一定能够简单地工作，此时使用该替换功能能够简单工作
+具体可以参考
+https://github.com/tpope/vim-abolish
+
+### surround插件
+surround增强了括号的处理能力，其命令与文本对象的编辑能力很像，常用的包括
+cs"' 成对将“修改为‘
+ds" 成对删除"
+ysiw" 在当前光标中增加“ 。这个功能可以结合easy motion，很容易对一段字符加括号，能解决输入括号时的痛苦。比如  foo|， |为光标位置，则在normal模式下输入 ys<leader><leader>b<easy motion选择位置f>), 则文本将变成(foo)
+ 这是因为ys操作可以作用与所有的vim textobj上，而easy motion的<leader><leader>b键等价于带选择能力的vim b选定textobj功能，因而这两个能力是可以结合起来使用的。
+vS" 首先触发visual模式 (v是普通的visual模式，V是行式的visual模式，都可以工作)，选定文本后按S，再按"，全部选中的内容被" 扩起来
+具体可见:
+https://github.com/tpope/vim-surround
+
+### 注释，反注释
+使用nerdcommender来进行注释，反注释
+<leader>cc 对于选定的区域增加注释
+<leader>cu 对于选定的区域反注释
+
+## 代码格式
+### 自动缩进
 缩进提示: <leader>ig
 
-
-
+### 自动缩进
 自动代码对齐: 使用visual模式选定文本之后，按 = 即可
-
 选定文本后，采用< >可以减少，增加缩进。排版时使用这个键比采用列模式要来得方便
-
 http://yyq123.blogspot.com/2010/10/vim-indent.html
 
-
-
-按 = 号，: 号对齐
-
+### 按操作符对齐
 直接使用tabular插件
-
+按 = 号，: 号对齐
 假设需要按=号进行对齐，则visual模式下选定需要对齐的文本，然后输入
-
 :Tab /=
-
 具体详见:
-
 http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 
 
-
+## 编辑
+### 基础命令
 列编辑模式: https://blog.csdn.net/scaleqiao/article/details/46289447
-
 ctrl+v 进如列编辑选定模式，选定列，然后
-
 删除列: d，列插入字符:  I，然后输入每列都要插入的内容，最后 Esc
+insert mode下，
+<C+h> 可以删除一个字符 (使用backspace的话效率较低)
+<C+w> 可以删除一个词
+<C+u> 可以删除一整行
+具体可以参考下面的教程
+https://github.com/iggredible/Learn-Vim/blob/master/ch06_insert_mode.md
+u: undo
+ctrl+r : redo
 
-
-
-文本对象编辑能力，常用的比如有:
-
-diw 删除光标所在单词
-
-ciw 修改光标所在单词
-
-di(  删除括号内所有内容
-
-d2i(  删除两层括号内所有内容，这个命令可以避免移动光标就可以进行编辑
-
-ci(  修改括号内所有内容
-
-da( 删除括号内所有内容，包括括号
-
-ca( 修改括号内所有内容，包括括号
-
-这里的( 也可以应用于 < , [, {, ' ," 等必备的标签，以及html标签
-
-具体可见:
-
-https://zhuanlan.zhihu.com/p/24387751
-
-sfp13内置的插件  https://github.com/kana/vim-textobj-indent
-
-能够按代码缩进来选择代码块。这个插件的主要用途是用于类似Python代码的选择处理
-
-ii 选择与当前光标对应的行具有相同缩进的最小缩进块。即从光标所在的行，上下分别开始搜索所有缩进小于当前行缩进的行。当找到第一个空行，即停止
-
-ai 选择与当前光标对应的行具有相同缩进的最大缩进块。即从光标所在的行，上下分别开始搜索所有缩进小于行缩进的行。
-
-
-
- https://github.com/terryma/vim-expand-region插件能够快速扩展当前文本对象范围
-
-+ 从当前光标位置扩大visual选择范围 
-
-_ 从当前光标位置减小visual选择范围 
-
-
-
-surround增强了括号的处理能力，其命令与文本对象的编辑能力很像，常用的包括
-
-cs"' 成对将“修改为‘
-
-ds" 成对删除"
-
-ysiw" 在当前光标中增加“ 。这个功能可以结合easy motion，很容易对一段字符加括号，能解决输入括号时的痛苦。比如  foo|， |为光标位置，则在normal模式下输入 ys<leader><leader>b<easy motion选择位置f>), 则文本将变成(foo)
-
- 这是因为ys操作可以作用与所有的vim textobj上，而easy motion的<leader><leader>b键等价于带选择能力的vim b选定textobj功能，因而这两个能力是可以结合起来使用的。
-
-vS" 首先触发visual模式 (v是普通的visual模式，V是行式的visual模式，都可以工作)，选定文本后按S，再按"，全部选中的内容被" 扩起来
-
-具体可见:
-
-https://github.com/tpope/vim-surround
-
-
-
+### autopair插件
 autopair: 随便按一个 括号，进入配对模式。然后按 括号的结束符，结束配对
-
 按一个括号进入配对模式后，按 space，再输入字符，则自动括号两边自动对齐。然后按 括号的结束符，结束配对
-
 https://github.com/jiangmiao/auto-pairs
 
-
-
-正则表达式
-
+## 正则表达式
 vim默认搜索命令/ , 替换命令s// 所使用的正则表达式与Perl标准的正则表达式标准不同。有些字符与正则的元字符相同，有些又不相同，所以很难使用
-
 为了解决这个问题，在进行使用正则时，统一增加一个\v前缀，则会与其他语言的正则保持一致
 
-
-
-注释
-
-<leader>cc 对于选定的区域增加注释
-
-<leader>cu 对于选定的区域反注释
-
-
-
-常用命令:
-
+## git
 :Gcd 是当前命令执行的当前目录变成git的根目录
-
   这个功能是fugitive插件提供的最重要的功能之一。因为很多的命令都是基于文本当前的buffer所在目录作为相对目录进行执行的。
-
   Gcd用于将这些命令的目录转移到git根目录，也就是通常所说的项目根目录下，因而会更加有用
-
   比如：
-
 :Gcd | Ack 在git更目录下执行Ack命令，对代码在项目根目录下的代码进行搜索
-
 :Gcd | Far 在git更目录下执行Far命令，对代码在项目根目录下的代码进行搜索和替换
 
-
-
 :Gstatus 触发 fugative
-
  g? 键 help
-
  s: 键  执行git add
-
  u: 键  执行git reset
-
  dv: 对选定的文件启动垂直分屏的gdiff
 
-
-
 :Gdiff 触发图形化的对比
-
  zo 开发被 fold 的行
-
  zc 关闭被 fold 的行
-
-
 
 :Glog 触发图形化的log修改浏览
-
  zo 开发被 fold 的行
-
  zc 关闭被 fold 的行
 
 
 
-垂直打开若干个文件
 
-vim -O file1.txt file2.txt
-水平打开若干个文件
-
-vim -o file1.txt file2.txt
-
-
-
-垂直打开窗口
-
-ctrl+w + v
-
-水平打开窗口
-
-ctrl+w + S
-
-关闭当前窗口
-
-ctrl+w + C
-
-全屏使用下面两个命令来实现
-
-ctrl+w + | 垂直伸展到最大
-
-ctrl+w + _ 水平伸展到最大
-
-垂直加水平伸展就基本等于全屏了
-
-退出全部使用下面的命令来实现
-
-ctrl+w + = 以等高的方式调整目前的窗口布局
-
-gt 跳转到下个tab
-
-gT 跳转到上个tab
-ngt 跳转到第n个tab
-
-
-
-在vim中，窗口和buffer是不同的概念。真正进行编辑的是buffer，而window是buffer的view
-
-所以窗口被关闭了，但是buffer是不会被关闭的。但是buffer被关闭，则窗口也要跟着一起关闭
-
-https://github.com/iggredible/Learn-Vim/blob/master/ch02_buffers_windows_tabs.md
-
-
-
-insert mode下，
-
-<C+h> 可以删除一个字符 (使用backspace的话效率较低)
-
-<C+w> 可以删除一个词
-
-<C+u> 可以删除一整行
-
-具体可以参考下面的教程
-
-https://github.com/iggredible/Learn-Vim/blob/master/ch06_insert_mode.md
 
 
 
@@ -850,15 +708,6 @@ vim +BundleInstall! +BundleClean +q
 <leader>PN 在cc，cpp文件中按下这个快捷键，则会根据对应的.h文件，生成代码的骨架,并且如果class在头文件中是在namespace下的话，不生成namespace前缀
 <leader>PP 在cc，cpp文件中按下这个快捷键，则会根据对应的.h文件，生成代码的骨架
 
-(14) 使用MattesGroeger/vim-bookmarks来替代vim自带的书签能力。
-这是因为vim自带的书签能力太弱，甚至没有标签的展现，以及标签的内容标注，当内容较多是根本无法进行管理。并且没有对标签进行持久化的能力
-
-命令:
-<leader>mi增加一个书签，并且对书签的内容进行标注
-<leader>mc删除标签
-<leader>ma列出全部的标签
-当几个项目中的标签数据很多时，可以增加关键字来进行分组。这个插件已经与ctrl-p插件进行了集成，在进入ctrl-p中，再按下ctrl-f，会见到标签的选择
-此时就可以根据标签的特征来进行过滤，搜索
 
 (15) 使用'xarronpan/vim-preview-enhance'来增加在preview window中查看当前函数定义的功能
 这个功能的主要用途的在阅读代码的时候避免眼睛的跳转，能够同时查看两屏的代码
@@ -906,41 +755,6 @@ daa 
 
 
 
-(19) 使用 justinmk/vim-dirvish 插件来浏览文件
-
-nerdtree更加适用与浏览整个项目的目录结构，而vim-dirvish则更加使用于浏览当前文件目录附近的文件。
-
-一个典型的用法是在一个独立的窗口中 (:enew命令)，或者是一个split窗口中 (:vnew)，通过 vim-dirvish 来打开插件
-
-vim-dirvish是netrw的替代品，但是更加强大。最重要的功能是vim-dirvish可以通过x键来选定对应的文件到arglist中。可以说是vim arglist的能力补全
-
-此外  vim-dirvish的buffer可以与普通vim buffer一样被编辑。比如通过d键来对buffer进行修改，或者g等命令进行filger，然后通过virtual选定需要的文件，键入.键来进行Shdo脚本允许。Shdo脚本与xargs类似，就是以 {} 符号作为占位符执行shell命令
-
-而每个占位符表示的则是被选中的文件。有点类似与fzf的能力，但是fzf中则没有目录树的能力。但是不具备单独选择文件的能力，所以比fpp，fzf这类工具的能力还是要差一些，主要有用还是加入arglist的能力
-
-
-
-常用命令:
-
-全局命令:
-
--：在当前文件所在目录打开dirvish
-
-
-
-在drivish buffer中的命令:
-
-g? : 显式命令帮助
-
-gq : 返回启动drivish的文件
-
-enter: 在当前buffer中打开dirvish选中文件, 或者进入子目录中
-
-x: 将文件加入arglist
-
-.: 将当前文件加入Shdo脚本中进行执行
-
-p: preview当前文件
 
 
 
@@ -1184,14 +998,9 @@ https://github.com/wellle/context.vim
 
 
 
-(33) ranger.vim
 
-https://github.com/francoiscabrol/ranger.vim
-
-<leader> + f即可在vim中启用ranger来寻找要打开的文件。从各个方面来讲都秒杀vim-dirvish插件。
-
-所以在一般情况下需要在vim中寻找非项目中的文件时，直接使用这个插件打开ranger来访问即可
-
+o
+o
 
 
 (34) linediff插件
