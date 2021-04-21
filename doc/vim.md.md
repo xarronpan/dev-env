@@ -139,6 +139,14 @@ dTa 光标向后跳到a字符之间的字符，并且删除不包括a之间的�
 
 详细可以参考: https://github.com/iggredible/Learn-Vim/blob/master/ch04_vim_grammar.md
 
+重复命令
+. normal命令可以重复上一个输入的命令。这个命令可以大量缩减需要键入的键数量。比如说 de 删除第一个单词，然后 .就会再执行一次de
+  又比如crc将单次变成了canmel case，然后移动到下一个需要处理的单词，再键入. , 则对应的单词也会变成 canmel case
+
+宏
+qa 开始录入vi的命令到寄存器a
+q  结束录入宏
+10@a 在光标当前位置重复a中的命令10次
 
 
 书签: 用于在重要的代码中打标记，然后可以在不同的位置上方便地跳转阅读理解代码
@@ -253,7 +261,7 @@ https://github.com/iggredible/Learn-Vim/blob/master/ch17_fold.md
 
 s 启动easy motion，找一个字符
 
-<leader> + w 使用easy motion跳转到附近的单词开始。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动作共用
+<leader> + w 使用easy motion跳转到附近的单词开始。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动作共用。在中文的文档中进行浏览编辑时，这个动作尤其有用
 
 <leader> + l 使用easy motion跳转到某行。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动作共用
 
@@ -308,7 +316,7 @@ cr-: 与crs相同，但是单次以-相连
 
 此外还支持单次间以 . <space>相连的功能，只是一般写代码的时候用不上
 
-目前这个功能只支持在当期光标所在单词上面执行。若需要在多个不同的单词上面执行，则需要通过类似 宏+搜索+上面的命令来进行操作
+目前这个功能只支持在当期光标所在单词上面执行。若需要在多个不同的单词上面执行，则需要visual-multi插件的支持
 
 
 
@@ -533,6 +541,7 @@ ctrl+w + = 以等高的方式调整目前的窗口布局
 gt 跳转到下个tab
 
 gT 跳转到上个tab
+ngt 跳转到第n个tab
 
 
 
@@ -1361,4 +1370,19 @@ https://github.com/glts/vim-textobj-comment
 dic 删除comment内部的内容
 dac 删除整个comment的内容
 
+(44) clever-f.vim
+https://github.com/rhysd/clever-f.vim
+这个插件主要解决目前, 键被用于leader键，而f，t等键的前后向搜索功能不能使用的问题
+而且这个插件给定的key-binding也比; , 键要好用
+使用方式: 
+比如fa 之后，再按f，则会重复fa的动作，再按F，则会重复执行Fa
 
+(45) gcmt/taboo.vim
+这个插件支持对tab进行rename，就与在使用tmux中，通过名字来区分任务一样
+命令:
+:RT newtabname   将当前tab的名称调整成newtabname
+
+(46) vim-textobj-space
+https://github.com/saihoooooooo/vim-textobj-space
+用法:
+diS 删除所有连续的空格

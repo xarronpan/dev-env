@@ -152,6 +152,11 @@ prefix + v 进入使用当前tmux上的屏幕输出，使用fzf来进行选择�
 
 这个插件允许你以任何可以想象的方式都能工作。而且因为是基于tmux的，所以根本不受服务器上shell的限制
 
+命令:
+prefix + v  将当前window可见区域的内容作为补全内容进行选择
+prefix + r  将当前window一段历史区域的内容作为补全内容进行选择
+prefix + R  将当前session中所有window一段历史区域的内容作为补全内容进行选择
+
 这个命令目前的主要问题是不会将内容拷贝到tmux的缓冲区中。所以若是考虑作为copy paste而使用的话则不合适
 
 prefix + b 会使用tmux的clipborad中的内容进行补全。这个功能直接可以提到tmux-fzf的clipboard补全功能。因而tmux-fzf的clipboard快捷键的功能太深了
@@ -297,6 +302,7 @@ sainnhe/tmux-fzf
 (3) 从tmux的copy缓冲区中，通过fzf的方式将copy的文本给paste到命令行中。因为一个复杂的运维操作中，有大量的命令输入的内容其实都是来自于之前的缓冲区的，所以这个功能实际上是非常实用的
 
      能够大幅减低自己copy paste的重复劳动
+目前的启动命令是: <prefix> + t
 
 
 
@@ -346,7 +352,7 @@ ranger集成
 
 当输入一个命令时需要一个文件或者目录作为参数，而这个参数你并不记得具体的名称，更加希望通过file explorer的方式来找到文件，此时可以通过键入
 
-<prefix> + R启动ranger，选择文件或者目录，最后在ranger中键入Q，然后获取到对应的文件或者目录作为参数
+<prefix> + F启动ranger，选择文件或者目录，最后在ranger中键入Q，然后获取到对应的文件或者目录作为参数
 
 这个命令在进行dirdiff，或者在vim键入命令时，需要文件参数时特别有用，能够大幅降低大脑的负担
 
