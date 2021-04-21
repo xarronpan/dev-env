@@ -76,6 +76,7 @@ https://zhuanlan.zhihu.com/p/38477934
 leader键在下述的配置中是 ','
 
 ## buffer/window/tab 管理
+### 内置功能
 在vim中，窗口和buffer是不同的概念。真正进行编辑的是buffer，而window是buffer的view
 所以窗口被关闭了，但是buffer是不会被关闭的。但是buffer被关闭，则窗口也要跟着一起关闭
 https://github.com/iggredible/Learn-Vim/blob/master/ch02_buffers_windows_tabs.md
@@ -84,7 +85,6 @@ https://github.com/iggredible/Learn-Vim/blob/master/ch02_buffers_windows_tabs.md
 :enew 在新窗口中打开一个empty buffer。下一步通过-命令来选择需要打开的文件。见dirvish插件的描述
 :vnew 在新的垂直窗口中打开一个empty buffer。下一步通过-命令来选择需要打开的文件。见dirvish插件的描述
 :tabnew 创建一个新的tab，并且创建一个新的buffer
-
 垂直打开若干个文件
 vim -O file1.txt file2.txt
 
@@ -113,8 +113,16 @@ gt 跳转到下个tab
 gT 跳转到上个tab
 ngt 跳转到第n个tab
 
-## help
-normal mode下面键入K，能够以当前光标单词为key去搜索vim的help文档。在阅读vimrc的时候，就不需要反复到web页面上去阅读插件的文档。
+### gcmt/taboo.vim 插件
+这个插件支持对tab进行rename，就与在使用tmux中，通过名字来区分任务一样
+命令:
+:RT newtabname   将当前tab的名称调整成newtabname
+
+### winresizer插件
+使用‘simeji/winresizer’ 插件来调整vim的窗体大小
+键入ctrl+x 进入窗体调整模式，hjkl用于调整当前获得焦点的窗口
+键入e间后可以调整窗体调整模式。其中window move的模式可以用于调整窗体的位置
+
 
 ## 光标移动操作
 ### 内置光标移动
@@ -138,7 +146,7 @@ jump backward: ctrl+i
 
 % 调转到嵌套 {} 的末尾。sfp13上面安装了matct-it插件，能够识别代码中的关键字，从而跳转到代码块的结束
 
-### easymositon光标移动
+### easymositon插件光标移动
 s 启动easy motion，找一个字符, 并跳转到对应的位置中
 <leader> + w 使用easy motion跳转到附近的单词开始。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动作共用。在中文的文档中进行浏览编辑时，这个动作尤其有用
 <leader> + l 使用easy motion跳转到某行。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动作共用
@@ -147,6 +155,13 @@ s 启动easy motion，找一个字符, 并跳转到对应的位置中
 <leader> <leader> + e 使用easy motion后向跳转到附近的单词结束 (与vim b的定义相同) 。 这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
 <leader> <leader> + j使用easy motion后向跳转到某行 (与vim j的定义相同)。这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
 <leader> <leader> + k 使用easy motion后向跳转到某行 (与vim k的定义相同)。这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
+
+### clever-f.vim插件
+https://github.com/rhysd/clever-f.vim
+这个插件主要解决目前, 键被用于leader键，而f，t等键的前后向搜索功能不能使用的问题
+而且这个插件给定的key-binding也比; , 键要好用
+使用方式: 
+比如fa 之后，再按f，则会重复fa的动作，再按F，则会重复执行Fa
 
 ### comfortable-motion插件
 yuttie/comfortable-motion.vim的作用能够使用鼠标滚动键顺滑地进行翻页
@@ -165,7 +180,7 @@ dTa 光标向后跳到a字符之间的字符，并且删除不包括a之间的�
 当时目前vi是不支持编辑normal 模式下的命令的。所以最简单的方式是在其他地方先调试好，再一并输入进来
 详细可以参考: https://github.com/iggredible/Learn-Vim/blob/master/ch04_vim_grammar.md
 
-### easymotion 增强vim动作语法
+### easymotion插件增强vim动作语法
 d <leader> <leader> + e 后向删除到某个单词的结束，通过easy motion来定位具体的位置
 d <leader> <leader> + b 前向删除到某个单词的结束，通过easy motion来定位具体的位置
 d <leader> <leader> + j 后向删除都某行，通过easy motion来具体的位置
@@ -191,7 +206,7 @@ ca( 修改括号内所有内容，包括括号
 
 https://zhuanlan.zhihu.com/p/24387751
 
-###vim-textobj-parameter
+###vim-textobj-parameter插件
 使用sgur/vim-textobj-parameter 插件来支持扩展text object的能力
 https://github.com/wellle/targets.vim
 扩展的能力其实不多：
@@ -205,17 +220,39 @@ dia
 daa 
 删除函数的参数，i，a与di", da" 的含义类似
 
-###vim-textobj-indent
+###vim-textobj-uri插件
+使用 jceb/vim-textobj-uri 增加url text object
+diu: 删除uri中的东西
+dau: 删除uri中的东西
+
+###vim-textobj-variable-segment插件
+(22) 使用 jceb/vim-textobj-variable-segment 增加 变量名分段 text object
+div: 删除一段变量名。变量名可以是下划线，或者是驼峰式的格式
+dav: 删除一段变量名，包括下划线。变量名可以是下划线，或者是驼峰式的格式
+
+###vim-textobj-indent插件
 sfp13内置的插件  https://github.com/kana/vim-textobj-indent
 
 能够按代码缩进来选择代码块。这个插件的主要用途是用于类似Python代码的选择处理
 ii 选择与当前光标对应的行具有相同缩进的最小缩进块。即从光标所在的行，上下分别开始搜索所有缩进小于当前行缩进的行。当找到第一个空行，即停止
 ai 选择与当前光标对应的行具有相同缩进的最大缩进块。即从光标所在的行，上下分别开始搜索所有缩进小于行缩进的行。
 
-### vim-expand-region
+### vim-expand-region插件
 https://github.com/terryma/vim-expand-region插件能够快速扩展当前文本对象范围
 '+' 从当前光标位置扩大visual选择范围 
 '-' 从当前光标位置减小visual选择范围 
+
+### vim-textobj-comment插件
+https://github.com/glts/vim-textobj-comment
+这个插件添加了很实用的注释text-obj
+用法：
+dic 删除comment内部的内容
+dac 删除整个comment的内容
+
+### vim-textobj-space插件
+https://github.com/saihoooooooo/vim-textobj-space
+用法:
+diS 删除所有连续的空格
 
 ## 剪切板交互管理
 ### 拷贝系统剪切板到vim中:
@@ -232,7 +269,7 @@ ctrl + shirt + v，具体可以参考下面链接 https://askubuntu.com/question
 有时当我们做了tmux的分屏或者vi的分屏时，上面的工作方式会选择整行，因而不能正确工作。此时我们通过 Alt+Shift加鼠标，可以选择一个矩形区域。这样子就在很大程度上缓解了分屏拷贝黏贴时的效率问题
 另外一个方式就是将tmux，vi全屏，然后在将vim的number给关掉，在使用shift的方式来拷贝。有时当我们需要进行选择的文本在tmux或者vi中跨了一行时 (但不是完整的一样)，适合采用这种方法。
 
-### 剪切板管理
+### 名字/数字寄存器
 可以通过名字寄存器，或者数据寄存器访问剪切板中最近访问过的内容。
 数字寄存器存放的内容都是以行为单位的剪切内容
 拥有这个功能，就意味着我们可以对剪切的内容进行精确的管理，从而能够对合适的剪切板内容进行粘贴。
@@ -253,6 +290,19 @@ https://github.com/iggredible/Learn-Vim/blob/master/ch08_registers.md
 使用roxma/vim-tmux-clipboard 插件来将 tmux，vim的剪切板来打通
 在tmux中copy的东西，在vim中通过在normal mode下键入 “”p 即可拷贝
 在vi中y的东西，在tmux中ctrl + ]即可拷贝出来
+
+### vim-cutlass && vim-yoink插件
+https://github.com/svermeulen/vim-yoink
+https://github.com/svermeulen/vim-cutlass
+vim默认的行为，是当进行d，x，s操作的时候，会将相应的内容拷贝到clipboard中
+但是在绝大多数的场景下，这种行为都是错误的，导致需要使用clipboard的内容非常麻烦
+为了解决这个问题 vim-cutlass 插件配置一个新的动作m，只有m的动作等价于原来的d操作
+d、x、s操作都不会更改缓冲区
+vim-yoink插件支持ring paste buffer，每次p后键入下面的命令，就会循环地获取paste buffer中的东西
+
+命令:
+<M+n> 获取上一个paste buffer的内容
+<M+p> 获取下一个paste buffer的内容
 
 ## 避免重复操作
 重复命令
@@ -356,7 +406,7 @@ vim scp://<target_host>/<dest_dir>/
 在本文件中搜索: shift+*, n , N，/ ，？
 目前按 <esc> + <esc>, 或者unimpair插件的yoh命令，会取消找到目标的高亮
 
-### fzf.vim
+### fzf.vim 插件
 #### 安装
 首先需要安装fzf，以及fzf默认官方的vim插件，然后才能安装fzf.vim
 https://github.com/junegunn/fzf.vim
@@ -405,8 +455,19 @@ vim +BundleInstall! +BundleClean +q
 <c+x><c+r> 使用本地zsh的命令历史进行fzf补全。这个功能在编写bash脚本时尤其有用。因为很多命令都会现在终端上输入调试后，才会编辑到shell脚本中
 <c+x><c+k> 使用linux本地的词典进行fzf补全。最大的用途是避免忘了英文单词的拼写时，不需要离开终端就能找到你需要的东西
 <c+x><c+l> 对当前输入的字符串为前缀的vim已经打开的文件行进行fzf补全。当需要跨文件去拷贝命令行时，这个命令可能会派上用场
-## 文本替换
-在文本中进行替换，一般是:s//命令
+
+### fzf-mru.vim插件
+https://github.com/xarronpan/fzf-mru.vim
+这个插件实现了一个基于项目的mru。这正是开发项目代码所急需的
+命令:
+<leader>r  启动mru查找文件进行编辑
+
+### vim-interestingwords插件
+这个插件支持在阅读，review代码的时候，同时对n个不同的word进行高亮，秒杀vim内置的高亮功能
+https://github.com/lfv89/vim-interestingwords
+使用方式:
+<leader> +k 高亮一个word
+<leader> + K 取消全部的高亮
 
 ### ack插件
 ACK keyword filepath
@@ -417,6 +478,41 @@ ctrlp最为重要的功能是mru搜索能力。在编写代码进行代码导航
 ctrlp中选择完成后打开一个垂直分屏, 使用 ctrl+v
 ctrlp中选择完成后打开一个tab, 使用 ctrl+t
 ctrlp切换搜索模式 ctrl+f，其中mru是most recent used文件的意思，用于寻找最近打开过的文件
+
+## 文本替换
+在文本中进行替换，一般是:s//命令
+
+### vim-far 插件
+far插件可以认为是vim substitute命令的增强。其除了支持subsititute完整的正则表达式替换，替换表达式中\1 \2匹配括号的功能外，最为主要的能力是
+1) 做替换的预览，并且在预览窗口进行排除后，最后再做应用
+2) 能够使用一条命令很方便地指定目录以及文件模式。而不需要使用vim arglist的方式来添加。
+总的而言，far插件基本秒杀vim内置的替换功能
+此外，far的正则表达式不需要\v前缀，就可以其从较为标准的extended posix regex的功能
+https://github.com/brooth/far.vim
+
+命令示例:
+FAR word1 word2 %  将当前buffer的word1 替换成 word2
+FAR word1 word2 parent/*.cc  在git的根目录中，将父级目录为parent的所有后缀为cc的文件中的word1 替换成 word2
+FAR word1 word2 parent/  在git的根目录中，将父级目录为parent的所有cc的文件中的word1 替换成 word2
+FAR foo(.+) too\1 *.cc   在git的根目录中，将ta(.+) 正则表达式的pattern替换成 正则表达是括号中的内容
+file pattern的说明可以看far的文档
+https://github.com/brooth/far.vim/blob/master/doc/far.txt
+
+在替换窗口中的快捷键：
+t    toggle 选定行是否要被排除在替换之外。这个命令可以应用于visual所选择区域
+zc   对文件进行fold
+zo   对文件进行unfold   这里fold，unfold的命令实际上与普通的文本buffer操作没有差别
+s    正式应用替换
+u    undo 替换
+
+### ctrlsf插件
+ctrlsf会产生一个类似与sublime的查找输出，并且最为重要的功能，是能够在查找输出的窗口中进行文本编辑，替换，并且能够保存
+适合于目的未完全明确的文本替换操作。在一次查找过程中，只有少量的文本会被替换掉
+命令：
+:CF pattern 启动ctrlsf进行替换操作
+在搜索结果窗口中，p是preview结果
+ctrl+j, ctrl+k  是在搜索结果中上移，下移
+
 
 ## 文本转换
 ### surround插件
@@ -434,6 +530,18 @@ https://github.com/tpope/vim-surround
 <leader>cc 对于选定的区域增加注释
 <leader>cu 对于选定的区域反注释
 
+### multi visual插件
+https://github.com/mg979/vim-visual-multi
+mult visual是multi cursor插件的加强版，基本上秒杀multi cursor插件
+<c-n>会以当前光标下面的文本为模本，进入multi visual模式，进行文本搜索。
+n 选定下一个光标，N 回退一个光标，q 跳过一个光标。当光标选定之后，就可以以普通的visusl模式下的编辑模式对文本进行编辑
+按 <Tab>，则可以切换到一个类似与normal的模式。此时所有的vim的normal mode的多数命令都能够使用，比如说 adolish，surrond的命令
+移动光标之后再按tab，则会根据光标的位置，调整被进行visual选择的区域
+按 i/a 等，则可以进入到插入模式
+按入 \\x，则会进入ex模式，vim中的全部ex命令都能执行，并会对所有被选中的visual区域进行执行。
+<c+方向键> 则会类似与列模式一样选定多行，并且进入normal模式进行编辑
+按esc键将会退出multi visual模式
+
 ### abolish插件
 spf13中安装了 abolish插件，特别适用的是下标与驼峰式的名字的自动替换
 crs： 转成下划线形式
@@ -447,7 +555,7 @@ cr-: 与crs相同，但是单次以-相连
 具体可以参考
 https://github.com/tpope/vim-abolish
 
-### vim-exchange
+### vim-exchange 插件
 使用tommcdo/vim-exchange插件来交换对象
 https://github.com/tommcdo/vim-exchange
 cxx 交换两行。首先在第一行中键入cxx，然后再另外一行中键入cxx，则两行会被交换
@@ -496,6 +604,7 @@ vim默认搜索命令/ , 替换命令s// 所使用的正则表达式与Perl标�
 为了解决这个问题，在进行使用正则时，统一增加一个\v前缀，则会与其他语言的正则保持一致
 
 ## git
+### fugitive插件
 :Gcd 是当前命令执行的当前目录变成git的根目录
   这个功能是fugitive插件提供的最重要的功能之一。因为很多的命令都是基于文本当前的buffer所在目录作为相对目录进行执行的。
   Gcd用于将这些命令的目录转移到git根目录，也就是通常所说的项目根目录下，因而会更加有用
@@ -546,8 +655,31 @@ https://github.com/iggredible/Learn-Vim/blob/master/ch13_the_global_command.md
 使用 skywind3000/asyncrun.vim 将quick-fix window与外部命令进行集成
 常用命令: AR youcommand
 
+### 修正命令执行目录/rooter插件
+https://github.com/airblade/vim-rooter
+这个插件非常重要，提供了改变被执行命令当前执行目录的能力。
+用户可以自定义项目根目录的特征。
+这个命令特别与很多搜索命令是绝配。
+命令：
+: PR | Files   在项目根目录下执行fzf的Files命令
+
+### tmux集成/vim-tmux-runner插件
+https://github.com/christoomey/vim-tmux-runner
+这个插件主要的功能在于在vim中不需要失去focus，就能在vi的窗口下创建一个tmux pane，执行shell 命令
+这种命令的主要用途，在于我们在vim中进行编辑，需要输入一些信息，而这些信息的来源需要通过命令行才能获得
+所以这个命令的典型用途是与 tmux-bulter插件一起使用。目前只要 <prefix> + r，就能启动pane输出历史的补齐功能。所以这种场景下，vim就能够很容易获得需要输入的内容
+（如果需要输入进来的是多行的话，还是只能通过r！等方式来调用命令，大家所擅长的使用场景不同）
+这个插件的另外一种用途，就是在代码窗口中直接选择文本，发送到tmux窗口中。这种用法多见于REPL的编程方式。
+此时tmux runner窗口中可以运行一个解析器。然后我们就可以不离开编辑窗口的前提下，快速地编辑验证代码
+使用方式:
+:TR command 将command发往tmux runner窗口
+:TRL        将编辑器所在行，或者visual区域中的命令发送到tmux runner窗口中
+:TA         将当前已经被打开的tmux窗口作为tmux runner窗口
+例子:
+:TR ls -l
+
 ## IDE功能
-### youcompleteme
+### youcompleteme 插件
 #### 安装
 首先安装YouCompleteMe插件
 在spf13 的 .vimrc.before.local 配置中增加 bundle group: youcompleteme，并且将 neocomplete 给干掉
@@ -604,8 +736,34 @@ nnoremap <leader>doc :YcmCompleter GetDoc<CR>                            //显�
 : cp //GoToReference功能会将结果方案quick fix window中。cp用于访问quick fix window的下一条
 :YcmCompleter GoToSymbol '目标符号'                                       //全局查找符号
 :YcmDebugInfo                                                             //ycm调试输出
-### vim-go
+### vim-go 插件
+#### 安装
+spf13的配置中默认已经安装了vim-go插件。需要在 .vim.before.local 中显式配置 bundle_groups, 增加go的组，然后在运行 vim +BundleInstall +BundleClean，
+才会真正安装vim-go插件。
+在安装完成vim-go插件后，需要通过gvm安装合适版本的golang，再打开对应的项目，并在
+在命令行中运行：
+:GoInstallBinaries
+则会将vim-go所需要的运行时库给下载下来。在完成之后，vim-go才算安装完成。
+这个插件的很多功能，其实在ycm中已经包括了。所以这类功能直接使用ycm中的能力即可 (都是基于gopls的，所以普通的代码导航能力实际上是没有差别的)。
+在安装完成gvm之后，使用 gvm use goversion 命令设置 GO_ROOT等变量，并且通过go get等命令将依赖的包给下载回来之后，ycm就可以启动自动补全以及语法实时提示的功能了
+(在启动的时候，最好显式在启动vim的终端中键入命令: gvm use go{yourversion})
 
+#### 功能
+<leader> god   输出当前类型的描述信息，包括了函数等相关信息
+<leader> goi    输出当前类型所实现的接口
+
+自动生成代码的命令：
+:GoImpl [receiver] [interface]
+根据 receiver 与 interface生成golang的stub代码
+例子:
+`:GoImpl f *Foo io.Writer`
+生成类型为Foo，函数参数为f，实现接口 Foo io.Writer 的桩代码
+
+代码自动lint，fmt的命令：
+注：
+guru中包括了很多动态分析的代码分析能力，比如GoCallees，GoCallers等。这些能力因为非常消耗分析资源，因为guru需要设置一个scope之后才能进行分析使用
+此外，只要引用的库代码中有使用cgo的话，则不能正常进行编译，所以这类动态分析的功能目前基本不可用。
+而且guru官方已经不会再继续进行更新，全都替换成了gopls。所以这些功能都避免去使用即可。使用全局的代码搜索，其实也能很快将这些东西给分析出来
 
 ### ultisnips
  spf13中已经安装了ultisnips 以及 ultisnap 的snippet仓库。当我们数据的字符串中包括了 snippet的关键字时，ycm的菜单中就会给出带有 <snip> 字样的提示
@@ -638,13 +796,13 @@ vim +BundleInstall! +BundleClean +q
 ## tags管理
  使用ludovicchabant/vim-gutentags自动生成和管理ctags
 
-##文档
+##文档生成
 使用vim-scripts/DoxygenToolkit.vim 来增加对c/c++/python生成doxygen风格文档的功能
 命令:
    在函数行中输入名: Dox即可生成文档
 
-## 杂项
-### a.vim
+## 效率插件
+### a.vim插件
 使用vim-scripts/a.vim ，支持在头文件与源文件之间快速切换，打开窗口进行编辑
 常用命令:
 :A      在头文件，目标文件间跳转
@@ -652,7 +810,7 @@ vim +BundleInstall! +BundleClean +q
 具体可见
 https://github.com/vim-scripts/a.vim
 
-### vim-preview
+### vim-preview插件
 使用'xarronpan/vim-preview-enhance'来增加在preview window中查看当前函数定义的功能
 这个功能的主要用途的在阅读代码的时候避免眼睛的跳转，能够同时查看两屏的代码
 
@@ -661,439 +819,75 @@ https://github.com/vim-scripts/a.vim
 <leaser>pc 关闭preview window
 如果需要滚屏查看preview windows下的内容，可以直接使用鼠标滚屏
 
-
-
-
-
-
-
-
-
-
-
-
-(21) 使用 jceb/vim-textobj-uri 增加url text object
-
-diu: 删除uri中的东西
-
-dau: 删除uri中的东西
-
-
-
-(22) 使用 jceb/vim-textobj-uri 增加 变量名分段 text object
-
-div: 删除一段变量名。变量名可以是下划线，或者是驼峰式的格式
-
-dav: 删除一段变量名，包括下划线。变量名可以是下划线，或者是驼峰式的格式
-
-
-
-(23) 使用 tpope/vim-unimpaired 插件，就不用在记住一堆的成对的命令
-
+### vim-unimpaired插件
+使用 tpope/vim-unimpaired 插件，就不用在记住一堆的成对的命令
 [op （或者 [op 以及 yop命令）然后进行 黏贴，则退出insert模式之后，会自动退出paste模式。不再需要麻烦的set paste，set nopaste
-
 yon toggle set number
-
 yol toggle set list
-
 yoh toggle 搜索高亮
-
 [q next quickfix item
-
 ]q prev quickfix item
-
 ]l next locationlist item
-
 ]l prev locationlist item
-
-
-
 由于命令较多，可以通过: h unimpaired 命令来查看所有的东西。一般而言，如果发现成对的命令，可以实现unimpaired的模式，看是否能够工作。
-
 尽可能少地手动输入命令。太慢了。
 
-
-
-(24)  使用nathanaelkane/vim-indent-guides，打开关闭indent提示
-
-<Leader>ig 打开，关闭indent提示
-
-
-
-(25) 使用 'andymass/vim-matchup' 插件
-
+### vim-matchup插件
 mathcup插件是matchit的加强版。主要好用的功能包括：
-
 嵌套符号除了支持（）[] {} 等符号外，也支持语言的关键字
-
 di%  删除嵌套括号或者语言关键字中的内容。不包括嵌套符。比起内置的di( , di{ 等text-obj，一方面需要记忆的符号更少，另外一方面支持语言关键字，是vim内置text-obj所不能比拟的。
-
 d2i%  删除两层嵌套括号或者语言关键字中的内容。不包括嵌套符
-
 da% 删除嵌套括号或者语言关键字中的内容。包括嵌套符
-
 % 跳到配对的嵌套符号
-
 [% 往外跳出当前的嵌套括号。跳掉嵌套括号的开始
-
 [2% 往外跳出两层当前的嵌套括号。跳掉嵌套括号的开始
-
 ]% 往外跳出当前的嵌套括号。跳掉嵌套括号的结束
 
-
-
-(26) 使用‘simeji/winresizer’ 插件来调整vim的窗体大小
-
-键入ctrl+z 进入窗体调整模式，hjkl用于调整当前获得焦点的窗口
-
-键入e间后可以调整窗体调整模式。其中window move的模式可以用于调整窗体的位置
-
-
-
-(27) vim-go
-
-spf13的配置中默认已经安装了vim-go插件。需要在 .vim.before.local 中显式配置 bundle_groups, 增加go的组，然后在运行 vim +BundleInstall +BundleClean，
-
-才会真正安装vim-go插件。
-
-在安装完成vim-go插件后，需要通过gvm安装合适版本的golang，再打开对应的项目，并在
-
-在命令行中运行：
-
-:GoInstallBinaries
-
-则会将vim-go所需要的运行时库给下载下来。在完成之后，vim-go才算安装完成。
-
-这个插件的很多功能，其实在ycm中已经包括了。所以这类功能直接使用ycm中的能力即可 (都是基于gopls的，所以普通的代码导航能力实际上是没有差别的)。
-
-在安装完成gvm之后，使用 gvm use goversion 命令设置 GO_ROOT等变量，并且通过go get等命令将依赖的包给下载回来之后，ycm就可以启动自动补全以及语法实时提示的功能了
-
-(在启动的时候，最好显式在启动vim的终端中键入命令: gvm use go{yourversion})
-
-<leader> god   输出当前类型的描述信息，包括了函数等相关信息
-
-<leader> goi    输出当前类型所实现的接口
-
-
-
-自动生成代码的命令：
-
-:GoImpl [receiver] [interface]
-
-根据 receiver 与 interface生成golang的stub代码
-
-例子:
-
-:GoImpl f *Foo io.Writer
-
-生成类型为Foo，函数参数为f，实现接口 Foo io.Writer 的桩代码
-
-
-
-代码自动lint，fmt的命令：
-
-
-
-注：
-
-guru中包括了很多动态分析的代码分析能力，比如GoCallees，GoCallers等。这些能力因为非常消耗分析资源，因为guru需要设置一个scope之后才能进行分析使用
-
-此外，只要引用的库代码中有使用cgo的话，则不能正常进行编译，所以这类动态分析的功能目前基本不可用。
-
-而且guru官方已经不会再继续进行更新，全都替换成了gopls。所以这些功能都避免去使用即可。使用全局的代码搜索，其实也能很快将这些东西给分析出来
-
-
-
-(28) vim-translator
-
+### 翻译/vim-translator插件
 直接可以在编辑器中，遇到不认识的单词直接启动翻译，而不需要到浏览器中进行操作，加快工作流程
-
 https://github.com/voldikss/vim-translator
-
 命令：
-
 TL  可以在normal模式或者在visual模式下执行。会在status line中给出翻译信息。目前只有英文到中文的翻译运行得比较稳定
 
-
-
-(29) vim-far
-
-far插件可以认为是vim substitute命令的增强。其除了支持subsititute完整的正则表达式替换，替换表达式中\1 \2匹配括号的功能外，最为主要的能力是
-
-1) 做替换的预览，并且在预览窗口进行排除后，最后再做应用
-
-2) 能够使用一条命令很方便地指定目录以及文件模式。而不需要使用vim arglist的方式来添加。
-
-总的而言，far插件基本秒杀vim内置的替换功能
-
-此外，far的正则表达式不需要\v前缀，就可以其从较为标准的extended posix regex的功能
-
-https://github.com/brooth/far.vim
-
-
-
-命令示例:
-
-FAR word1 word2 %  将当前buffer的word1 替换成 word2
-
-FAR word1 word2 parent/*.cc  在git的根目录中，将父级目录为parent的所有后缀为cc的文件中的word1 替换成 word2
-
-FAR word1 word2 parent/  在git的根目录中，将父级目录为parent的所有cc的文件中的word1 替换成 word2
-
-FAR foo(.+) too\1 *.cc   在git的根目录中，将ta(.+) 正则表达式的pattern替换成 正则表达是括号中的内容
-
-file pattern的说明可以看far的文档
-
-https://github.com/brooth/far.vim/blob/master/doc/far.txt
-
-
-
-在替换窗口中的快捷键：
-
-t    toggle 选定行是否要被排除在替换之外。这个命令可以应用于visual所选择区域
-
-zc   对文件进行fold
-
-zo   对文件进行unfold   这里fold，unfold的命令实际上与普通的文本buffer操作没有差别
-
-s    正式应用替换
-
-u    undo 替换
-
-
-
-(30) vim-dir-diff
-
-采用这个插件就可以直接在命令行下，对代码进行递归diff，类似与beyond compare
-
-https://github.com/will133/vim-dirdiff
-
-目前已经在shell中进行了配置，可以通过 dirdiff dir1 dir2 来启动对比
-
-
-
-(31) NrrwRgn
-
-https://github.com/chrisbra/NrrwRgn
-
-采用这个插件，可以保证修改只发生在被选定的区域
-
-这个功能的一个主要用途是向对一段文本使用vim中的命令进行替换，但是不希望这些替换在区域之外生效
-
-此时就可以使用这个功能，在一个独立的buffer中进行修改
-
-使用方式
-
-使用visual方式选定一段区域，然后输入命令 : NR
-
-
-
-(32) context.vim
-
-https://github.com/wellle/context.vim
-
-这个插件可以在窗口顶部显示当前代码的上下文，在阅读复杂的代码的时候，能够减低头脑的负担
-
-使用方式：
-
-:CT  toggle context插件
-
-
-
-
-o
-o
-
-
-(34) linediff插件
-
-linediff插件可以完成以前出现过的对比两段代码的功能。
-
-使用方式：
-
-在第一段文本使用visual方式选定后，输入命令：LD
-
-在第一段文本使用visual方式选定后，再输入命令：LD
-
-则此时就会启动vim diff窗口进行对比
-
-https://github.com/AndrewRadev/linediff.vim
-
-
-
-(35) vim-interestingwords
-
-这个插件支持在阅读，review代码的时候，同时对n个不同的word进行高亮，秒杀vim内置的高亮功能
-
-https://github.com/lfv89/vim-interestingwords
-
-使用方式:
-
-<leader> +k 高亮一个word
-
-<leader> + K 取消全部的高亮
-
-
-
-(36) vim-tmux-runner
-
-这个插件主要的功能在于在vim中不需要失去focus，就能在vi的窗口下创建一个tmux pane，执行shell 命令
-
-这种命令的主要用途，在于我们在vim中进行编辑，需要输入一些信息，而这些信息的来源需要通过命令行才能获得
-
-所以这个命令的典型用途是与 tmux-bulter插件一起使用。目前只要 <prefix> + r，就能启动pane输出历史的补齐功能。所以这种场景下，vim就能够很容易获得需要输入的内容
-
-（如果需要输入进来的是多行的话，还是只能通过r！等方式来调用命令，大家所擅长的使用场景不同）
-
-这个插件的另外一种用途，就是在代码窗口中直接选择文本，发送到tmux窗口中。这种用法多见于REPL的编程方式。
-
-此时tmux runner窗口中可以运行一个解析器。然后我们就可以不离开编辑窗口的前提下，快速地编辑验证代码
-
-使用方式:
-
-:TR command 将command发往tmux runner窗口
-
-:TRL        将编辑器所在行，或者visual区域中的命令发送到tmux runner窗口中
-
-:TA         将当前已经被打开的tmux窗口作为tmux runner窗口
-
-例子:
-
-:TR ls -l
-
- https://github.com/christoomey/vim-tmux-runner
-
-
-
-(37) mtth/scratch.vim
-
+### 草稿窗口/scratch.vim 插件
 这个插件用于启动一个草稿窗口
-
 草稿窗口可以用于存放临时需要进行记录的内容。这点在编写需要反复进行拷贝黏贴的代码时特别有用。虽然这个功能也可以通过拷贝寄存器来实现，
-
 但是草稿窗口中的内容还是可以进行进一步编辑的。
-
 这个窗口还可以进行一些草稿记录，比如记录当前需要完成的事情等等
 
-
-
 命令：
-
 :SW  启用sratch窗口
-
 normal mode下按入gs ， 则会进入sratch窗口并进入insert模式。当退出insert模式的时候，窗口会自动关闭
-
 visual mode下按入gs， 则会将visual的内容拷贝进入sratch窗口，并且进入到sratch窗口中。
-
 任意模式下键入gS，则会清空sratch窗口的内容
 
+### 限定区域编辑:NrrwRgn插件
+https://github.com/chrisbra/NrrwRgn
+采用这个插件，可以保证修改只发生在被选定的区域
+这个功能的一个主要用途是向对一段文本使用vim中的命令进行替换，但是不希望这些替换在区域之外生效
+此时就可以使用这个功能，在一个独立的buffer中进行修改
+使用方式
+使用visual方式选定一段区域，然后输入命令 : NR
 
+### 显式代码上下文:context.vim插件
+https://github.com/wellle/context.vim
+这个插件可以在窗口顶部显示当前代码的上下文，在阅读复杂的代码的时候，能够减低头脑的负担
+使用方式：
+:CT  toggle context插件
 
-(38) ctrlsf
+## diff
+### diff目录:vim-dir-diff插件
+采用这个插件就可以直接在命令行下，对代码进行递归diff，类似与beyond compare
+https://github.com/will133/vim-dirdiff
+目前已经在shell中进行了配置，可以通过 dirdiff dir1 dir2 来启动对比
 
-ctrlsf会产生一个类似与sublime的查找输出，并且最为重要的功能，是能够在查找输出的窗口中进行文本编辑，替换，并且能够保存
+### diff选定行:linediff插件
+linediff插件可以完成以前出现过的对比两段代码的功能。
+使用方式：
+在第一段文本使用visual方式选定后，输入命令：LD
+在第一段文本使用visual方式选定后，再输入命令：LD
+则此时就会启动vim diff窗口进行对比
+https://github.com/AndrewRadev/linediff.vim
 
-适合于目的未完全明确的文本替换操作。在一次查找过程中，只有少量的文本会被替换掉
-
-命令：
-
-:CF pattern 启动ctrlsf进行替换操作
-
-在搜索结果窗口中，p是preview结果
-
-ctrl+j, ctrl+k  是在搜索结果中上移，下移
-
-
-
-(39) rooter
-
-https://github.com/airblade/vim-rooter
-
-这个插件非常重要，提供了改变被执行命令当前执行目录的能力。
-
-用户可以自定义项目根目录的特征。
-
-这个命令特别与很多搜索命令是绝配。
-
-命令：
-
-: PR | Files   在项目根目录下执行fzf的Files命令
-
-
-
-(40) fzf-mru.vim
-
-https://github.com/xarronpan/fzf-mru.vim
-
-这个插件实现了一个基于项目的mru。这正是开发项目代码所急需的
-
-命令：
-
-<leader>r  启动mru查找文件进行编辑
-
-
-
-(41) multi visual
-
-https://github.com/mg979/vim-visual-multi
-
-mult visual是multi cursor插件的加强版，基本上秒杀multi cursor插件
-
-<c-n>会以当前光标下面的文本为模本，进入multi visual模式，进行文本搜索。
-
-n 选定下一个光标，N 回退一个光标，q 跳过一个光标。当光标选定之后，就可以以普通的visusl模式下的编辑模式对文本进行编辑
-
-按 <Tab>，则可以切换到一个类似与normal的模式。此时所有的vim的normal mode的多数命令都能够使用，比如说 adolish，surrond的命令
-
-移动光标之后再按tab，则会根据光标的位置，调整被进行visual选择的区域
-
-按 i/a 等，则可以进入到插入模式
-
-按入 \\x，则会进入ex模式，vim中的全部ex命令都能执行，并会对所有被选中的visual区域进行执行。
-
-<c+方向键> 则会类似与列模式一样选定多行，并且进入normal模式进行编辑
-
-按esc键将会退出multi visual模式
-
-
-
-具体可见: https://github.com/terryma/vim-multiple-cursors
-
-(42) vim-cutlass && vim-yoink
-https://github.com/svermeulen/vim-yoink
-https://github.com/svermeulen/vim-cutlass
-
-vim默认的行为，是当进行d，x，s操作的时候，会将相应的内容拷贝到clipboard中
-但是在绝大多数的场景下，这种行为都是错误的，导致需要使用clipboard的内容非常麻烦
-为了解决这个问题 vim-cutlass 插件配置一个新的动作m，只有m的动作等价于原来的d操作
-d、x、s操作都不会更改缓冲区
-vim-yoink插件支持ring paste buffer，每次p后键入下面的命令，就会循环地获取paste buffer中的东西
-
-命令:
-<M+n> 获取上一个paste buffer的内容
-<M+p> 获取下一个paste buffer的内容
-
-(43) vim-textobj-comment
-https://github.com/glts/vim-textobj-comment
-这个插件添加了很实用的注释text-obj
-
-用法：
-dic 删除comment内部的内容
-dac 删除整个comment的内容
-
-(44) clever-f.vim
-https://github.com/rhysd/clever-f.vim
-这个插件主要解决目前, 键被用于leader键，而f，t等键的前后向搜索功能不能使用的问题
-而且这个插件给定的key-binding也比; , 键要好用
-使用方式: 
-比如fa 之后，再按f，则会重复fa的动作，再按F，则会重复执行Fa
-
-(45) gcmt/taboo.vim
-这个插件支持对tab进行rename，就与在使用tmux中，通过名字来区分任务一样
-命令:
-:RT newtabname   将当前tab的名称调整成newtabname
-
-(46) vim-textobj-space
-https://github.com/saihoooooooo/vim-textobj-space
-用法:
-diS 删除所有连续的空格
+## help
+normal mode下面键入K，能够以当前光标单词为key去搜索vim的help文档。在阅读vimrc的时候，就不需要反复到web页面上去阅读插件的文档。
