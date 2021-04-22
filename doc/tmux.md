@@ -45,14 +45,25 @@ prefix + ！ 使用当前pane创建新窗口
 详细可见:
 https://github.com/tmuxinator/tmuxinator
 
+### 并行会话交互: xpanes
+可以用于同时打开多个tmux pane，执行参数化的命令，或者同时输入相同的命令
+在多台机器上面同时跟踪日志的时候特别有用, 例如:
+```bash
+xpanes --ssh 10.27.0.100 10.27.0.110 10.27.0.117 10.27.0.122    #打开n个pane，ssh到多台机器上，并且多个pane中输入的命令是相同的。输入的命令是交互式的
+xpanes -ct 'ssh {} tail -f /data/services/cim_fanout_pdc-t02221606.b6b0cd17.r/log/pdc.log' 10.27.0.100 10.27.0.110 10.27.0.117 10.27.0.122 #打开n个pane，并且执行-c中的命令
+```
+注意到当我们全屏其中一个窗口时，输入的命令是不同同步到其他机器中的。
+这就使得这个工具既能实现多台机器间输入的命令同步，也能使得有时有些机器上面的命令不同于其他命令
+这就意味着这个工具的工作流，就是先打开一堆需要可能进行操作的机器，然后在逐个进行操作，再看是否有需要一起进行操作的内容。
+
 ### 菜单式管理: tmux-fzf插件
 sainnhe/tmux-fzf
 这个插件的主要作用有三：
-(1) 查询tmux的keymapping，有点像在vim中用fzf来查询Maps中功能
-(2) 复杂的pane，window，session操作。
-    比如杀死一个session，使用tmux fzf插件就非常方便
-    又比如将一个pane给合并到一个windows中去，使用pane下面的join命令即可
-(3) 从tmux的copy缓冲区中，通过fzf的方式将copy的文本给paste到命令行中。因为一个复杂的运维操作中，有大量的命令输入的内容其实都是来自于之前的缓冲区的，所以这个功能实际上是非常实用的
+* 查询tmux的keymapping，有点像在vim中用fzf来查询Maps中功能
+* 复杂的pane，window，session操作。
+   *比如杀死一个session，使用tmux fzf插件就非常方便
+   *又比如将一个pane给合并到一个windows中去，使用pane下面的join命令即可
+* 从tmux的copy缓冲区中，通过fzf的方式将copy的文本给paste到命令行中。因为一个复杂的运维操作中，有大量的命令输入的内容其实都是来自于之前的缓冲区的，所以这个功能实际上是非常实用的
     能够大幅减低自己copy paste的重复劳动
 目前的启动命令是: <prefix> + t
 
@@ -153,32 +164,25 @@ tmux对pet程序进行封装的主要用途，是能够允许在任何机器上�
 我们就不再需要对很多的命令记录手册，而只需要通过快捷键将snappet给调用出来使用。
 pet支持按参数模板来填入参数，而且这个插件能够与tmux-bulder等插件一起工作，能力就更加强大了。pet还支持对命令加标签，能够增加找到代码片段的效率
 目前配置的启动快捷键： prefix + g
-
-增加snappet： 
-pet new
-
-管理snappet ：
-pet edit
-
-将snappet同步到gist进行备份：
-pet sync
+```bash
+pet new  #增加snappet
+pet edit #管理snappet
+pet sync #将snappet同步到gist进行备份：
+pet exec #选择snappet
+```
 在gist token失效的时候(目前可能token有一个过期时间，大多数情况下不需要进行token刷新)，需要刷新分配个pet的gist token，pet sync的时候token才能正常工作
 请在上面的链接中刷新token
 https://github.com/settings/tokens
 刷新token之后，再通过pet config命令跟新pet 配置文件中的token字段
 
-当不在tmux中的时候，启动pet snappet去执行命令的方式是 :
-pet exec
-
 ### 临时数据存储: tmux-butler插件
 tmux-bulter插件中包含了一个sneppetdb用于存储临时数据。典型的数据比如 机房的名字与机房id的对应关系，某个app的appid的值等经常要用到作为输入，但是不是典型的命令片段的情况
 prefix + m 会启用sneppetdb中的内容，通过key将内容获取到命令行中。snippetdb相对于pet而言非常轻量，更加适合于存储一些与业务相关联，但是反复需要作为命令参数的输入源要用到的数据
 比如所机房的groupid，某个业务的appid等信息。这个插件也能够大大加快进行编程，运维操作时的大脑负担，因为要获取这些业务数据通常很繁琐
-在shell中执行
-
-sa key value  在snippetdb中增加key value对
-sr  通过fzf选择需要删除的key value对
-
+```bash
+sa key value  #在snippetdb中增加key value对
+sr            #通过fzf选择需要删除的key value对
+```
 ## 自动补全
 ### 使用文件浏览器补全文件名: ranger集成
 当输入一个命令时需要一个文件或者目录作为参数，而这个参数你并不记得具体的名称，更加希望通过file explorer的方式来找到文件，此时可以通过键入
@@ -199,8 +203,6 @@ sr  通过fzf选择需要删除的key value对
 ### 使用tmux-buffer进行补全: tmux-butler插件
 tmux-bulter插件内置集成了使用tmux-buffer作为补全内容源的功能
 prefix + b 会使用tmux的clipborad中的内容进行补全。这个功能直接可以提到tmux-fzf的clipboard补全功能。因而tmux-fzf的clipboard快捷键的功能太深了
-
-
 
 ## 插件管理
 安装tmux插件管理器
