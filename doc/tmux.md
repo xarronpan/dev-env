@@ -31,7 +31,6 @@ prefix + o 切换到下个pane
 prefix + （hjkl）上下左右切换pane
 prefix + （HJKL）上下左右拉伸pane。可以通过这种快捷键，临时隐藏暂时不想使用的pane，从而使得一个window中的pane的数目更多，协作更加紧密
 prefix + enter 进入到vi-copy-mode
-  在vi-copy-mode中，/是启动查找，v是开始选择，y是完成选择
 prefix + p paste选择到的内容到命令行中
 prefix + num 切换窗口
 prefix + ,  重命名窗口
@@ -68,13 +67,8 @@ sainnhe/tmux-fzf
 此外在tmux的mouse模式下，不按住shift键，则默认会使用tmux的visual模式来选择文本。此时在切换到vi中后，可以直接通过 ""p将内容拷贝到vi中。在tmux窗口中，可以通过ctrl+p拷贝到命令行中。
 这种copy方式的优势在于在命令行中可以跨一屏，跨split窗口进拷贝。
 
-## 插件管理
-安装tmux插件管理器
-https://github.com/tmux-plugins/tpm
-可以从命令行中直接触发插件安装，删除。
-https://github.com/tmux-plugins/tpm/blob/master/docs/managing_plugins_via_cmd_line.md
-
 ## 从屏幕输出获取信息
+在vi-copy-mode中，/是启动查找，v是开始选择，y是完成选择
 ### 拷贝选定文本: tmux-yank插件
 https://github.com/tmux-plugins/tmux-yank
 tmux-yank的主要功能是在屏幕上进行copy选定之后，按Y即可将copy的内容paste到当前命令行中。可以当做是命令行补全来进行使用。
@@ -131,7 +125,7 @@ prefix + v 进入使用当前tmux上的屏幕输出，使用fzf来进行选择�
 在经过tmux-finger, tmux-jump, tmux-butler, tmux-yank的配置之后，其实只有需要拷贝到windows下面进行处理的东西，才需要使用鼠标来进行拷贝 (鼠标进行拷贝的速度其实是较慢的)
 
 ## 屏幕内容搜索
-### 同panel正则表达式搜索: copycat插件
+### 同panel 正则表达式搜索: copycat插件
 https://github.com/tmux-plugins/tmux-copycat
 由于有 tmux-finger，tmux-jump等插件，copy-cat存在的理由只有是支持正则表达式搜索，以及需要进行拷贝的内容已经不在可视范围内，但是具有较为复杂的内置pattern，比如ip，地址，文件路径，hash等。
 只有在需要在命令内容中进行正则搜索时，或者待搜索内容不可视，且待搜索内容具有相对复杂的模式，比如说ip，地址，文件路径，hash等，才考虑使用copycat插件
@@ -142,7 +136,7 @@ prefix + ctrl-u - url search (http, ftp and git urls)
 prefix + ctrl-d - number search (mnemonic d, as digit)
 prefix + ctrl-i - ip address search
 
-### 同panelfuzzy搜索: tmux-fuzzback插件
+### 同panel fuzzy搜索: tmux-fuzzback插件
 https://github.com/roosta/tmux-fuzzback
 这个小众插件可以将pane中的buffer作为fzf的输入源。
 当我们在远端机器上进行操作是，可能会输出log，也有可能会ls出命令的结果，但是由于内容过长了导致看不到结果
@@ -207,10 +201,16 @@ tmux-bulter插件内置集成了使用tmux-buffer作为补全内容源的功能
 prefix + b 会使用tmux的clipborad中的内容进行补全。这个功能直接可以提到tmux-fzf的clipboard补全功能。因而tmux-fzf的clipboard快捷键的功能太深了
 
 
+
+## 插件管理
+安装tmux插件管理器
+https://github.com/tmux-plugins/tpm
+可以从命令行中直接触发插件安装，删除。
+https://github.com/tmux-plugins/tpm/blob/master/docs/managing_plugins_via_cmd_line.md
+
 ## 翻译: tmux-google-translate插件 
 https://github.com/knakayama/tmux-google-translate
 这个插件，在加入 <prefix> + X之后就会启动 translate-shell进行翻译
 默认会将中文翻译成英文。要启用中文到英文的翻译，需要在shell中输入 :zh
 在tmux的vi-copy-mode下面，选择好了单次之后，再键入 X，即可调出插件进行翻译
 有了这个插件之后，在终端之中遇到不懂的单词，再也不需要到浏览器中找相关的内容，能够加快阅读资料的速度
-
