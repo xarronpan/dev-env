@@ -236,6 +236,37 @@ https://github.com/facebook/PathPicker
 
 用于直接在shell脚本的输出中获取文件名，并且执行相关命令
 
+9 csplit
+
+可以通过正则模式来将文件拆分成几个独立的文件
+
+有用的例子
+
+https://www.golinuxcloud.com/csplit-split-command-examples-linux-unix/#1_csplit_based_on_regex_match
+
+10 paste
+
+paste命令是cut命令的反操作，可以将多个文件按列或者按行进行合并
+
+https://www.howtoforge.com/linux-paste-command/
+
+11 join
+
+join命令与数据的join的含义是相同的，只是使用在文本记录上面。需要在文本有一个键将记录给串联起来
+
+有用的例子
+
+https://shapeshed.com/unix-join/
+
+7 检查.so所依赖的动态库
+
+使用objdump命令。依赖的动态库可以在 Dynamic Section 一部分中被找到
+
+objdump -p exe
+
+...
+Dynamic Section:
+...
 
 
 translate shell
