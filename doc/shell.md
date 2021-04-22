@@ -1,3 +1,13 @@
+# readline 快捷键
+<C+h> 删除一个字符
+<C+w>删除一个word
+<C+u>删除一行
+<C+a> 跳到行头
+<C+e> 跳到行尾
+<Alt+f> 前进一个单词
+<Alt+b> 后退一个单词
+<C+x > <C+e> 启动vim编辑器编辑当前命令行。用于长命令的编辑
+
 # 正则表达式
 ## 正则表达式标准
 Linux下正则表达式的标准至少分为basic poxis, posix extended, 还有perl 几个标准
@@ -61,16 +71,6 @@ sed '3,6 {/This/{/fish/d}}' pets.txt
 ```
 sed命令的详细介绍可以见:
 https://coolshell.cn/articles/9104.html
-
-# readline 快捷键
-<C+h> 删除一个字符
-<C+w>删除一个word
-<C+u>删除一行
-<C+a> 跳到行头
-<C+e> 跳到行尾
-<Alt+f> 前进一个单词
-<Alt+b> 后退一个单词
-<C+x > <C+e> 启动vim编辑器编辑当前命令行。用于长命令的编辑
 
 # 语法
 ## 空变量使用
