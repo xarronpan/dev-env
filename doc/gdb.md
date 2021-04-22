@@ -1,4 +1,4 @@
-#调试原理
+# 调试原理
 gdb调试器的主要工作原理，是使用符号信息，外加依赖于操作系统提供的api来实现断点，step等功能的。也就是说linux的其他系统命令，也提供了对于运行中的程序进行调试的能力，而不仅仅是gdb的能力
 这也不奇怪在Linux下有一系列动态调试进程，获取进程信息的的工具链了。
 断点则是操作系统内核依赖于CPU的软中断机制来进行实现的。CPU中有专门为调试器使用的软中断指令int 3。
@@ -63,7 +63,8 @@ https://wizardforcel.gitbooks.io/100-gdb-tips/content/call-func.html
 ## 打印长信息
 这个需求最多出现在需要print proto中的信息的时候。
 输入下面的命令，则长内容的中东西会全部被答应出来
-set print elements 0
+```bash
+set print elements 0```
 
 ## 动态加入log
 gdb支持通过 dprintf 来支持在代码中动态加入日志的能力。这个能力能够在调试程序时很方便地进行使用，能够随时往代码中增加日志来观察输出的结果
@@ -166,12 +167,6 @@ https://wizardforcel.gitbooks.io/100-gdb-tips/content/set-scheduler-locking-on.h
 所以为了让被调试线程保持正确的行为被调试，每个系统调用都应该检查是否是由于信号的中断导致退出。如果是的话，需要再重试进入函数进行处理。
 详细信息可以参考下面的文档:
 https://sourceware.org/gdb/current/onlinedocs/gdb/Interrupted-System-Calls.html#Interrupted-System-Calls
-
-
-
-
-
-
 
 # 测试系统的异常分支
 在进行调试的时候，有很多情况下有些分支不能正常跑到，但是测试上面又需要进行代码分支的覆盖。
