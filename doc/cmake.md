@@ -68,7 +68,7 @@ https://cmake.org/cmake/help/v3.19/manual/cmake-properties.7.html#manual:cmake-p
 https://github.com/ttroy50/cmake-examples
 上面的链接包括了cmake的经典使用范例。这个例子中的每个例子都需要彻底吃透
 
-# 常用功能:
+# 常用功能
 ## 排查错误
 ```bash
 make VERBOSE=1     #执行make的时候，输出详细的make 输出信息，用于调试参数是否存在问题
