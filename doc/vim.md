@@ -18,10 +18,11 @@ set ttymouse=xterm2 则用于在vim中支持鼠标的拖拽功能。当这个功
 加载 .workspace.vim 的目的是为了加载一些项目专用的配置。比如项目的ctags生成脚本，项目tab的设置等，都是项目专用的。
 
 nerdtree的配置不符合多数ide的使用习惯:
-每次打开文件tree组件都会消失，执行 echo 'let NERDTreeQuitOnOpen=0' >> ~/.vimrc.local 将配置增加到 .vimrc.local 个性化配置当中
+每次打开文件tree组件都会消失，执行 `echo 'let NERDTreeQuitOnOpen=0' >> ~/.vimrc.local` 将配置增加到 .vimrc.local 个性化配置当中
 
 在 ~/.vimrc.before.local 中增加下面配置
-let g:spf13_no_fastTabs = 1
+```vim
+let g:spf13_no_fastTabs = 1```
 (spf13默认将HLM给remap了，这项配置是用于恢复该配置的)
 
 ##secrut crt
@@ -44,12 +45,10 @@ https://github.com/iggredible/Learn-Vim/blob/master/ch02_buffers_windows_tabs.md
 :enew 在新窗口中打开一个empty buffer。下一步通过-命令来选择需要打开的文件。见dirvish插件的描述
 :vnew 在新的垂直窗口中打开一个empty buffer。下一步通过-命令来选择需要打开的文件。见dirvish插件的描述
 :tabnew 创建一个新的tab，并且创建一个新的buffer
-垂直打开若干个文件
-vim -O file1.txt file2.txt
-
-水平打开若干个文件
-vim -o file1.txt file2.txt
-
+```bash
+vim -O file1.txt file2.txt #垂直打开若干个文件
+vim -o file1.txt file2.txt #水平打开若干个文件
+```
 切换buffer: :bn, :bN, :b number 详见 https://stackoverflow.com/questions/102384/using-vims-tabs-like-buffers
 切换tab可以直接上鼠标进行切换, 或者键入ngt来命令来进行切换
 
@@ -132,7 +131,7 @@ dfa 光标向前跳到a字符之间的字符，并且删除包括a之间的内�
 dFa 光标向后跳到a字符之间的字符，并且删除包括a之间的内容
 dta 光标向前跳到a字符之间的字符，并且删除不包括a之间的内容
 dTa 光标向后跳到a字符之间的字符，并且删除不包括a之间的内容
-!}column -t -s "|" 在当前光标位置到段落结束之间，执行shell命令替换当前文档。！号表示执行外部的shell命令，} 表示范围是到段落结束，column -t -s "|" 表示要执行的shell命令
+`!}column -t -s "|"` 在当前光标位置到段落结束之间，执行shell命令替换当前文档。`!` 号表示执行外部的shell命令，`}` 表示范围是到段落结束，`column -t -s "|"` 表示要执行的shell命令
 这段命令全部需要在normal模式下面输入才能正常工作。问题是由于没有回显，我们并不知道normal模式下输入的命令是否是正确的。
 目前的一个方法是在shell终端上编辑好之后，再通过鼠标在vi的normal模式下一次给黏贴过去
 另外一个方案则是使用set showcmd，此时当一个normal mode的命令没有完成执行前，在屏幕的右下角会有一个字符串显式你已经输入过的字符串
@@ -160,7 +159,7 @@ d2i(  删除两层括号内所有内容，这个命令可以避免移动光标�
 ci(  修改括号内所有内容
 da( 删除括号内所有内容，包括括号
 ca( 修改括号内所有内容，包括括号
-这里的( 也可以应用于 类似'{', '"', 等必备的标签，以及html标签
+这里的( 也可以应用于 类似`{`, `"`, `'` 等标签，以及html标签
 具体可见:
 
 https://zhuanlan.zhihu.com/p/24387751
@@ -185,7 +184,7 @@ diu: 删除uri中的东西
 dau: 删除uri中的东西
 
 ### vim-textobj-variable-segment插件
-(22) 使用 jceb/vim-textobj-variable-segment 增加 变量名分段 text object
+使用 jceb/vim-textobj-variable-segment 增加 变量名分段 text object
 div: 删除一段变量名。变量名可以是下划线，或者是驼峰式的格式
 dav: 删除一段变量名，包括下划线。变量名可以是下划线，或者是驼峰式的格式
 
@@ -247,7 +246,7 @@ https://github.com/iggredible/Learn-Vim/blob/master/ch08_registers.md
 
 ### tmux clipboard集成:vim-tmux-clipboard插件
 使用roxma/vim-tmux-clipboard 插件来将 tmux，vim的剪切板来打通
-在tmux中copy的东西，在vim中通过在normal mode下键入 “”p 即可拷贝
+在tmux中copy的东西，在vim中通过在normal mode下键入 ""p 即可拷贝
 在vi中y的东西，在tmux中ctrl + ]即可拷贝出来
 
 ### ring clipboard && 删除行为修正:vim-cutlass && vim-yoink插件
@@ -348,9 +347,9 @@ https://github.com/francoiscabrol/ranger.vim
 
 ### 导航远程文件
 在命令行中输入
-vim scp://<target_host>/<dest_dir>/
+`vim scp://<target_host>/<dest_dir>/`
 或者先启动vim，再在命令下面输入:
-:e scp://<target_host>/<dest_dir>/
+`:e scp://<target_host>/<dest_dir>/`
 则vim会启动netrw文件浏览器，浏览target_host下 dest_dir下面的内容。
 这样子就可以解决远端机器上面因为没有合格版本的vim，编辑比较困难的问题。
 在文件编辑过程中，若需要重新浏览文件，可以在命令中输入:
@@ -458,10 +457,10 @@ far插件可以认为是vim substitute命令的增强。其除了支持subsititu
 https://github.com/brooth/far.vim
 
 命令示例:
-FAR word1 word2 %  将当前buffer的word1 替换成 word2
-FAR word1 word2 parent/*.cc  在git的根目录中，将父级目录为parent的所有后缀为cc的文件中的word1 替换成 word2
-FAR word1 word2 parent/  在git的根目录中，将父级目录为parent的所有cc的文件中的word1 替换成 word2
-FAR foo(.+) too\1 *.cc   在git的根目录中，将ta(.+) 正则表达式的pattern替换成 正则表达是括号中的内容
+`:FAR word1 word2 %`  将当前buffer的word1 替换成 word2
+`:FAR word1 word2 parent/*.cc`  在git的根目录中，将父级目录为parent的所有后缀为cc的文件中的word1 替换成 word2
+`:FAR word1 word2 parent/ ` 在git的根目录中，将父级目录为parent的所有cc的文件中的word1 替换成 word2
+`:FAR foo(.+) too\1 *.cc  ` 在git的根目录中，将 foo(.+) 正则表达式的pattern替换成 正则表达是括号中的内容
 file pattern的说明可以看far的文档
 https://github.com/brooth/far.vim/blob/master/doc/far.txt
 
@@ -722,7 +721,7 @@ spf13的配置中默认已经安装了vim-go插件。需要在 .vim.before.local
 <leader> goi    输出当前类型所实现的接口
 
 自动生成代码的命令：
-:GoImpl [receiver] [interface]
+`:GoImpl [receiver] [interface]`
 根据 receiver 与 interface生成golang的stub代码
 例子:
 `:GoImpl f *Foo io.Writer`
