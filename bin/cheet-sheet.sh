@@ -24,7 +24,7 @@ case $SECTION in
   vim-script )
     vim -M ~/cheatsheets/languages/vimscript.md ;;
   gdb )
-    vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' ~/cheatsheets/tools/gdb.txt ;;
+    vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' -c 'setlocal filetype=bash' ~/cheatsheets/tools/gdb.txt ;;
   git )
     vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' ~/cheatsheets/tools/git.txt ;;
   tmux )
