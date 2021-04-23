@@ -51,3 +51,5 @@ ctrl+y  触发copyq
 ctrl+m  给剪切板内容增加标签
 ctrl+i  标记剪切板内容为重要
 ctrl+f  固定剪切板内容
+# 虚拟机
+安装vmware16.00 版本虚拟机
