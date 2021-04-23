@@ -210,6 +210,14 @@ https://github.com/tmux-plugins/tpm
 可以从命令行中直接触发插件安装，删除。
 https://github.com/tmux-plugins/tpm/blob/master/docs/managing_plugins_via_cmd_line.md
 
+## 文档集成
+### cheatsheet集成
+<prefix> + C   启动cheatsheet, 查找有用信息
+### notes集成
+<prefix> + N   启动notes，查找有用信息
+### manpage集成
+<prefix> + M   启动manpage，查找有用信息
+
 ## 翻译: tmux-google-translate插件 
 https://github.com/knakayama/tmux-google-translate
 这个插件，在加入 <prefix> + X之后就会启动 translate-shell进行翻译
