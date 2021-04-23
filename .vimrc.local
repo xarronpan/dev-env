@@ -74,6 +74,8 @@ let g:bookmark_no_default_key_mappings = 1
 let g:taboo_tab_format = '  %N:%f  '
 let g:taboo_renamed_tab_format = '  %N:%l  '
 let g:vim_markdown_folding_style_pythonic = 1
+let g:git_messenger_preview_mods = "botright"
+let g:git_messenger_close_on_cursor_moved = v:false
 
 "vim setting configure
 set ttymouse=xterm2

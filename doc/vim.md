@@ -567,7 +567,7 @@ vim默认搜索命令/ , 替换命令s// 所使用的正则表达式与Perl标�
 为了解决这个问题，在进行使用正则时，统一增加一个\v前缀，则会与其他语言的正则保持一致
 
 ## git集成
-### git gui集成:fugitive插件
+### gui集成:fugitive插件
 :Gcd 是当前命令执行的当前目录变成git的根目录
   这个功能是fugitive插件提供的最重要的功能之一。因为很多的命令都是基于文本当前的buffer所在目录作为相对目录进行执行的。
   Gcd用于将这些命令的目录转移到git根目录，也就是通常所说的项目根目录下，因而会更加有用
@@ -588,6 +588,17 @@ vim默认搜索命令/ , 替换命令s// 所使用的正则表达式与Perl标�
 :Glog 触发图形化的log修改浏览
  zo 开发被 fold 的行
  zc 关闭被 fold 的行
+### 浏览某行代码的commit log: git-messenger插件
+rhysd/git-messenger插件可以展现某行代码所对应的git commit信息
+git commit信息在阅读不熟悉的代码的时候，能够提供类似文档一样的功能，详细描述代码编写已经调整的原因
+命令:
+<leader>gm  启动preview窗口, 在窗口中展现cursor所在代码行的commit信息
+在preview窗口中的命令:
+? 显式帮助菜单, 包括了下面列出的这些快捷键
+o 显式下一条commit
+O 显式上一条commit
+d 显式当前commit，当前cursor所在文件的diff修改
+D 显式当前commit所有的diff修改
 
 ## 命令
 ### 行命令
