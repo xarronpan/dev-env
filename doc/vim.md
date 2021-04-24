@@ -217,6 +217,13 @@ vim-gitgutter提供了git hunk文本对象, 一个hunk指当前文档与git仓�
 dic      textobj, 选择当前光标所在hunk并删除
 dac      textobj, 选择当前光标所在hunk并删除
 
+### 配对文本对象: vim-matchup插件
+mathcup插件是matchit的加强版。主要好用的功能包括：
+嵌套符号除了支持（）[] {} 等符号外，也支持语言的关键字
+di%   删除嵌套括号或者语言关键字中的内容。不包括嵌套符。比起内置的di( , di{ 等text-obj，一方面需要记忆的符号更少，另外一方面支持语言关键字，是vim内置text-obj所不能比拟的。
+d2i%  删除两层嵌套括号或者语言关键字中的内容。不包括嵌套符
+da%   删除嵌套括号或者语言关键字中的内容。包括嵌套符
+
 ## 剪切板交互管理
 ### 拷贝系统剪切板到vim中:
 ctrl + shirt + v，具体可以参考下面链接 https://askubuntu.com/questions/256782/how-to-copy-paste-contents-in-the-vi-editor
@@ -411,7 +418,7 @@ vim +BundleInstall! +BundleClean +q
 
 <leader> :  对vim的命令历史进行fzf搜索
 <leader> /  对vim的搜索历史进行fzf搜索
-<leader> h  对vim的全局mru file进行fzf搜索
+<leader> H  对vim的全局mru file进行fzf搜索
 <leader> W  对vim的window进行fzf搜索
 <leader> b  对vim的buffer进行fzf搜索, 主要用途打开无名窗口
 
@@ -602,6 +609,8 @@ vim-gitgutter能够在sigcolum上显示正在提交的代码与git仓库中的�
 <leader> hp 在preview window中展现当前hunk的git diff
 ]c       跳转到下一个hunk
 [c       跳转到上一个hunk
+
+vim-gitgutter提供了git hunk文本对象, 具体参考文本对象一章
 
 ### 浏览某行代码的commit log: git-messenger插件
 rhysd/git-messenger插件可以展现某行代码所对应的git commit信息
@@ -831,13 +840,12 @@ yoh toggle 搜索高亮
 ### 符号配对:vim-matchup插件
 mathcup插件是matchit的加强版。主要好用的功能包括：
 嵌套符号除了支持（）[] {} 等符号外，也支持语言的关键字
-di%  删除嵌套括号或者语言关键字中的内容。不包括嵌套符。比起内置的di( , di{ 等text-obj，一方面需要记忆的符号更少，另外一方面支持语言关键字，是vim内置text-obj所不能比拟的。
-d2i%  删除两层嵌套括号或者语言关键字中的内容。不包括嵌套符
-da% 删除嵌套括号或者语言关键字中的内容。包括嵌套符
 % 跳到配对的嵌套符号
 [% 往外跳出当前的嵌套括号。跳掉嵌套括号的开始
 [2% 往外跳出两层当前的嵌套括号。跳掉嵌套括号的开始
 ]% 往外跳出当前的嵌套括号。跳掉嵌套括号的结束
+
+matchup提供了match up文本对象，具体参考文本对象一章
 
 ### 翻译:vim-translator插件
 直接可以在编辑器中，遇到不认识的单词直接启动翻译，而不需要到浏览器中进行操作，加快工作流程
