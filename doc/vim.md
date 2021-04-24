@@ -35,7 +35,7 @@ https://zhuanlan.zhihu.com/p/38477934
 # 常用功能
 leader键在下述的配置中是 ','
 
-## buffer/window/tab 管理
+## buffer/window/tab
 ### 内置功能
 在vim中，窗口和buffer是不同的概念。真正进行编辑的是buffer，而window是buffer的view
 所以窗口被关闭了，但是buffer是不会被关闭的。但是buffer被关闭，则窗口也要跟着一起关闭
@@ -82,7 +82,7 @@ ngt 跳转到第n个tab
 键入e间后可以调整窗体调整模式。其中window move的模式可以用于调整窗体的位置
 
 
-## 光标移动操作
+## 光标移动
 ### 内置光标移动
 vim上的基础操作，请参考: https://github.com/iggredible/Learn-Vim/blob/master/ch05_moving_in_file.md
 fa 光标向前跳到a字符, 在按；重复fa这个动作，再按，重复Fa这个动作 (目前,操作已经被remap掉了，但是可以在tmux的vi copy mode下使用这个键进行拷贝)
@@ -125,7 +125,7 @@ https://github.com/rhysd/clever-f.vim
 yuttie/comfortable-motion.vim的作用能够使用鼠标滚动键顺滑地进行翻页
 <C+u> <C+d> 的效果现在就是顺滑地翻页，注意力不会跟丢代码位置
 
-## vim动作语法
+## 动作语法
 ### 内置动作语法
 dfa 光标向前跳到a字符之间的字符，并且删除包括a之间的内容
 dFa 光标向后跳到a字符之间的字符，并且删除包括a之间的内容
@@ -150,7 +150,7 @@ d <leader><leader>+ Ta 往前删除从当前光标开始，到使用easy motion�
 从上面的例子可以看出，easy motion除了支持s键以外，所以以 <leader><leader>开头的键，都是支持vi的默认动作的，比如f，F，t，a，w，b间，也就是可以在vi的所有支持的动词加名词的动作中，都加入easy motion
 的支持。<leader><leader>+vim光标跳转键，除了扩展了vim的移动光标的所有能力了，也极大加强了vim选择textobj的能力。这个动作键可以和vim中的所有编辑动作(d,c,s，以及插件所支持的编辑动作)相互结合使用
 
-## vim文本对象
+## 文本对象
 ### 内置文本对象
 diw 删除光标所在单词
 ciw 修改光标所在单词
