@@ -14,6 +14,7 @@ gdb
 git
 tmux
 vim
+ansible
 markdown
 CHEET_SHEET_SECTIONS
 )
@@ -68,6 +69,13 @@ case $SECTION in
            -c 'syntax match CheetSheetMarker "#"' \
            -c 'highlight CheetSheetMarker ctermfg=10' \
            ~/cheatsheets/skywind3000/awesome-cheatsheets/editors/vim.txt ;;
+  ansible )
+    vim -M -c 'setlocal foldmethod=expr' \
+           -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
+           -c 'setlocal foldtext=NeatFoldText()' \
+           -c 'syntax match CheetSheetMarker "#"' \
+           -c 'highlight CheetSheetMarker ctermfg=10' \
+           ~/cheatsheets/luckylittle/ansible-cheatsheet/ansible-cheatsheet.txt ;;
   markdown )
     glow -p ~/cheatsheets/tchapi/markdown-cheatsheet/README.md ;;
   *)

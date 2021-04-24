@@ -63,5 +63,6 @@ git clone https://github.com/a8m/golang-cheat-sheet cheatsheets/a8m/golang-cheat
 git clone https://github.com/mortennobel/cpp-cheatsheet cheatsheets/mortennobel/cpp-cheatsheet
 git clone https://github.com/AnthonyCalandra/modern-cpp-features cheatsheets/AnthonyCalandra/modern-cpp-features
 git clone https://github.com/tchapi/markdown-cheatsheet cheatsheets/tchapi/markdown-cheatsheet
+git clone https://github.com/luckylittle/ansible-cheatsheet cheatsheets/luckylittle/ansible-cheatsheet
 
 git clone git clone https://github.com/xarronpan/dev-env ~/notes
