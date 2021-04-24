@@ -16,21 +16,45 @@ case $SECTION in
   cht )
     cht.sh --shell;;
   bash )
-    vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' -c 'setlocal foldtext=NeatFoldText()' ~/cheatsheets/languages/bash.sh ;;
+    vim -M -c 'setlocal foldmethod=expr' \
+           -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
+           -c 'setlocal foldtext=NeatFoldText()' \
+            ~/cheatsheets/languages/bash.sh ;;
   golang )
-    vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetGolangCheatSheetFold(v:lnum)' -c 'setlocal foldtext=NeatFoldText()' ~/cheatsheets/languages/golang.go ;;
+    vim -M -c 'setlocal foldmethod=expr' \
+           -c 'setlocal foldexpr=GetGolangCheatSheetFold(v:lnum)' \
+           -c 'setlocal foldtext=NeatFoldText()' \
+           ~/cheatsheets/languages/golang.go ;;
   python )
     vim -M ~/cheatsheets/languages/python.md ;;
   vim-script )
     vim -M ~/cheatsheets/languages/vimscript.md ;;
   gdb )
-    vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' -c 'setlocal foldtext=NeatFoldText()' -c 'setlocal filetype=bash' ~/cheatsheets/tools/gdb.txt ;;
+    vim -M -c 'setlocal foldmethod=expr' \
+           -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
+           -c 'setlocal foldtext=NeatFoldText()' \
+           ~/cheatsheets/tools/gdb.txt ;;
   git )
-    vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' -c 'setlocal foldtext=NeatFoldText()' ~/cheatsheets/tools/git.txt ;;
+    vim -M -c 'setlocal foldmethod=expr' \
+           -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
+           -c 'setlocal foldtext=NeatFoldText()' \
+           -c 'syntax match CheetSheetMarker "#"' \
+           -c 'highlight CheetSheetMarker ctermfg=10' \
+            ~/cheatsheets/tools/git.txt ;;
   tmux )
-    vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' -c 'setlocal foldtext=NeatFoldText()' ~/cheatsheets/tools/tmux.txt ;;
+    vim -M -c 'setlocal foldmethod=expr' \
+           -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
+           -c 'setlocal foldtext=NeatFoldText()' \
+           -c 'syntax match CheetSheetMarker "#"' \
+           -c 'highlight CheetSheetMarker ctermfg=10' \
+           ~/cheatsheets/tools/tmux.txt ;;
   vim )
-    vim -M -c 'setlocal foldmethod=expr' -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' -c 'setlocal foldtext=NeatFoldText()' ~/cheatsheets/editors/vim.txt ;;
+    vim -M -c 'setlocal foldmethod=expr' \
+           -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
+           -c 'setlocal foldtext=NeatFoldText()' \
+           -c 'syntax match CheetSheetMarker "#"' \
+           -c 'highlight CheetSheetMarker ctermfg=10' \
+           ~/cheatsheets/editors/vim.txt ;;
   *)
-    exit0 ;;
+    exit 0 ;;
 esac
