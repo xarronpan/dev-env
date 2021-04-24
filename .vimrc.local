@@ -2,7 +2,7 @@
 let NERDTreeQuitOnOpen=0
 let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:indent_guides_enable_on_vim_startup = 0
-let g:signify_priority = 5
+let g:signify_disable_by_default = 1
 let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#ycm#error_symbol = 'E:'
 let g:airline#extensions#ycm#warning_symbol = 'W:'
@@ -89,6 +89,9 @@ color solarized
 autocmd BufEnter *.go call timer_start(10, { tid -> execute('setlocal nolist') })
 autocmd BufEnter * call timer_start(10, { tid -> execute('setlocal nospell') })
 autocmd BufEnter * call timer_start(10, { tid -> execute('hi MatchParen cterm=underline ctermbg=none ctermfg=red') })
+autocmd BufEnter * call timer_start(10, { tid -> execute('highlight GitGutterAdd    guifg=#009900 guibg=black ctermfg=2 ctermbg=black') })
+autocmd BufEnter * call timer_start(10, { tid -> execute('highlight GitGutterChange guifg=#bbbb00 guibg=black ctermfg=3 ctermbg=black') })
+autocmd BufEnter * call timer_start(10, { tid -> execute('highlight GitGutterDelete guifg=#ff2222 guibg=black ctermfg=1 ctermbg=black') })
 
 function! s:p(...)
   let preview_args = get(g:, 'fzf_preview_window', ['right', 'ctrl-/'])
@@ -262,7 +265,7 @@ nnoremap <silent> <C-g> :Rooter <bar> CWAg!<CR>
 nnoremap <silent> <C-b> :CWBLines!<CR>
 nnoremap <silent> <C-c> :Commands<CR>
 nnoremap <silent> <leader>r :Rooter<bar>FZFMru<CR>
-nnoremap <silent> <leader>h :History<CR>
+nnoremap <silent> <leader>H :History<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>W :Windows<CR>
 nnoremap <silent> <leader>: :History:<CR>

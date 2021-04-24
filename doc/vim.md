@@ -212,6 +212,11 @@ https://github.com/saihoooooooo/vim-textobj-space
 用法:
 diS 删除所有连续的空格
 
+### git hunk文本对象: vim-gitgutter插件
+vim-gitgutter提供了git hunk文本对象, 一个hunk指当前文档与git仓库中的一个差异
+dic      textobj, 选择当前光标所在hunk并删除
+dac      textobj, 选择当前光标所在hunk并删除
+
 ## 剪切板交互管理
 ### 拷贝系统剪切板到vim中:
 ctrl + shirt + v，具体可以参考下面链接 https://askubuntu.com/questions/256782/how-to-copy-paste-contents-in-the-vi-editor
@@ -588,6 +593,16 @@ vim默认搜索命令/ , 替换命令s// 所使用的正则表达式与Perl标�
 :Glog 触发图形化的log修改浏览
  zo 开发被 fold 的行
  zc 关闭被 fold 的行
+
+### gitdiff集成: vim-gitgutter
+vim-gitgutter能够在sigcolum上显示正在提交的代码与git仓库中的差异，并且能够处理这些差异
+每一块差异称为一个hunk
+<leader> hs stage当前光标所在的hunk
+<leader> hu undo当前光标所在的hunk
+<leader> hp 在preview window中展现当前hunk的git diff
+]c       跳转到下一个hunk
+[c       跳转到上一个hunk
+
 ### 浏览某行代码的commit log: git-messenger插件
 rhysd/git-messenger插件可以展现某行代码所对应的git commit信息
 git commit信息在阅读不熟悉的代码的时候，能够提供类似文档一样的功能，详细描述代码编写已经调整的原因
