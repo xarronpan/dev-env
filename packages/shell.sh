@@ -57,14 +57,16 @@ wget git.io/trans
 mv trans ~/bin
 chmod +x trans ~/bin/trans
 
-git clone https://github.com/skywind3000/awesome-cheatsheets cheatsheets/skywind3000/awesome-cheatsheets
-git clone https://github.com/xarronpan/python-cheatsheet cheatsheets/xarronpan/python-cheatsheet
-git clone https://github.com/a8m/golang-cheat-sheet cheatsheets/a8m/golang-cheat-sheet
-git clone https://github.com/mortennobel/cpp-cheatsheet cheatsheets/mortennobel/cpp-cheatsheet
-git clone https://github.com/AnthonyCalandra/modern-cpp-features cheatsheets/AnthonyCalandra/modern-cpp-features
-git clone https://github.com/tchapi/markdown-cheatsheet cheatsheets/tchapi/markdown-cheatsheet
-git clone https://github.com/luckylittle/ansible-cheatsheet cheatsheets/luckylittle/ansible-cheatsheet
-git clone https://github.com/enochtangg/quick-SQL-cheatsheet cheatsheets/enochtangg/quick-SQL-cheatsheet
-git clone https://github.com/LeCoupa/awesome-cheatsheets cheatsheets/LeCoupa/awesome-cheatsheets
+git clone https://github.com/skywind3000/awesome-cheatsheets ~/cheatsheets/skywind3000/awesome-cheatsheets
+git clone https://github.com/xarronpan/python-cheatsheet ~/cheatsheets/xarronpan/python-cheatsheet
+git clone https://github.com/a8m/golang-cheat-sheet ~/cheatsheets/a8m/golang-cheat-sheet
+git clone https://github.com/mortennobel/cpp-cheatsheet ~/cheatsheets/mortennobel/cpp-cheatsheet
+git clone https://github.com/AnthonyCalandra/modern-cpp-features ~/cheatsheets/AnthonyCalandra/modern-cpp-features
+git clone https://github.com/tchapi/markdown-cheatsheet ~/cheatsheets/tchapi/markdown-cheatsheet
+git clone https://github.com/luckylittle/ansible-cheatsheet ~/cheatsheets/luckylittle/ansible-cheatsheet
+git clone https://github.com/enochtangg/quick-SQL-cheatsheet ~/cheatsheets/enochtangg/quick-SQL-cheatsheet
+git clone https://github.com/LeCoupa/awesome-cheatsheets ~/cheatsheets/LeCoupa/awesome-cheatsheets
+git clone https://gist.github.com/bradtraversy/f407d642bdc3b31681bc7e56d95485b6 ~/cheatsheets/bradtraversy/mongodb_cheat_sheet.md
+git clone https://github.com/michaeltreat/Mongo_CheatSheet ~/cheatsheets/michaeltreat/Mongo_CheatSheet
 
 git clone git clone https://github.com/xarronpan/dev-env ~/notes

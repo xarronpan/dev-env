@@ -18,6 +18,8 @@ ansible
 markdown
 sql
 redis
+mongodb-brief
+mongodb
 CHEET_SHEET_SECTIONS
 )
 case $SECTION in 
@@ -87,6 +89,10 @@ case $SECTION in
            -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
            -c 'setlocal foldtext=NeatFoldText()' \
             ~/cheatsheets/LeCoupa/awesome-cheatsheets/databases/redis.sh ;;
+  mongodb-brief )
+    vim -M ~/cheatsheets/bradtraversy/mongodb_cheat_sheet.md/mongodb_cheat_sheet.md ;;
+  mongodb )
+    glow -p ~/cheatsheets/michaeltreat/Mongo_CheatSheet/README.md ;;
   *)
     exit 0 ;;
 esac
