@@ -57,5 +57,11 @@ wget git.io/trans
 mv trans ~/bin
 chmod +x trans ~/bin/trans
 
-git clone https://github.com/skywind3000/awesome-cheatsheets ~/cheatsheets
+git clone https://github.com/skywind3000/awesome-cheatsheets cheatsheets/skywind3000/awesome-cheatsheets
+git clone https://github.com/xarronpan/python-cheatsheet cheatsheets/xarronpan/python-cheatsheet
+git clone https://github.com/a8m/golang-cheat-sheet cheatsheets/a8m/golang-cheat-sheet
+git clone https://github.com/mortennobel/cpp-cheatsheet cheatsheets/mortennobel/cpp-cheatsheet
+git clone https://github.com/AnthonyCalandra/modern-cpp-features cheatsheets/AnthonyCalandra/modern-cpp-features
+git clone https://github.com/tchapi/markdown-cheatsheet cheatsheets/tchapi/markdown-cheatsheet
+
 git clone git clone https://github.com/xarronpan/dev-env ~/notes
