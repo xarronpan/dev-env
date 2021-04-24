@@ -16,6 +16,7 @@ tmux
 vim
 ansible
 markdown
+sql
 CHEET_SHEET_SECTIONS
 )
 case $SECTION in 
@@ -78,6 +79,8 @@ case $SECTION in
            ~/cheatsheets/luckylittle/ansible-cheatsheet/ansible-cheatsheet.txt ;;
   markdown )
     glow -p ~/cheatsheets/tchapi/markdown-cheatsheet/README.md ;;
+  sql )
+    vim -M ~/cheatsheets/enochtangg/quick-SQL-cheatsheet/README.md ;;
   *)
     exit 0 ;;
 esac
