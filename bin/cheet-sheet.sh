@@ -17,6 +17,7 @@ vim
 ansible
 markdown
 sql
+redis
 CHEET_SHEET_SECTIONS
 )
 case $SECTION in 
@@ -81,6 +82,11 @@ case $SECTION in
     glow -p ~/cheatsheets/tchapi/markdown-cheatsheet/README.md ;;
   sql )
     vim -M ~/cheatsheets/enochtangg/quick-SQL-cheatsheet/README.md ;;
+  redis )
+    vim -M -c 'setlocal foldmethod=expr' \
+           -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
+           -c 'setlocal foldtext=NeatFoldText()' \
+            ~/cheatsheets/LeCoupa/awesome-cheatsheets/databases/redis.sh ;;
   *)
     exit 0 ;;
 esac

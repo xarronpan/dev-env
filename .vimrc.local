@@ -178,7 +178,7 @@ command! -bang -nargs=* FSFZFBLines
       \     <bang>0)
 
 function! GetShellCheatSheetFold(lnum)
-  if getline(a:lnum) =~? '\v^#####.+$'
+  if getline(a:lnum) =~? '\v(^#####.+$)|(^.+\*\*\*\*.+$)'
     if getline(a:lnum + 1) =~? '\v^#+ .+$'
       return '0'
     endif

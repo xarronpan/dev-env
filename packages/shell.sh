@@ -65,5 +65,6 @@ git clone https://github.com/AnthonyCalandra/modern-cpp-features cheatsheets/Ant
 git clone https://github.com/tchapi/markdown-cheatsheet cheatsheets/tchapi/markdown-cheatsheet
 git clone https://github.com/luckylittle/ansible-cheatsheet cheatsheets/luckylittle/ansible-cheatsheet
 git clone https://github.com/enochtangg/quick-SQL-cheatsheet cheatsheets/enochtangg/quick-SQL-cheatsheet
+git clone https://github.com/LeCoupa/awesome-cheatsheets cheatsheets/LeCoupa/awesome-cheatsheets
 
 git clone git clone https://github.com/xarronpan/dev-env ~/notes
