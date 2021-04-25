@@ -25,7 +25,46 @@ nerdtree的配置不符合多数ide的使用习惯:
 let g:spf13_no_fastTabs = 1```
 (spf13默认将HLM给remap了，这项配置是用于恢复该配置的)
 
-##secrut crt
+## rsync
+由于我们将 编辑虚拟机 与开发虚拟机分离，需要一种方便的方案，在编辑虚拟机上面编辑时，将信息同步到 开发虚拟机
+这样子我们就可以使用一个tmux分屏登录到 开发虚拟机上面进行编译，调试，看起来与编辑虚拟机编辑窗口形成了一个集成开发环境
+对于每个git上面的项目中在.workspance.vim中增加一个autocmd，当vim发生了buffer写的时候，将项目目录下的源代码都同步到远端去
+注意到很多与源代码无关的东西，都需要进行过滤
+
+.workspace.vim:
+
+```vim
+autocmd BufWritePost * silent !(
+\ cd ~/git/zixia &&
+\ rsync -avz --delete --exclude=".*"•
+\ --exclude="*.o"•
+\ --exclude="/tags"•
+\ --exclude="/build"•
+\ --exclude="/output"•
+\ . 14.116.173.26:~/git/zixia
+\ >> .rsync.log 2>&1 &
+    )
+```
+## ctags
+vim中的很多功能都依赖与ctags的生成。比如在ycm所依赖的信息不全的时候，ctags仍然可以进行使用
+我们依赖 ludovicchabant/vim-gutentags 来生成ctags
+由于在有些项目中，引用的第三方文件很多，有可能会造成ctags话大量时间生成无用的符号，所以需要定制ctags调用的参数
+
+若需要特殊的ctags配置时，可以在项目的目录增加 .gutctags，输入下面的配置: 
+
+.gutctags:
+```bash
+--exclude=third-party/*
+--exclude=build/*
+--exclude=.cache/*
+--exclude=.vscode/*
+--exclude=.git/*
+--exclude=.gitignore/*
+--exclude=.gitmodules/*
+--languages=C,C++,Protobuf
+-R
+```
+## secrut crt
 鼠标的滚动事件需要发送到远端，这样子 confortable motion插件就可以使用鼠标互动键来滚动vim中的代码
 SessionOptions → Terminal  勾选 Send Scroll wheel event to remote
 vim在xterm下的行为，可以参考下面这篇文章。鼠标的中间可以用于黏贴
