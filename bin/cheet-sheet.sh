@@ -20,6 +20,7 @@ sql
 redis
 mongodb-brief
 mongodb
+naming
 CHEET_SHEET_SECTIONS
 )
 case $SECTION in 
@@ -93,6 +94,8 @@ case $SECTION in
     vim -M ~/cheatsheets/bradtraversy/mongodb_cheat_sheet.md/mongodb_cheat_sheet.md ;;
   mongodb )
     glow -p ~/cheatsheets/michaeltreat/Mongo_CheatSheet/README.md ;;
+  naming )
+    vim -M ~/cheatsheets/xarronpan/naming-cheatsheet/README.md ;;
   *)
     exit 0 ;;
 esac

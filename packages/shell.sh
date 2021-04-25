@@ -68,5 +68,6 @@ git clone https://github.com/enochtangg/quick-SQL-cheatsheet ~/cheatsheets/enoch
 git clone https://github.com/LeCoupa/awesome-cheatsheets ~/cheatsheets/LeCoupa/awesome-cheatsheets
 git clone https://gist.github.com/bradtraversy/f407d642bdc3b31681bc7e56d95485b6 ~/cheatsheets/bradtraversy/mongodb_cheat_sheet.md
 git clone https://github.com/michaeltreat/Mongo_CheatSheet ~/cheatsheets/michaeltreat/Mongo_CheatSheet
+git clone https://github.com/xarronpan/naming-cheatsheet ~/cheatsheets/xarronpan/naming-cheatsheet
 
 git clone git clone https://github.com/xarronpan/dev-env ~/notes
