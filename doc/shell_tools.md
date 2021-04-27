@@ -1,9 +1,9 @@
-# 文档搜索
+# 文档
 ## tldr
 https://github.com/tldr-pages/tldr
 高质量的unix command man page。对于一个unix 命令，可以先参考这里的说明，再翻阅man page，再考虑google
 tldr的特点是给出来的信息质量高，按使用频率来进行排序，不求全面
-cheat.sh的特点是比较全面，但是命令较多，适合用于进行搜索
+cheat.sh的特点是比较全面，但是命令较多，适合用于进行搜索 
 
 ## cheet.sh
 https://github.com/chubin/cheat.sh
@@ -26,6 +26,22 @@ cht命令来快速查找需要的编程语言 问答答案
 cht中本身也集成了相当数量类似与tldr的命令使用例子。
 比如 ： find  输出一系列常用的find命令的使用例子。cht中的命名cheat的数量，复杂度比tldr中的要稍高一些，对于高级用户更为有用
 所以在tldr中若没有找到满意的答案后，可以使用cht进一步进行尝试，看能否找到答案
+
+## info
+info page是加强版本的manpage，解决了man page没有结构化的章节, 以及手册内容难以理解的问题.
+man page更加多是一个类似与一个全面介绍工具系统功能的cheatsheet, 更加适用于在阅读完命令的例子之后，进入深入了解系统的详细功能
+而info page则更加适合于系统地全新学习一个命令
+info page使用的时候需要配置vi-key binding才相对比较容易进行使用.
+当info page缺失时, 比如tar命令，会fall back为man page.此时在ubuntu上需要安装命令所对应的文件包 xxx-doc
+以tar为例子，则命令为: sudo apt install tar-doc
+在设置了vim的key mapping之后, 在info中的重要命令如下:
+H      显示info的help page，里面有详细的key mapping说明。第一页中的key mapping是最为重要和基础的
+`M-g`    跳转到链接所在的页面
+'      跳转回到上一个页面
+`M-<`    跳转在当前页的顶部
+`M->`    跳转在当前页的尾部
+
+在当前页面中，可以使用vi的key mapping进行移动，以及进行页面搜索
 
 # 交互增强
 ## 综合搜索工具: fzf
