@@ -159,6 +159,7 @@ alias cv="tput cnorm"
 alias gh="group-hosts"
 alias sa="$HOME/.tmux-butler/scripts/snippetdb put"
 alias sr="$HOME/bin/snippetdb-remove.sh"
+alias info="info --vi-keys"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
