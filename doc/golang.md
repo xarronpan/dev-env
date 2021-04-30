@@ -1,3 +1,6 @@
+# packages官网
+https://pkg.go.dev/
+
 # feature分析
 ## go mod
 golang1.11 之后引入了go mod，用于管理golang包的版本。
