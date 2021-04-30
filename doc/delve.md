@@ -20,6 +20,13 @@ delve install
 https://github.com/go-delve/delve/blob/master/Documentation/installation/README.md
 
 # 常用命令:
+启动调试进程
+例子
+dlv debug git.agoralab.co/shen/mde_cdn_bridge -- -config-file test.toml
+这个命令会启动适当的参数编译应用程序，从而保证被编译的代码都能在devle中正确地调试
+例子中的  git.agoralab.co/shen/mde_cdn_bridge 目录下需要有main包，以及main函数定义
+`--`后面表示的是被调试程序的参数.
+
 命令行参数:
 https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv.md
 
