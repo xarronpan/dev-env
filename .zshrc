@@ -63,7 +63,6 @@ antigen bundle zlsun/solarized-man
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle joel-porquet/zsh-dircolors-solarized.git
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle softmoth/zsh-vim-mode
 antigen bundle hlissner/zsh-autopair
 
 # Load the theme.
