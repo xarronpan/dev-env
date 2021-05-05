@@ -1,3 +1,6 @@
 [delta]
-	minus-emph-style = black auto
-	plus-emph-style = black auto
+  plus-style = "syntax #012800"
+  minus-style = "syntax #000000"
+  minus-emph-style = black auto
+  plus-emph-style = black auto
+  side-by-side = true
