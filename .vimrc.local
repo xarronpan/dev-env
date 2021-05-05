@@ -78,6 +78,7 @@ let g:vim_markdown_folding_style_pythonic = 1
 let g:git_messenger_preview_mods = "botright"
 let g:git_messenger_close_on_cursor_moved = v:false
 let g:gitgutter_sign_priority = 5
+let g:interestingWordsTermColors = ['2', '3', '1', '4', '13', '6']
 
 "vim setting configure
 set ttymouse=xterm2
