@@ -22,6 +22,44 @@ Terminal/Enulator/Emacs， 选择Use ALT as Meta key，选择Send Escape for met
 这样子终端上面也可以访问类似网页的东西
 按键: ctl + 鼠标左键，点击url即可
 
+# xshell
+## 安装
+安装xshell7 个人免费版
+
+## 配置
+### 颜色/字体
+导入solarized dark配色方案
+工具->配色方案->导入
+将dev-env/windows/solarized-dark.xcs在window中进行保存, 并且导入到xshell中
+
+文件->当前会话属性->外观 
+配色方案使用  solarized dark
+加粗字体选择  使用大胆的色彩
+使用闪烁的光标 光标闪烁设置 700ms
+
+### 配置键盘
+alt键
+文件->当前会话属性->终端->键盘->Meta键盘仿真 
+勾选: 将左alt键作为meta键, 将右alt键作为meta键
+
+鼠标
+工具->选项->鼠标和键盘
+配置鼠标右键为 拷贝剪切板内容
+鼠标中间为 弹出菜单
+勾选 使用URL超链接, 勾选使用ctrl+单击 打开超链接
+不勾选 使用ctrl+单击移动终端光标
+在选择一项中, 勾选 将选中自动拷贝到剪切板
+
+鼠标的滚轮事件不需配置默认就会发送到终端上,能够实现vim,tmux的滚动操作
+
+键盘
+工具->选项->鼠标和键盘
+在按键对应  一项中点编辑按钮, 新建 ctrl+shift+v 快捷键, 并且选择快捷键类型为 菜单, 再选择菜单功能 (编辑)黏贴
+将ctrl+shift+v键绑定成拷贝剪切板内容,保持与securecrt的使用习惯的一致性
+
+### 常用功能
+在经过配置之后,快捷键与securecrt完全相同.在tmux中使用shift + 相关鼠标快捷键即可完成相关功能
+
 # remap caplock
 由于我们的键位大量地依赖与ctrl键，而ctrl键实际上离键盘很远，所以一个较好的方案是将caps lock键remap成ctrl键，而不使用caps lock键的功能
 这样子长久使用键盘的工作效率将变得很高
