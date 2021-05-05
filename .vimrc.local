@@ -3,6 +3,7 @@ let NERDTreeQuitOnOpen=0
 let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:indent_guides_enable_on_vim_startup = 0
 let g:signify_disable_by_default = 1
+let g:airline_solarized_dark_inactive_border = 1
 let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#ycm#error_symbol = 'E:'
 let g:airline#extensions#ycm#warning_symbol = 'W:'
@@ -93,6 +94,8 @@ autocmd BufEnter * call timer_start(10, { tid -> execute('hi MatchParen cterm=un
 autocmd BufEnter * call timer_start(10, { tid -> execute('highlight GitGutterAdd    guifg=#009900 guibg=black ctermfg=2 ctermbg=black') })
 autocmd BufEnter * call timer_start(10, { tid -> execute('highlight GitGutterChange guifg=#bbbb00 guibg=black ctermfg=3 ctermbg=black') })
 autocmd BufEnter * call timer_start(10, { tid -> execute('highlight GitGutterDelete guifg=#ff2222 guibg=black ctermfg=1 ctermbg=black') })
+highlight VertSplit ctermbg=black ctermfg=230
+highlight link EasyMotionShade Comment
 
 function! s:p(...)
   let preview_args = get(g:, 'fzf_preview_window', ['right', 'ctrl-/'])
