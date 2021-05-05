@@ -57,8 +57,18 @@ alt键
 在按键对应  一项中点编辑按钮, 新建 ctrl+shift+v 快捷键, 并且选择快捷键类型为 菜单, 再选择菜单功能 (编辑)黏贴
 将ctrl+shift+v键绑定成拷贝剪切板内容,保持与securecrt的使用习惯的一致性
 
+新建 shift+space 快捷键，并且选择快捷键类型为 菜单，在选择菜单功能 (使用默认搜索引擎进行搜索)
+这样子我们就将 shift+space绑定成启动搜索引擎的快捷键。
+
+### 配置搜索引擎
+工具-> 再网上搜索-> 管理搜索引擎中，可以填入搜索引擎的访问模板
+google的访问模板为:
+https://www.google.com/search?q=%s
+
 ### 常用功能
 在经过配置之后,快捷键与securecrt完全相同.在tmux中使用shift + 相关鼠标快捷键即可完成相关功能
+当我们使用shift+鼠标选定好了文本之后，
+再按shift+space就可以将选择的文本作为关键字通过搜索引擎进行搜索
 
 # remap caplock
 由于我们的键位大量地依赖与ctrl键，而ctrl键实际上离键盘很远，所以一个较好的方案是将caps lock键remap成ctrl键，而不使用caps lock键的功能
