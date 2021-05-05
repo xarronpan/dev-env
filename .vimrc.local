@@ -97,6 +97,7 @@ autocmd BufEnter * call timer_start(10, { tid -> execute('highlight GitGutterCha
 autocmd BufEnter * call timer_start(10, { tid -> execute('highlight GitGutterDelete guifg=#ff2222 guibg=black ctermfg=1 ctermbg=black') })
 highlight VertSplit ctermbg=black ctermfg=230
 highlight link EasyMotionShade Comment
+highlight Pmenu ctermbg=black ctermfg=15
 
 function! s:p(...)
   let preview_args = get(g:, 'fzf_preview_window', ['right', 'ctrl-/'])
