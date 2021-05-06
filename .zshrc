@@ -151,7 +151,7 @@ export TLDR_QUOTE='italic'
 export TLDR_DESCRIPTION='gray'
 export TLDR_CODE='green'
 export TLDR_PARAM='green'
-export CHTSH_QUERY_OPTIONS="style=solarized-dark"
+export CHTSH_QUERY_OPTIONS="style=default"
 export TZ='Asia/Shanghai'
 
 alias cv="tput cnorm"
