@@ -15,6 +15,8 @@ chmod +x ~/bin/tldr
 curl https://cht.sh/:cht.sh > ~/bin/cht.sh
 chmod +x ~/bin/cht.sh
 
+sudo apt-get install xsel
+
 sudo apt-get install fd-find
 
 sudo add-apt-repository ppa:aacebedo/fasd
