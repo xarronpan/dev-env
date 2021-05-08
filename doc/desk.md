@@ -65,10 +65,19 @@ alt键
 google的访问模板为:
 https://www.google.com/search?q=%s
 
+### 配置X11 forwarding
+安装xming，然后在 文件->当前绘画属性->连接->SSH->隧道
+X11转移，勾选转移到XDISPLAY
+
 ### 常用功能
 在经过配置之后,快捷键与securecrt完全相同.在tmux中使用shift + 相关鼠标快捷键即可完成相关功能
 当我们使用shift+鼠标选定好了文本之后，
 再按shift+space就可以将选择的文本作为关键字通过搜索引擎进行搜索
+
+# xming
+安装xming的主要用途是打通ubuntu的剪切板与windows的剪切板
+此外我们可以在命令行中在windows中调起gui程序进行处理，其实是非常强大的功能
+比如在命令行中输入 firefox, 则会弹出windows的命令窗口, 并且展现firefox的界面，并且能够进行鼠标交互
 
 # remap caplock
 由于我们的键位大量地依赖与ctrl键，而ctrl键实际上离键盘很远，所以一个较好的方案是将caps lock键remap成ctrl键，而不使用caps lock键的功能
