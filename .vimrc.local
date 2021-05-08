@@ -79,6 +79,7 @@ let g:git_messenger_preview_mods = "botright"
 let g:git_messenger_close_on_cursor_moved = v:false
 let g:gitgutter_sign_priority = 5
 let g:interestingWordsTermColors = ['2', '3', '1', '4', '13', '6']
+let g:ctrlsf_default_root = 'project'
 
 "vim setting configure
 set ttymouse=xterm2
@@ -230,7 +231,7 @@ cnoreabbrev DL Linediff
 cnoreabbrev DB diffthis
 cnoreabbrev DD DirDiff
 cnoreabbrev PR Rooter
-cnoreabbrev CF Rooter <bar> CtrlSF
+cnoreabbrev CF CtrlSF
 cnoreabbrev FAR Rooter <bar> Far
 cnoreabbrev TM TabMessage
 cnoreabbrev VSA VSSplitAbove
