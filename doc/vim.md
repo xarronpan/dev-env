@@ -835,6 +835,11 @@ vim +BundleInstall! +BundleClean +q
 <leader>PN 在cc，cpp文件中按下这个快捷键，则会根据对应的.h文件，生成代码的骨架,并且如果class在头文件中是在namespace下的话，不生成namespace前缀
 <leader>PP 在cc，cpp文件中按下这个快捷键，则会根据对应的.h文件，生成代码的骨架
 
+## 缩写
+当我们通过abbrev命令定义了缩写之后，在vim的命令模式下输入缩写的命令，都会被vim自动展开
+比如使用搜索命令时，若搜索关键字与缩写相同，则搜索关键字会被展开。这可能不是我们所希望的行为
+这时候只要键入ctrl+v, 则vim便不会启动缩写的展开
+
 ## tags管理
  使用ludovicchabant/vim-gutentags自动生成和管理ctags
  这个插件需要安装 universal-ctags, tagbar插件需要对应的符号信息。注意tagbar会自动生成tags，不需要人为生成
