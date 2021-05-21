@@ -57,6 +57,7 @@ antigen use oh-my-zsh
 #antigen bundle lein
 #antigen bundle command-not-found
 antigen bundle extract
+antigen bundle kubectl
 
 # External bundle.
 antigen bundle zlsun/solarized-man
@@ -164,3 +165,4 @@ alias info="info --vi-keys"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [[ -s "/home/panxiangrong/.gvm/scripts/gvm" ]] && source "/home/panxiangrong/.gvm/scripts/gvm"
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
