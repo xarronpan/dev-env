@@ -58,6 +58,8 @@ antigen use oh-my-zsh
 #antigen bundle command-not-found
 antigen bundle extract
 antigen bundle kubectl
+antigen bundle docker
+antigen bundle docker-compose
 
 # External bundle.
 antigen bundle zlsun/solarized-man
@@ -65,6 +67,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle joel-porquet/zsh-dircolors-solarized.git
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle hlissner/zsh-autopair
+antigen bundle akarzim/zsh-docker-aliases
 
 # Load the theme.
 antigen theme romkatv/powerlevel10k
