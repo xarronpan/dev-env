@@ -21,6 +21,7 @@ redis
 mongodb-brief
 mongodb
 naming
+docker
 CHEET_SHEET_SECTIONS
 )
 case $SECTION in 
@@ -96,6 +97,8 @@ case $SECTION in
     glow -p ~/cheatsheets/michaeltreat/Mongo_CheatSheet/README.md ;;
   naming )
     vim -M ~/cheatsheets/xarronpan/naming-cheatsheet/README.md ;;
+  docker )
+    vim -M ~/cheatsheets/xarronpan/DockerCheatSheet/README.md ;;
   *)
     exit 0 ;;
 esac
