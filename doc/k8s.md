@@ -287,7 +287,7 @@ kubectl api-resources --api-group=extensions # "extensions" API 组中的所有�
 ```
 #格式化输出
 要以特定格式将详细信息输出到终端窗口，将 -o（或者 --output）参数添加到支持的 kubectl 命令中。
-
+```
 输出格式                                      描述
 -o=custom-columns=<spec>                      使用逗号分隔的自定义列来打印表格
 -o=custom-columns-file=<filename>             使用 <filename> 文件中的自定义列模板打印表格
@@ -297,7 +297,7 @@ kubectl api-resources --api-group=extensions # "extensions" API 组中的所有�
 -o=name                                       仅打印资源名称而不打印其他内容
 -o=wide                                       以纯文本格式输出额外信息，对于 Pod 来说，输出中包含了节点名称
 -o=yaml                                       输出 YAML 格式的 API 对象
-
+```
 
 使用 -o=custom-columns 的示例：
 ```bash
@@ -315,6 +315,7 @@ kubectl get pods -A -o=custom-columns='DATA:metadata.*'
 Kubectl 日志输出详细程度是通过 -v 或者 --v 来控制的，参数后跟一个数字表示日志的级别。 Kubernetes 通用的日志习惯和相关的日志级别在 这里 有相应的描述。
 
 详细程度   描述
+```
 --v=0      用于那些应该 始终 对运维人员可见的信息，因为这些信息一般很有用。
 --v=1      如果您不想要看到冗余信息，此值是一个合理的默认日志级别。
 --v=2      输出有关服务的稳定状态的信息以及重要的日志消息，这些信息可能与系统中的重大变化有关。这是建议大多数系统设置的默认日志级别。
@@ -325,4 +326,4 @@ Kubectl 日志输出详细程度是通过 -v 或者 --v 来控制的，参数后
 --v=7      显示 HTTP 请求头。
 --v=8      显示 HTTP 请求内容。
 --v=9      显示 HTTP 请求内容而且不截断内容。
-
+```
