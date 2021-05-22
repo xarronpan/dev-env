@@ -163,8 +163,17 @@ alias sa="$HOME/.tmux-butler/scripts/snippetdb put"
 alias sr="$HOME/bin/snippetdb-remove.sh"
 alias info="info --vi-keys"
 
-# Get latest container ID
-alias dl="docker ps -l -q"
+# Show logs of container, e.g. $dl base
+alias dl="docker logs"
+
+# Show logs of container, following logs, e.g. $dlf base
+alias dlf="docker logs -f"
+
+# Attach to a running container, e.g. $da base
+alias da="docker attach"
+
+# Stop a container, e.g. $ds base
+alias ds="docker stop"
 
 # Get container process
 alias dps="docker ps"
