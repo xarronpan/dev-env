@@ -1,3 +1,9 @@
+k8s配置编写教程
+https://kubernetes.io/docs/concepts/
+
+k8s配置编写手册
+https://kubernetes.io/docs/reference/kubernetes-api/
+
 #Kubectl 上下文和配置
 设置 kubectl 与哪个 Kubernetes 集群进行通信并修改配置信息。 查看使用 kubeconfig 跨集群授权访问 文档获取配置文件详细信息。
 ```bash
