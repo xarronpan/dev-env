@@ -327,3 +327,58 @@ Kubectl 日志输出详细程度是通过 -v 或者 --v 来控制的，参数后
 --v=8      显示 HTTP 请求内容。
 --v=9      显示 HTTP 请求内容而且不截断内容。
 ```
+#配置私有docker image仓库的访问私钥
+因为我们需要去私有的Docker仓库拉取镜像，所以需要指定访问仓库的密钥。在我们使用docker login命令成功登录私有仓库后(一般需要密钥认证)，
+会在 ~/.docker/config.json 中生成访问某个仓库的密钥。我们需要将这个密钥通过创建secret对象放在k8s中，然后在pod或者pod的template的spec中，通过
+spec.imagePullSecrets 配置指向该secret对象，这样子当pod去拉取仓库时，就会使用该secret对象中指定的密钥去拉取仓库中的image
+注意pod或者pod template的spec.image.containers.image中的仓库名称必须与docker login时所指定的仓库名称要求一致，否则会出现认证失败的问题
+比如 hub.agoralab.co 以及 hubmaster.agoralab.co可能指向的都是同一个仓库，但是在docker login以及 spec.image.containers.image 中使用的仓库名称必须相同
+这是因为认证算法会认为两个仓库不是同一个仓库
+```bash
+#docker login 到一个私有仓库中，比如 hub.agoralab.co, 
+#login成功登录, 会在$(pwd)/.docker/config.json中生成密钥配置信息
+docker login hub.agoralab.co
+
+#生成一个名字称为 regcred 的secret对象, secret对象的内容来源是$(pwd)/.docker/config.json, 即docker的密钥存储配置位置
+kubectl create secret generic regcred \
+    --from-file=.dockerconfigjson=$(pwd)/.docker/config.json \
+    --type=kubernetes.io/dockerconfigjson
+
+#在pod或者pod template的 spec.imagePullSecrets 配置中指定这个secret。
+#spec.image.containers.image中指定了仓库的名称，与docker login中指定的仓库名称必须相同
+#pod template 例子:
+```
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello
+  labels:
+    app: hello
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      containers:
+      - name: hello
+        image: hub.agoralab.co/hello/hello:1.0.0
+        ports:
+          - name: http
+            containerPort: 2000
+        resources:
+          limits:
+            cpu: "1"
+            memory: "500Mi"
+          requests:
+            cpu: "1"
+            memory: "500Mi"
+      imagePullSecrets:
+      - name: regcred
+```
+
