@@ -260,7 +260,7 @@ noremap <M-k> <C-w>p5<C-y><C-w>p
 nnoremap <silent> <leader>t :tabnew<CR>
 nnoremap <silent> <leader>n :enew<CR>
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>:q<CR>:copen<CR>
+nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <silent> <leader>fi :YcmCompleter FixIt<CR>
 nnoremap <silent> <leader>gi :YcmCompleter GoToImplementation<CR>
 nnoremap <silent> <leader>gt :YcmCompleter GoToType<CR>
