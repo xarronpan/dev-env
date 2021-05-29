@@ -96,13 +96,32 @@ alt + t         窗体固定在top，并且以半透明方式展现
 # chrome配置
 ## git增强
 ### Sourcegraph
-支持在git浏览代码中增加ide的go defination, go reference功能
+支持在git浏览代码中增加ide的go defination, go reference, 全局搜索代码，以及搜索文件的功能
 极大增强浏览git中代码的便利性
+需要登录才能释放全部的能力, 比octotree缺少一点的就是tab切换的功能
+全局搜索代码的入口在代码仓库的顶部增加的 sourcegraph 图标, 点击进去的搜索栏，默认就是在代码行中搜索, 直接输入搜索关键字即可
+比如:
+repo:^github\.com/labstack/echo$ test
+
+搜索文件的入口在代码仓库的顶部增加的 sourcegraph 图标, 点击进去的搜索栏，搜索文件需要使用 file: 
+repo:^github\.com/labstack/echo$ file:basic
 
 ### octotree
-支持在git浏览代码时增加树形浏览窗口
+支持在git浏览代码时增加树形浏览窗口, tab, 文件搜索等功能
+需要登录才能释放全部的能力
+双击树形列表即可按tab打开文件
 
-###
+### OctoLinker
+支持在git浏览代码时, 能够通过import, include等关键字进行导航
+
+### Octohint
+支持相关变量，函数一起hint高亮.
+单击代码即可生效
+
+### gitzip
+支持批量下载github中的文件.
+点击需要下载代码的空白处，右下角会出现下载图标
+
 ## tab管理: onetab
 对于开发人员而言，浏览器其实就是有点像命令行终端。当存在数量很多的网页的时候，需要对任务进行分门别类，这样子就能快速找到需要完成任务的窗口
 onetab chrome插件可以用于对网页的标签页进行管理
