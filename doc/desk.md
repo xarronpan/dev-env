@@ -138,6 +138,7 @@ EveyThing需要启动运行
 有道词典
 ProcessKiller
 Wox-Dash-Zeal
+Wox.Plugin.Runner
 
 常用功能:
 atl + space    启动wox
@@ -156,6 +157,7 @@ z py3: sys.v
 z py3:sys.v
 z py2,py3:sys.v
 z rust,c:print
+r ue  启动自定义命令ue. 自定义命令适用与绿色安装的软件，或者给名字特别长的命令生成alias
 
 # 离线文档
 安装Zeal
