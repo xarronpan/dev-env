@@ -70,6 +70,21 @@ SessionOptions → Terminal  勾选 Send Scroll wheel event to remote
 vim在xterm下的行为，可以参考下面这篇文章。鼠标的中间可以用于黏贴
 https://zhuanlan.zhihu.com/p/38477934
 
+# 升级
+再更新了youcompleteme插件之后，有时候ycm的二进制服务, 或者依赖的服务需要进行升级后，方能进行使用
+目前遇到过的情况包括:
+1 整个依赖的二进制服务需要重新编译
+  这种情况下，只要按照编译的方式重新编译即可
+
+2 clangd服务需要重新升级
+  这种情况下，会发现c++的go refernce功能无法工作，使用YcmDebugInfo发现clangd没有启动
+造成这个现象的原因是ycm依赖的clangd服务升级了，需要升级clangd服务。
+  处理方法:
+  进入 ~/.vim/bundle/YouCompleteMe, 执行
+  mv ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/clangd ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/clangdbak 
+  ./install.py --skip-build  --clangd-completer  #不需要重新编译ycm, 只是重新下载clangd
+  确认clangd安装成功后，再删除 ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/clangdbak 
+
 
 # 常用功能
 leader键在下述的配置中是 ','

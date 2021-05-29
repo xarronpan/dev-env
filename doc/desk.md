@@ -127,16 +127,28 @@ ctrl + t 新建标签页。往往是搜索开始的入口
 并且将secure crt，chrome等功能都以快捷键的方式进行绑定。
 这样子就能够节省大量切换不同任务，应用的时间了
 
-# 剪切板管理: copyq
-用于复杂运维操作时，不需要反复到终端上获取需要信息
-在选定了剪切板内容之后，按enter，即会将内容copy到剪切板中。
-copyq在网页，或者在终端上都能够进行使用。
-对于一些临时性质需要进行管理，并可能需要进行输入的内容是比较实用的
-配置:
-配置启用使用vim快捷键
-ctrl+y  触发copyq
-ctrl+m  给剪切板内容增加标签
-ctrl+i  标记剪切板内容为重要
-ctrl+f  固定剪切板内容
+# 桌面搜索
+安装wox
+安装插件
+Host      修改host文件
+swicheroo 切换窗口
+clipboard history 剪切板历史
+need kv store插件
+EveyThing需要启动运行
+
+常用功能:
+atl + space    启动wox
+win  关键字    搜索已经打开窗口
+cb   关键字    搜索剪切板历史
+g    关键字    搜素google
+b    关键字    搜索浏览器标签
+need Key         Get value of Key to clipboard	
+need Key Value   Save kv
+need delete Key  Delete kv
+hosts  关键字  编辑hosts文件
+
+# 离线文档
+安装Zeal
+
 # 虚拟机
 安装vmware16.00 版本虚拟机
