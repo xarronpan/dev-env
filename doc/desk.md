@@ -94,6 +94,15 @@ alt + t         窗体固定在top，并且以半透明方式展现
 则可以使用win键加 方向键，很方便地设置窗体停靠
 
 # chrome配置
+## git增强
+### Sourcegraph
+支持在git浏览代码中增加ide的go defination, go reference功能
+极大增强浏览git中代码的便利性
+
+### octotree
+支持在git浏览代码时增加树形浏览窗口
+
+###
 ## tab管理: onetab
 对于开发人员而言，浏览器其实就是有点像命令行终端。当存在数量很多的网页的时候，需要对任务进行分门别类，这样子就能快速找到需要完成任务的窗口
 onetab chrome插件可以用于对网页的标签页进行管理
