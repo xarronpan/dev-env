@@ -122,6 +122,13 @@ repo:^github\.com/labstack/echo$ file:basic
 支持批量下载github中的文件.
 点击需要下载代码的空白处，右下角会出现下载图标
 
+### GitHub Hovercard
+当页面中存在github的项目链接时，直接移动鼠标到链接上，则可以浏览到关键性的项目信息，比如start等
+这个插件与awesome系列是绝配
+
+### GitHub Code Folding
+在github代码中支持foldering操作
+
 ## tab管理: onetab
 对于开发人员而言，浏览器其实就是有点像命令行终端。当存在数量很多的网页的时候，需要对任务进行分门别类，这样子就能快速找到需要完成任务的窗口
 onetab chrome插件可以用于对网页的标签页进行管理
