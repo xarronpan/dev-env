@@ -135,6 +135,9 @@ swicheroo 切换窗口
 clipboard history 剪切板历史
 need kv store插件
 EveyThing需要启动运行
+有道词典
+ProcessKiller
+Wox-Dash-Zeal
 
 常用功能:
 atl + space    启动wox
@@ -142,10 +145,17 @@ win  关键字    搜索已经打开窗口
 cb   关键字    搜索剪切板历史
 g    关键字    搜素google
 b    关键字    搜索浏览器标签
-need Key         Get value of Key to clipboard	
+need Key         Get value of Key to clipboard
 need Key Value   Save kv
 need delete Key  Delete kv
 hosts  关键字  编辑hosts文件
+yd     关键字  有道中英文互译
+kill   关键字  杀进程
+z      关键字  搜索zeal
+z py3: sys.v
+z py3:sys.v
+z py2,py3:sys.v
+z rust,c:print
 
 # 离线文档
 安装Zeal
