@@ -105,7 +105,7 @@ func main() {
   var req *http.Request
   var err error
   defer reportMetrics(&req, &err)
-	req, err = http.NewRequest("POST", "http://127.0.0.1", bytes.NewBuffer(nil))
+  req, err = http.NewRequest("POST", "http://127.0.0.1", bytes.NewBuffer(nil))
   if err != nil {
     return
   }
@@ -116,7 +116,28 @@ func main() {
 
 这个例子中很大程度上说明了golang的设计哲学
 golang很大程度上面是作为c语言的改良版本而进行设计的，其设计目的很大程度上是沿用了c语言的哲学与思路，主要修正了c语言的内存访问问题，以及增加了并发的访问特性。
+因而golang的值访问语义基本上是与c语言保持一致的，slice切片的设计很大程度上也是与c语言的思想是相一致的
 其中的一项证据是golang里面没有提供类似继承这样子的语言特性，因为语言的发明者认为这些特性与c语言的设计哲学是相违背的
+还有一项证据是package的包特性，似乎比较鼓励一个包中的代码逻辑拆分，其实也是和c语言的风格都是相类似的
 所以使用golang的风格与思路很大程度上应该将其看成一种不能访问底层内存的c语言会更加合适一些
+采用这种设计的其中一个想法，估计是希望从c、c++语言的群体中去迁移市场，从而达到与java进行抗衡的这样子一个商业目标
 
+## 带receiver的函数对象调用
+golang支持调用函数对象时，携带receiver，如下面例子所示
+```go
+type A struct {
+  Mem1 int
+}
+
+func (a *A) foo() {
+ fmt.Printf("%d", a.Mem1)
+}
+
+func main() {
+  a := &A{}
+  a.Mem1 = 200
+  f := a.foo
+  f()                   // 输出200
+}
+```
 
