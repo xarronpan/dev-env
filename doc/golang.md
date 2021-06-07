@@ -87,3 +87,36 @@ func printSlice(s []int) {
 https://blog.go-zh.org/go-slices-usage-and-internals
 猜测golang采用这种设计的主要原因，是为了操作数组的灵活性以及效率。其能够支持将一个子数组作为一个普通数组来进行操作。这种feature是std，java都没有的。
 但是为了这种操作的效率，只能采用类似引用的语义，而不能向python那样子直接使用一个不可变的list，最终推演的结果就是形成上面的设计。golang数组的设计是否合理是待商榷的事情了。
+
+## 指向指针的指针 && golang的设计哲学
+golang与java, python等语言一个重要的不同之处，是在语言中保留了C语言指针的含义
+一般而言，golang的指针与java，python等语言的引用的地位是相类似的，但是保留了指针的含义
+更加具体地，golang支持类似C语言中指向指针的指针的用法
+比如说下面的代码，我们可以通过指针的指针来判定指针本身的值是否发生了变化
+注意到像interface这种类型本质上也是一个指针，所以下面例子中errRef实际上也是指向指针的指针的
+``` go
+func reportMetrics(reqRef **http.Request, errRef *error) {
+  if *reqRef != nil {
+    fmt.Printf("req no nil")
+  }
+}
+
+func main() {
+  var req *http.Request
+  var err error
+  defer reportMetrics(&req, &err)
+	req, err = http.NewRequest("POST", "http://127.0.0.1", bytes.NewBuffer(nil))
+  if err != nil {
+    return
+  }
+}
+```
+注意到这种语言特性在java还有python中都是不存在的，这些语言中没有指向引用的引用这种特性
+这也部分说明了golang语言中为何不将指针这种语言特性给索性去掉，因而其的确能够提供比其他语言更好的一些表达特性
+
+这个例子中很大程度上说明了golang的设计哲学
+golang很大程度上面是作为c语言的改良版本而进行设计的，其设计目的很大程度上是沿用了c语言的哲学与思路，主要修正了c语言的内存访问问题，以及增加了并发的访问特性。
+其中的一项证据是golang里面没有提供类似继承这样子的语言特性，因为语言的发明者认为这些特性与c语言的设计哲学是相违背的
+所以使用golang的风格与思路很大程度上应该将其看成一种不能访问底层内存的c语言会更加合适一些
+
+
