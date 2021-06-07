@@ -140,4 +140,8 @@ func main() {
   f()                   // 输出200
 }
 ```
-
+## string编码
+在golang中，string与byte[]是相同的东西。这种设计与c, c++的设计是相同的。
+在golang中要表示一个unicode字符串，需要使用rune类型。rune实际上是int32的别名
+更加具体的描述可以参考:
+https://blog.golang.org/strings
