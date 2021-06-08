@@ -5,17 +5,24 @@ https://www.liaoxuefeng.com/wiki/1016959663602400
 python -m pdb err.py
 pdb中的调试命令与gdb中的调试命令基本一致
 
-# 整数
-python 里面的整数与其他语言的整数一个比较大的差异是不区分int，uint
+# 语言特性
+## 类型安全
+
+## 整数
+python3 里面的整数与其他语言的整数一个比较大的差异是不区分int，uint
 都统一是有符号的，而且不需要担心溢出的问题，不需要程序员去定义int的位数
 这样子其实的确是简化了程序员的工作，其代价是通过执行效率来进行换取
+注意这点与python2是不同的。python2中是区分各种不同长度的int整数的
+从这个角度上面来讲，python3要好于python2
 
-# 字符串字符编码
-python 中默认的字符串都是unicode字符串。想要得到类似c/c++的bytes或者string,
+## 字符串字符编码
+python3 中默认的字符串都是unicode字符串。想要得到类似c/c++的bytes或者string,
 需要通过encode/decode的方式将字符串转化为python中的bytes
 这点设计与java的String是相同的, 也是相对合理的技术方案
+注意这点与python2是不同的。python2中还有一个acsii字符串，实际上更加混乱
+从这个角度上面来讲，python3要好于python2
 
-# tuple
+## tuple
 python 中的tuple的地位就等价与python里面不可变的list，除了这点之外，tuple与list支持的功能都是等价的
 python 中希望支持tuple的原因，是在很多情况下，tuple比list更加不容易出错
 比如说 函数参数中的可变参数，就是通过 tuple进行表示的。另外例子去动态调用一个函数时，也是使用tuple来进行表示而不是list(具体见 函数参数一节)
@@ -33,11 +40,18 @@ def test_fun(param1, *p, param2, param3):
 if __name__ == "__main__":
     test_fun("test_value", "v1", "v2", param2="abc", param3="def")
 ```
+## list
+python与其他编程语言另外一个大的差别是内置了很多与list直接相关的语言特性, 比如:
+(1) 列表生成式
+  https://www.liaoxuefeng.com/wiki/1016959663602400/1017317609699776
+实际上, dict和set也都支持列表生成式
+(2) 生成器
+  https://www.liaoxuefeng.com/wiki/1016959663602400/1017318207388128
+这些特性估计使得python在科学计算领域，复杂算法的表达上相对与其他语言会更加自然，有竞争力
 
-# slice
+## slice
 python 中支持类似golang的slice的能力, 通过[start:end]操作符获取一个list的子list。
 与golang中的slice不同，通过slice表达式返回的list是区别与原来list的一个新list
-
 ``` python
     l1 = list(range(10))
     print(l1)   
@@ -54,7 +68,7 @@ python 中支持类似golang的slice的能力, 通过[start:end]操作符获取�
    #[20, 1]
 ```
 
-# 函数参数
+## 函数参数
 python相对与其他编程语言的一个主要特点是丰富的参数表达方式，包括:
   默认参数
   可变参数
@@ -113,3 +127,28 @@ a = 1 b = 2 c = 3 d = 88 kw = {'x': '#'}
 ```
 python支持这种方式的调用的主要原因，是在有一些很极端的场景之下，我们不希望去hardcode调用函数的参数，而是通过代码的方式来构造对应的代码
 这样子就可以将一些冗余的代码给抽象出来。这种需求通常出现在抽象程度很高的框架代码中
+
+## 匿名函数
+python使用lambda 表达式来表示匿名函数. 需要匿名函数的主要原因是python是基于缩进, 没有符号界定函数的开始结束，
+所以很难支持其他语言所能够支持的函数直接就地编写的写法。即使支持，使用起来也会很别扭。
+所以作为补救，使用lambda关键字来创建匿名函数，并且匿名函数也只支持一行的表达式写法
+所以对于匿名函数的支持，python实际上是要弱于其他的语言的。
+而且这个lambda就是函数式编程中的lambda的含义
+https://www.liaoxuefeng.com/wiki/1016959663602400/1017451447842528
+
+## 装饰器
+python的装饰器也是独有的语言feature, 提供了一种可编程的机制将数据绑定在代码的对象中，提高了代码的可读性
+类似于java里面注解的功能
+https://www.liaoxuefeng.com/wiki/1016959663602400/1017451662295584
+
+## 迭代器
+在python中，Iterator还有Iterable是不同的概念
+Iterable是指能够被 for in 循环所引用的对象。像list, dict之类的对象都是Iterable的
+而Iterator则是指能够被next()函数所引用的的对象。比如生成器对象就是一个Iterator
+两者进行分别对待的主要原因，是Iterator所指向的对象可以是无限的，而Iterable必须是有限的.
+想要获取list, dict的Iterator，可以通过 iter() 函数获得
+https://www.liaoxuefeng.com/wiki/1016959663602400/1017323698112640
+
+## 私有变量, 函数
+python中并没有语言级别去类似定义private, public访问权限的机制, 只有一个命名约定
+约定以 _ 开头的函数或者变量都是在模块中私有的，__开始的变量或者函数则是系统内置定义的
