@@ -39,8 +39,6 @@ let g:go_highlight_fields = 1
 let g:go_list_height = 10
 let g:far#source = 'ag'
 let g:far#enable_undo = 1
-let g:context_enabled = 0
-let g:context_add_mappings = 0
 let g:nrrw_rgn_incr = 60
 let g:nrrw_rgn_hl = 'Search'
 let g:VtrClearBeforeSend = 0
@@ -225,7 +223,6 @@ cnoreabbrev EBM EditBookmarks
 cnoreabbrev TL Translate
 cnoreabbrev YR YcmCompleter RefactorRename
 cnoreabbrev YF YcmCompleter Format
-cnoreabbrev CT ContextToggle
 cnoreabbrev SW Scratch
 cnoreabbrev DL Linediff
 cnoreabbrev DB diffthis
