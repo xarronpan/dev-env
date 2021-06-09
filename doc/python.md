@@ -73,6 +73,12 @@ python 中支持类似golang的slice的能力, 通过[start:end]操作符获取�
    #[20, 1]
 ```
 
+## bytes && bytes array
+bytes和bytes array是python中用于表示二进制数组的语言特性。
+其关系与tuple与list之间的关系相类似， bytes是不可变的，bytes array是可变的，而这两个对象所支持的接口都是基本相同的
+注意bytes和bytes array并没有被看成是一种list。这是因为python中的list可以放入不同类型的数据，但是bytes中的数据都指可能是8字节数据
+所以将两者给混起来显然不是一个合理的方案
+
 ## 函数参数
 python相对与其他编程语言的一个主要特点是丰富的参数表达方式，包括:
   默认参数
