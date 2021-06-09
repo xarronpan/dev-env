@@ -163,3 +163,232 @@ golang的一个模块(按照上文的定义，而不是golang中module的定义)
 注意到c语言的编程风格中其实这种方式是很常见的。这也是golang是c语言的一个改良版本的另一个证据
 
 在golang中，上文所定义的模块，在golang中的名称是package。而golang的module的概念是若干个package的集合
+
+## 面向对象编程
+golang中并没有直接支持面向对象编程的概念，但是给出了能够实现面向对象编程含义的机制
+利用这些机制，在golang中能够很容易按面向对象编程的风格组织代码。
+更加具体地说，面向对象编程的特性分为几项独立的特性:
+(1) 数据与方法的绑定与封装
+    golang中通过receiver与函数绑定的语法糖来实现的。这样子golang中支持了类似c，c++中通过 p.Func()的方式来调用代码的写法
+```go
+type Foo struct {
+}
+
+func (c *Foo) Func () {
+}
+
+int main() {
+  c := &Foo{}
+  c.Func()
+}
+```
+   支持这种写法的其中一个原因，是父类子类在代码的使用上，当函数签名是相同的时候，除了对象的创建位置外，其他地方都不需要进行修改
+比如在c语言中，若要求类型安全, 则父类和子类的函数名称都是不同的，这就造成了当父类修改成子类时，全部的函数代码都需要进行修改的问题
+注意这里提到的点和多态还不太相同。即使在没有多态的情况下，替换一个父类到子类需要修改很多代码也是不可以接受的
+```c
+//父类的函数
+int ParentFunc(Parent* parent, int param1, int param2)
+
+//子类的函数
+int ChildFunc(Child* child, int param1, int param2)
+```
+  能够解决这个问题的另外一个方案是类似于c++中的重载函数的方案。但是这种方案Func(p, )的可读性还是不如 p.Func()的好，因为作为接受消息
+的对象的位置与其他的参数是在语法上给明确区分开来的
+
+(2) 子类拥有父类的数据还有方法，并且能够增加自己的数据以及方法，以及覆盖父类方法的能力
+    如果golang中没有额外的语言特性，则实现这项语言特性，golang需要使用组合以及代理的方式编写代码
+```go
+type Parent struct {
+}
+
+func (p *Parent) Func () {
+}
+
+type Child struct {
+  parent *Parent
+}
+
+func (c *Child) Func () {
+  //通过代理的方式来实现子类拥有父类方法的功能
+  c.parent.Func()
+}
+```
+可以看出，这个方案已经是在类型安全的前提下, 能够实现该需求的最简单方案了, 通过代理转发的方式，代码的冗余度是最低的方案了
+假设golang不是类型安全的话，可以通过将Child的struct直接塞入到Parent的Func函数中实现。在c语言中的确可以采用这种写法。
+这种写法的问题一是类型不安全，而是不能够支持多继承的结构
+
+我们可以发现这种方式其实已经能够实现面向对象语义中子类拥有父类数据还有行为的特性了，但是主要存在的问题在于代码的冗余
+每继承一个父类，都需要增加一大堆的代理方法，在语言的层面上面讲，对于这种常见的需求带来那么多的冗余代码，肯定是不够理想的
+所以在golang中增加了一种语法糖专门应对这种需求，减少代码的冗余度，这样子 子类拥有父类数据还有方法的问题就能够很好地被解决
+```go
+type Parent struct {
+}
+
+func (p *Parent) Func () {
+}
+
+type Child struct {
+  Parent //通过这种写法，表示Child拥有父类的全部方法，这样子就不需要编写很多的代理转发的代码
+}
+```
+同时Child能够覆盖父类中的方法，从而支持按差异编程的能力
+```go
+type Parent struct {
+}
+
+func (p *Parent) Func () {
+}
+
+type Child struct {
+  Parent //通过这种写法，表示Child拥有父类的全部方法，这样子就不需要编写很多的代理转发的代码
+}
+
+// Child定义了自己的Func方法，能够覆盖Parent的方法
+func (c *Child) Func () {
+}
+```
+
+(3) 多态
+多态的本质是客户端代码能够通过同一个接口能够访问不同的对象。
+这点能力其实interface的语言特性已经进行了支持，所以golang认为不需要更多的特性来完成这个需求
+为了让golang支持面向对象编程语言中子类可以拥有父类的函数，并且能够对这些函数进行修改，结合(2)中给出的设计，
+golang应该需要支持interface能够指向一个子类，而子类的方法都是从父类那里继承过来的写法。
+```go
+type ParentInf interface {
+  Func(param int)
+}
+
+type Parent struct {
+}
+
+func (p *Parent) Func (param int) {
+}
+
+type Child struct {
+  Parent //通过这种写法，表示Child拥有父类的全部方法，这样子就不需要编写很多的代理转发的代码
+}
+
+int main() {
+  var pi ParentInf
+  pi = &Child{}
+  pi.Func(100)  //interface指向Child所继承下来的方法，如果golang的设计考虑了支持OO这种特性，则是应该给与支持的
+}
+```
+
+(4) 子类能够修改父类的行为
+这种行为其实在golang中可以通过让子类去重新设置一个函数对象来进行实现。特别地，我们提到过golang中函数对象是可以和receiver进行绑定了
+要实现这个需求就更加简单了
+
+
+下面的代码展现了在golang中如何去模拟一个Child继承了Parent还有Parent2，并且改写接口代码，以及template method的示例
+```go
+package main
+
+import "fmt"
+
+type ParentInf interface {
+	Func1(param1 string)
+	Func4(param1 string)
+}
+
+type ParentInf2 interface {
+	Func5()
+}
+
+type Parent struct {
+	mem1    int
+	Overide func(int)
+}
+
+//Func1不会被子类改写。但是Func1会调用一个内部方法func3，
+//func3会被子类改写。我们通过Overide方法被子类改写来模仿这种行为
+func (p *Parent) Func1(param1 string) {
+	fmt.Println("Func1")
+	p.Overide(100)
+}
+
+func (p *Parent) func3(param1 int) {
+	fmt.Println("Parent Func3")
+}
+
+//Func4会被子类改写，并且Func4是ParentInf中的一部分, 这就验证了golang能够实现父类的public virtual函数被改写的行为
+func (p *Parent) Func4(param1 string) {
+	fmt.Println("Parent Func4")
+}
+
+func NewParent() *Parent {
+	p := &Parent{}
+	p.Overide = p.func3
+	return p
+}
+
+//golang支持非菱形结构的继承结构的代码编写。Child会同时拥有Parent1还有Parent2的方法
+type Parent2 struct {
+	mem3 int
+}
+
+func (p *Parent2) Func5() {
+	fmt.Println("Parent2 Func5")
+}
+
+type Child struct {
+	Parent
+	Parent2
+	mem2 int
+}
+
+//Func2是Child增加的函数
+func (c *Child) Func2(param1 int) {
+	fmt.Println("Func2")
+}
+
+//func3等于是改写了Parent中的func3函数, 但是需要通过在创建对象时修改Parent的Overide函数对象来实现
+func (c *Child) func3(param1 int) {
+	fmt.Printf("Child Func3, %d\n", c.mem2)
+}
+
+//Child覆写Parent的Func4函数
+func (c *Child) Func4(param1 string) {
+	fmt.Println("Child Func4")
+}
+
+func NewChild(param int) *Child {
+	c := &Child{mem2: param}
+	c.Overide = c.func3  //实现private virtual函数被改写的行为
+	return c
+}
+
+func main() {
+	p := NewParent()
+	p.Func1("abc")
+
+	c := NewChild(200)
+	c.Func1("abc")
+	c.Func2(2)
+	c.Func5()
+
+	var pi ParentInf
+	pi = p
+	pi.Func1("def")
+	pi.Func4("def")
+
+	pi = c
+	pi.Func1("def")
+	pi.Func4("def")
+
+	var pi2 ParentInf2
+	pi2 = c
+	pi2.Func5()
+}
+```
+
+结论:  golang中给出了构造面向对象编程的机制，但是没有在语言层面上给出一个统一的对象的概念，而这些机制又是相对零散的，没有一个整体的概念的
+其实方案与javascript，lua等脚本语言的方案是相类似的。是否是一个好的方案是值得商榷的, 因为没有整体的概念让人很难进行整体理解和使用。
+这里其实也可以推演出面向对象这种技术的本质:
+面向对象技术与函数，编程语言相类似，本质上是一种基于类比的使用界面, 能够通过对于自然界中的类别已经行为的关系，快速地理解编程语言提供的特性的行为
+(编程语言也是一种基于类比的界面，能够通过人类语言的行为，快速地理解如何操作计算机的指令还有数据)
+这种技术本质上是在编程语言层面, 解决开发程序中存在的下列实际需求, 并通过人类容易理解的概念模型来使用编程语言有效地解决这些需求:
+(1) 信息隐藏的需求
+(2) 模块间的冗余问题。A模块的数据还有函数的逻辑与B模块大幅相同，如果没有额外的语言机制，则会造成需要反复编写冗余代理代码的情况
+(3) 调用方无差别地使用若干个模块，并且运行过程中改变行为的需求
+(4) 从A模块的数据还有函数的逻辑与B模块大幅相同所延申出来的A模块与B模块间有细微差异，希望通过尽可能少的冗余来表达这种差异
