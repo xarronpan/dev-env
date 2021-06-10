@@ -398,3 +398,47 @@ func main() {
 (4) 从A模块的数据还有函数的逻辑与B模块大幅相同所延申出来的A模块与B模块间有细微差异，希望通过尽可能少的冗余来表达这种差异
 
 所以从这种角度上面来看，面向对象语言从易用性的角度上面来讲，是一种优秀的技术方案。
+
+## 错误处理
+在golang中返回错误有两种不同的风格
+(1) 创建自定义的错误类型，以及错误对象，并且将额外的错误信息放入到错误对象中
+在这种场景下，错误的使用者需要通过下向转型来判断是什么错误，并且在将对象转换成具体的错误类型之后，再通过接口获取具体的错误信息
+这种方案是最为经典的方案，与java exception这类方案的错误数据表示是相类似的, 缺点是有时你需要定义较多的自定义错误类型，在一些比较轻的场景下可能不太方便
+
+(2) 返回一个特定的错误对象值来区分不同的错误
+这种方案其实很大程度上等价与一个错误码，其实并不是那么好的一种错误处理方式
+其实是一种应该被完全抛弃掉的错误处理方案, 但是golang中没有具体对错误进行分类的语法，而需要自己去下向转型, 代码编写其他其实是很别扭，远远没有java的异常含义清晰。
+但是目前golang不少的标准库都采用这种返回错误的方式
+在有些场景下，你希望这种风格的错误能够往上进行传递，但是这是你又没有对这个错误增加信息的能力。此时可以考虑使用 github.com/pkg/errors
+```go
+import (
+   "database/sql"
+   "fmt"
+
+   "github.com/pkg/errors"
+)
+
+func foo() error {
+   return errors.Wrap(sql.ErrNoRows, "foo failed")
+}
+
+func bar() error {
+   return errors.WithMessage(foo(), "bar failed")
+}
+
+func main() {
+   err := bar()
+   if errors.Cause(err) == sql.ErrNoRows {
+      fmt.Printf("data not found, %v\n", err)
+      fmt.Printf("%+v\n", err)
+      return
+   }
+   if err != nil {
+      // unknown error
+   }
+}
+```
+注意到这种风格的错误不使用于定义一个很清晰的api的场景，因为这种错误会对外暴露底层的程序细节，以及导致错误与api的描述不在一个抽象层次的问题
+(错误本身也是api的一部分!，因而给用户的概念应该是与api是用户能够整体进行理解的)
+这种用法更加适合于模块内部的较为轻的错误处理写法
+具体可见: https://medium.com/@dche423/golang-error-handling-best-practice-cn-42982bd72672
