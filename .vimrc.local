@@ -315,6 +315,8 @@ nmap <leader>mx <Plug>BookmarkClearAll
 nmap <leader>mkk <Plug>BookmarkMoveUp
 nmap <leader>mjj <Plug>BookmarkMoveDown
 nmap <leader>mg <Plug>BookmarkMoveToLine
+nmap <leader>]]c <plug>(signify-next-hunk)
+nmap <leader>[[c <plug>(signify-prev-hunk)
 
 au FileType go nmap <Leader>gd :YcmCompleter GoTo<CR>
 au FileType go nmap <leader>goi <Plug>(go-implements)
