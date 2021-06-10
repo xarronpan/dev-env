@@ -1,5 +1,9 @@
 # 教程 
+简易教程
 https://www.liaoxuefeng.com/wiki/1016959663602400
+
+cookbook
+https://python3-cookbook.readthedocs.io/zh_CN/latest/preface.html
 
 # 调试
 python -m pdb err.py
