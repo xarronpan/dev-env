@@ -347,7 +347,7 @@ docker login hub.agoralab.co
 
 #生成一个名字称为 regcred 的secret对象, secret对象的内容来源是$(pwd)/.docker/config.json, 即docker的密钥存储配置位置
 kubectl create secret generic regcred \
-    --from-file=.dockerconfigjson=$(HOME)/.docker/config.json \
+    --from-file=.dockerconfigjson=$HOME/.docker/config.json \
     --type=kubernetes.io/dockerconfigjson
 
 #在pod或者pod template的 spec.imagePullSecrets 配置中指定这个secret。
