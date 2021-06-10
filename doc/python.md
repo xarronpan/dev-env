@@ -234,6 +234,10 @@ class MyList(object, metaclass=ListMetaclass):
 ```
 比如上面的代码，没有任何的函数调用，但是hello函数还是会被执行
 在 `__new__`函数中去修改被创建的类的行为
+这里也可以分析一下为何动态修改类的代码为何需要放在另外一个类中，被成为元类。
+这是因为假设需求本身非常非常变态，动态创建A classs的代码模块，本身也需要动态创建类的行为，则假设创建A class的代码模块本身是个class，
+则有办法进行支持。此时动态创建A class的代码是一个class B，假设Class B也需要动态创建类的行为，则B Class也可以有个元类C Class，由C Class
+来进行指定。这样子任何复杂的语言行为都能够被支持。换一句话说，metaclass使得类创建的行为是能够形成一个闭包的。
 
 metaclass有点像javascript中的prototype的语言特性，通过一个对象的prototype指向的对象本身来构造一个类，都能够实现动态修改类的能力
 当然与反射的例子相类似，javascript支持这种功能的方式更加松散，更加容易出错，而python则提供了更加有针对性的语言机制来满足这一类需求
