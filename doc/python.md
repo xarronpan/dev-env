@@ -155,6 +155,8 @@ https://www.liaoxuefeng.com/wiki/1016959663602400/1017451447842528
 python的装饰器也是独有的语言feature, 提供了一种可编程的机制以声明式的方式，将行为绑定在类或者函数中的机制
 类似于java里面注解的功能
 https://www.liaoxuefeng.com/wiki/1016959663602400/1017451662295584
+类也是可以进行修饰的:
+https://python3-cookbook.readthedocs.io/zh_CN/latest/c09/p12_using_decorators_to_patch_class_definitions.html
 
 java中的注解以及python中的decorator都是相类似的语言特性。这些语言特性的主要作用是给类或者是函数增加行为(或者改变行为)。修饰器应该是对于这种语言特性较为准确的描述
 首先其本质上的作用与函数相类似，目的是为了去除代码里面的冗余，将很多函数或者很多类中共同使用的功能给集中在一起。
