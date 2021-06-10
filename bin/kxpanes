@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ $# != 1 ]; then
+  echo "usage: kxpanes 'k8s label selector'"
+  exit 1
+fi
+
+kubectl get pod -l $1|tail -n +2|cut -d' ' -f1|xpanes -s -c "kubectl exec -ti {} /bin/bash"
