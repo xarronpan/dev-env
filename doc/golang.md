@@ -177,7 +177,7 @@ type Foo struct {
 func (c *Foo) Func () {
 }
 
-int main() {
+func main() {
   c := &Foo{}
   c.Func()
 }
@@ -268,7 +268,7 @@ type Child struct {
   Parent //通过这种写法，表示Child拥有父类的全部方法，这样子就不需要编写很多的代理转发的代码
 }
 
-int main() {
+func main() {
   var pi ParentInf
   pi = &Child{}
   pi.Func(100)  //interface指向Child所继承下来的方法，如果golang的设计考虑了支持OO这种特性，则是应该给与支持的
