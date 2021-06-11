@@ -247,6 +247,24 @@ type Child struct {
 func (c *Child) Func () {
 }
 ```
+在上面的代码中，假设Child中拥有的是一个指针值，也是可以work的
+```go
+type Parent struct {
+}
+
+func (p *Parent) Func () {
+}
+
+type Child struct {
+  *Parent //通过这种写法，表示Child拥有父类的全部方法，这样子就不需要编写很多的代理转发的代码
+}
+
+// Child定义了自己的Func方法，能够覆盖Parent的方法
+func (c *Child) Func () {
+}
+```
+这种feature在golang中被称为内嵌。具体可见:
+https://github.com/xarronpan/dev-env/blob/main/doc/golang.md
 
 (3) 多态
 多态的本质是客户端代码能够通过同一个接口能够访问不同的对象。
