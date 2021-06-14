@@ -72,5 +72,6 @@ git clone https://gist.github.com/bradtraversy/f407d642bdc3b31681bc7e56d95485b6 
 git clone https://github.com/michaeltreat/Mongo_CheatSheet ~/cheatsheets/michaeltreat/Mongo_CheatSheet
 git clone https://github.com/xarronpan/naming-cheatsheet ~/cheatsheets/xarronpan/naming-cheatsheet
 git clone https://github.com/xarronpan/DockerCheatSheet ~/cheatsheets/xarronpan/DockerCheatSheet
+git clone https://github.com/yren/yaml-cheatsheet ~/cheatsheets/yren/yaml-cheatsheet
 
 git clone https://github.com/xarronpan/dev-env ~/notes
