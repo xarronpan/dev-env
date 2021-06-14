@@ -22,6 +22,7 @@ mongodb-brief
 mongodb
 naming
 docker
+yaml
 CHEET_SHEET_SECTIONS
 )
 case $SECTION in 
@@ -99,6 +100,8 @@ case $SECTION in
     vim -M ~/cheatsheets/xarronpan/naming-cheatsheet/README.md ;;
   docker )
     vim -M ~/cheatsheets/xarronpan/DockerCheatSheet/README.md ;;
+  yaml)
+    vim -M ~/cheatsheets/yren/yaml-cheatsheet/README.md ;;
   *)
     exit 0 ;;
 esac
