@@ -126,6 +126,10 @@ When a chart is deployed (a release is created), a status message is shown. To p
 ```bash
 helm status <release-name>
 ```
+### Get user defined values of a release
+```bash
+helm get values <release-name>
+```
 
 ## Uninstalling a release
 To uninstall a chart release from your cluster:

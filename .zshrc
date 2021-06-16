@@ -223,3 +223,4 @@ dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 
 [[ -s "/home/panxiangrong/.gvm/scripts/gvm" ]] && source "/home/panxiangrong/.gvm/scripts/gvm"
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+[[ /usr/local/bin/helm ]] && source <(helm completion zsh)
