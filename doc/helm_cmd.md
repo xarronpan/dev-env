@@ -1,9 +1,6 @@
 # Heml Doc
 https://helm.sh/docs/topics/charts/
 
-# Heml Template
-https://lzone.de/cheat-sheet/Helm%20Templates
-
 # Helm commands
 ## Finding and viewing charts
 
@@ -106,7 +103,27 @@ Example, installing chart sourcerepo/myapp and overriding the property foo.bar:
 ```bash
 helm install --set foo.bar=hello myapp-instance sourcerepo/myapp
 ```
-
+## Upgrading charts
+### Upgrade an app
+```bash
+helm upgrade [release] [chart]
+```
+### Instruct Helm to rollback changes if the upgrade fails
+```bash
+helm upgrade [release] [chart] --atomic
+```
+### Upgrade a release. If it does not exist on the system, install it
+```bash
+helm upgrade [release] [chart] --install
+```
+### Upgrade to a specified version
+```bash
+helm upgrade [release] [chart] --version [version-number]
+```
+### Roll back a release
+```bash
+helm rollback [release] [revision]
+```
 ## Getting information about deployed charts
 ### List all releases (deployed charts)
 When you want to see all the charts that have been deployed on your cluster (releases):
