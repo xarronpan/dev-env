@@ -147,6 +147,14 @@ helm status <release-name>
 ```bash
 helm get values <release-name>
 ```
+### Get all the release information
+```bash
+helm get all <release-name>
+```
+### Get release history
+```bash
+helm history <release-name>
+```
 
 ## Uninstalling a release
 To uninstall a chart release from your cluster:
