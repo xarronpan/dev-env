@@ -456,7 +456,7 @@ vim +BundleInstall! +BundleClean +q
 :Commands //搜索全部支持的命令
 :Commits //搜索gitlog的提交历史
 :Ag keyword   //在当前打开的文件目录搜索代码, 因为有预览窗口，所以比ack.vim要好用
-:GAg keyword //在git项目的根目录搜索代码, 因为有预览窗口，所以比ack.vim要好用
+:AG keyword //在git项目的根目录搜索代码, 因为有预览窗口，所以比ack.vim要好用
 :History:  //搜索vim命令历史
 :History   //搜索打开过的文件
 
