@@ -74,6 +74,10 @@ X11转移，勾选转移到XDISPLAY
 当我们使用shift+鼠标选定好了文本之后，
 再按shift+space就可以将选择的文本作为关键字通过搜索引擎进行搜索
 
+# terminus
+安装版本7.20
+只需要选择solarized配色，已经将除了ctrl-shift-v快捷键除外的其他快捷键给disable掉即可
+
 # xming
 安装xming的主要用途是打通ubuntu的剪切板与windows的剪切板
 此外我们可以在命令行中在windows中调起gui程序进行处理，其实是非常强大的功能
