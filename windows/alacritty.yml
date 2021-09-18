@@ -109,8 +109,9 @@
 
 font:
   normal:
-    family: Source Code Pro
-  size: 13
+    family: Consolas
+  size: 13.5
+
 # Font configuration
 #font:
   # Normal (roman) font face
