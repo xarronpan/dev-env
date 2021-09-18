@@ -96,6 +96,7 @@ autocmd BufEnter * call timer_start(10, { tid -> execute('highlight GitGutterCha
 autocmd BufEnter * call timer_start(10, { tid -> execute('highlight GitGutterDelete guifg=#ff2222 guibg=black ctermfg=1 ctermbg=black') })
 highlight VertSplit ctermbg=black ctermfg=black
 highlight SignColumn ctermbg=black
+highlight Cursorline ctermbg=8
 highlight link EasyMotionShade Comment
 highlight Pmenu ctermbg=black ctermfg=15
 
