@@ -79,6 +79,7 @@ X11转移，勾选转移到XDISPLAY
 只需要选择solarized配色，已经将除了ctrl-shift-v快捷键除外的其他快捷键给disable掉即可
 
 # alacritty
+安装source code pro字体
 将 alacritty.yaml 放入 C:\Users\PXR\AppData\Roaming\alacritty 中 
 
 # xming
