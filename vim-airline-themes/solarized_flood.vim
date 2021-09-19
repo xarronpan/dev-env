@@ -172,7 +172,8 @@ let g:airline#themes#solarized_flood#palette.accents = {
 
 if get(g:, 'loaded_ctrlp', 0)
   let g:airline#themes#solarized_flood#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(
-        \ [ '#d7d7ff', '#5f00af', 189, 55 , ''    ],
+        "\ [ '#d7d7ff', '#5f00af', 189, 55 , ''    ],
+        \ [ '#d7d7ff', '#000000', 189, 0 , ''    ],
         \ [ '#ffffff', '#875fd7', 231, 98 , ''    ],
         \ [ '#5f00af', '#ffffff', 55 , 231, 'bold'])
 endif
