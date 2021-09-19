@@ -150,9 +150,12 @@ let g:airline#themes#solarized_flood#palette.visual_modified = {
 " *****************************************************************************
 "                                                                 Inactive Mode
 " *****************************************************************************
+"let s:airline_a_inactive = ['#4e4e4e', '#1c1c1c', 239, 234, '']
+"let s:airline_b_inactive = ['#4e4e4e', '#262626', 239, 235, '']
+"let s:airline_c_inactive = ['#4e4e4e', '#303030', 239, 236, '']
 let s:airline_a_inactive = ['#4e4e4e', '#1c1c1c', 239, 234, '']
-let s:airline_b_inactive = ['#4e4e4e', '#262626', 239, 235, '']
-let s:airline_c_inactive = ['#4e4e4e', '#303030', 239, 236, '']
+let s:airline_b_inactive = ['#4e4e4e', '#000000', 239, 0, '']
+let s:airline_c_inactive = ['#4e4e4e', '#002831', 239, 8, '']
 let g:airline#themes#solarized_flood#palette.inactive =
       \ airline#themes#generate_color_map(s:airline_a_inactive,
                                         \ s:airline_b_inactive,
