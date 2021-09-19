@@ -22,7 +22,8 @@ https://blog.csdn.net/ddydavie/article/details/79031564
 prefix + : 输入命令 new，创建新tmux session
 prefix + C +c  创建新tmux session
 prefix + d  从当前tmux session dettach
-prefix + s 切换session
+prefix + s 切换session tree. 在界面中选中会话/window/panel，按x能够删除对应对象
+prefix + S 切换session. 选中session按h，l键能够展开/收起 会话/window/panel
 prefix + $ 重命名当前session
 关闭session，可以使用tmux fzf插件的菜单功能来关闭
 prefix + c 在当前session中创建窗口
@@ -34,8 +35,10 @@ prefix + enter 进入到vi-copy-mode
 prefix + p paste选择到的内容到命令行中
 prefix + num 切换窗口
 prefix + ,  重命名窗口
-prefix + - 垂直分窗口，创建新pane
-prefix + _ 水平分窗口，创建新pane
+prefix + - 垂直分窗口，创建新pane, panel与当前panel在同一个目录中
+prefix + _ 水平分窗口，创建新pane, panel与当前panel在同一个目录中
+prefix + % 垂直分窗口，创建新pane
+prefix + " 水平分窗口，创建新pane
 prefix + x 关闭当前pane
 prefix + ！ 使用当前pane创建新窗口
 
