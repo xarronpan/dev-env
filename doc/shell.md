@@ -1,6 +1,7 @@
 # readline 快捷键
 <C+h> 删除一个字符
-<C+w>删除一个word
+<C+w> 向前删除一个word
+<Alt+d> 向后删除一个word
 <C+u>删除一行
 <C+a> 跳到行头
 <C+e> 跳到行尾
