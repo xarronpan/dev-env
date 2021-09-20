@@ -45,7 +45,13 @@ prefix + ！ 使用当前pane创建新窗口
 ### 会话管理: tmuxinator
 会话的概念相当于一个tmux项目的概念。一个tmux的项目中，应该有多个关联关系相对较紧密的多个不同窗口。而一个窗口中的pane，则应该是内容更加紧密的
 我们可以通过更加强大的插件，来将session中的布局给持久化下来，变成一套完整的ide环境配置。在涉及到的ide项目结构非常复杂的情况下，或者项目非常多的时候，就需要tmux的session管理工具来完成这些事情。
-详细可见:
+tmuxn new project  创建一个新project, 并进行编辑配置
+tmuxn ls           查看项目列表
+tmuxn start project 使用一个新的tmux sesison启动项目
+tmuxn edit project  编辑项目配置
+tmuxn copy src_pro dest_pro 使用src_pro的配置，创建dest_pro
+
+配置的使用非常简单, 详细可见:
 https://github.com/tmuxinator/tmuxinator
 
 ### 并行会话交互: xpanes

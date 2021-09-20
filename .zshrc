@@ -158,6 +158,7 @@ export CHTSH_QUERY_OPTIONS="style=solarized-dark"
 export TZ='Asia/Shanghai'
 export EDITOR='vim'
 
+alias tmuxn="tmuxinator"
 alias cv="tput cnorm"
 alias gh="group-hosts"
 alias sa="$HOME/.tmux-butler/scripts/snippetdb put"
