@@ -154,8 +154,9 @@ export TLDR_QUOTE='italic'
 export TLDR_DESCRIPTION='gray'
 export TLDR_CODE='green'
 export TLDR_PARAM='green'
-export CHTSH_QUERY_OPTIONS="style=default"
+export CHTSH_QUERY_OPTIONS="style=solarized-dark"
 export TZ='Asia/Shanghai'
+export EDITOR='vim'
 
 alias cv="tput cnorm"
 alias gh="group-hosts"
