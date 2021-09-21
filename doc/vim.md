@@ -280,12 +280,14 @@ da%   删除嵌套括号或者语言关键字中的内容。包括嵌套符
 
 ## 剪切板交互管理
 ### 拷贝系统剪切板到vim中:
-ctrl + shirt + v，具体可以参考下面链接 https://askubuntu.com/questions/256782/how-to-copy-paste-contents-in-the-vi-editor
+ctrl + shift + v，具体可以参考下面链接 https://askubuntu.com/questions/256782/how-to-copy-paste-contents-in-the-vi-editor
 从系统缓存区拷贝到vim会出现缩进正常的问题。
 可以通过命令:set paste 进入paste模式，先进行黏贴，
 然后通过命令:set nopaste 退出paste模式
 可以通过 unimpaired 插件的 [op 命令来缓解从系统缓冲区拷贝到vim中的多行数据不对齐的问题
 出现这个问题的主要原因，是vim中对于来自keyboard的输入，都会默认打开自动indent的功能。而set paste的作用，也只是关闭自动indent的功能而已。
+此外，如果使用windows+alacritty的话，上面的操作会引起vim多插入分行。这是因为windows平台对于分行的处理存在问题
+此时可以通过命令: Ap，然后输入ctrl + shift + v, 然后esc解决这个问题
 
 ### 从vi中选择文本到系统缓冲区
 目前我们是打开了vi的mouse模式以及tmux的mouse模式，所以当我们使用鼠标在vi的buffer中进行选择时，默认是使用vi的visual模式来选择文本。
