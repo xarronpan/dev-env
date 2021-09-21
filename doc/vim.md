@@ -683,17 +683,22 @@ D 显式当前commit所有的diff修改
 
 ## 命令
 ### 行命令
-vim中的外部执行命令，是可以与shell的命令打通的。其拥有将行数据给予外部命令处理完成后，再修改当前行的能力
-vim命令能力的本质优势是可编程，几乎可以无限扩展。但是代价是前期的入门成本比较高
-:r !date   //执行date，并且将date的结果输入当前行
-:w !cat    //读入全部的文本数据，并且调用cat执行命令
-: !grep -oP '\d+\.\d+\.\d+\.\d+'    //读入当前行，并且将当前行作为STDIN送给grep命令，然后再获取grep命令的输出替换当前行的内容
-:% !grep -oP '\d+\.\d+\.\d+\.\d+'
-具体可以参考下面的教程
-https://github.com/iggredible/Learn-Vim/blob/master/ch14_external_commands.md
 j 命令：
 可以将多行文本变成一行文本。
 用法，使用visual模式选择多行文本，然后在命令中输入: j，即可将多行文本变成一行文本
+sort 命令:
+可以排序多行
+用法，使用visual模式选择多行文本，然后在命令中输入: sort，即可排序多行文本
+
+### 外部命令
+vim中的外部执行命令，是可以与shell的命令打通的。其拥有将行数据给予外部命令处理完成后，再修改当前行的能力
+vim命令能力的本质优势是可编程，几乎可以无限扩展。但是代价是前期的入门成本比较高
+:r !date   //执行date，并且将date的结果输入当前行。!号表示启动外部命令，而r是vim中内置的读入命令，能够读入文件。两者组合，表示将date的输出读入到当前行中
+:w !cat    //读入全部的文本数据，并且调用cat执行命令
+:.!grep -oP '\d+\.\d+\.\d+\.\d+'    //读入当前行(.表示当前行)，并且将当前行作为STDIN送给grep命令，然后再获取grep命令的输出替换当前行的内容
+:% !grep -oP '\d+\.\d+\.\d+\.\d+'  //读入当前文件所有行(%表示所有行)，并且将每一行作为STDIN送给grep命令，然后再获取grep命令的输出替换每一行
+具体可以参考下面的教程
+https://github.com/iggredible/Learn-Vim/blob/master/ch14_external_commands.md
 
 ### global命令
 
@@ -701,13 +706,13 @@ vi的global 命令是来自于ed命令的。所以vi中的s命令，全局命令
 注意到vim中的i，a，c等命令的命名方式就是来源于ed编辑器的，所以sed中也存在这些命令。不过这些命令是作用在一整行上的
 目前看起来vim作用与行的命令种类要比sed中的要多。更准确地说，vi比sed多了光标移动, 以及基于光标的文本动作的文本处理能力，而sed的处理能力，基本上只能基于一整行来进行
 
+global command可以通过一个 g/pattern1/,/pattern2/的模式选定 pattern1, pattern2之间范围的文本来进行处理。这个选定范围的能力与sed的范围选定能力定义是相同的。
+并且能够指定与pattern1，pattern2之间的行偏移
 外部命令，以及类似s的命令，都是直接可以与global command进行集成的。
 global command本质上是一个多行的文本过滤以及处理能力。这样子行上面的任何命令都可以在行数据上进行处理，本质上就是给予了无限的扩充能力 
 g/mongodb/.!grep -oP '\d+\.\d+\.\d+\.\d+'                     //在有mongodb的当行中，将行中内容作为STDIN调用外部命令grep，将行中的ip地址给过滤出来后，再替换当前行的内容
 g/mongodb/s/mongodb/hello/g                                       //在有mongodb的当行中，执行 s/mongodb/hello/g操作，将行中所有的mongodb都变成hello
 其中行处理能力中还涉及多行的处理函数比如sort，j命令等。
-global command可以通过一个 g/pattern1/,/pattern2/的模式选定 pattern1, pattern2之间范围的文本来进行处理。这个选定范围的能力与sed的范围选定能力定义是相同的。
-并且能够指定与pattern1，pattern2之间的行偏移
 global command的详细介绍可以参考下面的文档:
 https://github.com/iggredible/Learn-Vim/blob/master/ch13_the_global_command.md
 
