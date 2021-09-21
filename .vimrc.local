@@ -263,6 +263,7 @@ function! s:AlapastyManipulate()
   normal! Gygg
   exe "hide"
   normal! p
+  set paste!
 endfunction
 
 function! s:AlapastySetProps()
