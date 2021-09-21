@@ -22,8 +22,8 @@ https://blog.csdn.net/ddydavie/article/details/79031564
 prefix + : 输入命令 new，创建新tmux session
 prefix + C +c  创建新tmux session
 prefix + d  从当前tmux session dettach
-prefix + s 切换session tree. 在界面中选中会话/window/panel，按x能够删除对应对象
-prefix + S 切换session. 选中session按h，l键能够展开/收起 会话/window/panel
+prefix + w 切换session/window. 在界面中选中会话/window/panel，按x能够删除对应对象
+prefix + s 切换session. 选中session按h，l键能够展开/收起 会话/window/panel
 prefix + $ 重命名当前session
 关闭session，可以使用tmux fzf插件的菜单功能来关闭
 prefix + c 在当前session中创建窗口
