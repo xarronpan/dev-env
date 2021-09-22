@@ -49,6 +49,8 @@ alt+f alt+b
 ctrl+w atl+d
 atl键同样使用右手来按
 
+ctrl+_ undo之前的修改
+
 ctrl+s ctrl+q
 ctrl+s ctrl+q 是bash下面的快捷键，因而在vim中不能进行重新绑定
 在按入ctrl+s之后，终端会与终端的输出解绑。此时如果在vim中的话，看起来就是vim不能动了。这其实是终端不能进行输出引起的
