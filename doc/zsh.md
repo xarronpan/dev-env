@@ -65,7 +65,7 @@ ctrl+x a
 x  x可以解压任意文件
 
 ## 光标跳转: ace jump
-在zsh命令行中，键入 ctrl+s，则会启动zce插件，模仿emac中的ace jump模式搜索文本。在zsh中输出参数的首选方式是该方式，明显要被采用vim的方式要快
+在zsh命令行中，键入 ctrl+g，则会启动zce插件，模仿emac中的ace jump模式搜索文本。在zsh中输出参数的首选方式是该方式，明显要被采用vim的方式要快
 这主要是由于进入vim模式需要额外的key输入，而且进入到了vim模式后，目前并不支持类似easy-motion的方式的移动，导致移动效率很低下。
 进入vim模式快捷键: ctrl + j
 
