@@ -84,7 +84,7 @@ ZSH_HIGHLIGHT_STYLES[comment]=fg=241
 bindkey '^O' fzf_completion
 zstyle ':zce:*' bg 'fg=11'
 zstyle ':zce:*' fg 'fg=1,bold'
-bindkey '^s' zce
+bindkey '^g' zce
 setupsolarized dircolors.ansi-dark
 
 _gen_fzf_default_opts() {
