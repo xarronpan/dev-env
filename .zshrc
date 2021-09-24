@@ -157,6 +157,7 @@ export TLDR_PARAM='green'
 export CHTSH_QUERY_OPTIONS="style=solarized-dark"
 export TZ='Asia/Shanghai'
 export EDITOR='vim'
+export DISPLAY='192.168.127.1:0.0' #modify to your x11 server ip
 
 alias tmuxn="tmuxinator"
 alias cv="tput cnorm"
