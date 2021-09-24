@@ -16,12 +16,18 @@ tldr，以及超级速查表cheetsheet针对固定的问题使用效率更高，
 cht.sh安装完成后，在
 .bash_aliases 中增加
 alias cht='cht.sh --shell'
+
 cht命令来快速查找需要的编程语言 问答答案
-比如：cd go  进入go语言查询分类，然后 
+在终端中，支持的命令包括:
+:list 列出全部的目录分类。一般一个目录是一门语言
+help 列出帮助
+cd go  进入go语言查询分类，然后 
+           :list 则能给出当前编程语言的一个速查表的目录。输入list的内容即可找到对应的速查内容
+           :learn 则能给出当前编程语言的一个简单速查表
+           如果内置cheat sheet不能满足要求，则可以使用开放的语句在stackover flow上进行查询
            revert list 查询如何 revert list的相关结果
            revert list/1 获取这个查询命题的下一个结果 
            这里每一项结果都是一个可用的代码级，因而可能需要浏览多个结果之后才能找到合适的答案
-           :learn 则能给出当前编程语言的一个简单速查表
 
 cht中本身也集成了相当数量类似与tldr的命令使用例子。
 比如 ： find  输出一系列常用的find命令的使用例子。cht中的命名cheat的数量，复杂度比tldr中的要稍高一些，对于高级用户更为有用
