@@ -82,6 +82,9 @@ X11转移，勾选转移到XDISPLAY
 安装source code pro字体
 将 alacritty.yaml 放入 C:\Users\PXR\AppData\Roaming\alacritty 中 
 
+# windows terminal
+在settings.json中，调整solarized dark的background值为#001E27即可
+
 # xming
 安装xming的主要用途是打通ubuntu的剪切板与windows的剪切板
 此外我们可以在命令行中在windows中调起gui程序进行处理，其实是非常强大的功能
