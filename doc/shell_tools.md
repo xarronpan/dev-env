@@ -24,6 +24,7 @@ help 列出帮助
 cd go  进入go语言查询分类，然后 
            :list 则能给出当前编程语言的一个速查表的目录。输入list的内容即可找到对应的速查内容
            :learn 则能给出当前编程语言的一个简单速查表
+           :1line 该语言中常用的一行代码 (:list的结果中可以获取到)
            如果内置cheat sheet不能满足要求，则可以使用开放的语句在stackover flow上进行查询
            revert list 查询如何 revert list的相关结果
            revert list/1 获取这个查询命题的下一个结果 
