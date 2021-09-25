@@ -74,13 +74,13 @@ X11转移，勾选转移到XDISPLAY
 当我们使用shift+鼠标选定好了文本之后，
 再按shift+space就可以将选择的文本作为关键字通过搜索引擎进行搜索
 
-# terminus
-安装版本7.20
-只需要选择solarized配色，已经将除了ctrl-shift-v快捷键除外的其他快捷键给disable掉即可
-
 # alacritty
-安装source code pro字体
-将 alacritty.yaml 放入 C:\Users\PXR\AppData\Roaming\alacritty 中 
+目前alcritty主要发现的问题有:
+在windows中鼠标不能正常支持
+在windows中黏贴多行文本的时候，会插入空行
+在windows中编辑中文文件的时候，会出现奇怪的闪烁
+综合而言，alacritty更加适合在linux平台上进行使用，而在windows中，更加适合直接使用windows terminal
+除非所windows10版本不足导致windows terminal不能被安装
 
 # windows terminal
 在settings.json中，调整solarized dark的background值为#001E27
@@ -90,10 +90,28 @@ X11转移，勾选转移到XDISPLAY
 ctrl+shift+p 启动命令窗口，在命令窗口中可以找到打开setting的命令。
 这个命令可以在专注模式下(标签栏隐藏)的情况下给恢复配置
 
-# xming
-安装xming的主要用途是打通ubuntu的剪切板与windows的剪切板
-此外我们可以在命令行中在windows中调起gui程序进行处理，其实是非常强大的功能
-比如在命令行中输入 firefox, 则会弹出windows的命令窗口, 并且展现firefox的界面，并且能够进行鼠标交互
+# X11 forwardiing
+X11 forwarding主要用途是打通ubuntu的界面展现于windows的界面展现，以及ubuntu剪切板与windows的剪切板
+原理是ssh client能够将登录服务器的界面指令转发到windows中，并且由windows中安装的X server软件对指令进行解析之后，呈现界面
+
+## ssh
+ssh登录服务器时，需要增加 -X 参数，即可以启动用X11 端口转发
+在被登录的服务中，需要设置DISPLAY变量值为: Xserverip:0.0  . 比如windows与ubuntu虚拟机之间局域网的地址是192.168.127.1
+则DISPLAY需要设置为 192.168.127.1:0.0 
+
+## XServer
+windows中常用的开源XServer就是XMing。启动XMing时，需要在laucher中设置access control为禁用，则ubuntu通过ssh -X进行X11 forwarding
+即可以工作. XMing laucher中的clipboard选项，则可以视情况而定。如果目前的终端已经支持OSC52协议(clipboard协议), 则这里可以关闭
+目前windows terminal, alacritty都支持该协议，而xshell，securecrt则不支持
+
+# 翻墙
+安装SSR，使windows 客户端能够进行翻墙。同时配置ubuntu命令行环境下的 http_proxy, https_proxy环境变量(建议在rc文件中配置)，
+指向SSR的代理端口(默认为1080), 并且SSR客户端中需要进行配置允许本局域网连接SSR代理。
+这样子在ubuntu下的wget，git等命令，都能进行翻墙访问
+操作系统对于http代理的支持，都是在应用层实现，要求不同的应用去遵循系统定义的代理接口, 比如http_proxy, https_proxy这些环境变量
+这样子只要我们在一个统一的地方设置代理，则基本全部的命令都能够使用
+但是有些命令，比如apt，或者一些python库似乎没有使用这些环境变量需要单独进行设置
+ubuntu桌面上使用代理，则需要在桌面的设置/网络界面上进行设置
 
 # remap caplock
 由于我们的键位大量地依赖与ctrl键，而ctrl键实际上离键盘很远，所以一个较好的方案是将caps lock键remap成ctrl键，而不使用caps lock键的功能
