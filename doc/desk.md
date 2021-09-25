@@ -83,7 +83,12 @@ X11转移，勾选转移到XDISPLAY
 将 alacritty.yaml 放入 C:\Users\PXR\AppData\Roaming\alacritty 中 
 
 # windows terminal
-在settings.json中，调整solarized dark的background值为#001E27即可
+在settings.json中，调整solarized dark的background值为#001E27
+黏贴功能给remap成ctrl + shift + v
+
+快捷键:
+ctrl+shift+p 启动命令窗口，在命令窗口中可以找到打开setting的命令。
+这个命令可以在专注模式下(标签栏隐藏)的情况下给恢复配置
 
 # xming
 安装xming的主要用途是打通ubuntu的剪切板与windows的剪切板
