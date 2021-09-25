@@ -20,10 +20,13 @@ alias cht='cht.sh --shell'
 cht命令来快速查找需要的编程语言 问答答案
 在终端中，支持的命令包括:
 :list 列出全部的目录分类。一般一个目录是一门语言
+:intro 给出cht最重要的功能介绍
 help 列出帮助
 cd go  进入go语言查询分类，然后 
            :list 则能给出当前编程语言的一个速查表的目录。输入list的内容即可找到对应的速查内容
            :learn 则能给出当前编程语言的一个简单速查表
+           :learn~keyword 当给出的速查表过大时，可以通过~keyword，只展现与keyword匹配的功能
+                          比如 tar~extract 只展现tar命令cheatsheet中extract相关的内容 
            1line 该语言中常用的一行代码 (:list的结果中可以获取到)
            weirdness 该语言中一些奇怪的行为 (:list的结果中可以获取到）
            如果内置cheat sheet不能满足要求，则可以使用开放的语句在stackover flow上进行查询
