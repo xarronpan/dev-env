@@ -27,6 +27,9 @@ function capture_pane_history(){
   $tmuxcmd
 }
 
+ROOTDIR="$( cd "$(dirname "$0")/.." >/dev/null 2>&1 ; pwd -P )"
+cat $ROOTDIR/.zsh_history | awk -F ";" '{print $2}' | uniq
+
 cur_session=`tmux display-message -p '#S'`
 windows_list=`tmux list-windows -F '#I' -t $cur_session`
 for cur_window in $windows_list; do
@@ -35,3 +38,4 @@ for cur_window in $windows_list; do
       capture_pane_history $window.$i
   done
 done
+
