@@ -82,6 +82,7 @@ let g:interestingWordsTermColors = ['2', '3', '1', '4', '13', '6']
 let g:ctrlsf_default_root = 'project'
 let g:tagbar_position = 'leftabove vertical'
 let g:tagbar_width = 29
+let g:peekaboo_window = 'vertical leftabove 30new'
 
 "vim setting configure
 set ttymouse=xterm2
