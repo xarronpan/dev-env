@@ -305,6 +305,7 @@ ctrl + shift + v，具体可以参考下面链接 https://askubuntu.com/question
 
 对于名字寄存器，可以先在visual mode中对内容进行选定之后，输入: 进入命令模式，然后输入 yank a，将visual mode下选定的内容给拷贝到a寄存器中
 "ap  将名字寄存器a中的内容给paste出来
+"ayiw 将光标所在单词拷贝到a寄存器中
 名字寄存器的更多使用方案，可以参考下面的文章
 http://vimcasts.org/episodes/using-vims-named-registers/
 
