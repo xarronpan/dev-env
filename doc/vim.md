@@ -489,7 +489,8 @@ vim +BundleInstall! +BundleClean +q
 https://github.com/xarronpan/fzf-mru.vim
 这个插件实现了一个基于项目的mru。这正是开发项目代码所急需的
 命令:
-<leader>r  启动mru查找文件进行编辑
+<leader>M  启动mru查找文件进行编辑
+<leader>R  刷新mru列表，用于清理被删除的文件
 
 ### 关键词高亮:vim-interestingwords插件
 这个插件支持在阅读，review代码的时候，同时对n个不同的word进行高亮，秒杀vim内置的高亮功能
