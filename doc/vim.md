@@ -566,8 +566,14 @@ https://github.com/tpope/vim-surround
 ### 多光标操作:multi visual插件
 https://github.com/mg979/vim-visual-multi
 mult visual是multi cursor插件的加强版，基本上秒杀multi cursor插件
+
+选定文本:
 <c-n>会以当前光标下面的文本为模本，进入multi visual模式，进行文本搜索。y有时<c-n>不一定能够选择得到合适的文本，
 此时可以先进入visual模式选择需要转换的问题，再键入<c-n>, 则插件会以visual模式下选择的内容启动多光标替换
+<c-n>有时需要进行处理的多光标模式不一定为相同模式的问题。此时可以通过<c-n>, 在输入/则能够通过类似正则表达试的方式
+确定需要进行处理的多多光标文体。由此可见这个插件在需要批量进行文本替换时真的堪称神器
+
+操作选定文本:
 n 选定下一个光标，N 回退一个光标，q 跳过一个光标。当光标选定之后，就可以以普通的visusl模式下的编辑模式对文本进行编辑
 按 <Tab>，则可以切换到一个类似与normal的模式。此时所有的vim的normal mode的多数命令都能够使用，比如说 adolish，surrond的命令
 移动光标之后再按tab，则会根据光标的位置，调整被进行visual选择的区域
