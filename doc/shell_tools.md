@@ -75,6 +75,18 @@ https://github.com/denisidoro/navi      cheet的搜索增强能力
 https://github.com/bigH/git-fuzzy        git命令行的增强能力。这个项目本身也挺有用的，但是由于fugitive已经完成了git中绝大多数命令行管理的功能，所以这个工具本省意义不大
 https://github.com/laktak/extrakto       tmux能力增强。看起来很炫酷，但是不支持跨pane的屏幕数据的拷贝黏贴，所以实际用于比较有限。
 
+## 文件浏览工具: ranger
+命令:
+:Q 在rg命令中，cd到对应的目录中. 在tmux/vim插件中，将选中的目录/文件作为参数进行输出
+:z 在ranger中使用fastd进行跳转
+
+快捷键:
+ctrl-h: toggle show hidden files
+alt-f: 在rg中启用fzf进行搜索
+
+此外ranger支持很多插件功能，能够让其能力更加强悍
+https://github.com/ranger/ranger/wiki/Custom-Commands
+
 ## rlwrap
 使得任何从stdlin行中获取命令的工具，都能拥有像shell那样子的能够通过上下键寻找曾经输入过的命令，并且进行编辑的能力
 
