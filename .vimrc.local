@@ -325,6 +325,8 @@ noremap <M-u> <C-w>p<C-u><C-w>p
 noremap <M-d> <C-w>p<C-d><C-w>p
 noremap <M-j> <C-w>p5<C-e><C-w>p
 noremap <M-k> <C-w>p5<C-y><C-w>p
+noremap <M-h> :SidewaysLeft<cr>
+noremap <M-l> :SidewaysRight<cr>
 nnoremap <silent> <leader>t :tabnew<CR>
 nnoremap <silent> <leader>n :enew<CR>
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
