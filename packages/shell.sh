@@ -18,6 +18,7 @@ chmod +x ~/bin/cht.sh
 sudo apt-get install xsel
 
 sudo apt-get install fd-find
+sudo apt-get install ripgrep
 
 sudo add-apt-repository ppa:aacebedo/fasd
 sudo apt-get update
