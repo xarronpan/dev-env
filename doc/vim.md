@@ -601,6 +601,12 @@ cr-: 与crs相同，但是单次以-相连
 具体可以参考
 https://github.com/tpope/vim-abolish
 
+### 参数位置交换: sideways.vim
+atl+h 尝试向左交换光标所在参数。
+atl+l 尝试向右交换光标所在参数。
+
+除了函数参数，这个插件也支持一系列的其他参数的位置交换，比如golang list参数等
+
 ### 交换文本: vim-exchange 插件
 使用tommcdo/vim-exchange插件来交换对象
 https://github.com/tommcdo/vim-exchange
