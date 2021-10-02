@@ -129,7 +129,7 @@ function dirdiff()
   vim $@ -c "DirDiff $DIR1 $DIR2"
 }
 
-function rg {
+function rag {
   local IFS=$'\t\n'
   local tempfile="$(mktemp -t tmp.XXXXXX)"
   local ranger_cmd=(
