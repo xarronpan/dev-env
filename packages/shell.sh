@@ -33,6 +33,8 @@ sudo apt-get install axel
 
 sudo apt-get install sshfs
 
+sudo apt-get install parallel
+
 git clone https://github.com/bigH/git-fuzzy.git ~/.git-fuzzy
 
 sudo curl https://sh.rustup.rs -sSf | sh
