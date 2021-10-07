@@ -167,6 +167,17 @@ https://shapeshed.com/unix-join/
 可以方便地在命令行中并行地在本机或者远端执行命令
 这个命令牛逼的地方是可以以很短的命令行，地将需要处理的命令分发到不同的机器上，在处理完成之后再传输到本地
 就是一个迷你的并行处理工具。
+paralled提供的命令行能力基本上与xargs是相同的。所以基本上xargs能够进行使用的地方，就可以使用paralled命令，但是paralled的并行化能力
+比xargs要强, 同时处理能力也更加灵活。比如说-n(--max-args)参数在xargs中与paralled中都能够从标准输入中最多读入n行作为需要执行的命令的参数1..n
+但是paralled提供了引用n个不同参数占位符的能力，举个例子，{1}，{2}，...{n}
+paralled中也提供了从命令行读取参数, 并且对参数进行的组合能力: 
+paralled echo ::: 1 2 3 ::: 4 5 6               输入参数组合: 1 4,1 5,1 6,2 4,2 5,2 6 ..
+paralled --link echo ::: 1 2 3 ::: 4 5 6        输入参数join: 1 4,2 5,3 6 ..
+上诉这些功能在xargs中都是没有进行提供的
+
+具体可以参考下面的资料:
+https://linux.cn/article-9718-1.html
+https://www.baeldung.com/linux/processing-commands-in-parallel
 https://opensource.com/article/18/5/gnu-parallel
 https://www.youtube.com/watch?v=OpaiGYxkSuQ&list=PL284C9FF2488BC6D1
 
