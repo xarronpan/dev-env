@@ -167,6 +167,11 @@ q 命令可以对csv格式的内容进行SQL处理，包括类似于filter，gro
 有用的例子
 http://harelba.github.io/q/#installation
 
+## datetime处理
+dateutil工具包提供了dgrep, dseq, dsort等对datetime进行处理的工具包，对于时间相关的处理非常顺手
+有用的例子:
+http://www.fresse.org/dateutils/
+
 # 并行处理
 ## parallel
 可以方便地在命令行中并行地在本机或者远端执行命令

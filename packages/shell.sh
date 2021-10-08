@@ -41,6 +41,7 @@ sudo curl https://sh.rustup.rs -sSf | sh
 cargo install exa
 
 sudo apt-get install socat
+sudo apt-get install dateutils
 sudo pip install ranger-fm
 
 mkdir -p ~/tmp && cd ~/tmp
