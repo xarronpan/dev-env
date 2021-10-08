@@ -162,6 +162,11 @@ join命令与数据的join的含义是相同的，只是使用在文本记录上
 有用的例子
 https://shapeshed.com/unix-join/
 
+## 使用sql对文本进行处理: q
+q 命令可以对csv格式的内容进行SQL处理，包括类似于filter，groupby的能力是其他工具需要编写较多的代码才能实现的
+有用的例子
+http://harelba.github.io/q/#installation
+
 # 并行处理
 ## parallel
 可以方便地在命令行中并行地在本机或者远端执行命令
