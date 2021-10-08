@@ -188,8 +188,7 @@ paralled --link echo ::: 1 2 3 ::: 4 5 6        输入参数join: 1 4,2 5,3 6 ..
 具体可以参考下面的资料:
 https://linux.cn/article-9718-1.html
 https://www.baeldung.com/linux/processing-commands-in-parallel
-https://opensource.com/article/18/5/gnu-parallel
-https://www.youtube.com/watch?v=OpaiGYxkSuQ&list=PL284C9FF2488BC6D1
+https://www.gnu.org/software/parallel/parallel_tutorial.html
 
 # 编译工具链
 ## 检查.so所依赖的动态库: objdump
