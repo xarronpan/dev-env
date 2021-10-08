@@ -147,7 +147,7 @@ s命令则用于list mru cache的使用情况
 https://github.com/sharkdp/fd
 一个速度比find快100倍，命令行参数要简单70%的find命令，比find要好用太多了
 
-#文本处理
+# 文本处理
 ## 按模式拆分文件: csplit
 可以通过正则模式来将文件拆分成几个独立的文件
 有用的例子
