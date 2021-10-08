@@ -163,7 +163,7 @@ join命令与数据的join的含义是相同的，只是使用在文本记录上
 https://shapeshed.com/unix-join/
 
 ## 使用sql对文本进行处理: q
-q 命令可以对csv格式的内容进行SQL处理，包括类似于filter，groupby的能力是其他工具需要编写较多的代码才能实现的
+q 命令可以对csv格式的内容进行SQL处理，包括类似于filter，groupby, 甚至对文件进行join的能力是其他工具需要编写较多的代码才能实现的
 有用的例子
 http://harelba.github.io/q/#installation
 
