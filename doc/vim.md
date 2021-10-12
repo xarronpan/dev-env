@@ -986,8 +986,8 @@ https://github.com/will133/vim-dirdiff
 ### diff选定行:linediff插件
 linediff插件可以完成以前出现过的对比两段代码的功能。
 使用方式：
-在第一段文本使用visual方式选定后，输入命令：LD
-在第一段文本使用visual方式选定后，再输入命令：LD
+在第一段文本使用visual方式选定后，输入命令：DL
+在第一段文本使用visual方式选定后，再输入命令：DL
 则此时就会启动vim diff窗口进行对比
 https://github.com/AndrewRadev/linediff.vim
 
