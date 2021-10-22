@@ -295,7 +295,8 @@ cnoreabbrev YR YcmCompleter RefactorRename
 cnoreabbrev YF YcmCompleter Format
 cnoreabbrev SW Scratch
 cnoreabbrev DL Linediff
-cnoreabbrev DB diffthis
+cnoreabbrev DB windo diffthis
+cnoreabbrev UDB windo diffoff
 cnoreabbrev DD DirDiff
 cnoreabbrev PR Rooter
 cnoreabbrev CF CtrlSF
