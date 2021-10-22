@@ -98,7 +98,8 @@ https://github.com/iggredible/Learn-Vim/blob/master/ch02_buffers_windows_tabs.md
 打开新buffer
 :enew 在新窗口中打开一个empty buffer。下一步通过-命令来选择需要打开的文件。见dirvish插件的描述
 :vnew 在新的垂直窗口中打开一个empty buffer。下一步通过-命令来选择需要打开的文件。见dirvish插件的描述
-:tabnew 创建一个新的tab，并且创建一个新的buffer
+:tabnew 创建一个新的tab，并且创建一个新的buffer (<leader>tn)
+:tabclose 关闭一个tab (<leader>tc)
 ```bash
 vim -O file1.txt file2.txt #垂直打开若干个文件
 vim -o file1.txt file2.txt #水平打开若干个文件
