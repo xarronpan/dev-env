@@ -991,5 +991,10 @@ linediff插件可以完成以前出现过的对比两段代码的功能。
 则此时就会启动vim diff窗口进行对比
 https://github.com/AndrewRadev/linediff.vim
 
+### diff buffer
+在一个window上打开多个文件
+:DB Diff同一个window上多个文件
+:UDB 关闭同一个window上多个文件Diff
+
 ## help
 normal mode下面键入K，能够以当前光标单词为key去搜索vim的help文档。在阅读vimrc的时候，就不需要反复到web页面上去阅读插件的文档。
