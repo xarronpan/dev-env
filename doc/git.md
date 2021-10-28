@@ -168,7 +168,7 @@ git push              #将本地分支的修改同步到远程分支
 ## 从仓库的本地分支中创建本地分支，切换到该分支，并且推送到远程分支
 ```bash
 git checkout -b new_branch  #这个命令以当前本地分支为基准，创建新的本地分支，并且切换到新的本地分支。git checkout指切换分支，-b表示创建分支
-git push origin new_branch```
+git push --set-upstream origin new_branch
 
 ## 从仓库中拉取远程仓库分支，并且在本地创建本地分支
 ```bash
