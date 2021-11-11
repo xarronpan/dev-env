@@ -330,6 +330,7 @@ noremap <M-l> :SidewaysRight<cr>
 nnoremap <silent> <leader>tn :tabnew<CR>
 nnoremap <silent> <leader>tc :tabclose<CR>
 nnoremap <silent> <leader>n :enew<CR>
+nnoremap <silent> <leader>ep :echo expand('%:p')<CR>
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <silent> <leader>fi :YcmCompleter FixIt<CR>
