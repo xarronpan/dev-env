@@ -825,7 +825,7 @@ nnoremap <leader>gr :YcmCompleter GoToReferences<CR>:q<CR>:copen<CR>     //反�
                                                                          //再显式地将ycm的窗口关闭，再调用copen命令打开quicklist窗口，方便在quicklist窗口中浏览所有的语句引用
 nnoremap <leader>fi :YcmCompleter FixIt<CR>                              //自动修正编译错误
 nnoremap <leader>gi :YcmCompleter GoToImplementation<CR>                 //跳转到接口实现功能
-nnoremap <leader>doc :YcmCompleter GetDoc<CR>                            //显示符号文档信息
+nnoremap <leader>doc :YcmCompleter GetDoc<CR>                            //显示符号文档信息, 按esc键之后，显示符号的窗口不会关闭
 
 实用命令：
 ：lopen                                                                  //打开location list。ycm会将出错代码汇总位置都放在location list中
