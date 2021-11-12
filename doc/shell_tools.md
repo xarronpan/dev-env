@@ -199,3 +199,16 @@ objdump -p exe
 ...
 Dynamic Section:
 ...
+
+# 抓包
+## tcpdump
+tcpdump的使用方式为:
+tcpdump options pcap-expression
+比较有用的options有:
+-i any 从全部的接口进行抓包
+-w test.cap 将文件给存储在 test.cap中
+pcap-expression为过滤表达式，具体可以参考:
+man pcap-filter中见到详细的说明
+具体可以参考下面的资料
+https://www.cnblogs.com/wongbingming/p/13212306.html
+
