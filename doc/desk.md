@@ -241,3 +241,7 @@ r ue  启动自定义命令ue. 自定义命令适用与绿色安装的软件，�
 安装snipaste
 配置
 ctrl+\` 开始截屏
+# wireshark
+查看filter帮助: 
+帮助 -> 说明文档 -> wireshark过滤器
+文档的下部有不同协议的reference入口，里面有不同过滤器的名称，含义以及类型
