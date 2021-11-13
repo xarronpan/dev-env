@@ -202,12 +202,16 @@ Dynamic Section:
 
 # 抓包
 ## tcpdump
+tcmpdump存储的格式为pcap文件格式。由于wireshark也是基于pcap的，所以抓下来的包可以被wireshart进行分析
+经典的使用方法是在服务器上使用tcmpdump抓包之后，再在wireshark进行可视化的图形分析
 tcpdump的使用方式为:
 tcpdump options pcap-expression
 比较有用的options有:
 -i any 从全部的接口进行抓包
--w test.cap 将文件给存储在 test.cap中
-pcap-expression为过滤表达式，具体可以参考:
+-w test.cap 将文件给存储在 test.cap中. 
+pcap-expression的作用是对数据包进行过滤，使用了pcap软件中所定义的包过滤规则。
+一条过滤规则由  实体类型(比如说host port) 方向(比如说 src来源，dst目标) 协议(比如说tcp udp协议) 几部分组成，
+而这些过滤规则本身可以使用and or 括号进行组合
 man pcap-filter中见到详细的说明
 具体可以参考下面的资料
 https://www.cnblogs.com/wongbingming/p/13212306.html
