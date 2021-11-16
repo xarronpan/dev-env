@@ -80,8 +80,8 @@ let g:git_messenger_close_on_cursor_moved = v:false
 let g:gitgutter_sign_priority = 5
 let g:interestingWordsTermColors = ['2', '3', '1', '4', '13', '6']
 let g:ctrlsf_default_root = 'project'
-let g:tagbar_position = 'leftabove vertical'
-let g:tagbar_width = 29
+let g:tagbar_position = 'rightbelow'
+let g:tagbar_height = 35
 
 "vim setting configure
 set ttymouse=xterm2
