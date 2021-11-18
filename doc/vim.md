@@ -372,6 +372,10 @@ linux内置的书签功能太弱，因而目前使用了bookmark插件。
 <leader>mi增加一个书签，并且对书签的内容进行标注
 <leader>mc删除标签
 <leader>ma列出全部的标签
+<leader>mn跳到本文件下一个书签
+<leader>np跳到本文件上一个书签
+:BookmarkSave FILE_PATH 将书签存储备份到某个位置
+:BookmarkLoad FILE_PATH 读入书签
 当几个项目中的标签数据很多时，可以增加关键字来进行分组。这个插件已经与ctrl-p插件进行了集成，在进入ctrl-p中，再按下ctrl-f，会见到标签的选择
 此时就可以根据标签的特征来进行过滤，搜索
 
