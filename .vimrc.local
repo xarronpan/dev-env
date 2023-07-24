@@ -355,7 +355,7 @@ nnoremap <silent> <leader>: :History:<CR>
 nnoremap <silent> <leader>/ :History/<CR>
 nnoremap <silent> <leader>L :FZFLocList!<CR>
 nnoremap <silent> <leader>Q :FZFQuickFix!<CR>
-nnoremap <silent> <leader>F :Files<CR>
+nnoremap <silent> <leader>F :cd %:p:h <bar> Files<CR>
 nnoremap <silent> <leader>G :cd %:p:h <bar> CWAg!<CR>
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
