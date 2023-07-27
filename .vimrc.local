@@ -285,6 +285,8 @@ command! Ap call s:AlapastyCreate()
 
 cnoreabbrev ACK Rooter <bar> Ack!
 cnoreabbrev AG Rooter <bar> Ag!
+cnoreabbrev A cd %:p:h <bar> A
+cnoreabbrev AV cd %:p:h <bar> AV
 cnoreabbrev FB FSFZFBLines!
 cnoreabbrev AR AsyncRun
 cnoreabbrev TR VtrSendCommandToRunner!
