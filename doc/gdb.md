@@ -207,6 +207,10 @@ p  test1_```
 p c.test1_```
 注意在使用gdb来进行调试时，符号是不区分private与public的。
 
+# 带参数调试进程
+gdb -args target_file args1 args2 ...
+
+
 # 调试正在运行的进程
 在shell中输入
 ```bash
