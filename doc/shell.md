@@ -137,3 +137,15 @@ echo ${arrIN[1]}                  # Output: john@home.com
 具体可以参考
 https://stackoverflow.com/questions/918886/how-do-i-split-a-string-on-a-delimiter-in-bash
 
+# 日志分析
+## less
+1 通过行号关联分析日志
+  可以开两个不同的tmux窗口，一个窗口用less显式已经过滤的内容，一个窗口显式还没有过滤的内容
+两个窗口通过日志的行号来进行关联。这样子就可以做到类似ultraedit中过滤搜索分析日志的能力
+显式行号: 
+  在less命令行输入 -N, 即可toggle显式行号
+只显式过滤内容:
+  在less命令行输入 &pattern, 即可显式与pattern匹配的日志。
+
+2 实时跟踪日志
+  在less命令行输入 -F开始跟踪，ctrl-C停止跟踪
