@@ -216,3 +216,13 @@ man pcap-filter中见到详细的说明
 具体可以参考下面的资料
 https://www.cnblogs.com/wongbingming/p/13212306.html
 
+# 数据同步
+通过rsync可以本地编译机器与远端机器进行数据同步
+最重要的功能是进行代码的同步，这样子就可以在远端机器上进行编译/调试, 而不需要在远端机器上通过git拉去代码
+具体的方法为在远端机器上启动rsyncd，这样子就可以使用rsync的数据同步方式，绕开ssh的相关限制
+具体可以参考:
+https://itlanyan.com/use-rsync-daemon-to-sync-files-between-servers/
+需要特别注意的，包括:
+secrets file必须设置成600
+配置需要配置成
+hosts allow = *
