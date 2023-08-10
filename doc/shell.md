@@ -144,6 +144,8 @@ https://stackoverflow.com/questions/918886/how-do-i-split-a-string-on-a-delimite
 两个窗口通过日志的行号来进行关联。这样子就可以做到类似ultraedit中过滤搜索分析日志的能力
 显式行号: 
   在less命令行输入 -N, 即可toggle显式行号
+定位到行号:
+  在less命令行输入 xxxg, xxx为行号
 只显式过滤内容:
   在less命令行输入 &pattern, 即可显式与pattern匹配的日志。
 
