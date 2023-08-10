@@ -148,4 +148,4 @@ https://stackoverflow.com/questions/918886/how-do-i-split-a-string-on-a-delimite
   在less命令行输入 &pattern, 即可显式与pattern匹配的日志。
 
 2 实时跟踪日志
-  在less命令行输入 -F开始跟踪，ctrl-C停止跟踪
+  在less命令行输入 F开始跟踪，ctrl-C停止跟踪
