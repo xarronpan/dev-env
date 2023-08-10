@@ -148,6 +148,7 @@ https://stackoverflow.com/questions/918886/how-do-i-split-a-string-on-a-delimite
   在less命令行输入 xxxg, xxx为行号
 只显式过滤内容:
   在less命令行输入 &pattern, 即可显式与pattern匹配的日志。
+  再输入一次 &, 即可退出过滤模式，显式之前的内容。显式会定位到屏幕最上一行所属的行号
 
 2 实时跟踪日志
   在less命令行输入 F开始跟踪，ctrl-C停止跟踪
