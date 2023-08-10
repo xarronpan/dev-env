@@ -127,6 +127,12 @@ https://sourceware.org/gdb/current/onlinedocs/gdb/Symbols.html
 比如 p (*(cim::store::MsgWorker* (ptr_value)))
 这种方式也可以在分析内存的时候，应用到任意复杂结构的数据分析中
 
+# 步进调试代码
+## next一行代码
+有时候使用gdb的next命令，由于函数调用的层次很深，很多个next命令仍然在同一行中
+此时可以使用tbreak命令+行号(不需要文件名)，设置临时断点，再continue到这个断点，就可以达到跳过若干行代码的作用
+tb 行号
+
 # 断点/条件断点/ 观察断点
 可以在被调试的文件名前面加入路径前缀，用于区分不同的文件
  ```bash
