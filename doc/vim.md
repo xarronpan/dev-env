@@ -811,12 +811,7 @@ sudo python3 install.py --all
 在vim中输入命令:
 :YcmDebugInfo
 确认youcompleteme已经安装成功
-youcompleteme会使得vim变成一个真正的集成开发环境。在编辑c/c++项目时，为了使得clang能够工作，如果是使用make的项目，需要安装compiledb来生成编译数据库
-https://pypi.org/project/compiledb/
-同时为了头文件也可以正确编译, 还需要安装compdb，生成头文件的编译代码信息
-https://github.com/Sarcasm/compdb
 
-这样子youcompleteme就可以进行错误的实时提示，以及进行精确的符号跳转，符号查找
 #### 功能
 快捷键:
 注：<leader>键按上面的配置，是 '，' 号
@@ -843,6 +838,13 @@ nnoremap <leader>doc :YcmCompleter GetDoc<CR>                            //显�
 : cp //GoToReference功能会将结果方案quick fix window中。cp用于访问quick fix window的下一条
 :YcmCompleter GoToSymbol '目标符号'                                       //全局查找符号
 :YcmDebugInfo                                                             //ycm调试输出
+#### 编译数据库
+youcompleteme会使得vim变成一个真正的集成开发环境。在编辑c/c++项目时，为了使得clang能够工作，如果是使用make的项目，需要安装compiledb来生成编译数据库
+https://pypi.org/project/compiledb/
+同时为了头文件也可以正确编译, 还需要安装compdb，生成头文件的编译代码信息, 否则遇到存.h文件时, 会报编译错误
+https://github.com/Sarcasm/compdb
+这样子youcompleteme就可以进行错误的实时提示，以及进行精确的符号跳转，符号查找
+
 ### vim-go 插件
 #### 安装
 spf13的配置中默认已经安装了vim-go插件。需要在 .vim.before.local 中显式配置 bundle_groups, 增加go的组，然后在运行 vim +BundleInstall +BundleClean，
