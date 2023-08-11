@@ -497,6 +497,10 @@ https://github.com/xarronpan/fzf-mru.vim
 <leader>M  启动mru查找文件进行编辑
 <leader>R  刷新mru列表，用于清理被删除的文件
 
+注意若我们的项目跨了几个仓库的情况下，这个插件只搜索当前仓库下的mru，可能使用起来不方便
+此时应该考虑fzf.vim的History命令。目前已经绑定了命令:
+<leader>H
+
 ### 关键词高亮:vim-interestingwords插件
 这个插件支持在阅读，review代码的时候，同时对n个不同的word进行高亮，秒杀vim内置的高亮功能
 https://github.com/lfv89/vim-interestingwords
