@@ -813,6 +813,8 @@ sudo python3 install.py --all
 确认youcompleteme已经安装成功
 youcompleteme会使得vim变成一个真正的集成开发环境。在编辑c/c++项目时，为了使得clang能够工作，如果是使用make的项目，需要安装compiledb来生成编译数据库
 https://pypi.org/project/compiledb/
+同时为了头文件也可以正确编译, 还需要安装compdb，生成头文件的编译代码信息
+https://github.com/Sarcasm/compdb
 
 这样子youcompleteme就可以进行错误的实时提示，以及进行精确的符号跳转，符号查找
 #### 功能
