@@ -1,3 +1,6 @@
+# 常用gdb命令tips
+https://www.gitbook.com/book/wizardforcel/100-gdb-tips
+
 # 调试原理
 gdb调试器的主要工作原理，是使用符号信息，外加依赖于操作系统提供的api来实现断点，step等功能的。也就是说linux的其他系统命令，也提供了对于运行中的程序进行调试的能力，而不仅仅是gdb的能力
 这也不奇怪在Linux下有一系列动态调试进程，获取进程信息的的工具链了。
@@ -135,6 +138,9 @@ https://sourceware.org/gdb/current/onlinedocs/gdb/Symbols.html
 有时候使用gdb的next命令，由于函数调用的层次很深，很多个next命令仍然在同一行中
 此时可以使用tbreak命令+行号(不需要文件名)，设置临时断点，再continue到这个断点，就可以达到跳过若干行代码的作用
 tb 行号
+
+## 退出当前执行函数
+fin
 
 # 断点/条件断点/ 观察断点
 可以在被调试的文件名前面加入路径前缀，用于区分不同的文件
