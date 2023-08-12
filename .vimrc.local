@@ -9,6 +9,7 @@ let g:airline_theme = 'solarized_flood'
 let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#ycm#error_symbol = 'E:'
 let g:airline#extensions#ycm#warning_symbol = 'W:'
+let g:airline_section_c = '%t'
 let g:ycm_always_populate_location_list = 1
 highlight ycmwarningline guibg=#ffffcc
 highlight ycmwarningsign guibg=#ffffcc
