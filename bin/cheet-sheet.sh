@@ -39,17 +39,17 @@ case $SECTION in
            -c 'setlocal foldtext=NeatFoldText()' \
            ~/cheatsheets/skywind3000/awesome-cheatsheets/languages/golang.go ;;
   golang )
-    vim -M ~/cheatsheets/a8m/golang-cheat-sheet/README.md ;;
+    vim -M ~/cheatsheets/a8m/golang-cheat-sheet/README.md +Toc;;
   python-brief )
-    vim -M ~/cheatsheets/skywind3000/awesome-cheatsheets/languages/python.md ;;
+    vim -M ~/cheatsheets/skywind3000/awesome-cheatsheets/languages/python.md +Toc;;
   python )
-    vim -M ~/cheatsheets/xarronpan/python-cheatsheet/README.md ;;
+    vim -M ~/cheatsheets/xarronpan/python-cheatsheet/README.md +Toc;;
   cpp )
-    vim -M ~/cheatsheets/mortennobel/cpp-cheatsheet/README.md ;;
+    vim -M ~/cheatsheets/mortennobel/cpp-cheatsheet/README.md +Toc;;
   cpp11 )
-    vim -M ~/cheatsheets/AnthonyCalandra/modern-cpp-features/CPP11.md ;;
+    vim -M ~/cheatsheets/AnthonyCalandra/modern-cpp-features/CPP11.md +Toc;;
   vim-script )
-    vim -M ~/cheatsheets/skywind3000/awesome-cheatsheets/languages/vimscript.md ;;
+    vim -M ~/cheatsheets/skywind3000/awesome-cheatsheets/languages/vimscript.md +Toc;;
   gdb )
     vim -M -c 'setlocal foldmethod=expr' \
            -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
@@ -84,24 +84,24 @@ case $SECTION in
            -c 'highlight CheetSheetMarker ctermfg=10' \
            ~/cheatsheets/luckylittle/ansible-cheatsheet/ansible-cheatsheet.txt ;;
   markdown )
-    glow -p ~/cheatsheets/tchapi/markdown-cheatsheet/README.md ;;
+    glow -p ~/cheatsheets/tchapi/markdown-cheatsheet/README.md +Toc;;
   sql )
-    vim -M ~/cheatsheets/enochtangg/quick-SQL-cheatsheet/README.md ;;
+    vim -M ~/cheatsheets/enochtangg/quick-SQL-cheatsheet/README.md +Toc;;
   redis )
     vim -M -c 'setlocal foldmethod=expr' \
            -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
            -c 'setlocal foldtext=NeatFoldText()' \
             ~/cheatsheets/LeCoupa/awesome-cheatsheets/databases/redis.sh ;;
   mongodb-brief )
-    vim -M ~/cheatsheets/bradtraversy/mongodb_cheat_sheet.md/mongodb_cheat_sheet.md ;;
+    vim -M ~/cheatsheets/bradtraversy/mongodb_cheat_sheet.md/mongodb_cheat_sheet.md +Toc;;
   mongodb )
-    glow -p ~/cheatsheets/michaeltreat/Mongo_CheatSheet/README.md ;;
+    glow -p ~/cheatsheets/michaeltreat/Mongo_CheatSheet/README.md +Toc;;
   naming )
-    vim -M ~/cheatsheets/xarronpan/naming-cheatsheet/README.md ;;
+    vim -M ~/cheatsheets/xarronpan/naming-cheatsheet/README.md +Toc;;
   docker )
-    vim -M ~/cheatsheets/xarronpan/DockerCheatSheet/README.md ;;
+    vim -M ~/cheatsheets/xarronpan/DockerCheatSheet/README.md +Toc;;
   yaml)
-    vim -M ~/cheatsheets/yren/yaml-cheatsheet/README.md ;;
+    vim -M ~/cheatsheets/yren/yaml-cheatsheet/README.md +Toc;;
   *)
     exit 0 ;;
 esac
