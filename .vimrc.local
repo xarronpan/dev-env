@@ -85,7 +85,7 @@ let g:tagbar_position = 'rightbelow'
 let g:tagbar_height = 35
 
 "vim setting configure
-set ttymouse=xterm2
+"set ttymouse=xterm2
 set expandtab softtabstop=2 tabstop=2 shiftwidth=2
 set undodir=~/.vim/undodir
 set undofile
@@ -372,8 +372,8 @@ map  <leader><leader>l <Plug>(easymotion-bd-jk)
 nmap <leader><leader>l <Plug>(easymotion-overwin-line)
 map  <leader>w <Plug>(easymotion-bd-w)
 nmap <leader>w <Plug>(easymotion-overwin-w)
-"nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
-"nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
+nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
+nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
 nnoremap <leader>zfs :set foldmethod=syntax<CR>
 nnoremap <leader>zfi :set foldmethod=indent<CR>
 map <C-e> :Rooter <bar> NERDTreeTabsToggle<CR>
