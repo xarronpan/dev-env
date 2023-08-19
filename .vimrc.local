@@ -85,6 +85,7 @@ let g:interestingWordsTermColors = ['2', '3', '1', '4', '13', '6']
 let g:ctrlsf_default_root = 'project'
 let g:tagbar_position = 'rightbelow'
 let g:tagbar_height = 35
+let g:vim_tmux_clipboard#loadb_option = '-w'
 
 "vim setting configure
 "set ttymouse=xterm2
