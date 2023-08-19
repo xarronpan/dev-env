@@ -225,6 +225,10 @@ function! NeatFoldText()
   return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
 endfunction
 
+function! IndentFoldText()
+  return getline(v:foldstart)
+endfunction
+
 let AlapastyBufferName = ".alapasty"
 
 function! s:AlapastyCreate()
@@ -377,8 +381,8 @@ map  <leader>w <Plug>(easymotion-bd-w)
 nmap <leader>w <Plug>(easymotion-overwin-w)
 nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
 nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
-nnoremap <leader>zfs :set foldmethod=syntax<CR>
-nnoremap <leader>zfi :set foldmethod=indent<CR>
+nnoremap <leader>zfs :setlocal foldmethod=syntax foldtext=IndentFoldText()<CR>
+nnoremap <leader>zfi :setlocal foldmethod=indent foldtext=IndentFoldText()<CR>
 map <C-e> :Rooter <bar> NERDTreeTabsToggle<CR>
 nmap <leader>nt :Rooter <bar> NERDTreeFind<CR>
 nnoremap <leader>pt :PreviewTag<CR>
