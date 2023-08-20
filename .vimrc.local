@@ -385,7 +385,7 @@ nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
 nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
 nnoremap <leader>zfs :setlocal foldmethod=syntax foldtext=IndentFoldText()<CR>
 nnoremap <leader>zfi :setlocal foldmethod=indent foldtext=IndentFoldText()<CR>
-map <C-e> :Rooter <bar> NERDTreeTabsToggle<CR>
+map <C-e> :Rooter <bar> NERDTreeToggle<CR>
 nmap <leader>nt :Rooter <bar> NERDTreeFind<CR>
 nnoremap <leader>pt :PreviewTag<CR>
 nnoremap <leader>pc :PreviewClose<CR>
