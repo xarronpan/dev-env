@@ -1014,5 +1014,8 @@ https://github.com/AndrewRadev/linediff.vim
 :DB Diff同一个window上多个文件
 :UDB 关闭同一个window上多个文件Diff
 
+## MarkDown
+<leader>T 打开Toc窗口进行Markdown导航
+
 ## help
 normal mode下面键入K，能够以当前光标单词为key去搜索vim的help文档。在阅读vimrc的时候，就不需要反复到web页面上去阅读插件的文档。
