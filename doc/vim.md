@@ -94,6 +94,7 @@ leader键在下述的配置中是 ','
 在vim中，窗口和buffer是不同的概念。真正进行编辑的是buffer，而window是buffer的view
 所以窗口被关闭了，但是buffer是不会被关闭的。但是buffer被关闭，则窗口也要跟着一起关闭
 https://github.com/iggredible/Learn-Vim/blob/master/ch02_buffers_windows_tabs.md
+tabs则类似于tmux中的window，是vim windows的集合。目前我们的配置每个tab可以单独打开一个nerdtree，所以一个tab通常意味这一个项目目录
 
 打开新buffer
 :enew 在新窗口中打开一个empty buffer。下一步通过-命令来选择需要打开的文件。见dirvish插件的描述
@@ -354,8 +355,9 @@ zM 关闭所有被折叠的行
 
 https://github.com/iggredible/Learn-Vim/blob/master/ch17_fold.md
 
-<leader>zfs 在当前文件 使用 set foldmethod=syntax 创建fold，适用于C++，golang这类文件
-<leader>zfi 在当前文件 使用 set foldmethod=indent 创建fold，适用于Python这类文件
+<leader>cfs 在当前文件 使用 set foldmethod=syntax 创建fold，适用于C++，golang这类文件, 或者希望fold行能被高亮的情况
+<leader>cfi 在当前文件 使用 set foldmethod=indent 创建fold，适用于Python这类文件
+<learder>Z  使用fzf进行folding搜索. 这个功能用于在MardDown文件中搜索title
 
 ## 书签
 ### 内置书签功能
@@ -478,11 +480,14 @@ vim +BundleInstall! +BundleClean +q
 在任意模式下
 <leader> tab 对不同模式下的mapping进行fzf搜索
 
+<learder> Q 对QuickFix窗口进行搜索. 
+<learder> L 对Location窗口搜索. 
 <leader> :  对vim的命令历史进行fzf搜索
 <leader> /  对vim的搜索历史进行fzf搜索
 <leader> H  对vim的全局mru file进行fzf搜索
 <leader> W  对vim的window进行fzf搜索
 <leader> b  对vim的buffer进行fzf搜索, 主要用途打开无名窗口
+<learder> Z 对folding搜索. 这个功能用于在MardDown文件中搜索title
 
 在insert模式下
 <c+x><c+f> 对当前输入的字符串为前缀的path进行fzf补全。能够补全任意的path

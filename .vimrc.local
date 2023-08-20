@@ -75,7 +75,6 @@ let g:yoinkIncludeDeleteOperations = 1
 let g:bookmark_no_default_key_mappings = 1
 let g:taboo_tab_format = '  %N:%f  '
 let g:taboo_renamed_tab_format = '  %N:%l  '
-"let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_toc_autofit = 1
 let g:git_messenger_preview_mods = "botright"
@@ -383,8 +382,8 @@ map  <leader>w <Plug>(easymotion-bd-w)
 nmap <leader>w <Plug>(easymotion-overwin-w)
 nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
 nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
-nnoremap <leader>zfs :setlocal foldmethod=syntax foldtext=IndentFoldText()<CR>
-nnoremap <leader>zfi :setlocal foldmethod=indent foldtext=IndentFoldText()<CR>
+nnoremap <leader>cfs :setlocal foldmethod=syntax foldtext=IndentFoldText()<CR>
+nnoremap <leader>cfi :setlocal foldmethod=indent foldtext=foldtext()<CR>
 map <C-e> :Rooter <bar> NERDTreeToggle<CR>
 nmap <leader>nt :Rooter <bar> NERDTreeFind<CR>
 nnoremap <leader>pt :PreviewTag<CR>
