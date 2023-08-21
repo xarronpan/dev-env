@@ -13,3 +13,4 @@ cp vim-airline-themes/solarized_flood.vim ~/.vim/bundle/vim-airline-themes/autol
 #下面两项工具用于vim的ycm插件生成clang编译数据库使用
 sudo pip install compiledb
 sudo pip install compdb
+sudo pip install cpplint
