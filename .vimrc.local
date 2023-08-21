@@ -85,6 +85,14 @@ let g:ctrlsf_default_root = 'project'
 let g:tagbar_position = 'rightbelow'
 let g:tagbar_height = 35
 let g:vim_tmux_clipboard#loadb_option = '-w'
+let g:pymode_lint_on_fly = 1
+let g:pymode_lint_cwindow = 0
+let g:pymode_lint_todo_symbol = '>>'
+let g:pymode_lint_comment_symbol = '>>'
+let g:pymode_lint_visual_symbol = '>>'
+let g:pymode_lint_error_symbol = '>>'
+let g:pymode_lint_info_symbol = '>>'
+let g:pymode_lint_pyflakes_symbol = '>>'
 
 "vim setting configure
 "set ttymouse=xterm2
