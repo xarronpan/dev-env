@@ -157,10 +157,11 @@ export TLDR_PARAM='green'
 export CHTSH_QUERY_OPTIONS="style=solarized-dark"
 export TZ='Asia/Shanghai'
 export EDITOR='vim'
-export DISPLAY='192.168.127.1:0.0' #modify to your x11 server ip
+#export DISPLAY='192.168.127.1:0.0' #modify to your x11 server ip
 export http_proxy=192.168.127.1:1080 #modify to you ssr ip && port
 export https_proxy=192.168.127.1:1080
 export no_proxy='127.0.0.1'
+export GOPRIVATE="git.agoralab.co"
 
 alias tmuxn="tmuxinator"
 alias cv="tput cnorm"
