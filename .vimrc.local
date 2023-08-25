@@ -88,7 +88,7 @@ let g:vim_tmux_clipboard#loadb_option = '-w'
 let g:pymode_lint = 0
 let g:ale_linters = {
 \   'go': [],
-\   'cpp': [],
+\   'cpp': ['cpplint'],
 \   'c': [],
 \   'python': ['pyflakes'],
 \}
