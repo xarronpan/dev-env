@@ -369,7 +369,7 @@ nnoremap <silent> <leader>H :History<CR>
 nnoremap <silent> <leader>B :Buffers<CR>
 nnoremap <silent> <leader>W :Windows<CR>
 nnoremap <silent> <leader>: :History:<CR>
-nnoremap <silent> <leader>/ :History/<CR>
+nnoremap <silent> <leader>// :History/<CR>
 nnoremap <silent> <leader>L :FZFLocList!<CR>
 nnoremap <silent> <leader>Q :FZFQuickFix!<CR>
 nnoremap <silent> <leader>F :cd %:p:h <bar> Files<CR>
@@ -414,6 +414,7 @@ nmap <leader>mjj <Plug>BookmarkMoveDown
 nmap <leader>mg <Plug>BookmarkMoveToLine
 nmap <leader>]]c <plug>(signify-next-hunk)
 nmap <leader>[[c <plug>(signify-prev-hunk)
+nnoremap <silent> <leader>/ :OverCommandLine<CR>
 
 au FileType go nmap <Leader>gd :YcmCompleter GoTo<CR>
 au FileType go nmap <leader>goi <Plug>(go-implements)
