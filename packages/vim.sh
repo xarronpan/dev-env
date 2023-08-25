@@ -14,3 +14,4 @@ cp vim-airline-themes/solarized_flood.vim ~/.vim/bundle/vim-airline-themes/autol
 sudo pip install compiledb
 sudo pip install compdb
 sudo pip install cpplint
+sudo pip install flake8
