@@ -93,6 +93,11 @@ let g:pymode_lint_visual_symbol = '>>'
 let g:pymode_lint_error_symbol = '>>'
 let g:pymode_lint_info_symbol = '>>'
 let g:pymode_lint_pyflakes_symbol = '>>'
+let g:ale_linters = {
+\   'go': [],
+\   'cpp': [],
+\   'c': [],
+\}
 
 "vim setting configure
 "set ttymouse=xterm2
