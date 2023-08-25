@@ -241,6 +241,7 @@ func (p *Parent) Func () {
 
 type Child struct {
   Parent //通过这种写法，表示Child拥有父类的全部方法，这样子就不需要编写很多的代理转发的代码
+         //语言的行为，等价于人为地生成了转发代码
 }
 
 // Child定义了自己的Func方法，能够覆盖Parent的方法
@@ -257,6 +258,7 @@ func (p *Parent) Func () {
 
 type Child struct {
   *Parent //通过这种写法，表示Child拥有父类的全部方法，这样子就不需要编写很多的代理转发的代码
+         //语言的行为，等价于人为地生成了转发代码
 }
 
 // Child定义了自己的Func方法，能够覆盖Parent的方法
@@ -265,6 +267,50 @@ func (c *Child) Func () {
 ```
 这种feature在golang中被称为内嵌。具体可见:
 https://github.com/xarronpan/dev-env/blob/main/doc/golang.md
+
+!!! 内嵌主要的问题, 是代码的行为等价于人为生成了转发的代码。这点行为在某些场景和OO的行为还是不同的
+具体的例子如下
+```go
+type ParentInf interface {
+    Func()
+}
+
+type ParentEvent interface {
+    OnEvent(p ParentInf)
+}
+
+type Parent struct {
+    event ParentEvent
+}
+
+func (p *Parent) Func () {
+    p.event.OnEvent(p)
+}
+
+type Child struct {
+    Parent
+}
+
+func NewChild() *Child{
+    c := &Child{}
+    c.Parent.event = c
+}
+
+func (c *Child) OnEvent (p ParentInf) {
+    // c != p  !! 注意，p 此时指向Parent对象，而不是Child对象
+    // p.(*Child) 会崩溃，因为此时p指向的是Parent对象，不能转成Child对象
+}
+
+c := NewChild()
+c.Func()
+```
+在上述代码中，当c.Func被调用的时候，Parent会调用event接口进行回调
+在类似C++, java语言中，调用Func时的参数p等价于子类的对象，因而在OnEvent函数被调用时, 参数p等价于子类对象，
+因而在Child的OnEvent测试中, c==p, p.(*Child)都是可以工作的
+但是这点在golang语言中是不成立的。因为在调用c.Func时, 编译器只是人为地生成了代码 c.Parent.Func()
+因为Func中的参数是Parent，而不是Child的地址。所以  c==p, p.(*Child) 这些测试都是不能工作的
+ 
+ !!!所以golang中不具备完整模拟面向对象行为的能力的
 
 (3) 多态
 多态的本质是客户端代码能够通过同一个接口能够访问不同的对象。
