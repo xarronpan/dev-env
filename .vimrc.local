@@ -355,7 +355,7 @@ nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <silent> <leader>fi :YcmCompleter FixIt<CR>
 nnoremap <silent> <leader>gi :YcmCompleter GoToImplementation<CR>
 nnoremap <silent> <leader>gt :YcmCompleter GoToType<CR>
-nnoremap <silent> <leader>et :YcmCompleter GetType<CR>
+nnoremap <silent> <leader>pt :YcmCompleter GetType<CR>
 nnoremap <silent> <leader>do :YcmCompleter GetDoc<CR>
 nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
 nnoremap <silent> <C-t> :BTags<CR>
