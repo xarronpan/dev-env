@@ -932,14 +932,6 @@ vim +BundleInstall! +BundleClean +q
 具体可见
 https://github.com/vim-scripts/a.vim
 
-### tag预览:vim-preview插件
-使用'xarronpan/vim-preview-enhance'来增加在preview window中查看当前函数定义的功能
-这个功能的主要用途的在阅读代码的时候避免眼睛的跳转，能够同时查看两屏的代码
-
-命令:
-<leader>pt 当前光标下的tag打开preview window。若有多个tag定义，可以多次按 <leader>pt，则能在不同的定义间进行跳转
-<leaser>pc 关闭preview window
-如果需要滚屏查看preview windows下的内容，可以直接使用鼠标滚屏
 
 ### 补充命令:vim-unimpaired插件
 使用 tpope/vim-unimpaired 插件，就不用在记住一堆的成对的命令
@@ -990,11 +982,6 @@ https://github.com/chrisbra/NrrwRgn
 使用方式
 使用visual方式选定一段区域，然后输入命令 : NR
 
-### 显式代码上下文:context.vim插件
-https://github.com/wellle/context.vim
-这个插件可以在窗口顶部显示当前代码的上下文，在阅读复杂的代码的时候，能够减低头脑的负担
-使用方式：
-:CT  toggle context插件
 
 ## diff
 ### diff目录:vim-dir-diff插件

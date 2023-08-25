@@ -393,8 +393,6 @@ nnoremap <leader>cfs :setlocal foldmethod=syntax foldtext=IndentFoldText()<CR>
 nnoremap <leader>cfi :setlocal foldmethod=indent foldtext=foldtext()<CR>
 map <C-e> :Rooter <bar> NERDTreeToggle<CR>
 nmap <leader>nt :Rooter <bar> NERDTreeFind<CR>
-nnoremap <leader>pt :PreviewTag<CR>
-nnoremap <leader>pc :PreviewClose<CR>
 nnoremap <silent> <leader> :WhichKey ','<CR>
 nmap <M-n> <plug>(YoinkPostPasteSwapBack)
 nmap <M-p> <plug>(YoinkPostPasteSwapForward)
