@@ -2,6 +2,7 @@ vim的权威教程请参考： https://github.com/iggredible/Learn-Vim
 # 配置
 ## vim
 在ubuntu 20.04上，以spf13为基础，配置下面的命令。参考说明安装  https://github.com/spf13/spf13-vim
+此外对spf13有些修改，可以通过拷贝 https://github.com/xarronpan/spf13-vim 中的配置来修改sfp13中的行为
 
 vim的个性化配置: 这个配置可以上传到git，进行配置
 在 ~/.vimrc.local 中增加下面配置。目前这个配置可以在 https://github.com/xarronpan/dev-env.git 上访问到
