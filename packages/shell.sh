@@ -62,6 +62,8 @@ cd "$(bat --config-dir)/themes"
 git clone https://github.com/xarronpan/bat-solarized.git
 bat cache --build
 
+sudo pip install cppman
+
 wget git.io/trans
 mv trans ~/bin
 chmod +x trans ~/bin/trans
