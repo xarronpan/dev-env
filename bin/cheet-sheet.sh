@@ -27,6 +27,7 @@ k8s
 helm
 helm-cmd
 regex
+toml
 CHEET_SHEET_SECTIONS
 )
 case $SECTION in 
@@ -114,6 +115,8 @@ case $SECTION in
     vim -M ~/cheatsheets/xarronpan/helm-cheatsheet/helm_cmd.md +'setlocal nu!' +'setlocal foldlevel=20';;
   regex )
     browsh 'https://remram44.github.io/regex-cheatsheet/regex.html#syntax-basics' ;;
+  toml )
+    browsh 'https://quickref.me/toml' ;;
   *)
     exit 0+'setlocal foldlevel=20';;
 esac

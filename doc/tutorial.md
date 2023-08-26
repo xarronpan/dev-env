@@ -58,3 +58,6 @@ https://www.mysqltutorial.org/mysql-basics/
 
 #redis
 https://redis.io/docs/
+
+#toml
+https://github.com/toml-lang/toml/blob/main/toml.md
