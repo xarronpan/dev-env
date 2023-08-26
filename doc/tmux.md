@@ -127,9 +127,8 @@ tmux-jump的主要用途是为了进行copy-paste。而一般copy-paste操作都
 ### 跨panel已知模式文本auto-complete: tmux-bulter插件
 https://github.com/woodstok/tmux-butler
 命令:
-prefix + v  将当前window可见区域的内容作为补全内容进行选择
+prefix + v  将当前session中所有window一段历史区域的内容作为补全内容进行选择
 prefix + r  将当前window一段历史区域的内容作为补全内容进行选择
-prefix + R  将当前session中所有window一段历史区域的内容作为补全内容进行选择
 
 prefix + v 进入使用当前tmux上的屏幕输出，使用fzf来进行选择后，并且进行输出补全。在进入补全之后，还可以通过alt+pattern的方式，选择需要进行补全的pattern。
 内置的模式包括ip，命令行输入，hash等模式
@@ -189,7 +188,7 @@ https://github.com/settings/tokens
 
 ### 临时数据存储: tmux-butler插件
 tmux-bulter插件中包含了一个sneppetdb用于存储临时数据。典型的数据比如 机房的名字与机房id的对应关系，某个app的appid的值等经常要用到作为输入，但是不是典型的命令片段的情况
-prefix + m 会启用sneppetdb中的内容，通过key将内容获取到命令行中。snippetdb相对于pet而言非常轻量，更加适合于存储一些与业务相关联，但是反复需要作为命令参数的输入源要用到的数据
+prefix + M 会启用sneppetdb中的内容，通过key将内容获取到命令行中。snippetdb相对于pet而言非常轻量，更加适合于存储一些与业务相关联，但是反复需要作为命令参数的输入源要用到的数据
 比如所机房的groupid，某个业务的appid等信息。这个插件也能够大大加快进行编程，运维操作时的大脑负担，因为要获取这些业务数据通常很繁琐
 ```bash
 sa key value  #在snippetdb中增加key value对
@@ -224,11 +223,11 @@ https://github.com/tmux-plugins/tpm/blob/master/docs/managing_plugins_via_cmd_li
 
 ## 文档集成
 ### cheatsheet集成
-<prefix> + C   启动cheatsheet, 查找有用信息
+<prefix> + m   启动cheatsheet, 查找有用信息
 ### notes集成
-<prefix> + N   启动notes，查找有用信息
+<prefix> + n   启动notes，查找有用信息
 ### manpage集成
-<prefix> + M   启动manpage，查找有用信息
+<prefix> + q   启动manpage，查找有用信息
 
 ## 翻译: tmux-google-translate插件 
 https://github.com/knakayama/tmux-google-translate
