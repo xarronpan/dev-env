@@ -23,6 +23,9 @@ mongodb
 naming
 docker
 yaml
+k8s
+helm
+helm-cmd
 CHEET_SHEET_SECTIONS
 )
 case $SECTION in 
@@ -32,76 +35,82 @@ case $SECTION in
     vim -M -c 'setlocal foldmethod=expr' \
            -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
            -c 'setlocal foldtext=NeatFoldText()' \
-            ~/cheatsheets/skywind3000/awesome-cheatsheets/languages/bash.sh +'set nu!';;
+            ~/cheatsheets/skywind3000/awesome-cheatsheets/languages/bash.sh +'setlocal nu!' +'setlocal foldlevel=20';;
   golang-brief )
     vim -M -c 'setlocal foldmethod=expr' \
            -c 'setlocal foldexpr=GetGolangCheatSheetFold(v:lnum)' \
            -c 'setlocal foldtext=NeatFoldText()' \
-           ~/cheatsheets/skywind3000/awesome-cheatsheets/languages/golang.go +'set nu!' ;;
+           ~/cheatsheets/skywind3000/awesome-cheatsheets/languages/golang.go +'setlocal nu!' +'setlocal foldlevel=20';;
   golang )
-    vim -M ~/cheatsheets/a8m/golang-cheat-sheet/README.md +'set nu!' +Toc;;
+    vim -M ~/cheatsheets/a8m/golang-cheat-sheet/README.md +'setlocal nu!' +'setlocal foldlevel=20';;
   python-brief )
-    vim -M ~/cheatsheets/skywind3000/awesome-cheatsheets/languages/python.md +'set nu!' +Toc;;
+    vim -M ~/cheatsheets/skywind3000/awesome-cheatsheets/languages/python.md +'setlocal nu!' +'setlocal foldlevel=20';;
   python )
-    vim -M ~/cheatsheets/xarronpan/python-cheatsheet/README.md +'set nu!' +Toc;;
+    vim -M ~/cheatsheets/xarronpan/python-cheatsheet/README.md +'setlocal nu!' +'setlocal foldlevel=20';;
   cpp )
-    vim -M ~/cheatsheets/mortennobel/cpp-cheatsheet/README.md +'set nu!' +Toc;;
+    vim -M ~/cheatsheets/mortennobel/cpp-cheatsheet/README.md +'setlocal nu!' +'setlocal foldlevel=20';;
   cpp11 )
-    vim -M ~/cheatsheets/AnthonyCalandra/modern-cpp-features/CPP11.md +'set nu!' +Toc;;
+    vim -M ~/cheatsheets/AnthonyCalandra/modern-cpp-features/CPP11.md +'setlocal nu!' +'setlocal foldlevel=20';;
   vim-script )
-    vim -M ~/cheatsheets/skywind3000/awesome-cheatsheets/languages/vimscript.md +'set nu!' +Toc;;
+    vim -M ~/cheatsheets/skywind3000/awesome-cheatsheets/languages/vimscript.md +'setlocal nu!' +'setlocal foldlevel=20';;
   gdb )
     vim -M -c 'setlocal foldmethod=expr' \
            -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
            -c 'setlocal foldtext=NeatFoldText()' \
-           ~/cheatsheets/skywind3000/awesome-cheatsheets/tools/gdb.txt +'set nu!';;
+           ~/cheatsheets/skywind3000/awesome-cheatsheets/tools/gdb.txt +'setlocal nu!' +'setlocal foldlevel=20';;
   git )
     vim -M -c 'setlocal foldmethod=expr' \
            -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
            -c 'setlocal foldtext=NeatFoldText()' \
            -c 'syntax match CheetSheetMarker "#"' \
            -c 'highlight CheetSheetMarker ctermfg=10' \
-            ~/cheatsheets/skywind3000/awesome-cheatsheets/tools/git.txt +'set nu!';;
+            ~/cheatsheets/skywind3000/awesome-cheatsheets/tools/git.txt +'setlocal nu!' +'setlocal foldlevel=20';;
   tmux )
     vim -M -c 'setlocal foldmethod=expr' \
            -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
            -c 'setlocal foldtext=NeatFoldText()' \
            -c 'syntax match CheetSheetMarker "#"' \
            -c 'highlight CheetSheetMarker ctermfg=10' \
-           ~/cheatsheets/skywind3000/awesome-cheatsheets/tools/tmux.txt +'set nu!';;
+           ~/cheatsheets/skywind3000/awesome-cheatsheets/tools/tmux.txt +'setlocal nu!' +'setlocal foldlevel=20';;
   vim )
     vim -M -c 'setlocal foldmethod=expr' \
            -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
            -c 'setlocal foldtext=NeatFoldText()' \
            -c 'syntax match CheetSheetMarker "#"' \
            -c 'highlight CheetSheetMarker ctermfg=10' \
-           ~/cheatsheets/skywind3000/awesome-cheatsheets/editors/vim.txt +'set nu!';;
+           ~/cheatsheets/skywind3000/awesome-cheatsheets/editors/vim.txt +'setlocal nu!' +'setlocal foldlevel=20';;
   ansible )
     vim -M -c 'setlocal foldmethod=expr' \
            -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
            -c 'setlocal foldtext=NeatFoldText()' \
            -c 'syntax match CheetSheetMarker "#"' \
            -c 'highlight CheetSheetMarker ctermfg=10' \
-           ~/cheatsheets/luckylittle/ansible-cheatsheet/ansible-cheatsheet.txt +'set nu!';;
+           ~/cheatsheets/luckylittle/ansible-cheatsheet/ansible-cheatsheet.txt +'setlocal nu!' +'setlocal foldlevel=20';;
   markdown )
     glow -p ~/cheatsheets/tchapi/markdown-cheatsheet/README.md;;
   sql )
-    vim -M ~/cheatsheets/enochtangg/quick-SQL-cheatsheet/README.md +'set nu!' +Toc;;
+    vim -M ~/cheatsheets/enochtangg/quick-SQL-cheatsheet/README.md +'setlocal nu!' +'setlocal foldlevel=20';;
   redis )
     vim -M -c 'setlocal foldmethod=expr' \
            -c 'setlocal foldexpr=GetShellCheatSheetFold(v:lnum)' \
            -c 'setlocal foldtext=NeatFoldText()' \
-            ~/cheatsheets/LeCoupa/awesome-cheatsheets/databases/redis.sh +'set nu!';;
+            ~/cheatsheets/LeCoupa/awesome-cheatsheets/databases/redis.sh +'setlocal nu!' +'setlocal foldlevel=20';;
   mongodb-brief )
-    vim -M ~/cheatsheets/bradtraversy/mongodb_cheat_sheet.md/mongodb_cheat_sheet.md +'set nu!' +Toc;;
+    vim -M ~/cheatsheets/bradtraversy/mongodb_cheat_sheet.md/mongodb_cheat_sheet.md +'setlocal nu!' +'setlocal foldlevel=20';;
   mongodb )
     glow -p ~/cheatsheets/michaeltreat/Mongo_CheatSheet/README.md;;
   naming )
-    vim -M ~/cheatsheets/xarronpan/naming-cheatsheet/README.md +'set nu!' +Toc;;
+    vim -M ~/cheatsheets/xarronpan/naming-cheatsheet/README.md +'setlocal nu!' +'setlocal foldlevel=20';;
   docker )
-    vim -M ~/cheatsheets/xarronpan/DockerCheatSheet/README.md +'set nu!' +Toc;;
+    vim -M ~/cheatsheets/xarronpan/DockerCheatSheet/README.md +'setlocal nu!' +'setlocal foldlevel=20';;
   yaml)
-    vim -M ~/cheatsheets/yren/yaml-cheatsheet/README.md +'set nu!' +Toc;;
+    vim -M ~/cheatsheets/yren/yaml-cheatsheet/README.md +'setlocal nu!' +'setlocal foldlevel=20';;
+  k8s )
+    vim -M ~/cheatsheets/xarronpan/k8s-cheatsheet/k8s.md +'setlocal nu!' +'setlocal foldlevel=20';;
+  helm )
+    vim -M ~/cheatsheets/xarronpan/helm-cheatsheet/helm.md +'setlocal nu!' +'setlocal foldlevel=20';;
+  helm-cmd )
+    vim -M ~/cheatsheets/xarronpan/helm-cheatsheet/helm_cmd.md +'setlocal nu!' +'setlocal foldlevel=20';;
   *)
-    exit 0 ;;
+    exit 0+'setlocal foldlevel=20';;
 esac
