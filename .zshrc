@@ -146,11 +146,11 @@ function rag {
 }
 
 function cgodoc () {
-  go doc "$@" | chroma -l go -f terminal16 -s rrt | less
+  go doc "$@" | bat -lgo --style plain
 }
 
 function cpydoc () {
-  python3 -m pydoc "$@" | chroma -l py -f terminal16 -s rrt | less
+  python3 -m pydoc "$@" | bat -lpy --style plain
 }
 
 export BAT_THEME='Solarized'
