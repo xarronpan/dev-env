@@ -57,6 +57,10 @@ sudo dpkg -i glow_1.4.1_linux_amd64.deb
 wget https://github.com/harelba/q/releases/download/2.0.19/q-text-as-data_2.0.19-2_amd64.deb
 sudo dpkg -i q-text-as-data_2.0.19-2_amd64.deb
 
+wget https://github.com/browsh-org/browsh/releases/download/v1.8.2/browsh_1.8.2_linux_amd64
+x browsh_1.8.2_linux_amd64
+mv browsh_1.8.2_linux_amd64 ~/bin/browsh
+
 mkdir -p "$(bat --config-dir)/themes"
 cd "$(bat --config-dir)/themes"
 git clone https://github.com/xarronpan/bat-solarized.git
