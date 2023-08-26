@@ -7,6 +7,9 @@ https://pkg.go.dev/std
 #python
 https://docs.python.org/3/py-modindex.html
 
+#bash
+https://www.gnu.org/software/bash/manual/bash.html
+
 #docker
 https://docs.docker.com/engine/reference/builder/
 

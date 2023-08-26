@@ -20,6 +20,9 @@ https://www.liaoxuefeng.com/wiki/1016959663602400
 python Cookbook
 https://python3-cookbook.readthedocs.io/zh_CN/latest/chapters/p08_classes_and_objects.html
 
+#bash
+https://wangdoc.com/bash/intro
+
 #git
 教程
 https://www.liaoxuefeng.com/wiki/896043488029600
