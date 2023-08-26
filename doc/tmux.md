@@ -188,7 +188,7 @@ https://github.com/settings/tokens
 
 ### 临时数据存储: tmux-butler插件
 tmux-bulter插件中包含了一个sneppetdb用于存储临时数据。典型的数据比如 机房的名字与机房id的对应关系，某个app的appid的值等经常要用到作为输入，但是不是典型的命令片段的情况
-prefix + M 会启用sneppetdb中的内容，通过key将内容获取到命令行中。snippetdb相对于pet而言非常轻量，更加适合于存储一些与业务相关联，但是反复需要作为命令参数的输入源要用到的数据
+prefix + C 会启用sneppetdb中的内容，通过key将内容获取到命令行中。snippetdb相对于pet而言非常轻量，更加适合于存储一些与业务相关联，但是反复需要作为命令参数的输入源要用到的数据
 比如所机房的groupid，某个业务的appid等信息。这个插件也能够大大加快进行编程，运维操作时的大脑负担，因为要获取这些业务数据通常很繁琐
 ```bash
 sa key value  #在snippetdb中增加key value对
