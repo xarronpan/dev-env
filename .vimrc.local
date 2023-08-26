@@ -347,7 +347,8 @@ noremap <M-h> :SidewaysLeft<cr>
 noremap <M-l> :SidewaysRight<cr>
 nnoremap <silent> <leader>tn :tabnew<CR>
 nnoremap <silent> <leader>tc :tabclose<CR>
-nnoremap <silent> <leader>T :Toc<CR>
+nmap <F5> :Toc<CR>
+nmap <F6> :Folds<CR>
 nnoremap <silent> <leader>n :enew<CR>
 nnoremap <silent> <leader>ep :echo expand('%:p')<CR>
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
@@ -374,7 +375,6 @@ nnoremap <silent> <leader>L :FZFLocList!<CR>
 nnoremap <silent> <leader>Q :FZFQuickFix!<CR>
 nnoremap <silent> <leader>F :cd %:p:h <bar> Files<CR>
 nnoremap <silent> <leader>G :cd %:p:h <bar> CWAg!<CR>
-nnoremap <silent> <leader>Z :Folds<CR>
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
