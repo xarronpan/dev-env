@@ -2,4 +2,7 @@
 
 cd ~/notes/doc
 TARGET=$(fzf --prompt='sections>' --header="select note sections:")
-vim -M $TARGET +'set nu!' +Toc
+if [ -z $TARGET ]; then
+  exit 0 
+fi
+vim -M $TARGET +'setlocal nu!' +'setlocal foldlevel=20'
