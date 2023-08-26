@@ -149,6 +149,10 @@ function cgodoc () {
   go doc "$@" | chroma -l go -f terminal16 -s rrt | less
 }
 
+function cpydoc () {
+  python3 -m pydoc "$@" | chroma -l py -f terminal16 -s rrt | less
+}
+
 export BAT_THEME='Solarized'
 export LESS="-F -X $LESS"
 export PATH=$PATH:~/bin
@@ -187,6 +191,7 @@ alias dgrep="dateutils.dgrep"
 
 alias god="cgodoc"
 alias ccd="cppman"
+alias pyd="cpydoc"
 
 # Show logs of container, e.g. $dl base
 alias dl="docker logs"
