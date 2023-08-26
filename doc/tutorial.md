@@ -61,3 +61,6 @@ https://redis.io/docs/
 
 #toml
 https://github.com/toml-lang/toml/blob/main/toml.md
+
+#yaml
+https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started
