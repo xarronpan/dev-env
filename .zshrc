@@ -145,6 +145,10 @@ function rag {
   command rm -f -- "$tempfile" 2>/dev/null
 }
 
+function cgodoc () {
+  go doc "$@" | chroma -l go -f terminal16 -s rrt | less
+}
+
 export BAT_THEME='Solarized'
 export LESS="-F -X $LESS"
 export PATH=$PATH:~/bin
@@ -180,6 +184,9 @@ alias ddiff="dateutils.ddiff"
 alias dconv="dateutils.dconv"
 alias dadd="dateutils.dadd"
 alias dgrep="dateutils.dgrep"
+
+alias god="cgodoc"
+alias ccd="cppman"
 
 # Show logs of container, e.g. $dl base
 alias dl="docker logs"
