@@ -80,5 +80,7 @@ git clone https://github.com/michaeltreat/Mongo_CheatSheet ~/cheatsheets/michael
 git clone https://github.com/xarronpan/naming-cheatsheet ~/cheatsheets/xarronpan/naming-cheatsheet
 git clone https://github.com/xarronpan/DockerCheatSheet ~/cheatsheets/xarronpan/DockerCheatSheet
 git clone https://github.com/yren/yaml-cheatsheet ~/cheatsheets/yren/yaml-cheatsheet
+git clone https://github.com/xarronpan/k8s-cheatsheet.git ~/cheatsheets/xarronpan/k8s-cheatsheet
+git clone https://github.com/xarronpan/helm-cheatsheet.git ~/cheatsheets/xarronpan/helm-cheatsheet
 
 git clone https://github.com/xarronpan/dev-env ~/notes
