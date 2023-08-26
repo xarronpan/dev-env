@@ -777,12 +777,12 @@ https://github.com/airblade/vim-rooter
 ### tmux集成:vim-tmux-runner插件
 https://github.com/christoomey/vim-tmux-runner
 这个插件主要的功能在于在vim中不需要失去focus，就能在vi的窗口下创建一个tmux pane，执行shell 命令
-这种命令的主要用途，在于我们在vim中进行编辑，需要输入一些信息，而这些信息的来源需要通过命令行才能获得
-所以这个命令的典型用途是与 tmux-bulter插件一起使用。目前只要 <prefix> + r，就能启动pane输出历史的补齐功能。所以这种场景下，vim就能够很容易获得需要输入的内容
+这种命令的主要用途是用于调试脚本. 我们可以在另外tmux窗口中打开类似python的命令行，然后在vim本地编辑完之后
+将需要进行调试的代码行给发送到python命令行中进行调试。此这种编程方式称为REPL
+外, 在我们在vim中进行编辑，需要输入一些信息，而这些信息的来源需要通过命令行才能获得时, 也可以通过这种方式来获取
+所以这个命令的典型用途是与 tmux-bulter插件一起使用。目前只要 <prefix> + v，就能启动pane输出历史的补齐功能。
+所以这种场景下，vim就能够很容易获得需要输入的内容
 （如果需要输入进来的是多行的话，还是只能通过r！等方式来调用命令，大家所擅长的使用场景不同）
-这个插件的另外一种用途，就是在代码窗口中直接选择文本，发送到tmux窗口中。这种用法多见于REPL的编程方式。
-此时tmux runner窗口中可以运行一个解析器。然后我们就可以不离开编辑窗口的前提下，快速地编辑验证代码
-使用方式:
 :TR command 将command发往tmux runner窗口
 :TRL        将编辑器所在行，或者visual区域中的命令发送到tmux runner窗口中
 :TA         将当前已经被打开的tmux窗口作为tmux runner窗口
