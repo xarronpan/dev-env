@@ -92,6 +92,8 @@ let g:ale_linters = {
 \   'c': [],
 \   'python': ['pyflakes'],
 \}
+let g:formatdef_google_cpp = "'clang-format  -style=Google  -lines='.a:firstline.':'.a:lastline"
+let g:formatters_cpp = ['google_cpp']
 
 "vim setting configure
 "set ttymouse=xterm2
@@ -288,6 +290,7 @@ nnoremap <silent> <leader>tn :tabnew<CR>
 nnoremap <silent> <leader>tc :tabclose<CR>
 nmap <F5> :Toc<CR>
 nmap <F6> :Folds<CR>
+noremap <F8> :Autoformat<CR>
 nnoremap <silent> <leader>n :enew<CR>
 nnoremap <silent> <leader>ep :echo expand('%:p')<CR>
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>

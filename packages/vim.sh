@@ -15,3 +15,5 @@ sudo pip install compiledb
 sudo pip install compdb
 sudo pip install cpplint
 sudo pip install flake8
+
+sudo apt install clang-format
