@@ -356,12 +356,14 @@ zc 关闭被折叠的行
 za toggle被折叠的行
 zR 打开所有被折叠的行
 zM 关闭所有被折叠的行
+zj 定位到下一个fold
+zk 定位到上一个fold
 
 https://github.com/iggredible/Learn-Vim/blob/master/ch17_fold.md
 
 <leader>cfs 在当前文件 使用 set foldmethod=syntax 创建fold，适用于C++，golang这类文件, 或者希望fold行能被高亮的情况
 <leader>cfi 在当前文件 使用 set foldmethod=indent 创建fold，适用于Python这类文件
-<learder>Z  使用fzf进行folding搜索. 这个功能用于在MardDown文件中搜索title
+F6  使用fzf进行folding搜索. 这个功能用于在MardDown文件中搜索title
 
 ## 书签
 ### 内置书签功能
@@ -1006,7 +1008,7 @@ https://github.com/AndrewRadev/linediff.vim
 :UDB 关闭同一个window上多个文件Diff
 
 ## MarkDown
-<leader>T 打开Toc窗口进行Markdown导航
+F5 打开Toc窗口进行Markdown导航
 
 ## help
 normal mode下面键入K，能够以当前光标单词为key去搜索vim的help文档。在阅读vimrc的时候，就不需要反复到web页面上去阅读插件的文档。
