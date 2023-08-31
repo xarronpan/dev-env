@@ -33,6 +33,9 @@ https://www.ruanyifeng.com/blog/2018/10/git-internals.html
 git常用命令
 https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html
 
+#vim
+https://github.com/wsdjeg/vim-galore-zh_cn#%E8%B0%83%E8%AF%95
+
 #docker
 基本原理
 https://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html
