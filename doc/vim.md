@@ -1009,6 +1009,12 @@ https://github.com/AndrewRadev/linediff.vim
 
 ## MarkDown
 F5 打开Toc窗口进行Markdown导航
+## Man
+]] [[ 跳到下一个，前一个章节
+K 根据光标所在链接跳转
+C-T 跳回刚才的地方
+g/ 启动options搜索. 比如搜索 g/-Werror
+gf 根据光标所在文件跳转
 
 ## help
 normal mode下面键入K，能够以当前光标单词为key去搜索vim的help文档。在阅读vimrc的时候，就不需要反复到web页面上去阅读插件的文档。
