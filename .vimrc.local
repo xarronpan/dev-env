@@ -94,6 +94,23 @@ let g:ale_linters = {
 \}
 let g:formatdef_google_cpp = "'clang-format  -style=Google  -lines='.a:firstline.':'.a:lastline"
 let g:formatters_cpp = ['google_cpp']
+let g:any_jump_disable_default_keybindings = 1
+let g:any_jump_search_prefered_engine = 'ag'
+let g:any_jump_colors = {
+      \"plain_text":         "AnyJumpPlainText",
+      \"preview":            "AnyJumpPreview",
+      \"preview_keyword":    "AnyJumpPreviewKeyword",
+      \"heading_text":       "AnyJumpHeadingText",
+      \"heading_keyword":    "AnyJumpHeadingKeyword",
+      \"group_text":         "AnyJumpPlainText",
+      \"group_name":         "AnyJumpResultPath",
+      \"more_button":        "AnyJumpHelp",
+      \"more_explain":       "AnyJumpHelp",
+      \"result_line_number": "AnyJumpResultPath",
+      \"result_text":        "AnyJumpPlainText",
+      \"result_path":        "AnyJumpResultPath",
+      \"help":               "AnyJumpHelp"
+      \}
 
 "vim setting configure
 "set ttymouse=xterm2
@@ -115,6 +132,13 @@ highlight SignColumn ctermbg=black
 highlight Cursorline ctermbg=8
 highlight link EasyMotionShade Comment
 highlight Pmenu ctermbg=black ctermfg=15
+highlight AnyJumpPlainText ctermbg=black ctermfg=15
+highlight AnyJumpHeadingText ctermbg=green ctermfg=15
+highlight AnyJumpHeadingKeyword ctermbg=red ctermfg=15
+highlight AnyJumpHelp ctermbg=yellow ctermfg=15
+highlight AnyJumpResultPath ctermbg=blue ctermfg=15
+highlight AnyJumpPreview ctermbg=green ctermfg=15
+highlight AnyJumpPreviewKeyword ctermbg=red ctermfg=15
 
 autocmd! FileType fzf set laststatus=0 noshowmode noruler
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
@@ -264,6 +288,7 @@ cnoreabbrev TM TabMessage
 cnoreabbrev VSA VSSplitAbove
 cnoreabbrev VSB VSSplitBelow
 cnoreabbrev RT TabooRename
+cnoreabbrev AJ Rooter <bar> AnyJump
 
 "add slash
 cnoreabbrev AS s/$/\//
@@ -357,6 +382,8 @@ nmap <leader>mg <Plug>BookmarkMoveToLine
 nmap <leader>]]c <plug>(signify-next-hunk)
 nmap <leader>[[c <plug>(signify-prev-hunk)
 nnoremap <silent> <leader>/ :OverCommandLine<CR>
+nnoremap <leader>j :Rooter<bar>AnyJump<CR>
+xnoremap <leader>j :Rooter<bar>AnyJumpVisual<CR>
 
 au FileType go nmap <Leader>gd :YcmCompleter GoTo<CR>
 au FileType go nmap <leader>goi <Plug>(go-implements)
