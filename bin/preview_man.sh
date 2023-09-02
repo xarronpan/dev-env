@@ -33,4 +33,4 @@ function man() {
     man "$@"
 }
 PARAMS=($(echo $1|grep -oP '\w+'|head -n 2|xargs))
-vman ${PARAMS[1]} ${PARAMS[0]}
+LESS='' man ${PARAMS[1]} ${PARAMS[0]}
