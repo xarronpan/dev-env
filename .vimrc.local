@@ -65,8 +65,10 @@ let g:which_key_use_floating_win = 0
 let g:multi_cursor_use_default_mapping=0
 let g:VM_Extend_hl = 'Visual'
 let g:VM_highlight_matches = 'hi! link Search MatchParen'
-let g:lt_location_list_toggle_map = '<leader>ll'
-let g:lt_quickfix_list_toggle_map = '<leader>qq'
+let g:lt_location_list_toggle_map = '<leader><leader>l'
+let g:lt_quickfix_list_toggle_map = '<leader><leader>q'
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_use_smartsign_us = 1
 let g:AutoPairsShortcutToggle = ''
 let g:AutoPairsShortcutFastWrap = ''
 let g:AutoPairsShortcutJump = ''
@@ -355,10 +357,16 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 inoremap <expr> <c-x><c-r> fzf#vim#complete('cat ~/.zsh_history\|cut -c 16-\|tac')
 nmap s <Plug>(easymotion-overwin-f)
-map  <leader><leader>l <Plug>(easymotion-bd-jk)
-nmap <leader><leader>l <Plug>(easymotion-overwin-line)
-map  <leader>w <Plug>(easymotion-bd-w)
 nmap <leader>w <Plug>(easymotion-overwin-w)
+nmap <leader>l <Plug>(easymotion-overwin-line)
+map  <space>w <Plug>(easymotion-bd-w)
+map  <space>W <Plug>(easymotion-bd-W)
+map  <space>e <Plug>(easymotion-bd-e)
+map  <space>E <Plug>(easymotion-bd-E)
+map  <space>f <Plug>(easymotion-bd-f)
+map  <space>t <Plug>(easymotion-bd-t)
+map  <space>l <Plug>(easymotion-lineforward)
+map  <space>h <Plug>(easymotion-linebackward)
 nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
 nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
 nnoremap <leader>cfs :setlocal foldmethod=syntax foldtext=IndentFoldText()<CR>
