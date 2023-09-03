@@ -23,6 +23,9 @@ https://python3-cookbook.readthedocs.io/zh_CN/latest/chapters/p08_classes_and_ob
 #bash
 https://wangdoc.com/bash/intro
 
+#regex
+https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md
+
 #git
 教程
 https://www.liaoxuefeng.com/wiki/896043488029600
