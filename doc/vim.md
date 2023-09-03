@@ -199,16 +199,16 @@ dTa 光标向后跳到a字符之间的字符，并且删除不包括a之间的�
 详细可以参考: https://github.com/iggredible/Learn-Vim/blob/master/ch04_vim_grammar.md
 
 ### easymotion插件增强vim动作语法
-d <leader> <leader> + e 后向删除到某个单词的结束，通过easy motion来定位具体的位置
-d <leader> <leader> + b 前向删除到某个单词的结束，通过easy motion来定位具体的位置
-d <leader> <leader> + j 后向删除都某行，通过easy motion来具体的位置
-d <leader> <leader> + k 前向删除都某行，通过easy motion来具体的位置
-d <leader><leader>+ fa 往后删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
-d <leader><leader>+ Fa 往前删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
-d <leader><leader>+ ta 往后删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(不包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
-d <leader><leader>+ Ta 往前删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(不包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
-从上面的例子可以看出，easy motion除了支持s键以外，所以以 <leader><leader>开头的键，都是支持vi的默认动作的，比如f，F，t，a，w，b间，也就是可以在vi的所有支持的动词加名词的动作中，都加入easy motion
-的支持。<leader><leader>+vim光标跳转键，除了扩展了vim的移动光标的所有能力了，也极大加强了vim选择textobj的能力。这个动作键可以和vim中的所有编辑动作(d,c,s，以及插件所支持的编辑动作)相互结合使用
+d <space> + e 后向删除到某个单词的结束，通过easy motion来定位具体的位置
+d <space> + b 前向删除到某个单词的结束，通过easy motion来定位具体的位置
+d <space> + j 后向删除都某行，通过easy motion来具体的位置
+d <space> + k 前向删除都某行，通过easy motion来具体的位置
+d <space>+ fa 往后删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
+d <space>+ Fa 往前删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
+d <space>+ ta 往后删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(不包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
+d <space>+ Ta 往前删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(不包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
+从上面的例子可以看出，easy motion除了支持s键以外，所以以 <space>开头的键，都是支持vi的默认动作的，比如f，F，t，a，w，b间，也就是可以在vi的所有支持的动词加名词的动作中，都加入easy motion
+的支持。<space>+vim光标跳转键，除了扩展了vim的移动光标的所有能力了，也极大加强了vim选择textobj的能力。这个动作键可以和vim中的所有编辑动作(d,c,s，以及插件所支持的编辑动作)相互结合使用
 
 ## 文本对象
 ### 内置文本对象
