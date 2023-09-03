@@ -538,6 +538,9 @@ ctrlp切换搜索模式 ctrl+f，其中mru是most recent used文件的意思，�
 ## 文本替换
 在文本中进行替换，一般是:s//命令
 
+### subsitude预览
+<leader>/  使用one-motion插件的能力，对subsitude命令结果进行预览，非常使用
+
 ### vim-far 插件
 far插件可以认为是vim substitute命令的增强。其除了支持subsititute完整的正则表达式替换，替换表达式中\1 \2匹配括号的功能外，最为主要的能力是
 1) 做替换的预览，并且在预览窗口进行排除后，最后再做应用
@@ -902,7 +905,6 @@ https://github.com/derekwyatt/vim-protodef 
 在 .vimrc.bundles.local 中增加:
 Bundle 'xarronpan/vim-fswitch' 
 Bundle 'derekwyatt/vim-protodef'
-
 在shell中执行:
 vim +BundleInstall! +BundleClean +q
 
@@ -912,6 +914,11 @@ vim +BundleInstall! +BundleClean +q
 命令:
 <leader>PN 在cc，cpp文件中按下这个快捷键，则会根据对应的.h文件，生成代码的骨架,并且如果class在头文件中是在namespace下的话，不生成namespace前缀
 <leader>PP 在cc，cpp文件中按下这个快捷键，则会根据对应的.h文件，生成代码的骨架
+
+### AnyJump
+当LSP无法编译当前文件时, AnyJump使用正则表达式的方法给出最好的go to defination
+和 go to reference的能力。这点可以和Tags的能力一起使用, 对LSP IDE的能力进行补充
+<leader>j 启动AnyJump界面
 
 ## 缩写
 当我们通过abbrev命令定义了缩写之后，在vim的命令模式下输入缩写的命令，都会被vim自动展开

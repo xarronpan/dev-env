@@ -128,7 +128,7 @@ tmux-jump的主要用途是为了进行copy-paste。而一般copy-paste操作都
 https://github.com/woodstok/tmux-butler
 命令:
 prefix + v  将当前session中所有window一段历史区域的内容作为补全内容进行选择
-prefix + r  将当前window一段历史区域的内容作为补全内容进行选择
+prefix + V  将当前window一段历史区域的内容作为补全内容进行选择
 
 prefix + v 进入使用当前tmux上的屏幕输出，使用fzf来进行选择后，并且进行输出补全。在进入补全之后，还可以通过alt+pattern的方式，选择需要进行补全的pattern。
 内置的模式包括ip，命令行输入，hash等模式
