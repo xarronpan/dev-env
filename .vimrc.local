@@ -365,6 +365,7 @@ map  <space>e <Plug>(easymotion-bd-e)
 map  <space>E <Plug>(easymotion-bd-E)
 map  <space>f <Plug>(easymotion-bd-f)
 map  <space>t <Plug>(easymotion-bd-t)
+map  <space>n <Plug>(easymotion-bd-n)
 map  <space>l <Plug>(easymotion-lineforward)
 map  <space>h <Plug>(easymotion-linebackward)
 nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
