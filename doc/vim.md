@@ -174,12 +174,6 @@ s 启动easy motion，找一个字符, 并跳转到对应的位置中
 <leader> <leader> + j使用easy motion后向跳转到某行 (与vim j的定义相同)。这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
 <leader> <leader> + k 使用easy motion后向跳转到某行 (与vim k的定义相同)。这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
 
-### clever-f.vim插件
-https://github.com/rhysd/clever-f.vim
-这个插件主要解决目前, 键被用于leader键，而f，t等键的前后向搜索功能不能使用的问题
-而且这个插件给定的key-binding也比; , 键要好用
-使用方式: 
-比如fa 之后，再按f，则会重复fa的动作，再按F，则会重复执行Fa
 
 ### comfortable-motion插件
 yuttie/comfortable-motion.vim的作用能够使用鼠标滚动键顺滑地进行翻页
