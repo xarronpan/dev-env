@@ -5,3 +5,9 @@ https://explainshell.com/explain?cmd=cut%20-d%20%27%20%27%20-f%201%20/var/log/ap
 # regex
 通过用户提供文本生成regex
 https://github.com/pemistahl/grex
+
+# tools
+https://tool.lu/
+
+在线代码运行
+https://tool.lu/coderunner/
