@@ -138,11 +138,12 @@ highlight SignColumn ctermbg=black
 highlight Cursorline ctermbg=8
 highlight link EasyMotionShade Comment
 highlight Pmenu ctermbg=black ctermfg=15
+highlight PmenuSel ctermbg=red ctermfg=7
 highlight AnyJumpPlainText ctermbg=yellow ctermfg=15
 highlight AnyJumpHeadingText ctermbg=green ctermfg=15
 highlight AnyJumpHeadingKeyword ctermbg=red ctermfg=15
 highlight AnyJumpHelp ctermbg=gray ctermfg=15
-highlight AnyJumpResultPath ctermbg=blue ctermfg=15
+highlight AnyJumpResultPath ctermbg=6 ctermfg=15
 highlight AnyJumpPreview ctermbg=black ctermfg=15
 highlight AnyJumpPreviewKeyword ctermbg=red ctermfg=15
 
