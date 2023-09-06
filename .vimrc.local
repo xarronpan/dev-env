@@ -117,6 +117,8 @@ let g:any_jump_colors = {
       \"result_path":        "AnyJumpResultPath",
       \"help":               "AnyJumpHelp"
       \}
+let g:easyescape_chars = { "j": 2 }
+let g:easyescape_timeout = 200
 
 "vim setting configure
 "set ttymouse=xterm2
