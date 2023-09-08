@@ -199,6 +199,13 @@ ctrl + t 新建标签页。往往是搜索开始的入口
 并且将secure crt，chrome等功能都以快捷键的方式进行绑定。
 这样子就能够节省大量切换不同任务，应用的时间了
 
+# AutoHotkey
+像windows terminal这种程序无法使用wise hotkey来快速触发切换
+只能使用AutoHotkey编写脚本来进行切换。
+首先安装AutoHotkey v2.0, 然后讲window目前下的脚本windows terminal.ahk拷贝到桌面
+每次windows重启后双击运行该脚本即可
+由于在我们的工作流中windows termial基本上都运行在tmux里面，所以窗体是靠tmux的窗体名字进行定位的
+
 # 桌面搜索
 安装wox
 安装插件
