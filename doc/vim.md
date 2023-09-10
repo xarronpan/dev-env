@@ -266,6 +266,11 @@ https://github.com/saihoooooooo/vim-textobj-space
 用法:
 diS 删除所有连续的空格
 
+### vim-texobj-entire插件
+https://github.com/kana/vim-textobj-entire
+用法:
+vie 选择整个buffer中的东西。可以和NR, vim-tmux-runner一起使用
+
 ### git hunk文本对象: vim-gitgutter插件
 vim-gitgutter提供了git hunk文本对象, 一个hunk指当前文档与git仓库中的一个差异
 dic      textobj, 选择当前光标所在hunk并删除
