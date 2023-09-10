@@ -177,6 +177,8 @@ https://vimium.github.io/
 有用快捷键:
 H L 在浏览历史中前进，后退
 P 直接以系统剪贴板的内容打开标签页进行搜索
+  这个功能可以与tmux-finger一起使用。先使用tmux-finger使用shift+(选择键)的方式选择url到clipboard
+  然后打开chrome输入P跳转。这样子就可以使用鼠标了
 yt 复制当前tab页面地址，并且打开新的标签页
 / 在网页中启动vim的搜索模式
 T 搜索打开的标签页并且进行跳转

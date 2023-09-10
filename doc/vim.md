@@ -1007,6 +1007,7 @@ https://github.com/AndrewRadev/linediff.vim
 在一个window上打开多个文件
 :DB Diff同一个window上多个文件
 :UDB 关闭同一个window上多个文件Diff
+<c+w> c: 关闭diff窗口，显示原来的窗口
 
 ## MarkDown
 F5 打开Toc窗口进行Markdown导航
