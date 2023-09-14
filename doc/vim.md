@@ -100,6 +100,7 @@ tabs则类似于tmux中的window，是vim windows的集合。目前我们的配�
 打开新buffer
 :enew 在新窗口中打开一个empty buffer。下一步通过-命令来选择需要打开的文件。见dirvish插件的描述
 :vnew 在新的垂直窗口中打开一个empty buffer。下一步通过-命令来选择需要打开的文件。见dirvish插件的描述
+:e    重新打开当前文件
 :tabnew 创建一个新的tab，并且创建一个新的buffer (<leader>tn)
 :tabclose 关闭一个tab (<leader>tc)
 ```bash
