@@ -253,7 +253,7 @@ git checkout -b new_branch_name <tagname>    #将tag中的拉出分支来进行�
 # git tag的详细操作说明请见:https://git-scm.com/book/en/v2/Git-Basics-Tagging
 ```
 ## rebase
-https://www.atlassian.com/git/tutorials/merging-vs-rebasing#conceptual-overview
+https://www.atlassian.com/git/tutorials/merging-vs-rebasing
 https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase
 
 rebase是一种merge的方式。普通的merge会在commit log的graph中产生一个分叉，而rebase的合并则等价于找打两个需要merge的分支的差别，打一个patch
@@ -267,7 +267,9 @@ rebase应用场景如下:
 然后主干的开发人员不需要处理任何的冲突，fast-forward到分支上即可
   git merge应该也能做到刚才所提到的这些事情，使得在master开发的人员不需要自己做合并操作。这点对于协作性的开发是一个良好的实践。
 只是此时提交的历史会形成分叉。
-  已经被推送到仓库的分支不能进行rebase。这是因为rebase会改变commit log的结构, 导致commit log在远端仓库中不完整
+  rebase的关键准则，是不要在public(大家公共维护的)分支上进行rebase, 这是因为在public分支上的rebase操作，会破坏掉public分支的commit log
+导致项目无法进行追踪。这点其实也说明，以及推送到远程仓库的非public分支，其实是可以进行rebase的
+
 ```bash
 git checkout target_branch
 git rebase master 
