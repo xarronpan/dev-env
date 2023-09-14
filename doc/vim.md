@@ -685,17 +685,18 @@ vim默认搜索命令/ , 替换命令s// 所使用的正则表达式与Perl标�
 :Gcd | Ack 在git更目录下执行Ack命令，对代码在项目根目录下的代码进行搜索
 :Gcd | Far 在git更目录下执行Far命令，对代码在项目根目录下的代码进行搜索和替换
 
-:Gstatus 触发 fugative
+:G 触发 fugative
  g? 键 help
  s: 键  执行git add
  u: 键  执行git reset
  dv: 对选定的文件启动垂直分屏的gdiff
+     在冲突合并的场景下，对冲突文件使用dv会触发3方merge, 能够非常清楚地显示冲突情况
 
-:Gdiff 触发图形化的对比
+:G diff 触发图形化的对比
  zo 开发被 fold 的行
  zc 关闭被 fold 的行
 
-:Glog 触发图形化的log修改浏览
+:G log 触发图形化的log修改浏览
  zo 开发被 fold 的行
  zc 关闭被 fold 的行
 
@@ -709,6 +710,16 @@ vim-gitgutter能够在sigcolum上显示正在提交的代码与git仓库中的�
 [c       跳转到上一个hunk
 
 vim-gitgutter提供了git hunk文本对象, 具体参考文本对象一章
+
+### conflict处理: conflict-marker
+https://github.com/rhysd/conflict-marker.vim
+[x      跳转到上个冲突
+]x      跳转到下一个冲突
+co      采用ours分支的代码
+ct      采用theirs分支的代码
+cb      同时采用两者分支的代码
+cB      同时采用两者分支的代码, 采用相反的顺序
+cn      两者都不采用
 
 ### 浏览某行代码的commit log: git-messenger插件
 rhysd/git-messenger插件可以展现某行代码所对应的git commit信息
