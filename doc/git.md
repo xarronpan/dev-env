@@ -297,6 +297,4 @@ git rebase --abort
 #若rebase过程不符合预期，则可以通过上述命令重新开始rebase
 ```
 
-
-
 git rebase的详细操作说明请见: https://git-scm.com/book/en/v2/Git-Branching-Rebasing
