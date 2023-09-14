@@ -179,6 +179,7 @@ git branch -a         #列出全部的本地分支以及远程仓库本地追踪
 git pull              #将远程分支的修改同步到本地分支
 git push              #将本地分支的修改同步到远程分支
 git log target_branch #获取target_branch的commit日志
+git log --all --graph #打印所有分支的commit日志，并且显示分叉图
 ```
 ## 从仓库的本地分支中创建本地分支，切换到该分支，并且推送到远程分支
 ```bash
