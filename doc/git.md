@@ -292,9 +292,7 @@ git rebase master -i
 #rebase -i中最有用的命令是 squash，可以将若干个commit变成一个commit
 #rebase -i会在编辑器中给出将要对每个commit执行的命令，你可以通过编辑修改需要执行的命令
 #可以参考
-#   https://www.atlassian.com/git/tutorials/merging-vs-rebasing#conceptual-overview
-#   https://www.atlassian.com/git/tutorials/rewriting-history
-#   https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase
+#   https://www.atlassian.com/git/tutorials/merging-vs-rebasing
 #中的说明
 
 git rebase --abort
