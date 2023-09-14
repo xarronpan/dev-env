@@ -275,8 +275,23 @@ git rebase master
 #当target_branch上的每个commit都作为patch重新提交完之后, target branch就等于在版本上直接领先于master了
 #所以此时就可以直接做fast-forward的合并了
 #使用的过程中，只要跟随git命令行的输出输入命令即可. git命令会提示接下来所涉及到的相关操作
+
 git checkout master
-git merge target_branch                   #master采用fast-forward的方式合并到target_branch
+git merge target_branch
+#master采用fast-forward的方式合并到target_branch
+#上面的命令将master合并target_branch中的内容
+
+git checkout target_branch
+git rebase master -i
+#和git rebase master一样，但是允许rebase的过程中, 修改commit log
+#这个命令最重要的作用是清理提交历史, 这样子我们做开发提交的时候就不需要花过多时间去思考每次commit的内容
+#保证效率的同时，又保证commit log是严格有意义，可读的
+#可以参考 https://www.atlassian.com/git/tutorials/rewriting-history 的说明
+
+git rebase --abort
+#若rebase过程不符合预期，则可以通过上述命令重新开始rebase
 ```
-上面的命令将master合并target_branch中的内容
+
+
+
 git rebase的详细操作说明请见: https://git-scm.com/book/en/v2/Git-Branching-Rebasing
