@@ -14,12 +14,15 @@ https://github.com/progrium/bashstyle
 #git
 commit的最佳实践
 https://gist.github.com/luismts/495d982e8c5b1a0ced4a57cf3d93cf60
+1 经常commit，经常push
+   这样子能够保证所有东西都能够得到备份。因为后续可以通过git rebase来调整commit log
+   所以不用担心开发过程中commit log不干净的问题
 
-1 在feature分支上进行合并，而不要在发布分支上直接合并
+2 在feature分支上进行合并，而不要在发布分支上直接合并
    不论是使用merge, 或者rebase, 都应该在feature分支上合并测试完，
    再提交发布分支，由发布分支做fast forward合并.
    这是因为发布分支随时会有bug fix发布需求。在发布分支上做merge会block住整个流程
-2 使用git rebase改写commit log
+3 使用git rebase改写commit log
    在编辑开发的过程中，花费太多实践思考commit log怎么写是得不偿失的
    很多时候，没有测试通过的代码，也有提交的必要性，这样子就可以灵活地进行回滚
    关键是当feature对其他开发者可见时，需要对commit log进行调整，花费时间描述commit
