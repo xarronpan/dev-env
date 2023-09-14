@@ -253,7 +253,9 @@ git checkout -b new_branch_name <tagname>    #将tag中的拉出分支来进行�
 # git tag的详细操作说明请见:https://git-scm.com/book/en/v2/Git-Basics-Tagging
 ```
 ## rebase
+https://www.atlassian.com/git/tutorials/merging-vs-rebasing#conceptual-overview
 https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase
+
 rebase是一种merge的方式。普通的merge会在commit log的graph中产生一个分叉，而rebase的合并则等价于找打两个需要merge的分支的差别，打一个patch
 然后在进行merge的分支上面进行应用。
 rebase应用场景如下:
@@ -289,8 +291,10 @@ git rebase master -i
 #保证效率的同时，又保证commit log是严格有意义，可读的
 #rebase -i中最有用的命令是 squash，可以将若干个commit变成一个commit
 #rebase -i会在编辑器中给出将要对每个commit执行的命令，你可以通过编辑修改需要执行的命令
-#可以参考 https://www.atlassian.com/git/tutorials/rewriting-history 
-#         https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase
+#可以参考
+#   https://www.atlassian.com/git/tutorials/merging-vs-rebasing#conceptual-overview
+#   https://www.atlassian.com/git/tutorials/rewriting-history
+#   https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase
 #中的说明
 
 git rebase --abort
