@@ -171,11 +171,14 @@ git是基于机制为核心来提供产品的，则我们发现其提供的机�
 这里主要记录一些在公司开发的环境中经常会用到，但是在命令行中输入比较困难的命令
 因为公司的开发环境就与svn的使用环境就是相同的，所以一般就是本地分支与远程仓库分支建立一对一的简单关系，然后进行简单的pull，push即可
 其他经常使用的命令，直接在vi 中使用fugative插件来进行对应操作即可
+注意的是git命令行对于接下来需要使用的相关命令在输出的文本中都有明确的提示。
+当需要使用较为复杂的命令，比如说rebase的时候，明确地follow这些命令即可。
 ```bash
 git commit --amend    #补充提交文件为了避免commit log出现很多没有意义的提交历史
 git branch -a         #列出全部的本地分支以及远程仓库本地追踪分支
 git pull              #将远程分支的修改同步到本地分支
 git push              #将本地分支的修改同步到远程分支
+git log target_branch #获取target_branch的commit日志
 ```
 ## 从仓库的本地分支中创建本地分支，切换到该分支，并且推送到远程分支
 ```bash
@@ -212,7 +215,7 @@ git push target_branch --delete serverfix   #删除远程仓库的分支。我�
 git reset --hard sha1_version               #使head指针指向 sha1_version所指向的版本
 ```
 若进行回滚之后，需要跳转到回滚之前的版本，需要使用上面相同的命令
-但是需要找到回滚之前的版本号。使用git relog，能够找到所有的本地分支提交修改历史，并且有对应的sha1 版本号。找到后就可以进行混滚
+但是需要找到回滚之前的版本号。使用git relog，能够找到所有的本地分支提交修改历史，并且有对应的sha1 版本号。找到后就可以进行回滚
 ```bash
 git relog
 ```
@@ -271,6 +274,7 @@ git rebase master
 #rebase -i可以改变commit', 使commit'的说明和commit不一样
 #当target_branch上的每个commit都作为patch重新提交完之后, target branch就等于在版本上直接领先于master了
 #所以此时就可以直接做fast-forward的合并了
+#使用的过程中，只要跟随git命令行的输出输入命令即可. git命令会提示接下来所涉及到的相关操作
 git checkout master
 git merge target_branch                   #master采用fast-forward的方式合并到target_branch
 ```
