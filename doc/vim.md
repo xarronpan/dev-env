@@ -700,6 +700,10 @@ vim默认搜索命令/ , 替换命令s// 所使用的正则表达式与Perl标�
  zo 开发被 fold 的行
  zc 关闭被 fold 的行
 
+:G! push 异步push到仓库
+    !号表示在后台的意思。此时会启动一个preview window来暂时命令执行的进度
+    这个规则也可以使用在其他G命令中
+
 ### gitdiff集成: vim-gitgutter
 vim-gitgutter能够在sigcolum上显示正在提交的代码与git仓库中的差异，并且能够处理这些差异
 每一块差异称为一个hunk
