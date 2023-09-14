@@ -286,7 +286,11 @@ git rebase master -i
 #和git rebase master一样，但是允许rebase的过程中, 修改commit log
 #这个命令最重要的作用是清理提交历史, 这样子我们做开发提交的时候就不需要花过多时间去思考每次commit的内容
 #保证效率的同时，又保证commit log是严格有意义，可读的
-#可以参考 https://www.atlassian.com/git/tutorials/rewriting-history 的说明
+#rebase -i中最有用的命令是 squash，可以将若干个commit变成一个commit
+#rebase -i会在编辑器中给出将要对每个commit执行的命令，你可以通过编辑修改需要执行的命令
+#可以参考 https://www.atlassian.com/git/tutorials/rewriting-history 
+#         https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase
+#中的说明
 
 git rebase --abort
 #若rebase过程不符合预期，则可以通过上述命令重新开始rebase
