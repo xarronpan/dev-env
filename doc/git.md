@@ -267,7 +267,9 @@ rebase应用场景如下:
 然后主干的开发人员不需要处理任何的冲突，fast-forward到分支上即可
   git merge应该也能做到刚才所提到的这些事情，使得在master开发的人员不需要自己做合并操作。这点对于协作性的开发是一个良好的实践。
 只是此时提交的历史会形成分叉。
-  已经被推送到仓库的分支不能进行rebase。这是因为rebase会改变commit log的结构, 导致commit log在远端仓库中不完整
+  rebase的关键准则，是不要在public(大家公共维护的)分支上进行rebase, 这是因为在public分支上的rebase操作，会破坏掉public分支的commit log
+导致项目无法进行追踪。这点其实也说明，以及推送到远程仓库的非public分支，其实是可以进行rebase的
+
 ```bash
 git checkout target_branch
 git rebase master 
