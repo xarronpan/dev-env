@@ -258,16 +258,21 @@ rebase应用场景如下:
 在分支rebase的时候，主干是不会有变化的。所以分支上的合并操作并不会影响到主干上的开发。
 在分支rebase合并完成之后, 若master没有新的提交, 则分支的版本和master上的版本是存在这直接的前后关系的。这也是rebase "变基" 的含义，
 分支将自己的提交历史"变"到了主干的HEAD上。
-然后主干的开发人员不需要处理任何的冲突，fast-forwad到分支上即可
+然后主干的开发人员不需要处理任何的冲突，fast-forward到分支上即可
   git merge应该也能做到刚才所提到的这些事情，使得在master开发的人员不需要自己做合并操作。这点对于协作性的开发是一个良好的实践。
 只是此时提交的历史会形成分叉。
   已经被推送到仓库的分支不能进行rebase。这是因为rebase会改变commit log的结构, 导致commit log在远端仓库中不完整
 ```bash
 git checkout target_branch
-git rebase master                         #在master分支的commit线上生成一个新的commit,commit包括了target_branch与master的diff
-                                          #并且将target_branch给进行删除，然后将target_branch给指到新创建的commit位置中
+git rebase master 
+#target_branch变基到master，指的是首先将target_branch的commit log变成master的commit log, 此时target_branch首先变成和master上的HEAD版本一样
+#然后将target_branch与master分叉的之后的每一个commit, 都作为一个独立的patch, 在这个版本(也就是master的HEAD版本)上再次做提交。
+#每次提交的时候，需要处理冲突。每次提交的时候会创建新的commit'，与原来的commit相对应, 并且commit的说明是一样的
+#rebase -i可以改变commit', 使commit'的说明和commit不一样
+#当target_branch上的每个commit都作为patch重新提交完之后, target branch就等于在版本上直接领先于master了
+#所以此时就可以直接做fast-forward的合并了
 git checkout master
-git merge target_branch                   #master采用fastward的方式合并到target_branch
+git merge target_branch                   #master采用fast-forward的方式合并到target_branch
 ```
 上面的命令将master合并target_branch中的内容
 git rebase的详细操作说明请见: https://git-scm.com/book/en/v2/Git-Branching-Rebasing
