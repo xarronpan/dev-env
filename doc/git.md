@@ -173,6 +173,8 @@ git是基于机制为核心来提供产品的，则我们发现其提供的机�
 其他经常使用的命令，直接在vi 中使用fugative插件来进行对应操作即可
 注意的是git命令行对于接下来需要使用的相关命令在输出的文本中都有明确的提示。
 当需要使用较为复杂的命令，比如说rebase的时候，明确地follow这些命令即可。
+
+## 基础命令
 ```bash
 git commit --amend    #补充提交文件为了避免commit log出现很多没有意义的提交历史
 git branch -a         #列出全部的本地分支以及远程仓库本地追踪分支
@@ -180,7 +182,9 @@ git pull              #将远程分支的修改同步到本地分支
 git push              #将本地分支的修改同步到远程分支
 git log target_branch #获取target_branch的commit日志
 git log --all --graph #打印所有分支的commit日志，并且显示分叉图
-git relog             #打印reference log. 在版本回退的时候，需要用到这个日志来找到commit log中已经看不到的commit
+git relog             #打印reference log, 即工作空间对应的commitid变化的日志.
+                      #在版本回退的时候，需要用到这个日志来找到commit log中已经看不到的commit
+                      #relog中的hash表示工作空间发生变化时, 工作空间当时指向的commitid
 ```
 ## 从仓库的本地分支中创建本地分支，切换到该分支，并且推送到远程分支
 ```bash
