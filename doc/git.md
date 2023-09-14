@@ -268,7 +268,8 @@ rebase应用场景如下:
   git merge应该也能做到刚才所提到的这些事情，使得在master开发的人员不需要自己做合并操作。这点对于协作性的开发是一个良好的实践。
 只是此时提交的历史会形成分叉。
   rebase的关键准则，是不要在public(大家公共维护的)分支上进行rebase, 这是因为在public分支上的rebase操作，会破坏掉public分支的commit log
-导致项目无法进行追踪。这点其实也说明，以及推送到远程仓库的非public分支，其实是可以进行rebase的
+导致项目无法进行追踪。这点其实也说明，已经推送到远程仓库的非public分支，其实是可以进行rebase的, 也可以通过push --force来重写远程仓库
+的commit log
 
 ```bash
 git checkout target_branch
