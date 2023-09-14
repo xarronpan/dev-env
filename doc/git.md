@@ -180,6 +180,7 @@ git pull              #将远程分支的修改同步到本地分支
 git push              #将本地分支的修改同步到远程分支
 git log target_branch #获取target_branch的commit日志
 git log --all --graph #打印所有分支的commit日志，并且显示分叉图
+git relog             #打印reference log. 在版本回退的时候，需要用到这个日志来找到commit log中已经看不到的commit
 ```
 ## 从仓库的本地分支中创建本地分支，切换到该分支，并且推送到远程分支
 ```bash
@@ -203,8 +204,7 @@ git checkout to_merge_branch           #git的合并还是基于本地分支来�
 git merge target_branch                #将当且的分支，合并 target_branch 中的修改。如果target_branch中的东西是完全基于to_merge_branch的内容来修改的，则git只要移动版本指针即可完成merge
                                        #在git中称为fast-forward。
                                        #如果合并中发生冲突，则可以使用git status来定位冲突的位置，并且通过文件中的冲突标记来进行冲突合并。冲突标记已经很明确地标记出分支上的不同，因而不需要引入图形化的界面来进行解决
-                                       #在vim中，也可以采用Gdiff的方式打开冲突文件来进行编辑。Gdiff的窗口是直接可以进行编辑的。
-                                       #merge操作相当于对to_merge_branch的修改操作。所以如果需要确定合并的结果，此时使用git diff来对比即可
+                                       #在vim中，可以使用fugative窗口的dv命令来打开三方diff来观察冲突情况，使用conflict-marker来处理冲突
 ```
 ## 删除本地分支，并且同步到远程分支，使远程分支也被删除
 ```bash
