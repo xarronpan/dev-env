@@ -27,7 +27,13 @@ https://wangdoc.com/bash/intro
 https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md
 
 #git
-教程
+bitbucket教程
+https://www.atlassian.com/git/tutorials/what-is-version-control
+
+rewriting git history
+https://www.atlassian.com/git/tutorials/rewriting-history
+
+廖雪峰教程
 https://www.liaoxuefeng.com/wiki/896043488029600
 
 git原理
@@ -35,9 +41,6 @@ https://www.ruanyifeng.com/blog/2018/10/git-internals.html
 
 git常用命令
 https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html
-
-rewriting git history
-https://www.atlassian.com/git/tutorials/rewriting-history
 
 #vim
 https://github.com/iggredible/Learn-Vim/blob/master/README.md
