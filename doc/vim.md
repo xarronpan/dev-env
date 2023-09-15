@@ -11,15 +11,21 @@ vim的个性化配置: 这个配置可以上传到git，进行配置
 上面包括了不少youcompleteme的命令，后续安装youcompleteme的文档中会进行解释
 其中 ACK，AG的作用是创建一个命令的别名。默认Ack，Ag的行为都是搜索当前打开的文件目录下的文件，所以很难用。
 Rooter的作用是转到当前git的根目录下 (以及其他可以自定义的项目根目录)。
-set undofile 会开启 persist undo的功能。set undodir 设置undo log存放的位置。 ~/.vim/undodir 需要提前创建好，否则persist undo就不会能够正常工作。
-persist undo + undo tree插件，对于一些临时性的脚本，可以做到能够随时恢复文件版本的轻量级存储方案。undo log的信息可以自己进行清理
-g:signify_priority设置 vim signify 插件的展现优先级。否则当与youcomplete同时使用时，这个插件的内容会覆盖youcompleteme的语法错误提示，导致语法错误提示功能无法正常使用
-set ttymouse=xterm2 则用于在vim中支持鼠标的拖拽功能。当这个功能打开时，我们可以直接使用鼠标来改变vim各个窗体的大小，非常方便
-定义的FAg命令，以及FBLines命令，只是使用了 extend('<cword>') 命令获取当前光标下的字符串作为输入字符串调用fzf的Ag以及BLines函数。这样子做是模仿了Ack的行为
+set undofile 会开启 persist undo的功能。set undodir 设置undo log存放的位置。 ~/.vim/undodir 需要提前创建好，否则
+persist undo就不会能够正常工作。
+persist undo + undo tree插件，对于一些临时性的脚本，可以做到能够随时恢复文件版本的轻量级存储方案。undo log的信息可以
+自己进行清理
+g:signify_priority设置 vim signify 插件的展现优先级。否则当与youcomplete同时使用时，这个插件的内容会覆盖youcompleteme
+的语法错误提示，导致语法错误提示功能无法正常使用
+set ttymouse=xterm2 则用于在vim中支持鼠标的拖拽功能。当这个功能打开时，我们可以直接使用鼠标来改变vim各个窗体的大小，
+非常方便
+定义的FAg命令，以及FBLines命令，只是使用了 extend('<cword>') 命令获取当前光标下的字符串作为输入字符串调用fzf的Ag以及
+BLines函数。这样子做是模仿了Ack的行为
 加载 .workspace.vim 的目的是为了加载一些项目专用的配置。比如项目的ctags生成脚本，项目tab的设置等，都是项目专用的。
 
 nerdtree的配置不符合多数ide的使用习惯:
-每次打开文件tree组件都会消失，执行 `echo 'let NERDTreeQuitOnOpen=0' >> ~/.vimrc.local` 将配置增加到 .vimrc.local 个性化配置当中
+每次打开文件tree组件都会消失，执行 `echo 'let NERDTreeQuitOnOpen=0' >> ~/.vimrc.local` 将配置增加到 .vimrc.local 
+个性化配置当中
 
 在 ~/.vimrc.before.local 中增加下面配置
 ```vim
@@ -29,8 +35,8 @@ let g:spf13_no_fastTabs = 1```
 ## rsync
 由于我们将 编辑虚拟机 与开发虚拟机分离，需要一种方便的方案，在编辑虚拟机上面编辑时，将信息同步到 开发虚拟机
 这样子我们就可以使用一个tmux分屏登录到 开发虚拟机上面进行编译，调试，看起来与编辑虚拟机编辑窗口形成了一个集成开发环境
-对于每个git上面的项目中在.workspance.vim中增加一个autocmd，当vim发生了buffer写的时候，将项目目录下的源代码都同步到远端去
-注意到很多与源代码无关的东西，都需要进行过滤
+对于每个git上面的项目中在.workspance.vim中增加一个autocmd，当vim发生了buffer写的时候，将项目目录下的源代码都同步到远
+端去. 注意到很多与源代码无关的东西，都需要进行过滤
 
 .workspace.vim:
 
@@ -82,7 +88,8 @@ https://zhuanlan.zhihu.com/p/38477934
 造成这个现象的原因是ycm依赖的clangd服务升级了，需要升级clangd服务。
   处理方法:
   进入 ~/.vim/bundle/YouCompleteMe, 执行
-  mv ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/clangd ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/clangdbak 
+  mv ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/clangd \
+  ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/clangdbak 
   ./install.py --skip-build  --clangd-completer  #不需要重新编译ycm, 只是重新下载clangd
   确认clangd安装成功后，再删除 ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/clangdbak 
 
@@ -95,7 +102,10 @@ leader键在下述的配置中是 ','
 在vim中，窗口和buffer是不同的概念。真正进行编辑的是buffer，而window是buffer的view
 所以窗口被关闭了，但是buffer是不会被关闭的。但是buffer被关闭，则窗口也要跟着一起关闭
 https://github.com/iggredible/Learn-Vim/blob/master/ch02_buffers_windows_tabs.md
-tabs则类似于tmux中的window，是vim windows的集合。目前我们的配置每个tab可以单独打开一个nerdtree，所以一个tab通常意味这一个项目目录
+tabs则类似于tmux中的window，是vim windows的集合。
+目前不同的tab是共享同一个nerdtree的，所以不同的tab不能代表不同的项目
+最佳实践，是tab用于打开同一个项目中的不同需要反复创建的窗口，降低每次需要重建窗口的需要
+比如说一个tab浏览代码，一个tab做Git diff
 
 打开新buffer
 :enew 在新窗口中打开一个empty buffer。下一步通过-命令来选择需要打开的文件。见dirvish插件的描述
@@ -143,8 +153,10 @@ ngt 跳转到第n个tab
 ## 光标移动
 ### 内置光标移动
 vim上的基础操作，请参考: https://github.com/iggredible/Learn-Vim/blob/master/ch05_moving_in_file.md
-fa 光标向前跳到a字符, 在按；重复fa这个动作，再按，重复Fa这个动作 (目前,操作已经被remap掉了，但是可以在tmux的vi copy mode下使用这个键进行拷贝)
-Fa 光标向后跳到a字符，在按；重复fa这个动作，再按，重复Fa这个动作 (目前,操作已经被remap掉了，但是可以在tmux的vi copy mode下使用这个键进行拷贝)
+fa 光标向前跳到a字符, 在按；重复fa这个动作，再按，重复Fa这个动作 (目前,操作已经被remap掉了，但是可以在tmux的
+vi copy mode下使用这个键进行拷贝)
+Fa 光标向后跳到a字符，在按；重复fa这个动作，再按，重复Fa这个动作 (目前,操作已经被remap掉了，但是可以在tmux的
+vi copy mode下使用这个键进行拷贝)
 0 找到行头
 w 跳到下个单词开始
 e 跳到下个单词结束
@@ -167,13 +179,20 @@ jump backward: ctrl+i
 
 ### easymositon插件光标移动
 s 启动easy motion，找一个字符, 并跳转到对应的位置中
-<leader> + w 使用easy motion跳转到附近的单词开始。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动作共用。在中文的文档中进行浏览编辑时，这个动作尤其有用
-<leader> <leader> + l 使用easy motion跳转到某行。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动作共用
-<leader> <leader> + w 使用easy motion后向跳转到附近的单词开始 (与vim w的定义相同)。 这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
-<leader> <leader> + b 使用easy motion前向跳转到附近的单词结束 (与vim b的定义相同) 。 这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
-<leader> <leader> + e 使用easy motion后向跳转到附近的单词结束 (与vim b的定义相同) 。 这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
-<leader> <leader> + j使用easy motion后向跳转到某行 (与vim j的定义相同)。这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
-<leader> <leader> + k 使用easy motion后向跳转到某行 (与vim k的定义相同)。这个功能可以在visual模式下启用，用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
+<leader> + w 使用easy motion跳转到附近的单词开始。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的
+             动作共用。在中文的文档中进行浏览编辑时，这个动作尤其有用
+<leader> <leader> + l 使用easy motion跳转到某行。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动
+                      作共用
+<leader> <leader> + w 使用easy motion后向跳转到附近的单词开始 (与vim w的定义相同)。 这个功能可以在visual模式下启用，
+                      用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
+<leader> <leader> + b 使用easy motion前向跳转到附近的单词结束 (与vim b的定义相同) 。 这个功能可以在visual模式下启用，
+                      用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
+<leader> <leader> + e 使用easy motion后向跳转到附近的单词结束 (与vim b的定义相同) 。 这个功能可以在visual模式下启用，
+                      用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
+<leader> <leader> + j 使用easy motion后向跳转到某行 (与vim j的定义相同)。这个功能可以在visual模式下启用，用于选定文本
+                      ，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
+<leader> <leader> + k 使用easy motion后向跳转到某行 (与vim k的定义相同)。这个功能可以在visual模式下启用，用于选定文本
+                      ，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
 
 
 ### comfortable-motion插件
@@ -186,10 +205,12 @@ dfa 光标向前跳到a字符之间的字符，并且删除包括a之间的内�
 dFa 光标向后跳到a字符之间的字符，并且删除包括a之间的内容
 dta 光标向前跳到a字符之间的字符，并且删除不包括a之间的内容
 dTa 光标向后跳到a字符之间的字符，并且删除不包括a之间的内容
-`!}column -t -s "|"` 在当前光标位置到段落结束之间，执行shell命令替换当前文档。`!` 号表示执行外部的shell命令，`}` 表示范围是到段落结束，`column -t -s "|"` 表示要执行的shell命令
+`!}column -t -s "|"` 在当前光标位置到段落结束之间，执行shell命令替换当前文档。`!` 号表示执行外部的shell命令，`}` 表示
+范围是到段落结束，`column -t -s "|"` 表示要执行的shell命令
 这段命令全部需要在normal模式下面输入才能正常工作。问题是由于没有回显，我们并不知道normal模式下输入的命令是否是正确的。
 目前的一个方法是在shell终端上编辑好之后，再通过鼠标在vi的normal模式下一次给黏贴过去
-另外一个方案则是使用set showcmd，此时当一个normal mode的命令没有完成执行前，在屏幕的右下角会有一个字符串显式你已经输入过的字符串
+另外一个方案则是使用set showcmd，此时当一个normal mode的命令没有完成执行前，在屏幕的右下角会有一个字符串显式你已经
+输入过的字符串
 当时目前vi是不支持编辑normal 模式下的命令的。所以最简单的方式是在其他地方先调试好，再一并输入进来
 详细可以参考: https://github.com/iggredible/Learn-Vim/blob/master/ch04_vim_grammar.md
 
@@ -198,12 +219,18 @@ d <space> + e 后向删除到某个单词的结束，通过easy motion来定位�
 d <space> + b 前向删除到某个单词的结束，通过easy motion来定位具体的位置
 d <space> + j 后向删除都某行，通过easy motion来具体的位置
 d <space> + k 前向删除都某行，通过easy motion来具体的位置
-d <space>+ fa 往后删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
-d <space>+ Fa 往前删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
-d <space>+ ta 往后删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(不包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
-d <space>+ Ta 往前删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(不包括a)。其含义是easy motion的动作是可以和文本对象结合进行使用的
-从上面的例子可以看出，easy motion除了支持s键以外，所以以 <space>开头的键，都是支持vi的默认动作的，比如f，F，t，a，w，b间，也就是可以在vi的所有支持的动词加名词的动作中，都加入easy motion
-的支持。<space>+vim光标跳转键，除了扩展了vim的移动光标的所有能力了，也极大加强了vim选择textobj的能力。这个动作键可以和vim中的所有编辑动作(d,c,s，以及插件所支持的编辑动作)相互结合使用
+d <space>+ fa 往后删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(包括a)。其含义是easy motion的动作
+              是可以和文本对象结合进行使用的
+d <space>+ Fa 往前删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(包括a)。其含义是easy motion的动作
+              是可以和文本对象结合进行使用的
+d <space>+ ta 往后删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(不包括a)。其含义是easy motion的动
+              作是可以和文本对象结合进行使用的
+d <space>+ Ta 往前删除从当前光标开始，到使用easy motion选定的字符a之间范围的字符串(不包括a)。其含义是easy motion的动
+              作是可以和文本对象结合进行使用的
+从上面的例子可以看出，easy motion除了支持s键以外，所以以 <space>开头的键，都是支持vi的默认动作的，比如f，F，t，a，w，b
+间，也就是可以在vi的所有支持的动词加名词的动作中，都加入easy motion的支持。<space>+vim光标跳转键，除了扩展了vim的移动
+光标的所有能力了，也极大加强了vim选择textobj的能力。这个动作键可以和vim中的所有编辑动作(d,c,s，以及插件所支持的编辑
+动作)相互结合使用
 
 ## 文本对象
 ### 内置文本对象
@@ -223,7 +250,8 @@ https://zhuanlan.zhihu.com/p/24387751
 使用sgur/vim-textobj-parameter 插件来支持扩展text object的能力
 https://github.com/wellle/targets.vim
 扩展的能力其实不多：
-1. 增加了dI( dA) 等大写的修饰符，与di， da的语义相类似主要用于处理 被选择内容与括号(或者是引号，csv等)间 空行的情况，具体见文档
+1. 增加了dI( dA) 等大写的修饰符，与di， da的语义相类似主要用于处理 被选择内容与括号(或者是引号，csv等)间 空行的情况，
+   具体见文档
 2. 增加了n，l 修饰符，可以选择光标后，光标前的 pattern，不需要额外移动鼠标。比如 din（，在光标后面的( 中执行 di(
 3. 支持 处理csv
 di, 删除一个以, 分隔的csv中两个:之间的内容
@@ -247,7 +275,8 @@ dav: 删除一段变量名，包括下划线。变量名可以是下划线，或
 sfp13内置的插件  https://github.com/kana/vim-textobj-indent
 
 能够按代码缩进来选择代码块。这个插件的主要用途是用于类似Python代码的选择处理
-ii 选择与当前光标对应的行具有相同缩进的最小缩进块。即从光标所在的行，上下分别开始搜索所有缩进小于当前行缩进的行。当找到第一个空行，即停止
+ii 选择与当前光标对应的行具有相同缩进的最小缩进块。即从光标所在的行，上下分别开始搜索所有缩进小于当前行缩进的行。
+   当找到第一个空行，即停止
 ai 选择与当前光标对应的行具有相同缩进的最大缩进块。即从光标所在的行，上下分别开始搜索所有缩进小于行缩进的行。
 
 ### vim-expand-region插件
@@ -280,26 +309,32 @@ dac      textobj, 选择当前光标所在hunk并删除
 ### 配对文本对象: vim-matchup插件
 mathcup插件是matchit的加强版。主要好用的功能包括：
 嵌套符号除了支持（）[] {} 等符号外，也支持语言的关键字
-di%   删除嵌套括号或者语言关键字中的内容。不包括嵌套符。比起内置的di( , di{ 等text-obj，一方面需要记忆的符号更少，另外一方面支持语言关键字，是vim内置text-obj所不能比拟的。
+di%   删除嵌套括号或者语言关键字中的内容。不包括嵌套符。比起内置的di( , di{ 等text-obj，一方面需要记忆的符号更少，
+      另外一方面支持语言关键字，是vim内置text-obj所不能比拟的。
 d2i%  删除两层嵌套括号或者语言关键字中的内容。不包括嵌套符
 da%   删除嵌套括号或者语言关键字中的内容。包括嵌套符
 
 ## 剪切板交互管理
 ### 拷贝系统剪切板到vim中:
-ctrl + shift + v，具体可以参考下面链接 https://askubuntu.com/questions/256782/how-to-copy-paste-contents-in-the-vi-editor
+ctrl + shift + v，具体可以参考下面链接 
+https://askubuntu.com/questions/256782/how-to-copy-paste-contents-in-the-vi-editor
 从系统缓存区拷贝到vim会出现缩进正常的问题。
 可以通过命令:set paste 进入paste模式，先进行黏贴，
 然后通过命令:set nopaste 退出paste模式
 可以通过 unimpaired 插件的 [op 命令来缓解从系统缓冲区拷贝到vim中的多行数据不对齐的问题
-出现这个问题的主要原因，是vim中对于来自keyboard的输入，都会默认打开自动indent的功能。而set paste的作用，也只是关闭自动indent的功能而已。
+出现这个问题的主要原因，是vim中对于来自keyboard的输入，都会默认打开自动indent的功能。而set paste的作用，也只是关闭
+自动indent的功能而已。
 此外，如果使用windows+alacritty的话，上面的操作会引起vim多插入分行。这是因为windows平台对于分行的处理存在问题
 此时可以通过命令: Ap，然后输入ctrl + shift + v, 然后esc解决这个问题
 
 ### 从vi中选择文本到系统缓冲区
-目前我们是打开了vi的mouse模式以及tmux的mouse模式，所以当我们使用鼠标在vi的buffer中进行选择时，默认是使用vi的visual模式来选择文本。
-当我们希望去选择文本到系统的clipboard时，按shilft键，同时使用鼠标在vi的buffer中进行选择，即可在secure_crt中将vi的buffer中的数据拷贝到系统缓冲区中。 
-有时当我们做了tmux的分屏或者vi的分屏时，上面的工作方式会选择整行，因而不能正确工作。此时我们通过 Alt+Shift加鼠标，可以选择一个矩形区域。这样子就在很大程度上缓解了分屏拷贝黏贴时的效率问题
-另外一个方式就是将tmux，vi全屏，然后在将vim的number给关掉，在使用shift的方式来拷贝。有时当我们需要进行选择的文本在tmux或者vi中跨了一行时 (但不是完整的一样)，适合采用这种方法。
+目前我们是打开了vi的mouse模式以及tmux的mouse模式，所以当我们使用鼠标在vi的buffer中进行选择时，默认是使用vi的visual模
+式来选择文本。
+当我们希望去选择文本到系统的clipboard时，按shilft键，同时使用鼠标在vi的buffer中进行选择，即可在secure_crt中将vi的
+buffer中的数据拷贝到系统缓冲区中。 有时当我们做了tmux的分屏或者vi的分屏时，上面的工作方式会选择整行，因而不能正确
+工作。此时我们通过 Alt+Shift加鼠标，可以选择一个矩形区域。这样子就在很大程度上缓解了分屏拷贝黏贴时的效率问题
+另外一个方式就是将tmux，vi全屏，然后在将vim的number给关掉，在使用shift的方式来拷贝。有时当我们需要进行选择的文本在
+tmux或者vi中跨了一行时 (但不是完整的一样)，适合采用这种方法。
 
 ### 名字/数字寄存器
 可以通过名字寄存器，或者数据寄存器访问剪切板中最近访问过的内容。
@@ -309,7 +344,8 @@ ctrl + shift + v，具体可以参考下面链接 https://askubuntu.com/question
 数字寄存器是一个堆栈的结构，最新y，d的内容会存储在这些寄存器中。可以在visual mode上选择这些寄存器
 "1p  将数据寄存器1中的内容给paste出来
 
-对于名字寄存器，可以先在visual mode中对内容进行选定之后，输入: 进入命令模式，然后输入 yank a，将visual mode下选定的内容给拷贝到a寄存器中
+对于名字寄存器，可以先在visual mode中对内容进行选定之后，输入: 进入命令模式，然后输入 yank a，将visual mode下选定的
+内容给拷贝到a寄存器中
 "ap  将名字寄存器a中的内容给paste出来
 "ayiw 将光标所在单词拷贝到a寄存器中
 名字寄存器的更多使用方案，可以参考下面的文章
@@ -339,7 +375,8 @@ vim-yoink插件支持ring paste buffer，每次p后键入下面的命令，就�
 
 ## 避免重复操作
 重复命令
-. normal命令可以重复上一个输入的命令。这个命令可以大量缩减需要键入的键数量。比如说 de 删除第一个单词，然后 .就会再执行一次de
+. normal命令可以重复上一个输入的命令。这个命令可以大量缩减需要键入的键数量。比如说 de 删除第一个单词，然后 .就会再
+  执行一次de
   又比如crc将单次变成了canmel case，然后移动到下一个需要处理的单词，再键入. , 则对应的单词也会变成 canmel case
 
 宏
@@ -375,7 +412,8 @@ linux内置的书签功能太弱，因而目前使用了bookmark插件。
 
 ### vim-bookmark插件
 应使用MattesGroeger/vim-bookmarks来替代vim自带的书签能力。
-这是因为vim自带的书签能力太弱，甚至没有标签的展现，以及标签的内容标注，当内容较多是根本无法进行管理。并且没有对标签进行持久化的能力
+这是因为vim自带的书签能力太弱，甚至没有标签的展现，以及标签的内容标注，当内容较多是根本无法进行管理。并且没有对标签
+进行持久化的能力
 命令:
 <leader>mi增加一个书签，并且对书签的内容进行标注
 <leader>mc删除标签
@@ -384,7 +422,8 @@ linux内置的书签功能太弱，因而目前使用了bookmark插件。
 <leader>np跳到本文件上一个书签
 :BookmarkSave FILE_PATH 将书签存储备份到某个位置
 :BookmarkLoad FILE_PATH 读入书签
-当几个项目中的标签数据很多时，可以增加关键字来进行分组。这个插件已经与ctrl-p插件进行了集成，在进入ctrl-p中，再按下ctrl-f，会见到标签的选择
+当几个项目中的标签数据很多时，可以增加关键字来进行分组。这个插件已经与ctrl-p插件进行了集成，在进入ctrl-p中，
+再按下ctrl-f，会见到标签的选择
 此时就可以根据标签的特征来进行过滤，搜索
 
 ## 文件导航
@@ -396,10 +435,12 @@ Nerdtree 输入回车，会打开一个窗口buffer打开文件，并且会关�
 Nerdtree 输入i，会打开一个垂直分屏窗口buffer打开文件，并且不会关闭Nerdtree
 Nerdtree 输入t，会按tab的方式打开一个窗口buffer
 Nerdtree 输入m，会触发一个menu，上面有各种各样的文件操作可以选择
-<leader>nt  以当前打开的buffer，打开nerdtree，并且将光标移动到nerdtree上。用于快速定位被打开文件相同目录/附近目录的文件。
+<leader>nt  以当前打开的buffer，打开nerdtree，并且将光标移动到nerdtree上。用于快速定位被打开文件相同目录/附近目录
+            的文件。
 <leader>tt  打开符号导航toolbar
 在nerdtree中，选定了一个文件之后，在命令行输入BM(Bookmark命令)，则会创建这个文件的书签，并且能够输入文本进行标注
-则在nerdtree的导航栏中，就会有BM的列表，其打开方式与普通文件的打开方式相同。BookMark的功能在于能够对于一系列相关的文件给予快捷的访问方式
+则在nerdtree的导航栏中，就会有BM的列表，其打开方式与普通文件的打开方式相同。BookMark的功能在于能够对于一系列相关的
+文件给予快捷的访问方式
 避免反复在文件中寻找代码位置。这种功能与vim-bookmarks一起，在阅读熟悉新的代码时，能够大幅减低大脑所需要承担的压力
 在nerdtree中预览文件
 在nerdtree中移动光标，按go，则光标不会移动到被打开的buffer中，可以用于在文件中进行预览
@@ -407,9 +448,12 @@ Nerdtree 输入m，会触发一个menu，上面有各种各样的文件操作可
 ### 本地文件导航:vim-dirvish 插件
 nerdtree更加适用与浏览整个项目的目录结构，而vim-dirvish则更加使用于浏览当前文件目录附近的文件。
 一个典型的用法是在一个独立的窗口中 (:enew命令)，或者是一个split窗口中 (:vnew)，通过 vim-dirvish 来打开插件
-vim-dirvish是netrw的替代品，但是更加强大。最重要的功能是vim-dirvish可以通过x键来选定对应的文件到arglist中。可以说是vim arglist的能力补全
-此外  vim-dirvish的buffer可以与普通vim buffer一样被编辑。比如通过d键来对buffer进行修改，或者g等命令进行filger，然后通过virtual选定需要的文件，键入.键来进行Shdo脚本允许。Shdo脚本与xargs类似，就是以 {} 符号作为占位符执行shell命令
-而每个占位符表示的则是被选中的文件。有点类似与fzf的能力，但是fzf中则没有目录树的能力。但是不具备单独选择文件的能力，所以比fpp，fzf这类工具的能力还是要差一些，主要有用还是加入arglist的能力
+vim-dirvish是netrw的替代品，但是更加强大。最重要的功能是vim-dirvish可以通过x键来选定对应的文件到arglist中。可以说是
+vim arglist的能力补全
+此外  vim-dirvish的buffer可以与普通vim buffer一样被编辑。比如通过d键来对buffer进行修改，或者g等命令进行filger，
+然后通过virtual选定需要的文件，键入.键来进行Shdo脚本允许。Shdo脚本与xargs类似，就是以 {} 符号作为占位符执行shell命令
+而每个占位符表示的则是被选中的文件。有点类似与fzf的能力，但是fzf中则没有目录树的能力。但是不具备单独选择文件的能力，
+所以比fpp，fzf这类工具的能力还是要差一些，主要有用还是加入arglist的能力
 
 命令:
 -：在当前文件所在目录打开dirvish
@@ -497,9 +541,11 @@ vim +BundleInstall! +BundleClean +q
 
 在insert模式下
 <c+x><c+f> 对当前输入的字符串为前缀的path进行fzf补全。能够补全任意的path
-<c+x><c+r> 使用本地zsh的命令历史进行fzf补全。这个功能在编写bash脚本时尤其有用。因为很多命令都会现在终端上输入调试后，才会编辑到shell脚本中
+<c+x><c+r> 使用本地zsh的命令历史进行fzf补全。这个功能在编写bash脚本时尤其有用。因为很多命令都会现在终端上输入调试后
+           ，才会编辑到shell脚本中
 <c+x><c+k> 使用linux本地的词典进行fzf补全。最大的用途是避免忘了英文单词的拼写时，不需要离开终端就能找到你需要的东西
-<c+x><c+l> 对当前输入的字符串为前缀的vim已经打开的文件行进行fzf补全。当需要跨文件去拷贝命令行时，这个命令可能会派上用场
+<c+x><c+l> 对当前输入的字符串为前缀的vim已经打开的文件行进行fzf补全。当需要跨文件去拷贝命令行时，这个命令可能会派上
+           用场
 
 ### mru文件列表:fzf-mru.vim插件
 https://github.com/xarronpan/fzf-mru.vim
@@ -530,7 +576,8 @@ tags
 将生成的tag文件给排除在Ag，Ack的搜索结果之外
 
 ### 综合搜索:ctrlp插件
-ctrlp最为重要的功能是mru搜索能力。在编写代码进行代码导航时，最为有用的就是这个功能。目前已经绑定了ctrl+k来进行导航 (fzf中不存在这样子的功能)
+ctrlp最为重要的功能是mru搜索能力。在编写代码进行代码导航时，最为有用的就是这个功能。目前已经绑定了ctrl+k来进行导航
+(fzf中不存在这样子的功能)
 ctrlp中选择完成后打开一个垂直分屏, 使用 ctrl+v
 ctrlp中选择完成后打开一个tab, 使用 ctrl+t
 ctrlp切换搜索模式 ctrl+f，其中mru是most recent used文件的意思，用于寻找最近打开过的文件
@@ -542,7 +589,8 @@ ctrlp切换搜索模式 ctrl+f，其中mru是most recent used文件的意思，�
 <leader>/  使用one-motion插件的能力，对subsitude命令结果进行预览，非常使用
 
 ### vim-far 插件
-far插件可以认为是vim substitute命令的增强。其除了支持subsititute完整的正则表达式替换，替换表达式中\1 \2匹配括号的功能外，最为主要的能力是
+far插件可以认为是vim substitute命令的增强。其除了支持subsititute完整的正则表达式替换，替换表达式中\1 \2匹配括号的功
+能外，最为主要的能力是
 1) 做替换的预览，并且在预览窗口进行排除后，最后再做应用
 2) 能够使用一条命令很方便地指定目录以及文件模式。而不需要使用vim arglist的方式来添加。
 总的而言，far插件基本秒杀vim内置的替换功能
@@ -577,9 +625,12 @@ ctrl+j, ctrl+k  是在搜索结果中上移，下移
 surround增强了括号的处理能力，其命令与文本对象的编辑能力很像，常用的包括
 cs"' 成对将“修改为‘
 ds" 成对删除"
-ysiw" 在当前光标中增加“ 。这个功能可以结合easy motion，很容易对一段字符加括号，能解决输入括号时的痛苦。比如  foo|， |为光标位置，则在normal模式下输入 ys<leader><leader>b<easy motion选择位置f>), 则文本将变成(foo)
- 这是因为ys操作可以作用与所有的vim textobj上，而easy motion的<leader><leader>b键等价于带选择能力的vim b选定textobj功能，因而这两个能力是可以结合起来使用的。
-vS" 首先触发visual模式 (v是普通的visual模式，V是行式的visual模式，都可以工作)，选定文本后按S，再按"，全部选中的内容被" 扩起来
+ysiw" 在当前光标中增加“ 。这个功能可以结合easy motion，很容易对一段字符加括号，能解决输入括号时的痛苦。比如  foo|，
+|为光标位置，则在normal模式下输入 ys<leader><leader>b<easy motion选择位置f>), 则文本将变成(foo)
+ 这是因为ys操作可以作用与所有的vim textobj上，而easy motion的<leader><leader>b键等价于带选择能力的vim b选定textobj
+ 功能，因而这两个能力是可以结合起来使用的。
+vS" 首先触发visual模式 (v是普通的visual模式，V是行式的visual模式，都可以工作)，选定文本后按S，再按"，全部选中的内容
+被" 扩起来
 具体可见:
 https://github.com/tpope/vim-surround
 
@@ -599,7 +650,8 @@ mult visual是multi cursor插件的加强版，基本上秒杀multi cursor插件
 
 操作选定文本:
 n 选定下一个光标，N 回退一个光标，q 跳过一个光标。当光标选定之后，就可以以普通的visusl模式下的编辑模式对文本进行编辑
-按 <Tab>，则可以切换到一个类似与normal的模式。此时所有的vim的normal mode的多数命令都能够使用，比如说 adolish，surrond的命令
+按 <Tab>，则可以切换到一个类似与normal的模式。此时所有的vim的normal mode的多数命令都能够使用，比如说 adolish，
+surrond的命令
 移动光标之后再按tab，则会根据光标的位置，调整被进行visual选择的区域
 按 i/a 等，则可以进入到插入模式
 按入 \\x，则会进入ex模式，vim中的全部ex命令都能执行，并会对所有被选中的visual区域进行执行。
@@ -607,10 +659,12 @@ n 选定下一个光标，N 回退一个光标，q 跳过一个光标。当光�
 按esc键将会退出multi visual模式
 
 ### 变量名转换:abolish插件
-spf13中安装了 abolish插件，特别适用变量重命名, 比如说具有不同大小写/形式，但是含义相同的一组单词，需要重命名成另外一组单词, 
+spf13中安装了 abolish插件，特别适用变量重命名, 比如说具有不同大小写/形式，但是含义相同的一组单词，需要重命名成另外一
+组单词, 
 以及变量形式变化，比如下标与驼峰式的名字的自动替换
 变量重命名例子:
-:S/facilit{y,ies}/building{,s}/g   保持大小写的形式，将facility变成building, 并且通过 y->无，ies->s 的映射来处理单数复数的形式映射
+:S/facilit{y,ies}/building{,s}/g   保持大小写的形式，将facility变成building, 并且通过 y->无，ies->s 的映射来处理单
+                                   数复数的形式映射
 
 变量形式转换例子:
 crs： 转成下划线形式
@@ -620,7 +674,8 @@ cru: 转成大写形式
 cr-: 与crs相同，但是单次以-相连
 此外还支持单次间以 . <space>相连的功能，只是一般写代码的时候用不上
 目前这个功能只支持在当期光标所在单词上面执行。若需要在多个不同的单词上面执行，则需要visual-multi插件的支持
-另外这个插件还支持相似词的替换功能，当有较为复杂的相似词要替换时，普通的正则表达式也不一定能够简单地工作，此时使用该替换功能能够简单工作
+另外这个插件还支持相似词的替换功能，当有较为复杂的相似词要替换时，普通的正则表达式也不一定能够简单地工作，
+此时使用该替换功能能够简单工作
 具体可以参考
 https://github.com/tpope/vim-abolish
 
@@ -634,7 +689,8 @@ atl+l 尝试向右交换光标所在参数。
 使用tommcdo/vim-exchange插件来交换对象
 https://github.com/tommcdo/vim-exchange
 cxx 交换两行。首先在第一行中键入cxx，然后再另外一行中键入cxx，则两行会被交换
-X 在visual模式下进行交换。 首先使用visual模式对于第一个对象进行选择，并且按入X。然后在对第二个对象使用visual模式进行选择，并且按入X。则两个对象会被交换
+X 在visual模式下进行交换。 首先使用visual模式对于第一个对象进行选择，并且按入X。然后在对第二个对象使用visual模式进行
+选择，并且按入X。则两个对象会被交换
 cx(textobj), 比如cxiw。现在在第一个文本对象中输入cxtextobj1，然后移动到另外对象中，输入cxtextobj2，则两个对象会交换
 
 ## 代码格式
@@ -674,7 +730,8 @@ autopair: 随便按一个 括号，进入配对模式。然后按 括号的结�
 https://github.com/jiangmiao/auto-pairs
 
 ## 正则表达式
-vim默认搜索命令/ , 替换命令s// 所使用的正则表达式与Perl标准的正则表达式标准不同。有些字符与正则的元字符相同，有些又不相同，所以很难使用
+vim默认搜索命令/ , 替换命令s// 所使用的正则表达式与Perl标准的正则表达式标准不同。有些字符与正则的元字符相同，
+有些又不相同，所以很难使用
 为了解决这个问题，在进行使用正则时，统一增加一个\v前缀，则会与其他语言的正则保持一致
 
 ## git集成
@@ -762,10 +819,13 @@ address在vim中的定义，可以通过在vim中输入:h address得到。该帮
 ### 外部命令
 vim中的外部执行命令，是可以与shell的命令打通的。其拥有将行数据给予外部命令处理完成后，再修改当前行的能力
 vim命令能力的本质优势是可编程，几乎可以无限扩展。但是代价是前期的入门成本比较高
-:r !date   //执行date，并且将date的结果输入当前行。!号表示启动外部命令，而r是vim中内置的读入命令，能够读入文件。两者组合，表示将date的输出读入到当前行中
+:r !date   //执行date，并且将date的结果输入当前行。!号表示启动外部命令，而r是vim中内置的读入命令，能够读入文件。
+           //两者组合，表示将date的输出读入到当前行中
 :w !cat    //读入全部的文本数据，并且调用cat执行命令
-:.!grep -oP '\d+\.\d+\.\d+\.\d+'    //读入当前行(.表示当前行)，并且将当前行作为STDIN送给grep命令，然后再获取grep命令的输出替换当前行的内容
-:% !grep -oP '\d+\.\d+\.\d+\.\d+'  //读入当前文件所有行(%表示所有行)，并且将每一行作为STDIN送给grep命令，然后再获取grep命令的输出替换每一行
+:.!grep -oP '\d+\.\d+\.\d+\.\d+'    //读入当前行(.表示当前行)，并且将当前行作为STDIN送给grep命令，然后再获取grep
+                                    //命令的输出替换当前行的内容
+:% !grep -oP '\d+\.\d+\.\d+\.\d+'  //读入当前文件所有行(%表示所有行)，并且将每一行作为STDIN送给grep命令，然后再获取
+                                   //grep命令的输出替换每一行
 具体可以参考下面的教程
 https://github.com/iggredible/Learn-Vim/blob/master/ch14_external_commands.md
 
@@ -773,14 +833,19 @@ https://github.com/iggredible/Learn-Vim/blob/master/ch14_external_commands.md
 
 vi的global 命令是来自于ed命令的。所以vi中的s命令，全局命令范围匹配的语法定义，都是与sed是相类似。
 注意到vim中的i，a，c等命令的命名方式就是来源于ed编辑器的，所以sed中也存在这些命令。不过这些命令是作用在一整行上的
-目前看起来vim作用与行的命令种类要比sed中的要多。更准确地说，vi比sed多了光标移动, 以及基于光标的文本动作的文本处理能力，而sed的处理能力，基本上只能基于一整行来进行
+目前看起来vim作用与行的命令种类要比sed中的要多。更准确地说，vi比sed多了光标移动, 以及基于光标的文本动作的文本处理
+能力，而sed的处理能力，基本上只能基于一整行来进行
 
-global command可以通过一个 g/pattern1/,/pattern2/的模式选定 pattern1, pattern2之间范围的文本来进行处理。这个选定范围的能力与sed的范围选定能力定义是相同的。
+global command可以通过一个 g/pattern1/,/pattern2/的模式选定 pattern1, pattern2之间范围的文本来进行处理。这个选定范围
+的能力与sed的范围选定能力定义是相同的。
 并且能够指定与pattern1，pattern2之间的行偏移。模式的具体定义，可以通过在vim输入 :h address的文档中得到详细的描述
 外部命令，以及类似s的命令，都是直接可以与global command进行集成的。
-global command本质上是一个多行的文本过滤以及处理能力。这样子行上面的任何命令都可以在行数据上进行处理，本质上就是给予了无限的扩充能力 
-g/mongodb/.!grep -oP '\d+\.\d+\.\d+\.\d+'                     //在有mongodb的当行中，将行中内容作为STDIN调用外部命令grep，将行中的ip地址给过滤出来后，再替换当前行的内容
-g/mongodb/s/mongodb/hello/g                                       //在有mongodb的当行中，执行 s/mongodb/hello/g操作，将行中所有的mongodb都变成hello
+global command本质上是一个多行的文本过滤以及处理能力。这样子行上面的任何命令都可以在行数据上进行处理，本质上就是给予
+了无限的扩充能力 
+g/mongodb/.!grep -oP '\d+\.\d+\.\d+\.\d+'                     //在有mongodb的当行中，将行中内容作为STDIN调用外部命令
+                                                              //grep，将行中的ip地址给过滤出来后，再替换当前行的内容
+g/mongodb/s/mongodb/hello/g                                       //在有mongodb的当行中，执行 s/mongodb/hello/g操作，
+                                                                  //将行中所有的mongodb都变成hello
 其中行处理能力中还涉及多行的处理函数比如sort，j命令等。
 global command的详细介绍可以参考下面的文档:
 https://github.com/iggredible/Learn-Vim/blob/master/ch13_the_global_command.md
@@ -819,7 +884,8 @@ https://github.com/christoomey/vim-tmux-runner
 在spf13 的 .vimrc.before.local 配置中增加 bundle group: youcompleteme，并且将 neocomplete 给干掉
 bundle group是spf13中定义的bundle组的概念，当选定一个组时，会有若干个插件也被进行安装。
 在spf13中，若将neocomplete干掉，激活youcompleteme，则在 .vimrc.before.local 进行如下配置 :
-let g:spf13_bundle_groups=['general', 'writing', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc', 'youcompleteme', ]
+let g:spf13_bundle_groups \
+=['general', 'writing', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc', 'youcompleteme', ]
 在vim的命令行中执行 :BundleInstall!
 安装时间较长，需要耐心等待
 详细情况参考 https://github.com/spf13/spf13-vim 中YouCompleteMe插件的安装说明即可
@@ -828,7 +894,8 @@ let g:spf13_bundle_groups=['general', 'writing', 'programming', 'php', 'ruby', '
 然后编译YouCompleteMe插件
 cd ~/.vim/bundle/YouCompleteMe
 
-依照youcompleteme官方文档https://github.com/ycm-core/YouCompleteMe#installation 中youcompleteme linux 64bit的说明进行安装:
+依照youcompleteme官方文档https://github.com/ycm-core/YouCompleteMe#installation 中youcompleteme linux 64bit的说明进
+行安装:
 sudo apt install build-essential cmake vim-nox python3-dev
 sudo apt install mono-complete golang nodejs default-jdk npm
 
@@ -853,22 +920,31 @@ shift+tab: 反方向在语法提示中进行选择
 在.vimrc.local 中增加与 ide快捷键配置:
 ctrl+z 强行启动ycm的语义补全。一般ycm的语义补全只有在 -> .等操作后面才会启动。
 nnoremap <leader>gd :YcmCompleter GoTo<CR>                               //普通的跳转功能
-nnoremap <leader>gr :YcmCompleter GoToReferences<CR>:q<CR>:copen<CR>     //反向查找引用功能。由于ycm默认没有打开quicklist窗口，所以需要在调用了Ycm的命令后
-                                                                         //之前试过gotorefernce vim直接退出的问题，怀疑是ycm找不到目录中的其他文件引起的。
-                                                                         //此时只要将nerdtree插件给调用出来，再进行跳转即可。目前这个问题复现不了，暂时不清楚原因
-                                                                         //再显式地将ycm的窗口关闭，再调用copen命令打开quicklist窗口，方便在quicklist窗口中浏览所有的语句引用
+nnoremap <leader>gr :YcmCompleter GoToReferences<CR>:q<CR>:copen<CR>     //反向查找引用功能。由于ycm默认没有打开
+                                                                         //quicklist窗口，所以需要在调用了Ycm的命令后
+                                                                         //之前试过gotorefernce vim直接退出的问题，
+                                                                         //怀疑是ycm找不到目录中的其他文件引起的。
+                                                                         //此时只要将nerdtree插件给调用出来，再进行
+                                                                         //跳转即可。目前这个问题复现不了，暂时不清楚
+                                                                         //原因
+                                                                         //再显式地将ycm的窗口关闭，再调用copen命令打
+                                                                         //开quicklist窗口，方便在quicklist窗口中浏览
+                                                                         //所有的语句引用
 nnoremap <leader>fi :YcmCompleter FixIt<CR>                              //自动修正编译错误
 nnoremap <leader>gi :YcmCompleter GoToImplementation<CR>                 //跳转到接口实现功能
-nnoremap <leader>doc :YcmCompleter GetDoc<CR>                            //显示符号文档信息, 按esc键之后，显示符号的窗口不会关闭
+nnoremap <leader>doc :YcmCompleter GetDoc<CR>                            //显示符号文档信息, 按esc键之后，显示符号的窗
+                                                                         //口不会关闭
 
 实用命令：
-：lopen                                                                  //打开location list。ycm会将出错代码汇总位置都放在location list中
+：lopen                                                                  //打开location list。ycm会将出错代码汇总位
+                                                                         //置都放在location list中
 : cn //GoToReference功能会将结果方案quick fix window中。cn用于访问quick fix window的下一条
 : cp //GoToReference功能会将结果方案quick fix window中。cp用于访问quick fix window的下一条
 :YcmCompleter GoToSymbol '目标符号'                                       //全局查找符号
 :YcmDebugInfo                                                             //ycm调试输出
 #### 编译数据库
-youcompleteme会使得vim变成一个真正的集成开发环境。在编辑c/c++项目时，为了使得clang能够工作，如果是使用make的项目，需要安装compiledb来生成编译数据库
+youcompleteme会使得vim变成一个真正的集成开发环境。在编辑c/c++项目时，为了使得clang能够工作，如果是使用make的项目，
+需要安装compiledb来生成编译数据库
 https://pypi.org/project/compiledb/
 同时为了头文件也可以正确编译, 还需要安装compdb，生成头文件的编译代码信息, 否则遇到存.h文件时, 会报编译错误
 https://github.com/Sarcasm/compdb
@@ -876,14 +952,17 @@ https://github.com/Sarcasm/compdb
 
 ### vim-go 插件
 #### 安装
-spf13的配置中默认已经安装了vim-go插件。需要在 .vim.before.local 中显式配置 bundle_groups, 增加go的组，然后在运行 vim +BundleInstall +BundleClean，
+spf13的配置中默认已经安装了vim-go插件。需要在 .vim.before.local 中显式配置 bundle_groups, 增加go的组，然后在运行 
+vim +BundleInstall +BundleClean，
 才会真正安装vim-go插件。
 在安装完成vim-go插件后，需要通过gvm安装合适版本的golang，再打开对应的项目，并在
 在命令行中运行：
 :GoInstallBinaries
 则会将vim-go所需要的运行时库给下载下来。在完成之后，vim-go才算安装完成。
-这个插件的很多功能，其实在ycm中已经包括了。所以这类功能直接使用ycm中的能力即可 (都是基于gopls的，所以普通的代码导航能力实际上是没有差别的)。
-在安装完成gvm之后，使用 gvm use goversion 命令设置 GO_ROOT等变量，并且通过go get等命令将依赖的包给下载回来之后，ycm就可以启动自动补全以及语法实时提示的功能了
+这个插件的很多功能，其实在ycm中已经包括了。所以这类功能直接使用ycm中的能力即可 (都是基于gopls的，所以普通的代码导航
+能力实际上是没有差别的)。
+在安装完成gvm之后，使用 gvm use goversion 命令设置 GO_ROOT等变量，并且通过go get等命令将依赖的包给下载回来之后，
+ycm就可以启动自动补全以及语法实时提示的功能了
 (在启动的时候，最好显式在启动vim的终端中键入命令: gvm use go{yourversion})
 
 #### 功能
@@ -899,12 +978,15 @@ spf13的配置中默认已经安装了vim-go插件。需要在 .vim.before.local
 
 代码自动lint，fmt的命令：
 注：
-guru中包括了很多动态分析的代码分析能力，比如GoCallees，GoCallers等。这些能力因为非常消耗分析资源，因为guru需要设置一个scope之后才能进行分析使用
+guru中包括了很多动态分析的代码分析能力，比如GoCallees，GoCallers等。这些能力因为非常消耗分析资源，因为guru需要设置
+一个scope之后才能进行分析使用
 此外，只要引用的库代码中有使用cgo的话，则不能正常进行编译，所以这类动态分析的功能目前基本不可用。
-而且guru官方已经不会再继续进行更新，全都替换成了gopls。所以这些功能都避免去使用即可。使用全局的代码搜索，其实也能很快将这些东西给分析出来
+而且guru官方已经不会再继续进行更新，全都替换成了gopls。所以这些功能都避免去使用即可。使用全局的代码搜索，其实也能很
+快将这些东西给分析出来
 
 ### 代码模板: ultisnips 插件
- spf13中已经安装了ultisnips 以及 ultisnap 的snippet仓库。当我们数据的字符串中包括了 snippet的关键字时，ycm的菜单中就会给出带有 <snip> 字样的提示
+ spf13中已经安装了ultisnips 以及 ultisnap 的snippet仓库。当我们数据的字符串中包括了 snippet的关键字时，ycm的菜单中就
+ 会给出带有 <snip> 字样的提示
 在选中该菜单之后，在输入 ctrl + j，则会将snapit的文本加载到代码编辑器中。
 通过 ctrl+j ctrl+k 可以在snapit的不同参数中移动，编写需要的逻辑
 
@@ -927,7 +1009,8 @@ vim +BundleInstall! +BundleClean +q
 因而我fork出了一个版本，进行了细微的调整，放在我自己的git上。
 
 命令:
-<leader>PN 在cc，cpp文件中按下这个快捷键，则会根据对应的.h文件，生成代码的骨架,并且如果class在头文件中是在namespace下的话，不生成namespace前缀
+<leader>PN 在cc，cpp文件中按下这个快捷键，则会根据对应的.h文件，生成代码的骨架,并且如果class在头文件中是在namespace
+           下的话，不生成namespace前缀
 <leader>PP 在cc，cpp文件中按下这个快捷键，则会根据对应的.h文件，生成代码的骨架
 
 ### AnyJump
@@ -962,7 +1045,8 @@ https://github.com/vim-scripts/a.vim
 
 ### 补充命令:vim-unimpaired插件
 使用 tpope/vim-unimpaired 插件，就不用在记住一堆的成对的命令
-[op （或者 [op 以及 yop命令）然后进行 黏贴，则退出insert模式之后，会自动退出paste模式。不再需要麻烦的set paste，set nopaste
+[op （或者 [op 以及 yop命令）然后进行 黏贴，则退出insert模式之后，会自动退出paste模式。不再需要麻烦的set paste，
+set nopaste
 yon toggle set number
 yol toggle set list
 yoh toggle 搜索高亮
@@ -970,7 +1054,8 @@ yoh toggle 搜索高亮
 ]q prev quickfix item
 ]l next locationlist item
 ]l prev locationlist item
-由于命令较多，可以通过: h unimpaired 命令来查看所有的东西。一般而言，如果发现成对的命令，可以实现unimpaired的模式，看是否能够工作。
+由于命令较多，可以通过: h unimpaired 命令来查看所有的东西。一般而言，如果发现成对的命令，可以实现unimpaired的模式，
+看是否能够工作。
 尽可能少地手动输入命令。太慢了。
 
 ### 符号配对:vim-matchup插件
@@ -991,7 +1076,8 @@ TL  可以在normal模式或者在visual模式下执行。会在status line中�
 
 ### 草稿窗口:scratch.vim 插件
 这个插件用于启动一个草稿窗口
-草稿窗口可以用于存放临时需要进行记录的内容。这点在编写需要反复进行拷贝黏贴的代码时特别有用。虽然这个功能也可以通过拷贝寄存器来实现，
+草稿窗口可以用于存放临时需要进行记录的内容。这点在编写需要反复进行拷贝黏贴的代码时特别有用。虽然这个功能也可以通过
+拷贝寄存器来实现，
 但是草稿窗口中的内容还是可以进行进一步编辑的。
 这个窗口还可以进行一些草稿记录，比如记录当前需要完成的事情等等
 
@@ -1040,4 +1126,5 @@ g/ 启动options搜索. 比如搜索 g/-Werror
 gf 根据光标所在文件跳转
 
 ## help
-normal mode下面键入K，能够以当前光标单词为key去搜索vim的help文档。在阅读vimrc的时候，就不需要反复到web页面上去阅读插件的文档。
+normal mode下面键入K，能够以当前光标单词为key去搜索vim的help文档。在阅读vimrc的时候，就不需要反复到web页面上去阅读
+插件的文档。
