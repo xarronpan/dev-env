@@ -441,11 +441,20 @@ https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%9
 
 ###git grep
 git grep可以支持很多在当前版本代码进行搜索所不能发现的问题
-比如搜索某个变量是在哪些commit中被修改的
 在某个项目的历史版本范围中，进行grep 关键字搜索
-使用行日志搜索，分析某个函数在项目历史上的修改
+https://www.kosli.com/blog/git-grep-like-a-pro-the-complete-guide/
 这些工具可以提供理解系统非常有用，重要的信息
-由于工具比较复杂，直接看reference进行使用即可
+```bash
+git grep hello HEAD HEAD~2 new
+#在new分支上，HEAD HEAD~2范围之间进行grep搜索，搜索hello关键字
+
+git log -S ZLIB_BUF_MAX --oneline
+# 搜索常量ZLIB_BUF_MAX是什么时候被引入或者修改的
+
+git log -L :git_deflate_bound:zlib.c
+#行日志搜索，查看zlib.c文件中，git_deflate_bound的修改历史
+```
+详细参考:
 https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E6%90%9C%E7%B4%A2
 
 ###git blame
