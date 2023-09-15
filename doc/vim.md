@@ -752,13 +752,11 @@ vim默认搜索命令/ , 替换命令s// 所使用的正则表达式与Perl标�
  dv: 对选定的文件启动垂直分屏的gdiff
      在冲突合并的场景下，对冲突文件使用dv会触发3方merge, 能够非常清楚地显示冲突情况
 
-:G diff 触发图形化的对比
- zo 开发被 fold 的行
- zc 关闭被 fold 的行
+:G diff [git diff命令的所有参数] 触发图形化的对比
 
-:G log 触发图形化的log修改浏览
- zo 开发被 fold 的行
- zc 关闭被 fold 的行
+:G log [git log命令的所有参数] 触发图形化的log修改浏览
+ o 新建窗口查看 commit的diff
+ p preview commit的diff
 
 :G! push 异步push到仓库
     !号表示在后台的意思。此时会启动一个preview window来暂时命令执行的进度
