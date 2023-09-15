@@ -5,6 +5,10 @@
 git config --global user.email "panxiangrong@yy.com"
 git config --global user.name "panxiangrong"```
 
+注意--global参数表示这个配置是全局的。相对的，我们可以针对每个本地仓库进行参数配置
+详细可看
+https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config
+
 设置自动保存密码
 ```bash
 git config --global credential.helper store```
