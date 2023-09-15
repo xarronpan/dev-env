@@ -9,6 +9,17 @@ git config --global user.name "panxiangrong"```
 ```bash
 git config --global credential.helper store```
 
+#身份认证
+git的身份通过两种方式认证, 一种是ssh协议, 通过密钥对。另外一种则是账号密码
+账号密码在git认为访问仓库时需要密码时, 交互地进行输入
+可以通过配置
+```bash
+git config --global credential.helper store```
+
+记住账号的密码，从而不需要每次都进行输入。
+可以得知git实际上是不存储密码的明文的，而是加密过的东西
+所以git中故意没有任何地方去对一个仓库对应的密码
+
 # 原理
 https://www.liaoxuefeng.com/wiki/896043488029600/896202780297248
 ## 仓库
