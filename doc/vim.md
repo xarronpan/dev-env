@@ -758,6 +758,8 @@ vim默认搜索命令/ , 替换命令s// 所使用的正则表达式与Perl标�
  o 新建窗口查看 commit的diff
  p preview commit的diff
 
+:G rebase -i 在vim中触发git rebase -i, 用于调整commit历史
+
 :G! push 异步push到仓库
     !号表示在后台的意思。此时会启动一个preview window来暂时命令执行的进度
     这个规则也可以使用在其他G命令中
