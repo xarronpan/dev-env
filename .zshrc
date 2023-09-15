@@ -121,14 +121,6 @@ _gen_fzf_default_opts() {
 _gen_fzf_default_opts
 export FZF_DEFAULT_OPTS="--bind=alt-j:preview-down,alt-k:preview-up $FZF_DEFAULT_OPTS"
 
-function dirdiff()
-{
-  # Shell-escape each path:
-  DIR1=$(printf '%q' "$1"); shift
-  DIR2=$(printf '%q' "$1"); shift
-  vim $@ -c "DirDiff $DIR1 $DIR2"
-}
-
 function rag {
   local IFS=$'\t\n'
   local tempfile="$(mktemp -t tmp.XXXXXX)"
@@ -177,6 +169,7 @@ alias gh="group-hosts"
 alias sa="$HOME/.tmux-butler/scripts/snippetdb put"
 alias sr="$HOME/bin/snippetdb-remove.sh"
 alias info="info --vi-keys"
+alias vgdiff="git difftool -d -x dirdiff"
 
 alias strptime="dateutils.strptime"
 alias dtest="dateutils.dtest"
