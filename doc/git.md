@@ -421,3 +421,8 @@ git fuzzy diff commit1 commit2
 #使用fzf dir diff查看 commit1, commit2之间的差别
 #对于只查看差异会比较简单
 ```
+
+#stash
+若分支上进行开发的过程中，master分支有bug需要修复，但是开发分支上的工作还不想提交
+因为写得还不是很完备。此时可以先使用git stash命令将没有commit的内容进行保存，切到master分支进行开发之后
+回来再通过git stash pop将内容给恢复回来. 可以通过git stash list来看当前的stash中的东西
