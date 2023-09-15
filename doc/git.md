@@ -411,3 +411,13 @@ git rebase --abort
 ```
 
 git rebase的详细操作说明请见: https://git-scm.com/book/en/v2/Git-Branching-Rebasing
+
+##diff
+```bash
+vgdiff commit1 commit2 
+#使用vim dir diff查看 commit1, commit2之间的差别
+
+git fuzzy diff commit1 commit2
+#使用fzf dir diff查看 commit1, commit2之间的差别
+#对于只查看差异会比较简单
+```
