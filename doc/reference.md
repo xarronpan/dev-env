@@ -22,6 +22,9 @@ https://helm.sh/docs/topics/charts/
 #ansible
 https://docs.ansible.com/ansible/latest/collections/index_module.html
 
+#git
+https://git-scm.com/book/zh/v2
+
 #mongodb
 https://www.mongodb.com/docs/manual/reference/
 

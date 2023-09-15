@@ -426,3 +426,21 @@ git fuzzy diff commit1 commit2
 若分支上进行开发的过程中，master分支有bug需要修复，但是开发分支上的工作还不想提交
 因为写得还不是很完备。此时可以先使用git stash命令将没有commit的内容进行保存，切到master分支进行开发之后
 回来再通过git stash pop将内容给恢复回来. 可以通过git stash list来看当前的stash中的东西
+
+##tools
+###submodule
+git提供了非常强大的工具去管理复杂的项目结构
+比如说main-project需要依赖一个common-module, 而main-project, common-module都是一个独立的仓库
+common-module是一个独立仓库的原因，是因为有其他模块需要依赖它
+这里还存在着main-project的仓库需要记录和管理某个commit对应的common-module的版本信息的需求，
+以及main-project需要去修改common-module中的代码，同时需要将在common-module中处理与common-module其他人员的更新
+所有这些复杂的需求，导致了git需要为这类场景单独支持了submodule的功能
+一般而言，可以认为git submodule是一种源码级依赖的library管理工具
+由于工具比较复杂，直接看reference进行使用即可
+https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97
+
+###git grep
+git grep可以支持很多在当前版本代码进行搜索所不能发现的问题
+比如搜索某个变量是在哪些commit中被修改之类的。
+这些工具可以提供理解系统非常有用，重要的信息
+https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E6%90%9C%E7%B4%A2
