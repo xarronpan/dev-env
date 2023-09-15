@@ -72,10 +72,18 @@ git fetch <remote>```
 
 ### 将本地分支推送到远程仓库分支
 ```bash
-git push <remote> <local_branch_name>:<remote_branch_name>```
-这个命令会将本地的分支local_branch_name的内容, 推送到remote所对应的远程仓库中remote_branch_name所对应的分支中。远程仓库中如果没有这个分支，则会创建分支。否则会更新远程仓库分支中的内容。
-本地的分支名称与 远程仓库分支名称之间 没有必然联系。通过这种方式，我们就可以将本地分支中的内容给写入到 远程仓库中的分支中，从而建立了本地分支与远程仓库分支之间的一个方向的数据联系。
-当git发现本地分支的版本关系与远程仓库中没有先后的版本关系时会失败。此时用户需要自行发起一个等价于git pull的请求，将远程仓库分支中的东西merge到本地分支，由此建立了两者的版本关系后，才能进行提交。
+git push <remote> <local_branch>:<remote_branch>
+git push <remote> <remote_branch> 
+#若没有local_branch参数, 则表示将remote_branch对应的本地追踪分支
+#给推送到远程仓库分支remote_branch中
+```
+这个命令会将本地的分支local_branch的内容, 推送到remote所对应的远程仓库中remote_branch所对应的分支中。
+local_branch与remote_branch不一定需要建立追踪关系
+远程仓库中如果没有这个分支，则会创建分支。否则会更新远程仓库分支中的内容。
+本地的分支名称与 远程仓库分支名称之间 没有必然联系。通过这种方式，我们就可以将本地分支中的内容给写入到 
+远程仓库中的分支中，从而建立了本地分支与远程仓库分支之间的一个方向的数据联系。
+当git发现本地分支的版本关系与远程仓库中没有先后的版本关系时会失败。
+此时用户需要自行发起一个等价于git pull的请求，将远程仓库分支中的东西merge到本地分支，由此建立了两者的版本关系后，才能进行提交。
 详细见 (获取远程仓库分支的内容) 中的说明
 注意到上述命令在remote_branch_name在远程仓库不存在的时候, 是推送不到远程仓库的。
 创建远程仓库分支参考(创建远程仓库分支) 一节
@@ -206,6 +214,9 @@ git push --set-upstream origin new_branch
 #以上命令以当前本地分支为基准，创建新的本地分支，并且切换到新的本地分支。git checkout指切换分支，-b表示创建分支
 #注意这里push --set-upstream的分支名称, 需要与本地分支的名称完成匹配才能工作
 #当远程仓库分支不存在的时候，远程分支的名称依赖于本地分支的名称
+
+git push -u <remote> <local_brach>:<remote_branch>
+#若希望创建远程分支的时候，分支名称与本地名称不一致，则需要显示写入local_branch的名称
 ```
 
 ## 从仓库中拉取远程仓库分支，并且在本地创建本地分支
