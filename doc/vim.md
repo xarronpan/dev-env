@@ -758,6 +758,10 @@ vim默认搜索命令/ , 替换命令s// 所使用的正则表达式与Perl标�
  o 新建窗口查看 commit的diff
  p preview commit的diff
 
+:G blame 查看文件每一行是哪个版本引入的
+ o 新建窗口查看 commit的diff
+ p preview commit的diff
+
 :G rebase -i 在vim中触发git rebase -i, 用于调整commit历史
 
 :G! push 异步push到仓库
