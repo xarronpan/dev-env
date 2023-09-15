@@ -5,8 +5,10 @@
 ## 配置
 ### 颜色
 终端属性中，Terminal/Apperance 的color scheme 选择 solarized dark颜色
-Terminal/Emulator 选择 xterm，选择 256 color，这样子从服务器发送给securecrt的信息流中的颜色，字号信息(这些信息的术语就是ANSI color)，才能被secure crt解释到
-Terminal/Emulator 中勾选 use color scheme，则securt crt会将收到的ANSI color信息与color scheme进行一些映射之后，再会显式在终端上。
+Terminal/Emulator 选择 xterm，选择 256 color，这样子从服务器发送给securecrt的信息流中的颜色，字号信息(这些信息的术语就
+是ANSI color)，才能被secure crt解释到
+Terminal/Emulator 中勾选 use color scheme，则securt crt会将收到的ANSI color信息与color scheme进行一些映射之后，再会显式
+在终端上。
 
 ### 鼠标滚动事件同步到远端
 SessionOptions→Terminal 中，勾选Send Scroll Event to remote，这样子vim还有tmux才能响应鼠标滚动事件，并且进行屏幕的滚动
@@ -15,7 +17,8 @@ SessionOptions→Terminal 中，勾选Send Scroll Event to remote，这样子vim
 Terminal/Enulator/Emacs， 选择Use ALT as Meta key，选择Send Escape for meta key。
 这样子在bash终端上，就可以直接使用alt键来在bash中进行移动
 注意到这样子的配置，意味着alt键在vi上是不能直接进行使用的。这是因为vim认识的alt键是另外一个终端命令 (8bit)的模式。
-在vi上面使用meta键，需要做一些特殊的remap。所以，在vi中，并不推荐使用meta键作为快捷键。目前我们通过在vim中进行一些配置，来将这种alt键的信号转成meta键。所以vim中也是支持alt键的功能的。
+在vi上面使用meta键，需要做一些特殊的remap。所以，在vi中，并不推荐使用meta键作为快捷键。目前我们通过在vim中进行一些配置，
+来将这种alt键的信号转成meta键。所以vim中也是支持alt键的功能的。
 
 ## 常用功能 
 ### 打开浏览器来浏览屏幕中的url
@@ -100,21 +103,24 @@ ssh登录服务器时，需要增加 -X 参数，即可以启动用X11 端口转
 则DISPLAY需要设置为 192.168.127.1:0.0 
 
 ## XServer
-windows中常用的开源XServer就是XMing。启动XMing时，需要在laucher中设置access control为禁用，则ubuntu通过ssh -X进行X11 forwarding
-即可以工作. XMing laucher中的clipboard选项，则可以视情况而定。如果目前的终端已经支持OSC52协议(clipboard协议), 则这里可以关闭
-目前windows terminal, alacritty都支持该协议，而xshell，securecrt则不支持
+windows中常用的开源XServer就是XMing。启动XMing时，需要在laucher中设置access control为禁用，则ubuntu通过ssh -X进行X11 
+forwarding
+即可以工作. XMing laucher中的clipboard选项，则可以视情况而定。如果目前的终端已经支持OSC52协议(clipboard协议), 则这里可
+以关闭. 目前windows terminal, alacritty都支持该协议，而xshell，securecrt则不支持
 
 # 翻墙
 安装SSR，使windows 客户端能够进行翻墙。同时配置ubuntu命令行环境下的 http_proxy, https_proxy环境变量(建议在rc文件中配置)，
 指向SSR的代理端口(默认为1080), 并且SSR客户端中需要进行配置允许本局域网连接SSR代理。
 这样子在ubuntu下的wget，git等命令，都能进行翻墙访问
-操作系统对于http代理的支持，都是在应用层实现，要求不同的应用去遵循系统定义的代理接口, 比如http_proxy, https_proxy这些环境变量
+操作系统对于http代理的支持，都是在应用层实现，要求不同的应用去遵循系统定义的代理接口, 比如http_proxy, https_proxy这些环
+境变量
 这样子只要我们在一个统一的地方设置代理，则基本全部的命令都能够使用
 但是有些命令，比如apt，或者一些python库似乎没有使用这些环境变量需要单独进行设置
 ubuntu桌面上使用代理，则需要在桌面的设置/网络界面上进行设置
 
 # remap caplock
-由于我们的键位大量地依赖与ctrl键，而ctrl键实际上离键盘很远，所以一个较好的方案是将caps lock键remap成ctrl键，而不使用caps lock键的功能
+由于我们的键位大量地依赖与ctrl键，而ctrl键实际上离键盘很远，所以一个较好的方案是将caps lock键remap成ctrl键，而不使用caps
+lock键的功能
 这样子长久使用键盘的工作效率将变得很高
 https://gist.github.com/krists/8898275
 将上面的连接中的ctrl.reg保存成独立的问题，在windows上直接执行，再重启电脑即可
@@ -133,7 +139,8 @@ alt + t         窗体固定在top，并且以半透明方式展现
 支持在git浏览代码中增加ide的go defination, go reference, 全局搜索代码，以及搜索文件的功能
 极大增强浏览git中代码的便利性
 需要登录才能释放全部的能力, 比octotree缺少一点的就是tab切换的功能
-全局搜索代码的入口在代码仓库的顶部增加的 sourcegraph 图标, 点击进去的搜索栏，默认就是在代码行中搜索, 直接输入搜索关键字即可
+全局搜索代码的入口在代码仓库的顶部增加的 sourcegraph 图标, 点击进去的搜索栏，默认就是在代码行中搜索, 直接输入搜索关键字
+即可
 比如:
 repo:^github\.com/labstack/echo$ test
 
@@ -164,7 +171,8 @@ repo:^github\.com/labstack/echo$ file:basic
 在github代码中支持foldering操作
 
 ## tab管理: onetab
-对于开发人员而言，浏览器其实就是有点像命令行终端。当存在数量很多的网页的时候，需要对任务进行分门别类，这样子就能快速找到需要完成任务的窗口
+对于开发人员而言，浏览器其实就是有点像命令行终端。当存在数量很多的网页的时候，需要对任务进行分门别类，这样子就能快速找
+到需要完成任务的窗口
 onetab chrome插件可以用于对网页的标签页进行管理
 在安装完成后，输入
 chrome://extensions/shortcuts
@@ -258,6 +266,8 @@ ctrl+\` 开始截屏
 rtmpt and (ip.addr == 192.168.0.1 or ip == addr == 10.2.30.10)
 过滤ip包中包括 rtmpt协议的, 以及满足 ip.addr 为192.168.0.1 或则 ip.add 为 10.2.30.10的包进行展现
 
-注意到wireshark是对单个ip包进行分析的工具，因而当一些协议跨越了一个ip包的边界时，由于wireshark无法知道这些ip包是如何进行组织的
+注意到wireshark是对单个ip包进行分析的工具，因而当一些协议跨越了一个ip包的边界时，由于wireshark无法知道这些ip包是如何进
+行组织的
 所以wireshark也没有能力将这些包给进行分析。另外种情况，是当协议包进行了加密时，比如说https，wireshark也无能为力
-wireshark这类工具主要的用途，与观察软件输入的日志相类似，都能够获取到软件网络上的交互行为，对于调试，问题定义分析等都非常有用
+wireshark这类工具主要的用途，与观察软件输入的日志相类似，都能够获取到软件网络上的交互行为，对于调试，问题定义分析等都
+非常有用
