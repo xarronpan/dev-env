@@ -26,8 +26,8 @@ https://en.wikipedia.org/wiki/Regular_expression#Character_classes
  正则表达式的另外一个标准，就是Perl正则表达式PCRE。Perl的正则表达能力强于poxis extented，支持前后向断言等能力
 具体可以参考:
 https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions
- grep 的 -P 选项能够启用这项能力。而sed，vim的内置命令都不支持该项能力。vim要启用perl正则表达式，则需要使用perldo命令来启用。
-但是像搜索，全局命令等场景都不能使用上
+ grep 的 -P 选项能够启用这项能力。而sed，vim的内置命令都不支持该项能力。vim要启用perl正则表达式，则需要使用perldo命令来
+启用。但是像搜索，全局命令等场景都不能使用上
 
 # 高级文本过滤
 ## 寻找一个pattern，并且只匹配pattern中的一个子串
@@ -35,7 +35,8 @@ grep寻找一个pattern，并且只输出pattern中的其中一段match的字符
 https://unix.stackexchange.com/questions/13466/can-grep-output-only-specified-groupings-that-match
 例子:
 `grep -oP '(?<=cim_)\w+' file` 在file中寻找cim_开头的pattern，但是在输出中，只输出cim_后的一串word。
-`(?<=pattern)` 是正则表达式中的虚拟匹配操作，会匹配字符，但是不会匹配到输出中去。更加具体的可以参考grep中正则表达式中的说明书
+`(?<=pattern)` 是正则表达式中的虚拟匹配操作，会匹配字符，但是不会匹配到输出中去。更加具体的可以参考grep中正则表达式中的
+说明书
 https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md
 在vim中，则有 \zs \ze 来提供匹配一个pattern中一个子串的能力
 
@@ -60,7 +61,8 @@ sed -n '/pattern1/,/pattern2/p' file```
 
 ## sed
 sed是一个流文件的编辑程序，所以其能力很大程度上是基于多个行的。
-其中经常使用的 s// 命令, 使用posix extention进行匹配时，如要进行子括号引用，都是使用 \1 \2来进行表示 (表明这些引用自括号内容的符号，并不在posix的定义标准之内)
+其中经常使用的 s// 命令, 使用posix extention进行匹配时，如要进行子括号引用，都是使用 \1 \2来进行表示 (表明这些引用自括号
+内容的符号，并不在posix的定义标准之内)
 而 s// 命令只是其中一个替换命令而已
 sed 命令的基本模式是 "pattern, pattern 命令"。这里的pattern可以是正则表达式, 或者是行号。
 命令可以是 s a i c等常用命令
@@ -76,7 +78,8 @@ https://coolshell.cn/articles/9104.html
 
 # 语法
 ## 空变量使用
-出现在shell的条件判断表达式中的 变量引用，都需要带上""号来进行引用，否则有可能出现变量为空时，shell解析变量值不正确，或者语法出错等问题
+出现在shell的条件判断表达式中的 变量引用，都需要带上""号来进行引用，否则有可能出现变量为空时，shell解析变量值不正确，或者
+语法出错等问题
 比如:
 ```bash
 if [ "$VAR1" = "string1" ]; then

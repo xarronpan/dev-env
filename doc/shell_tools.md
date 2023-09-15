@@ -35,12 +35,14 @@ cd go  进入go语言查询分类，然后 
            这里每一项结果都是一个可用的代码级，因而可能需要浏览多个结果之后才能找到合适的答案
 
 cht中本身也集成了相当数量类似与tldr的命令使用例子。
-比如 ： find  输出一系列常用的find命令的使用例子。cht中的命名cheat的数量，复杂度比tldr中的要稍高一些，对于高级用户更为有用
+比如 ： find  输出一系列常用的find命令的使用例子。cht中的命名cheat的数量，复杂度比tldr中的要稍高一些，对于高级用户更为
+有用
 所以在tldr中若没有找到满意的答案后，可以使用cht进一步进行尝试，看能否找到答案
 
 ## info
 info page是加强版本的manpage，解决了man page没有结构化的章节, 以及手册内容难以理解的问题.
-man page更加多是一个类似与一个全面介绍工具系统功能的cheatsheet, 更加适用于在阅读完命令的例子之后，进入深入了解系统的详细功能
+man page更加多是一个类似与一个全面介绍工具系统功能的cheatsheet, 更加适用于在阅读完命令的例子之后，进入深入了解系统的详
+细功能
 而info page则更加适合于系统地全新学习一个命令
 info page使用的时候需要配置vi-key binding才相对比较容易进行使用.
 当info page缺失时, 比如tar命令，会fall back为man page.此时在ubuntu上需要安装命令所对应的文件包 xxx-doc
@@ -58,7 +60,8 @@ H      显示info的help page，里面有详细的key mapping说明。第一页�
 ## 综合搜索工具: fzf
 https://github.com/junegunn/fzf
 几乎全部的需要手动输入的内容，都可以通过这个工具进行获取
-比如获取文件里面的行，某个名字的进程id，获取网络端口号等。因为是交互式的，而且是fuzzy的，所以我们很容易就能调整发现我们需要查找的内容是否是正确的。
+比如获取文件里面的行，某个名字的进程id，获取网络端口号等。因为是交互式的，而且是fuzzy的，所以我们很容易就能调整发现我们
+需要查找的内容是否是正确的。
 最重要的功能是替换bash里面的自动补全功能
 比如 ctrl-t能够更好地替换bash里面的文件自动补齐功能
 ctrl-r能够提供一个更好的搜索命令历史的功能
@@ -70,10 +73,13 @@ alt-j alt-k  , 滚动预览窗口
 https://github.com/junegunn/fzf/wiki/Related-projects
 
 比较有用工具:
-https://github.com/junegunn/fzf.vim    进一步增强vim中的能力。主要是vim的多数能力都能进行fuzzy搜索。搜索Tags以及本文件Tags，搜索本文件内容，vim Maps的能力都很好用
+https://github.com/junegunn/fzf.vim    进一步增强vim中的能力。主要是vim的多数能力都能进行fuzzy搜索。搜索Tags以及本文件
+                                       Tags，搜索本文件内容，vim Maps的能力都很好用
 https://github.com/denisidoro/navi      cheet的搜索增强能力
-https://github.com/bigH/git-fuzzy        git命令行的增强能力。这个项目本身也挺有用的，但是由于fugitive已经完成了git中绝大多数命令行管理的功能，所以这个工具本省意义不大
-https://github.com/laktak/extrakto       tmux能力增强。看起来很炫酷，但是不支持跨pane的屏幕数据的拷贝黏贴，所以实际用于比较有限。
+https://github.com/bigH/git-fuzzy        git命令行的增强能力。这个项目本身也挺有用的，但是由于fugitive已经完成了git中绝
+                                         大多数命令行管理的功能，所以这个工具本省意义不大
+https://github.com/laktak/extrakto       tmux能力增强。看起来很炫酷，但是不支持跨pane的屏幕数据的拷贝黏贴，所以实际用于
+                                         比较有限。
 
 ## 文件浏览工具: ranger
 命令:
@@ -100,10 +106,12 @@ http://www.dest-unreach.org/socat/
 ```bash
 socat TCP-LISTEN:80,fork TCP:www.example.com:80```
 将本地的80端口的数据转发到 www.example.com:80 中去
-这个工具非常强大，甚至可以实现复杂的NAT转发映射功能 (在外网启用一个listen 端口，然后通过一个中转服务器，中转到内网机器上，也就几行命令)。
+这个工具非常强大，甚至可以实现复杂的NAT转发映射功能 (在外网启用一个listen 端口，然后通过一个中转服务器，中转到内网机器
+上，也就几行命令)。
 具体可以见:
 https://www.hi-linux.com/posts/61543.html
-这个工具的强大还远不止如此。所有的本地文件，readline等输入都可以看成socat所能进行转发的东西，因而这个工具可以说是无比强大的。
+这个工具的强大还远不止如此。所有的本地文件，readline等输入都可以看成socat所能进行转发的东西，因而这个工具可以说是无比
+强大的。
 socat甚至支持将进程命令的输入输出与数据包管道进行相连，因而能够组合出无比强大的网络环境
 相对而言，netcat没有转发数据到一个进程中的多个端口之间的能力，因而能力上只是socat的一个子集。
 
@@ -112,7 +120,8 @@ wget的加强版，支持多线程下载，断点续传。当网络状态不好�
 
 # 基础工具增强
 ## 语法高亮版本cat: bat
-在只读源代码时，可以使用bat替代less。因为bat命令中支持语法的高亮显示。bat命令可以用于解释命令 --help的输出，比less的可读性要好上很多
+在只读源代码时，可以使用bat替代less。因为bat命令中支持语法的高亮显示。bat命令可以用于解释命令 --help的输出，比less的
+可读性要好上很多
 
 ## 高可读diff: delta
 可以用于对diff的输出结果，进行可视化展现。可以进行配置的格式非常多样
@@ -136,7 +145,8 @@ alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection```
-除了能够通过z来cd进入最近使用的目录外，与autojump这类项目不同，fasd还支持直接将 mru 文件，目录当作参数传给其他命令。比如 vim `f dev`。
+除了能够通过z来cd进入最近使用的目录外，与autojump这类项目不同，fasd还支持直接将 mru 文件，目录当作参数传给其他命令。
+比如 vim `f dev`。
 并且支持交互式的选择能力。比如sd， sf，zz命令。
 s命令则用于list mru cache的使用情况
 
@@ -163,7 +173,8 @@ join命令与数据的join的含义是相同的，只是使用在文本记录上
 https://shapeshed.com/unix-join/
 
 ## 使用sql对文本进行处理: q
-q 命令可以对csv格式的内容进行SQL处理，包括类似于filter，groupby, 甚至对文件进行join的能力是其他工具需要编写较多的代码才能实现的
+q 命令可以对csv格式的内容进行SQL处理，包括类似于filter，groupby, 甚至对文件进行join的能力是其他工具需要编写较多的代码
+才能实现的
 有用的例子
 http://harelba.github.io/q/#installation
 
@@ -177,8 +188,10 @@ http://www.fresse.org/dateutils/
 可以方便地在命令行中并行地在本机或者远端执行命令
 这个命令牛逼的地方是可以以很短的命令行，地将需要处理的命令分发到不同的机器上，在处理完成之后再传输到本地
 就是一个迷你的并行处理工具。
-paralled提供的命令行能力基本上与xargs是相同的。所以基本上xargs能够进行使用的地方，就可以使用paralled命令，但是paralled的并行化能力
-比xargs要强, 同时处理能力也更加灵活。比如说-n(--max-args)参数在xargs中与paralled中都能够从标准输入中最多读入n行作为需要执行的命令的参数1..n
+paralled提供的命令行能力基本上与xargs是相同的。所以基本上xargs能够进行使用的地方，就可以使用paralled命令，但是paralled
+的并行化能力
+比xargs要强, 同时处理能力也更加灵活。比如说-n(--max-args)参数在xargs中与paralled中都能够从标准输入中最多读入n行作为需要
+执行的命令的参数1..n
 但是paralled提供了引用n个不同参数占位符的能力，举个例子，{1}，{2}，...{n}
 paralled中也提供了从命令行读取参数, 并且对参数进行的组合能力: 
 paralled echo ::: 1 2 3 ::: 4 5 6               输入参数组合: 1 4,1 5,1 6,2 4,2 5,2 6 ..
