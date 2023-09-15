@@ -441,6 +441,18 @@ https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%9
 
 ###git grep
 git grep可以支持很多在当前版本代码进行搜索所不能发现的问题
-比如搜索某个变量是在哪些commit中被修改之类的。
+比如搜索某个变量是在哪些commit中被修改的
+在某个项目的历史版本范围中，进行grep 关键字搜索
+使用行日志搜索，分析某个函数在项目历史上的修改
 这些工具可以提供理解系统非常有用，重要的信息
+由于工具比较复杂，直接看reference进行使用即可
 https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E6%90%9C%E7%B4%A2
+
+###git blame
+可以看出来当前代码版本中的每一行是在什么地方被引入的
+https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E4%BD%BF%E7%94%A8-Git-%E8%B0%83%E8%AF%95
+
+###git bisect
+可以通过在commit log中二分查找来定位bug
+https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E4%BD%BF%E7%94%A8-Git-%E8%B0%83%E8%AF%95
+
