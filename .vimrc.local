@@ -379,6 +379,7 @@ nnoremap <leader>cfi :setlocal foldmethod=indent foldtext=foldtext()<CR>
 map <C-e> :Rooter <bar> NERDTreeTabsToggle<CR>
 nmap <leader>nt :Rooter <bar> NERDTreeFind<CR>
 nnoremap <silent> <leader> :WhichKey ','<CR>
+nnoremap <silent> <space>  :WhichKey '<Space>'<CR>
 nmap <M-n> <plug>(YoinkPostPasteSwapBack)
 nmap <M-p> <plug>(YoinkPostPasteSwapForward)
 nmap p <plug>(YoinkPaste_p)
