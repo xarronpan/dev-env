@@ -789,17 +789,11 @@ cb      同时采用两者分支的代码
 cB      同时采用两者分支的代码, 采用相反的顺序
 cn      两者都不采用
 
-### 浏览某行代码的commit log: git-messenger插件
-rhysd/git-messenger插件可以展现某行代码所对应的git commit信息
-git commit信息在阅读不熟悉的代码的时候，能够提供类似文档一样的功能，详细描述代码编写已经调整的原因
-命令:
-<leader>gm  启动preview窗口, 在窗口中展现cursor所在代码行的commit信息
-在preview窗口中的命令:
-? 显式帮助菜单, 包括了下面列出的这些快捷键
-o 显式下一条commit
-O 显式上一条commit
-d 显式当前commit，当前cursor所在文件的diff修改
-D 显式当前commit所有的diff修改
+### fzf
+GC      使用fzf查看/搜索Git commits
+GBC     使用fzf查看/搜索当前Buffer的Git commits
+        可以选定一个文本区间，查看这个文件区间
+        在什么commits中被修改过
 
 ## 命令
 ### 行命令

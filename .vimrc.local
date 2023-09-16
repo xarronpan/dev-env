@@ -298,6 +298,8 @@ cnoreabbrev VSA VSSplitAbove
 cnoreabbrev VSB VSSplitBelow
 cnoreabbrev RT TabooRename
 cnoreabbrev AJ Rooter <bar> AnyJump
+cnoreabbrev GC Commits
+cnoreabbrev GBC BCommits
 
 "add slash
 cnoreabbrev AS s/$/\//
