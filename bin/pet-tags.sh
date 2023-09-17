@@ -1,5 +1,6 @@
 #! /bin/bash
-TAG=$(pet list|grep -oP '(?<=Tag: ).+'|sed 's/ /\n/g'|sort|uniq|fzf)
+HEADER='types: shell vim docker k8s gdb helm'
+TAG=$(pet list|grep -oP '(?<=Tag: ).+'|sed 's/ /\n/g'|sort|uniq|sort -V -r|fzf --header="$HEADER" +s)
 if [ -z $TAG ]; then
   exit 0
 fi
