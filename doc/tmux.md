@@ -198,7 +198,9 @@ tmux对pet程序进行封装的主要用途，是能够允许在任何机器上�
 我们就不再需要对很多的命令记录手册，而只需要通过快捷键将snappet给调用出来使用。
 pet支持按参数模板来填入参数，而且这个插件能够与tmux-bulder等插件一起工作，能力就更加强大了。pet还支持对命令加标签，
 能够增加找到代码片段的效率
-目前配置的启动快捷键： prefix + g
+目前配置的启动快捷键：
+prefix + g   进行命令搜索
+prefix + G   进行tag搜索
 ```bash
 pet new  #增加snappet
 pet edit #管理snappet
@@ -230,14 +232,14 @@ sr            #通过fzf选择需要删除的key value对
 
 ### 使用ansible inventory补全ip/group: ansible-inventory集成
 当输入一个命令时需要一个ip作为参数时，可以通过键入
-<prefix> + i，通过选择ansbile的inventory来选择对应的ip地址来进行处理。
+<prefix> + a，通过选择ansbile的inventory来选择对应的ip地址来进行处理。
 在选择groupid时，可以通过tab进行多选，此时的含义是多个groupid求交集得到的ip地址。该功能对于复杂的inventory结果特别有用
 在选择hosts是，可以通过tab进行多选，c-t 来toggle全选。
 为了使该系统能够知道系统中所存在的inventory，需要在 $HOME/.inventory目录中建立各个不同的inventory目录的软连接
 每一项软连接称之为一个环境。在使用ansible-inventory进行集成时，首选会选择环境参数
 与此相类似地，当需要一个ansible-group作为参数时，可以通过键入
 当输入一个命令时需要一个ip作为参数时，可以通过键入
-<prefix> + G，通过选择ansbile的inventory来选择对应的group来进行处理。
+<prefix> + A，通过选择ansbile的inventory来选择对应的group来进行处理。
 
 ### 使用tmux-buffer进行补全: tmux-butler插件
 tmux-bulter插件内置集成了使用tmux-buffer作为补全内容源的功能
