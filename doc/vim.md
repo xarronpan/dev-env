@@ -517,6 +517,7 @@ vim +BundleInstall! +BundleClean +q
 :Maps //搜索vim的normal模式下的key binding
 :Commands //搜索全部支持的命令
 :Commits //搜索gitlog的提交历史
+:BCommits //搜索gitlog的提交历史, 可以按文本区间进行搜索，非常强大
 :Ag keyword   //在当前打开的文件目录搜索代码, 因为有预览窗口，所以比ack.vim要好用
 :AG keyword //在git项目的根目录搜索代码, 因为有预览窗口，所以比ack.vim要好用
 :History:  //搜索vim命令历史
