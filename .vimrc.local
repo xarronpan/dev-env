@@ -302,11 +302,11 @@ cnoreabbrev GC Commits
 cnoreabbrev GBC BCommits
 
 "text add slash
-cnoreabbrev TAS s/$/\//
+cnoreabbrev SAS s/$/\//
 "text add back slash
-cnoreabbrev TABS s/$/\\/
+cnoreabbrev SABS s/$/\\/
 "text remove trailing space
-cnoreabbrev TRTS s/\v[ ]+$//
+cnoreabbrev SRTS s/\v[ ]+$//
 
 "key mappings configure
 let mapleader = ","
