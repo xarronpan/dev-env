@@ -445,8 +445,8 @@ git grep可以支持很多在当前版本代码进行搜索所不能发现的问
 https://www.kosli.com/blog/git-grep-like-a-pro-the-complete-guide/
 这些工具可以提供理解系统非常有用，重要的信息
 ```bash
-git grep hello HEAD HEAD~2 new
-#在new分支上，HEAD HEAD~2范围之间进行grep搜索，搜索hello关键字
+git grep hello HEAD~2 new
+#在new分支上，HEAD~2 commit 上进行grep搜索，搜索hello关键字
 
 git log -S ZLIB_BUF_MAX --oneline
 # 搜索常量ZLIB_BUF_MAX是什么时候被引入或者修改的
