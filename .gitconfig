@@ -1,4 +1,9 @@
 [delta]
   minus-emph-style = black auto
   plus-emph-style = black auto
-  side-by-side = true
+  side-by-side = false
+[user]
+	email = panxiangrong@agora.io
+	name = panxiangrong
+[credential]
+  helper = store
