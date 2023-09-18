@@ -27,20 +27,14 @@ https://wangdoc.com/bash/intro
 https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md
 
 #git
+廖雪峰教程
+https://www.liaoxuefeng.com/wiki/896043488029600
+
 bitbucket教程
 https://www.atlassian.com/git/tutorials/what-is-version-control
 
 rewriting git history
 https://www.atlassian.com/git/tutorials/rewriting-history
-
-廖雪峰教程
-https://www.liaoxuefeng.com/wiki/896043488029600
-
-git原理
-https://www.ruanyifeng.com/blog/2018/10/git-internals.html
-
-git常用命令
-https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html
 
 #vim
 https://github.com/iggredible/Learn-Vim/blob/master/README.md
@@ -62,6 +56,9 @@ https://helm.sh/docs/intro/using_helm/
 
 helm chart编写
 https://helm.sh/docs/chart_template_guide/getting_started/
+
+#gdb
+https://github.com/hellogcc/100-gdb-tips/blob/master/src/index.md
 
 #ansible
 https://docs.ansible.com/ansible/latest/getting_started/index.html

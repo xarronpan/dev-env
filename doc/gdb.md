@@ -1,5 +1,5 @@
 # 常用gdb命令tips
-https://www.gitbook.com/book/wizardforcel/100-gdb-tips
+https://github.com/hellogcc/100-gdb-tips/blob/master/src/index.md
 
 # 调试原理
 gdb调试器的主要工作原理，是使用符号信息，外加依赖于操作系统提供的api来实现断点，step等功能的。也就是说linux的其他系统命

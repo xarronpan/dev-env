@@ -25,6 +25,9 @@ https://docs.ansible.com/ansible/latest/collections/index_module.html
 #git
 https://git-scm.com/book/zh/v2
 
+#gdb
+https://sourceware.org/gdb/current/onlinedocs/gdb.html/
+
 #mongodb
 https://www.mongodb.com/docs/manual/reference/
 
