@@ -186,6 +186,9 @@ alias god="cgodoc"
 alias ccd="cppman"
 alias pyd="cpydoc"
 
+alias gf="git fuzzy"
+alias fd="fdfind"
+
 # Show logs of container, e.g. $dl base
 alias dl="docker logs"
 
