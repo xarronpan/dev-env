@@ -1013,6 +1013,8 @@ vim +BundleInstall! +BundleClean +q
 <leader>PN 在cc，cpp文件中按下这个快捷键，则会根据对应的.h文件，生成代码的骨架,并且如果class在头文件中是在namespace
            下的话，不生成namespace前缀
 <leader>PP 在cc，cpp文件中按下这个快捷键，则会根据对应的.h文件，生成代码的骨架
+<leader><leader> gi 与<leader>PN相同
+<leader><leader> gd 通过implement文件生成header的定义函数. 需要将光标放置在函数上, 再按这个快捷键 
 
 ### AnyJump
 当LSP无法编译当前文件时, AnyJump使用正则表达式的方法给出最好的go to defination
