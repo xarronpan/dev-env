@@ -27,8 +27,6 @@ let g:cpp_class_scope_highlight = 1
 let cpp_no_cpp14 = 1
 let cpp_no_cpp17 = 1
 let cpp_no_cpp20 = 1
-let g:protodefprotogetter = '~/.vim/bundle/vim-protodef/pullproto.pl'
-let g:disable_protodef_sorting = 1
 let g:rainbow_conf = {
 \   'separately': {
 \       'cmake': 0,
