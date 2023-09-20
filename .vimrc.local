@@ -325,8 +325,8 @@ noremap <M-h> :SidewaysLeft<cr>
 noremap <M-l> :SidewaysRight<cr>
 nnoremap <silent> <leader>tn :tabnew<CR>
 nnoremap <silent> <leader>tc :tabclose<CR>
-nmap <F5> :Toc<CR>
-nmap <F6> :Folds<CR>
+nnoremap <leader><leader>t :Toc<CR>
+nnoremap <leader><leader>f :Folds<CR>
 noremap <F8> :Autoformat<CR>
 nnoremap <silent> <leader>n :enew<CR>
 nnoremap <silent> <leader>pe :echo ''<CR>
