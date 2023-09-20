@@ -1120,6 +1120,10 @@ https://github.com/AndrewRadev/linediff.vim
 :UDB 关闭同一个window上多个文件Diff
 <c+w> c: 关闭diff窗口，显示原来的窗口
 
+### delta
+<leader><leader> ds  使用delta显示当前buffer的内容(通常是fugative中diff输出). <c-w>_可以全屏观察delta的内容
+<leader><leader> dv  使用delta -s(竖式)显示当前buffer的内容(通常是fugative中diff输出). <c-w>_可以全屏观察delta的内容
+
 ## MarkDown
 <leader><leader>t 打开Toc窗口进行Markdown导航
 ## Man
