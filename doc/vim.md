@@ -402,7 +402,7 @@ https://github.com/iggredible/Learn-Vim/blob/master/ch17_fold.md
 
 <leader>cfs 在当前文件 使用 set foldmethod=syntax 创建fold，适用于C++，golang这类文件, 或者希望fold行能被高亮的情况
 <leader>cfi 在当前文件 使用 set foldmethod=indent 创建fold，适用于Python这类文件
-F6  使用fzf进行folding搜索. 这个功能用于在MardDown文件中搜索title
+<leader><leader>f  使用fzf进行folding搜索. 这个功能用于在MardDown文件中搜索title
 
 ## 书签
 ### 内置书签功能
@@ -1003,6 +1003,7 @@ https://github.com/derekwyatt/vim-protodef 
 在 .vimrc.bundles.local 中增加:
 Bundle 'xarronpan/vim-fswitch' 
 Bundle 'derekwyatt/vim-protodef'
+Bundle 'tenfyzhong/vim-gencode-cpp.git'
 在shell中执行:
 vim +BundleInstall! +BundleClean +q
 
@@ -1120,7 +1121,7 @@ https://github.com/AndrewRadev/linediff.vim
 <c+w> c: 关闭diff窗口，显示原来的窗口
 
 ## MarkDown
-F5 打开Toc窗口进行Markdown导航
+<leader><leader>t 打开Toc窗口进行Markdown导航
 ## Man
 ]] [[ 跳到下一个，前一个章节
 K 根据光标所在链接跳转
