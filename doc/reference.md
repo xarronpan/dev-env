@@ -1,5 +1,8 @@
-#c/cpp
+#cpp
 https://en.cppreference.com/w/
+
+#c
+https://pubs.opengroup.org/onlinepubs/9699919799/
 
 #golang
 https://pkg.go.dev/std
