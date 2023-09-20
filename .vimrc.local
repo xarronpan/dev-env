@@ -356,7 +356,7 @@ nnoremap <silent> <leader>Q :FZFQuickFix!<CR>
 nnoremap <silent> <leader>F :cd %:p:h <bar> Files<CR>
 nnoremap <silent> <leader>G :cd %:p:h <bar> CWAg!<CR>
 nnoremap <silent> <leader><leader>gd :GenDeclaration<CR>
-nnoremap <silent> <leader><leader>gi :set paste<cr>i<c-r>=protodef#ReturnSkeletonsFromPrototypesForCurrentBuffer({'includeNS' : 0})<cr><esc>='[:set nopaste<cr>
+nnoremap <silent> <leader><leader>gi :GenDefinition<CR>
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
