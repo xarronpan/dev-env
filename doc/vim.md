@@ -997,25 +997,11 @@ https://vimzijun.net/2016/10/30/ultisnip/
 
 在vi中输入: UltiSnipsEdit，即可在一个编辑窗口中编辑自动以的snips
 
-### 生成桩代码: vim-protodef 插件
-使用vim-protodef插件，通过头文件的定义，自动生成cpp文件中的函数定义，避免重复体力劳动
-https://github.com/derekwyatt/vim-protodef 
-在 .vimrc.bundles.local 中增加:
-Bundle 'xarronpan/vim-fswitch' 
-Bundle 'derekwyatt/vim-protodef'
-Bundle 'tenfyzhong/vim-gencode-cpp.git'
-在shell中执行:
-vim +BundleInstall! +BundleClean +q
-
-其中vim-fswtich插件中不能支持cc文件自动找到h文件，因而对于我们这边的很多项目都不能正常工作。
-因而我fork出了一个版本，进行了细微的调整，放在我自己的git上。
-
-命令:
-<leader>PN 在cc，cpp文件中按下这个快捷键，则会根据对应的.h文件，生成代码的骨架,并且如果class在头文件中是在namespace
-           下的话，不生成namespace前缀
-<leader>PP 在cc，cpp文件中按下这个快捷键，则会根据对应的.h文件，生成代码的骨架
-<leader><leader> gi 与<leader>PN相同
-<leader><leader> gd 通过implement文件生成header的定义函数. 需要将光标放置在函数上, 再按这个快捷键 
+### 生成桩代码: vim-gencode-cpp 插件
+使用vim-gencode-cpp插件，通过头文件的定义，自动生成cpp文件中的函数定义
+以及通过cpp文件中的函数定义，自动生成头文件中的声明，避免很多重复体力劳动
+<leader><leader> gi 通过函数声明生成函数定义stub. 需要将光标放置在函数上, 再按这个快捷键 
+<leader><leader> gd 通过函数定位生成header的定义函数. 需要将光标放置在函数上, 再按这个快捷键 
 
 ### AnyJump
 当LSP无法编译当前文件时, AnyJump使用正则表达式的方法给出最好的go to defination
