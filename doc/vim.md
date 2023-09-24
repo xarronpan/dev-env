@@ -943,6 +943,10 @@ nnoremap <leader>doc :YcmCompleter GetDoc<CR>                            //显�
 : cp //GoToReference功能会将结果方案quick fix window中。cp用于访问quick fix window的下一条
 :YcmCompleter GoToSymbol '目标符号'                                       //全局查找符号
 :YcmDebugInfo                                                             //ycm调试输出
+
+<leader>pt                                                                //打印光标下面符号的代码定义
+<leader>pT                                                                //打印光标下面符号的类型信息
+
 #### 编译数据库
 youcompleteme会使得vim变成一个真正的集成开发环境。在编辑c/c++项目时，为了使得clang能够工作，如果是使用make的项目，
 需要安装compiledb来生成编译数据库
