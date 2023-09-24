@@ -1082,6 +1082,7 @@ scratch buffer中，搞完了之后，再一次性地将全部的需要拷贝的
 normal mode下按入gs ， 则会进入sratch窗口并进入insert模式。当退出insert模式的时候，窗口会自动关闭
 visual mode下按入gs， 则会将visual的内容拷贝进入sratch窗口，并且进入到sratch窗口中。
 任意模式下键入gS，则会清空sratch窗口的内容
+目前只要离开scratch buffer的窗口，scratch buffer会自动关闭
 
 ### 限定区域编辑:NrrwRgn插件
 https://github.com/chrisbra/NrrwRgn
