@@ -327,16 +327,17 @@ nnoremap <leader><leader>t :Toc<CR>
 nnoremap <leader><leader>f :Folds<CR>
 noremap <F8> :Autoformat<CR>
 nnoremap <silent> <leader>n :enew<CR>
-nnoremap <silent> <leader>pe :echo ''<CR>
-nnoremap <silent> <leader>pp :echo expand('%:p')<CR>
+nnoremap <silent> <leader>ee :echo ''<CR>
+nnoremap <silent> <leader>ep :echo expand('%:p')<CR>
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <silent> <leader>fi :YcmCompleter FixIt<CR>
 nnoremap <silent> <leader>gi :YcmCompleter GoToImplementation<CR>
 nnoremap <silent> <leader>gt :YcmCompleter GoToType<CR>
-nnoremap <silent> <leader>pt :YcmCompleter GetType<CR>
+nnoremap <silent> <leader>et :YcmCompleter GetType<CR>
 nnoremap <silent> <leader>do :YcmCompleter GetDoc<CR>
-noremap <silent> <leader>pT :vsplit <CR>:YcmCompleter GoTo<CR><c-w>p
+noremap <silent> <leader>pt :vsplit <CR>:YcmCompleter GoTo<CR><c-w>p
+noremap <silent> <leader>pc <c-w>p<c-w>c
 nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
 nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-g> :Rooter <bar> CWAg!<CR>
