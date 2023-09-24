@@ -336,6 +336,7 @@ nnoremap <silent> <leader>gi :YcmCompleter GoToImplementation<CR>
 nnoremap <silent> <leader>gt :YcmCompleter GoToType<CR>
 nnoremap <silent> <leader>pt :YcmCompleter GetType<CR>
 nnoremap <silent> <leader>do :YcmCompleter GetDoc<CR>
+noremap <silent> <leader>pT :vsplit <CR>:YcmCompleter GoTo<CR><c-w>p
 nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
 nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-g> :Rooter <bar> CWAg!<CR>
