@@ -452,9 +452,11 @@ nerdtree更加适用与浏览整个项目的目录结构，而vim-dirvish则更�
 一个典型的用法是在一个独立的窗口中 (:enew命令)，或者是一个split窗口中 (:vnew)，通过 vim-dirvish 来打开插件
 vim-dirvish是netrw的替代品，但是更加强大。
 其中的功能是vim-dirvish可以通过x键来选定对应的文件到arglist中。可以说是vim arglist的能力补全
-此外最重要的功能，是vim-dirvish的buffer可以与普通vim buffer一样被编辑。比如通过d键来对buffer进行修改，或者使用shell等命令进行filger，
-然后通过virtual选定需要的文件，键入.键来进行Shdo脚本允许。Shdo脚本与xargs类似，就是以 {} 符号作为占位符执行shell命令
-而每个占位符表示的则是被选中的文件。
+此外最重要的功能，是vim-dirvish的buffer可以与普通vim buffer一样被编辑。比如通过d键来对buffer进行修改，或者使用shell等
+命令进行filger，然后通过virtual选定需要的文件，键入.键来进行Shdo脚本允许。Shdo脚本与xargs类似，就是以 {} 符号作为占位
+符执行shell命令,而每个占位符表示的则是被选中的文件。
+这里需要注意的一个点，是使用'%'号获取当前执行的目录，否者很多shell命令执行的时候会提示找不到目录
+比如需要对每个文件进行ls, 则输入的命令为  :Shdo ls -l %{} 。
 这个功能就可以被看成一个交互式的shell脚本执行器, 而shell脚本的数据来源可以是通过vim buffer的操作方式得到的
 比如说我们可以通过:%!grep 命令将需要处理的文件给搞出来
 在选择好文件之后，我们就可以通过'.'键生成一个脚本。这个脚本会在一个新的窗口下被打开。
