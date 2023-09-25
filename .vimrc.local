@@ -117,7 +117,6 @@ let g:any_jump_colors = {
       \}
 let g:easyescape_chars = { "j": 2 }
 let g:easyescape_timeout = 200
-let g:no_cpplint_maps = 1
 
 "vim setting configure
 "set ttymouse=xterm2
@@ -300,7 +299,7 @@ cnoreabbrev AJ Rooter <bar> AnyJump
 cnoreabbrev GC Commits
 cnoreabbrev GBC BCommits
 cnoreabbrev AF Autoformat
-cnoreabbrev CL call Cpplint()
+cnoreabbrev CL AsyncRun cpplint %:p
 
 "text add slash
 cnoreabbrev SAS s/$/\//
