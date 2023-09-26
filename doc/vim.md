@@ -467,7 +467,7 @@ vim-dirvish是netrw的替代品，但是更加强大。
 就目前而言，这个命令只能交互式处理一个代码目录下的东西，但是也已经足够强大了
 
 命令:
--：在当前文件所在目录打开dirvish
+-：在当前文件所在目录打开dirvish. 如果已经再dirvish中，则会跑到上级目录
 
 在drivish buffer中的命令:
 g? : 显式命令帮助
@@ -476,6 +476,12 @@ enter: 在当前buffer中打开dirvish选中文件, 或者进入子目录中
 x: 将文件加入arglist
 .: 将当前visual选定的文件加入Shdo脚本中进行执行
 p: preview当前文件
+<c-p>: preview curosr所在上一个文件
+<c-n>: preview curosr所在下一个文件
+
+命令行命令:
+:Shdo ls -l {} 对于dirvish中visutal选中的行, 创建shell脚本, 命令为ls -l, 使用{}替代每一个选中的行
+:Shdo! ls -l {} 对于dirvish中选中的agrlist, 创建shell脚本, 命令为ls -l, 使用{}arglist中的每个值
 
 ### 本地文件预览导航:ranger 插件
 https://github.com/francoiscabrol/ranger.vim
