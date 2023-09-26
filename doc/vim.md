@@ -460,16 +460,19 @@ vim-dirvish是netrw的替代品，但是更加强大。
 这个功能就可以被看成一个交互式的shell脚本执行器, 而shell脚本的数据来源可以是通过vim buffer的操作方式得到的
 比如说我们可以通过:%!grep 命令将需要处理的文件给搞出来
 在选择好文件之后，我们就可以通过'.'键生成一个脚本。这个脚本会在一个新的窗口下被打开。
-我们可以交互地对其进行修改。在完成之后, 在脚本窗口下执行 :%! bash, 即会在当前脚本窗口中显式命令执行结果
+我们可以交互地对其进行修改。在完成之后, 在脚本窗口下执行 :%! bash, 即会在当前脚本窗口中显式命令执行结果.\
+或者在shell buffer中输入mapping Z!执行命令, 并且退出shell buffer。
 我们还可以对结果再进行编辑。这里实际演示了一种使用vim和bash进行交互的方式，即允许编辑器对bash命令执行的结果进行交互式
-的编辑，然后再通过vim和shell之间的通信来交互执行命令。这是一种我比较陌生的交互方式，但是实际上是个非常大的想法
+的编辑，然后再通过vim和shell之间的通信来交互执行命令。
+
+这是一种我比较陌生的交互方式，但是实际上是个非常大的想法
 这样子vim不仅仅可以看成一个源文件的编辑环境，同时也变成了一个交互命名的执行入口
 就目前而言，这个命令只能交互式处理一个代码目录下的东西，但是也已经足够强大了
 
-命令:
+mapping:
 -：在当前文件所在目录打开dirvish. 如果已经再dirvish中，则会跑到上级目录
 
-在drivish buffer中的命令:
+在drivish buffer中的mapping:
 g? : 显式命令帮助
 gq : 返回启动drivish的文件
 enter: 在当前buffer中打开dirvish选中文件, 或者进入子目录中
@@ -478,6 +481,9 @@ x: 将文件加入arglist
 p: preview当前文件
 <c-p>: preview curosr所在上一个文件
 <c-n>: preview curosr所在下一个文件
+
+在 drivish的shell buffer中的mapping:
+Z! 执行当前脚本，并且退出shell buffer
 
 命令行命令:
 :Shdo ls -l {} 对于dirvish中visutal选中的行, 创建shell脚本, 命令为ls -l, 使用{}替代每一个选中的行
