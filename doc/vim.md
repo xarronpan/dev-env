@@ -1148,6 +1148,15 @@ https://github.com/AndrewRadev/linediff.vim
 <leader><leader> ds  使用delta显示当前buffer的内容(通常是fugative中diff输出). <c-w>_可以全屏观察delta的内容
 <leader><leader> dv  使用delta -s(竖式)显示当前buffer的内容(通常是fugative中diff输出). <c-w>_可以全屏观察delta的内容
 
+## Doc
+###doge 插件
+doge插件可以生成各种形式的函数文档。
+注意该插件使用之前，需要在 .vim/bundle/vim-doge/scripts 目录下执行install.sh
+Mapping:
+<leader><leader>dg gen document
+<Tab> 下一个文档项
+<S-Tab> 上一个文本项
+
 ## MarkDown
 <leader><leader>t 打开Toc窗口进行Markdown导航
 ## Man
