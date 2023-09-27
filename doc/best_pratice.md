@@ -4,6 +4,7 @@ https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/cont
 #golang
 https://google.github.io/styleguide/go/best-practices.html
 https://go.dev/doc/effective_go
+https://go.dev/blog/godoc
 
 #python
 https://docs.python-guide.org/
