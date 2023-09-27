@@ -717,6 +717,11 @@ X 在visual模式下进行交换。 首先使用visual模式对于第一个对�
 选择，并且按入X。则两个对象会被交换
 cx(textobj), 比如cxiw。现在在第一个文本对象中输入cxtextobj1，然后移动到另外对象中，输入cxtextobj2，则两个对象会交换
 
+### 移动文本: vim-move 插件
+注意下面的key是大写的
+<A-J> 上移一块visual模式选定的文本
+<A-K> 下移一块visual模式选定的文本
+
 ## 代码格式
 ### 缩进提示
 缩进提示: <leader>ig
