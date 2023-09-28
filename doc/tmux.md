@@ -104,20 +104,6 @@ https://github.com/tmux-plugins/tmux-yank
 tmux-yank的主要功能是在屏幕上进行copy选定之后，按Y即可将copy的内容paste到当前命令行中。可以当做是命令行补全来进行使用。
 这个插件可以与tmux-jump与copy-cat插件一起工作
 
-### 同panel选择已知模式文本: tmux-thumbs插件
-#### 安装/配置
-https://github.com/fcsonline/tmux-thumbs
-
-#### 功能
-tmux-thumbs是 copycat+tmuxyank 的加强版。只需要一个 prefix + ' '(进行了remap。原来的功能是find-window，几乎很少用到)，
-就会进入finger模式，并能够通过字母按键将 url filepath ip numbers 等命令行参数中可能会用到的东西paste到命令行中
-另外 在finger模式下，使用 shift + (字母)，默认就会将选中的内容拷贝到tmux的缓冲区中。使用prefix + p就能将内容给拷贝出来
-该命令的主要用于将其中一个tmux窗口中的内容拷贝到另外一个窗口中。
-目前由于在vim中安装了 vim-tmux-clipboard 插件，所以vim的剪切板与tmux的剪切板是互通的。通过上述命令拷贝到tmux剪切板的内
-容，能够直接黏贴在vim中:
-在tmux中copy的东西，在vim中通过在normal mode下键入 ""p 即可拷贝
-在vi中y的东西，在tmux中ctrl + ]即可拷贝出来
-
 ### 同panel选择未知模式文本: tmux-jump插件
 https://github.com/schasse/tmux-jump
 prefix + f + 首字母，就会在当前屏幕上进入copy-mode，并且像easy-motion一样给出位置提示，通过字母进行跳转
