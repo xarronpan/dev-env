@@ -104,20 +104,13 @@ https://github.com/tmux-plugins/tmux-yank
 tmux-yank的主要功能是在屏幕上进行copy选定之后，按Y即可将copy的内容paste到当前命令行中。可以当做是命令行补全来进行使用。
 这个插件可以与tmux-jump与copy-cat插件一起工作
 
-### 同panel选择已知模式文本: tmux-fingers插件
+### 同panel选择已知模式文本: tmux-thumbs插件
 #### 安装/配置
-https://github.com/Morantron/tmux-fingers
-注意需要安装gawk，tmux-fingers才能正常工作。若在安装了tmux-finger之后，再安装gawk，则需要重新连接ssh，tmux-finger才能正常
-工作
-另外fingers的默认命令是将请求发送到xsel。当我们使用命令行终端的时候，xsel是会失败了。为了避免这个问题，设置下面的选项:
-set -g @fingers-main-action ':paste:'
-则fingers的默认行为是直接paste到命令行中。这也是我们需要的行为。
+https://github.com/fcsonline/tmux-thumbs
 
 #### 功能
-tmux-finger是 copycat+tmuxyank 的加强版。只需要一个 prefix + ' '(进行了remap。原来的功能是find-window，几乎很少用到)，
+tmux-thumbs是 copycat+tmuxyank 的加强版。只需要一个 prefix + ' '(进行了remap。原来的功能是find-window，几乎很少用到)，
 就会进入finger模式，并能够通过字母按键将 url filepath ip numbers 等命令行参数中可能会用到的东西paste到命令行中
-在finger模式下输入space键，可以切换 选择提示 的compact模式与非compact模式
-在finger模式下输入tab键，进入多选模式，在按tab键，完成全部的选择
 另外 在finger模式下，使用 shift + (字母)，默认就会将选中的内容拷贝到tmux的缓冲区中。使用prefix + p就能将内容给拷贝出来
 该命令的主要用于将其中一个tmux窗口中的内容拷贝到另外一个窗口中。
 目前由于在vim中安装了 vim-tmux-clipboard 插件，所以vim的剪切板与tmux的剪切板是互通的。通过上述命令拷贝到tmux剪切板的内
