@@ -121,10 +121,10 @@ tmux-jump的主要用途是为了进行copy-paste。而一般copy-paste操作都
 ### 跨panel已知模式文本auto-complete: tmux-bulter插件
 https://github.com/woodstok/tmux-butler
 命令:
-prefix + v  将当前session中所有window一段历史区域的内容作为补全内容进行选择
-prefix + V  将当前window一段历史区域的内容作为补全内容进行选择
+prefix + space  将当前session中所有window一段历史区域的内容作为补全内容进行选择
+prefix + ;  将当前window一段历史区域的内容作为补全内容进行选择
 
-prefix + v 进入使用当前tmux上的屏幕输出，使用fzf来进行选择后，并且进行输出补全。在进入补全之后，还可以通过alt+pattern的
+prefix + space 进入使用当前tmux上的屏幕输出，使用fzf来进行选择后，并且进行输出补全。在进入补全之后，还可以通过alt+pattern的
 方式，选择需要进行补全的pattern。内置的模式包括ip，命令行输入，hash等模式
 这个插件与tmux-finger与tmux-jump不同最为厉害的地方，是能够将一个windows上全部panne的内容都给进行收集。
 基于这个插件的强大性，若需要进行补全的内容是跨pane的，则应该使用这个插件进行补全 (比动用鼠标的速度可能还是要稍微快一些)
