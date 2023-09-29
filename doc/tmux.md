@@ -104,19 +104,23 @@ https://github.com/tmux-plugins/tmux-yank
 tmux-yank的主要功能是在屏幕上进行copy选定之后，按Y即可将copy的内容paste到当前命令行中。可以当做是命令行补全来进行使用。
 这个插件可以与tmux-jump与copy-cat插件一起工作
 
-### 同panel选择未知模式文本: tmux-jump插件
-https://github.com/schasse/tmux-jump
-prefix + f + 首字母，就会在当前屏幕上进入copy-mode，并且像easy-motion一样给出位置提示，通过字母进行跳转
-tmux-jump的主要用途是为了进行copy-paste。而一般copy-paste操作都是从单次首字母开始的，所以tmux-jump之后选择首字母进行提示
-在跳转到对应位置之后，典型的命令就是输入 veY、v$Y，vt Y， 表示开始拷贝到单词结束 ，当且行结束，当前连续字符串，并且将内
-容拷贝到命令行光标当前位置中。
-另外一个选择复制内容的技巧。使用该插件将光标定位到需要复制内容的开始,输入v，开始复制 。然后观察需要拷贝内容的结束的字母，
-比如说'a'。输入fa，这样子tmux的行为就会像vim一样，选择光标所在位置到光标开始第一个'a'所在位置之间的内容。如果这个位置不是
-目标位置，则输入;键往后搜索，输入,键往前搜索
-这样子就可以很快地定位到要选择的内容了
-如果不需要输出到当前命令行，则可以使用y命令。
-这个命令基本上能够涵盖在命令输出中拷贝参数的场景了
-主要到当我们进入了copy-mode之后，仍然可以使用 prefix+ f的方式来再次定位需要单词开始位置
+### 同panel屏幕信息获取插件 tmux-copy-toolkit插件
+tmux-copy-toolkit集成了tmux-jump, tmux-finger 还有vim easymotion的能力。是目前已知的tmux上在单pannel上获取信息最强的插件
+其有几种不同获取pannel内信息的方法, 见下面的描述.
+命令:
+prefex + . 获取屏幕上符合预设pattern的字符串, 并输出到prompt的位置中
+prefex + > 获取屏幕上符合预设pattern的字符串, 但是不输出到prompt, 只拷贝到tmux的buffer中
+
+prefex + f 使用类似easy-motion的方式, 分别选择start + end的模式拷贝一段字符串. 拷贝到的内容输出到prompt的位置
+prefex + F 使用类似easy-motion的方式, 分别选择start + end的模式拷贝一段字符串. 但是不输出到prompt,只拷贝到tmux的buffer中
+
+在进入tmux copy mode之后，输入s，就可以进入类似vim easy-motion的方式移动光标
+在选择到一个光标之后，输入v开始select文本，此时再输入s, 就可以通过easy-motion的方式选择范围
+copy-mode下:
+s easy-motion 通过字母移动光标
+Sj easy-motion 向下选择行开始位置
+Sk easy-motion 向上选择行开始位置
+Sn easy-motion 选择行开始位置
 
 ### 跨panel已知模式文本auto-complete: tmux-bulter插件
 https://github.com/woodstok/tmux-butler
