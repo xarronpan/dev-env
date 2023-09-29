@@ -208,7 +208,7 @@ https://github.com/settings/tokens
 ### 临时数据存储: tmux-butler插件
 tmux-bulter插件中包含了一个sneppetdb用于存储临时数据。典型的数据比如 机房的名字与机房id的对应关系，某个app的appid的值等
 经常要用到作为输入，但是不是典型的命令片段的情况
-prefix + C 会启用sneppetdb中的内容，通过key将内容获取到命令行中。snippetdb相对于pet而言非常轻量，更加适合于存储一些与
+prefix + v 会启用sneppetdb中的内容，通过key将内容获取到命令行中。snippetdb相对于pet而言非常轻量，更加适合于存储一些与
 业务相关联，但是反复需要作为命令参数的输入源要用到的数据
 比如所机房的groupid，某个业务的appid等信息。这个插件也能够大大加快进行编程，运维操作时的大脑负担，因为要获取这些业务数据
 通常很繁琐
@@ -219,7 +219,7 @@ sr            #通过fzf选择需要删除的key value对
 ## 自动补全
 ### 使用文件浏览器补全文件名: ranger集成
 当输入一个命令时需要一个文件或者目录作为参数，而这个参数你并不记得具体的名称，更加希望通过file explorer的方式来找到文件，
-此时可以通过键入<prefix> + F启动ranger，选择文件或者目录，最后在ranger中键入Q，然后获取到对应的文件或者目录作为参数
+此时可以通过键入<prefix> + r启动ranger，选择文件或者目录，最后在ranger中键入Q，然后获取到对应的文件或者目录作为参数
 这个命令在进行dirdiff，或者在vim键入命令时，需要文件参数时特别有用，能够大幅降低大脑的负担
 
 ### 使用ansible inventory补全ip/group: ansible-inventory集成
