@@ -105,6 +105,7 @@ tmux-yank的主要功能是在屏幕上进行copy选定之后，按Y即可将cop
 这个插件可以与tmux-jump与copy-cat插件一起工作
 
 ### 同panel屏幕信息获取插件 tmux-copy-toolkit插件
+https://github.com/xarronpan/tmux-copy-toolkit
 tmux-copy-toolkit集成了tmux-jump, tmux-finger 还有vim easymotion的能力。是目前已知的tmux上在单pannel上获取信息最强的插件
 其有几种不同获取pannel内信息的方法, 见下面的描述.
 命令:
