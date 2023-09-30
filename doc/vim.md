@@ -880,7 +880,7 @@ https://github.com/iggredible/Learn-Vim/blob/master/ch13_the_global_command.md
 ### 多文件命令
 https://github.com/iggredible/Learn-Vim/blob/master/ch21_multiple_file_operations.md
 vim有多种对多个文件执行命令的方法:
-资源 (命令)
+文件来源 (命令)
 arg list (argdo)
 buffer list (bufdo)
 window list (windo)
