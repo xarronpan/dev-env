@@ -213,7 +213,7 @@ ctrl + t 新建标签页。往往是搜索开始的入口
 像windows terminal这种程序无法使用wise hotkey来快速触发切换
 只能使用AutoHotkey编写脚本来进行切换。
 首先安装AutoHotkey v2.0, 然后讲window目前下的脚本windows terminal.ahk拷贝到桌面
-每次windows重启后双击运行该脚本即可
+每次windows重启后, 已管理员身份双击运行该脚本即可
 由于在我们的工作流中windows termial基本上都运行在tmux里面，所以窗体是靠tmux的窗体名字进行定位的
 
 # 桌面搜索
