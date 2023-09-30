@@ -885,9 +885,7 @@ arg list (argdo)
 buffer list (bufdo)
 window list (windo)
 tab list (tabdo)
-quickfix list (cdo)
 quickfix list filewise (cfdo)
-location list (ldo)
 location list filewise (lfdo)
 
 :argadd file1 file2 file3  //将file1, file2, file3加入到arglist
