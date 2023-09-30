@@ -892,6 +892,7 @@ location list filewise (lfdo)
 :args                      //展现args列表
 :argdo %s/donut/pancake/g  //在全部arglist中执行命令, 此时buffer中的内容会发送变化
 :argdelete *               //clearn arglist
+:argdelete file1           //将file1从arglist中删掉
 :update                    //将修改的进行落盘保存
 
 其他文件来源，与arglist的命令使用方式相类似
