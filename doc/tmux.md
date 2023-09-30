@@ -109,8 +109,8 @@ https://github.com/xarronpan/tmux-copy-toolkit
 tmux-copy-toolkit集成了tmux-jump, tmux-finger 还有vim easymotion的能力。是目前已知的tmux上在单pannel上获取信息最强的插件
 其有几种不同获取pannel内信息的方法, 见下面的描述.
 命令:
-prefex + . 获取屏幕上符合预设pattern的字符串, 并输出到prompt的位置中
-prefex + > 获取屏幕上符合预设pattern的字符串, 但是不输出到prompt, 只拷贝到tmux的buffer中
+prefex + . 获取屏幕上符合预设pattern的字符串, 并输出到prompt的位置中.输入n可以切换下一批匹配模式
+prefex + > 获取屏幕上符合预设pattern的字符串, 但是不输出到prompt, 只拷贝到tmux的buffer中.输入n可以切换下一批匹配模式
 
 prefex + f 使用类似easy-motion的方式, 分别选择start + end的模式拷贝一段字符串. 拷贝到的内容输出到prompt的位置
 prefex + F 使用类似easy-motion的方式, 分别选择start + end的模式拷贝一段字符串. 但是不输出到prompt,只拷贝到tmux的buffer中
