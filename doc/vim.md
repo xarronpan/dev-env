@@ -893,6 +893,8 @@ location list filewise (lfdo)
 :argdo %s/donut/pancake/g  //在全部arglist中执行命令, 此时buffer中的内容会发送变化
 :update                    //将修改的进行落盘保存
 
+其他文件来源，与arglist的命令使用方式相类似
+
 ### 异步命令+quickfix集成: asyncrun.vim插件
 使用 skywind3000/asyncrun.vim 将quick-fix window与外部命令进行集成
 常用命令: AR youcommand
