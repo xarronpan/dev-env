@@ -877,6 +877,24 @@ g/mongodb/s/mongodb/hello/g                                   
 global command的详细介绍可以参考下面的文档:
 https://github.com/iggredible/Learn-Vim/blob/master/ch13_the_global_command.md
 
+### 多文件命令
+https://github.com/iggredible/Learn-Vim/blob/master/ch21_multiple_file_operations.md
+vim有多种对多个文件执行命令的方法:
+资源 (命令)
+arg list (argdo)
+buffer list (bufdo)
+window list (windo)
+tab list (tabdo)
+quickfix list (cdo)
+quickfix list filewise (cfdo)
+location list (ldo)
+location list filewise (lfdo)
+
+:argadd file1 file2 file3  //将file1, file2, file3加入到arglist
+:args                      //展现args列表
+:argdo %s/donut/pancake/g  //在全部arglist中执行命令, 此时buffer中的内容会发送变化
+:update                    //将修改的进行落盘保存
+
 ### 异步命令+quickfix集成: asyncrun.vim插件
 使用 skywind3000/asyncrun.vim 将quick-fix window与外部命令进行集成
 常用命令: AR youcommand
