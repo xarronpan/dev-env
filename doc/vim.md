@@ -869,8 +869,9 @@ global command可以通过一个 g/pattern1/,/pattern2/的模式选定 pattern1,
 外部命令，以及类似s的命令，都是直接可以与global command进行集成的。
 global command本质上是一个多行的文本过滤以及处理能力。这样子行上面的任何命令都可以在行数据上进行处理，本质上就是给予
 了无限的扩充能力 
-g/mongodb/.!grep -oP '\d+\.\d+\.\d+\.\d+'                     //在有mongodb的当行中，将行中内容作为STDIN调用外部命令
-                                                              //grep，将行中的ip地址给过滤出来后，再替换当前行的内容
+g/mongodb/.!grep -oP '\d+\.\d+\.\d+\.\d+'                     //在有mongodb的当行中，将行中内容(.表示外部命令作用于
+                                                              //当前行)作为STDIN调用外部命令grep，将行中的ip地址给过
+                                                              //滤出来后，再替换当前行的内容
 g/mongodb/s/mongodb/hello/g                                       //在有mongodb的当行中，执行 s/mongodb/hello/g操作，
                                                                   //将行中所有的mongodb都变成hello
 其中行处理能力中还涉及多行的处理函数比如sort，j命令等。
