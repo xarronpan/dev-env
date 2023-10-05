@@ -118,6 +118,8 @@ let g:any_jump_colors = {
 let g:easyescape_chars = { "j": 2 }
 let g:easyescape_timeout = 200
 let g:doge_mapping = '<Leader><Leader>dg'
+let g:scratch_top = 0
+let g:cpp_include_log = 1
 
 "vim setting configure
 "set ttymouse=xterm2
@@ -301,6 +303,7 @@ cnoreabbrev GC Commits
 cnoreabbrev GBC BCommits
 cnoreabbrev AF Autoformat
 cnoreabbrev CL AsyncRun cpplint %:p
+cnoreabbrev CI CppInclude
 
 "text add slash
 cnoreabbrev SAS s/$/\//
@@ -326,6 +329,8 @@ noremap <M-h> :SidewaysLeft<cr>
 noremap <M-l> :SidewaysRight<cr>
 nnoremap <silent> <leader>tn :tabnew<CR>
 nnoremap <silent> <leader>tc :tabclose<CR>
+nnoremap <silent> <leader>sw :Scratch<CR>
+nnoremap <silent> <leader>sp :ScratchPreview<CR>
 nnoremap <leader><leader>t :Toc<CR>
 nnoremap <leader><leader>f :Folds<CR>
 nnoremap <silent> <leader>n :enew<CR>
@@ -359,6 +364,7 @@ nnoremap <silent> <leader>F :cd %:p:h <bar> Files<CR>
 nnoremap <silent> <leader>G :cd %:p:h <bar> CWAg!<CR>
 nnoremap <silent> <leader><leader>gd :GenDeclaration<CR>
 nnoremap <silent> <leader><leader>gi :GenDefinition<CR>
+nnoremap <silent> <leader><leader>gh :CppInclude<CR>
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
