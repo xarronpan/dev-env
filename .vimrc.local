@@ -119,7 +119,7 @@ let g:easyescape_chars = { "j": 2 }
 let g:easyescape_timeout = 200
 let g:doge_mapping = '<Leader><Leader>dg'
 let g:scratch_top = 0
-let g:cpp_include_log = 1
+"let g:cpp_include_log = 1
 
 "vim setting configure
 "set ttymouse=xterm2
