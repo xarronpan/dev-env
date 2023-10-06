@@ -910,6 +910,11 @@ https://github.com/airblade/vim-rooter
 命令：
 : PR | Files   在项目根目录下执行fzf的Files命令
 
+如果希望自己显式指定project的标识文件, 比如说.root，可以在.workspace.vim中加入下述配置实现
+```vim
+let g:rooter_patterns = ['.root']
+```
+
 ### tmux集成:vim-tmux-runner插件
 https://github.com/christoomey/vim-tmux-runner
 这个插件主要的功能在于在vim中不需要失去focus，就能在vi的窗口下创建一个tmux pane，执行shell 命令
