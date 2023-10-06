@@ -1102,8 +1102,10 @@ let g:cpp_include_origins = [
 
  gutentags默认会根据.git, .svn等文件作为project rooter来生成tag，并且会使用到定义在这个位置的tags文件。
  若需要在某些项目中使用类似.root等文件作为project的rooter, 可以在project的根目录创建.workspace.vim, 并且定义
-let g:gutentags_project_root = ['.root']
-let g:gutentags_add_default_project_roots = 0
+```vim
+ let g:gutentags_project_root = ['.root']
+ let g:gutentags_add_default_project_roots = 0
+```
 
 ## 文档生成
 使用vim-scripts/DoxygenToolkit.vim 来增加对c/c++/python生成doxygen风格文档的功能
