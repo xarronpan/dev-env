@@ -1055,6 +1055,31 @@ https://vimzijun.net/2016/10/30/ultisnip/
 <leader><leader> gi 通过函数声明生成函数定义stub. 需要将光标放置在函数上, 再按这个快捷键 
 <leader><leader> gd 通过函数定位生成header的定义函数. 需要将光标放置在函数上, 再按这个快捷键 
 
+### 自动生成头文件: vim-cpp-include 插件
+将光标移动到需要自动生成头文件的符号上，输入:CI, 即可根据tags文件，自动生成头文件插入到文件的开头
+能够大幅减低找头文件的时间
+:CI symbol  显式指定需要自动添加头文件的符号名称
+<leader><leader> gh 为光标所在符号自动添加头文件
+注意默认补充的头文件是绝对路径。为了能够自动补充成正确的相对文件路径，需要手动配置不同绝对路径文件的相对路径
+此外，c++标准库的头文件，也需要显式指定后才能工作
+这点需要在.workspace.vim中配置项目相关配置:
+```vim
+let g:cpp_include_origins = [
+   \ ['std', { 'version': 'c++17', 'surround': '<', 'sort_order': 0 }],
+   \ ['agora_universal_transport', { 'directory': '/home/panxiangrong/projects/rtm/src/agora_universal_transport', 'surround': '"', 'sort_order': 2 }],
+   \ ['media_server_signaling', { 'directory': '/home/panxiangrong/projects/rtm/src/media_server_signaling/', 'surround': '"', 'sort_order': 2 }],
+   \ ['signaling_common', { 'directory': '/home/panxiangrong/projects/rtm/src/signaling_common/', 'surround': '"', 'sort_order': 2 }],
+   \ ['signaling_config', { 'directory': '/home/panxiangrong/projects/rtm/src/signaling_config/', 'surround': '"', 'sort_order': 2 }],
+   \ ['signaling_protocol', { 'directory': '/home/panxiangrong/projects/rtm/src/signaling_protocol', 'surround': '"', 'sort_order': 2 }],
+   \ ['pb', { 'directory': '/home/panxiangrong/projects/rtm/src/.build/pb/c++/', 'surround': '"', 'sort_order': 2 }],
+   \ ['media_server_protocol', { 'directory': '/home/panxiangrong/projects/rtm/src/media_server_protocol/', 'surround': '"', 'sort_order': 2 }],
+   \ ['media_server_library', { 'directory': '/home/panxiangrong/projects/rtm/src/media_server_library/', 'surround': '"', 'sort_order': 2 }]]
+```
+上面的路径中，当发现绝对路径为/home/panxiangrong/projects/rtm/src/media_server_library/foo1/foo2 的头文件, 
+会自动调整为 foo1/foo2。这点信息一般是在构建系统中指定的，但是在插件的配置目录中重新配置一般也不会太麻烦
+否则插件的复杂度将会非常高，需要反向去解析各种各样的构建系统
+而具有std字符串的一样则是指定c++的标准库的版本。目前支持c++11, c++14以及c++17
+
 ### AnyJump
 当LSP无法编译当前文件时, AnyJump使用正则表达式的方法给出最好的go to defination
 和 go to reference的能力。这点可以和Tags的能力一起使用, 对LSP IDE的能力进行补充
@@ -1069,6 +1094,11 @@ https://vimzijun.net/2016/10/30/ultisnip/
  使用ludovicchabant/vim-gutentags自动生成和管理ctags
  这个插件需要安装 universal-ctags, tagbar插件需要对应的符号信息。注意tagbar会自动生成tags，不需要人为生成
  sudo apt install universal-ctags
+
+ gutentags默认会根据.git, .svn等文件作为project rooter来生成tag，并且会使用到定义在这个位置的tags文件。
+ 若需要在某些项目中使用类似.root等文件作为project的rooter, 可以在project的根目录创建.workspace.vim, 并且定义
+let g:gutentags_project_root = ['.root']
+let g:gutentags_add_default_project_roots = 0
 
 ## 文档生成
 使用vim-scripts/DoxygenToolkit.vim 来增加对c/c++/python生成doxygen风格文档的功能
