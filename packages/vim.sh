@@ -21,3 +21,14 @@ sudo python3 install.py --all
 
 cd ~/.vim/bundle/vim-doge/scripts
 ./install.sh
+
+cd ~
+sudo apt-get install clang libclang-10-dev
+git clone --depth=1 --recursive https://github.com/MaskRay/ccls
+cd ccls
+cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_PREFIX_PATH=/usr/lib/llvm-10 \
+    -DLLVM_INCLUDE_DIR=/usr/lib/llvm-10/include \
+    -DLLVM_BUILD_INCLUDE_DIR=/usr/include/llvm-10/
+cmake --build Release
+cd Release && sudo make install
