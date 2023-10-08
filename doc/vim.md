@@ -1096,6 +1096,25 @@ https://github.com/MaskRay/ccls/wiki/Build
 
 ccls和ycm一样同样依赖于compile_commands.json来进行编译
 
+使用方法是将光标放到符号的下面，然后输入下面的命令中的一个:
+HBC: CclsBaseHierarchy
+HDC: CclsDerivedHierarchy
+HCA: CclsCallHierarchy
+HCE: CclsCalleeHierarchy
+HMB: CclsMemberHierarchy
+HMF: CclsMemberFunctionHierarchy
+HMT: CclsMemberTypeHierarchy
+QBC: CclsBase
+QDC: CclsDerived
+QCA: CclsCallers
+QCE: CclsCallees
+QMB: CclsMembers
+QMF: CclsMemberFunctions
+QMT: CclsMemberTypes
+
+Hierarchy命令会启动一个树组件。在树组件中, 输入o会toggle叶子节点(如果该节点有叶子节点的话)
+输入enter能够定位到需要访问文件中
+
 ### AnyJump
 当LSP无法编译当前文件时, AnyJump使用正则表达式的方法给出最好的go to defination
 和 go to reference的能力。这点可以和Tags的能力一起使用, 对LSP IDE的能力进行补充

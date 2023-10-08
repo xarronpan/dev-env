@@ -103,6 +103,9 @@ if executable('ccls')
       \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp', 'cc', 'h', 'hpp'],
       \ })
 endif
+let g:ccls_position = 'botright'
+let g:ccls_orientation = 'horizontal'
+let g:ccls_size = 15
 
 let g:formatdef_google_cpp = "'clang-format  -style=Google  -lines='.a:firstline.':'.a:lastline"
 let g:formatters_cpp = ['google_cpp']
@@ -316,6 +319,20 @@ cnoreabbrev GBC BCommits
 cnoreabbrev AF Autoformat
 cnoreabbrev CL AsyncRun cpplint %:p
 cnoreabbrev CI CppInclude
+cnoreabbrev HBC CclsBaseHierarchy
+cnoreabbrev HDC CclsDerivedHierarchy
+cnoreabbrev HCA CclsCallHierarchy
+cnoreabbrev HCE CclsCalleeHierarchy
+cnoreabbrev HMB CclsMemberHierarchy
+cnoreabbrev HMF CclsMemberFunctionHierarchy
+cnoreabbrev HMT CclsMemberTypeHierarchy
+cnoreabbrev QBC CclsBase
+cnoreabbrev QDC CclsDerived
+cnoreabbrev QCA CclsCallers
+cnoreabbrev QCE CclsCallees
+cnoreabbrev QMB CclsMembers
+cnoreabbrev QMF CclsMemberFunctions
+cnoreabbrev QMT CclsMemberTypes
 
 "text add slash
 cnoreabbrev SAS s/$/\//
