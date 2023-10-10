@@ -1095,6 +1095,9 @@ ccls lsp需要进行编译安装:
 https://github.com/MaskRay/ccls/wiki/Build
 
 ccls和ycm一样同样依赖于compile_commands.json来进行编译
+目前ccls需要依赖于我自己修改过的版本，忽略compile_command.json中的头文件
+这是因为目前ycm使用了clangd, 而clangd对于头文件的分析能力有问题，需要使用compdb来分析增加头文件
+但是这些头文件会引起ccls每次启动的时候都重新进行编译，非常浪费CPU
 
 使用方法是将光标放到符号的下面，然后输入下面的命令中的一个:
 HBC: CclsBaseHierarchy
