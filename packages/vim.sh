@@ -24,7 +24,7 @@ cd ~/.vim/bundle/vim-doge/scripts
 
 cd ~
 sudo apt-get install clang libclang-10-dev
-git clone --depth=1 --recursive https://github.com/MaskRay/ccls
+git clone --depth=1 --recursive https://github.com/xarronpan/ccls
 cd ccls
 cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_PREFIX_PATH=/usr/lib/llvm-10 \

@@ -98,10 +98,11 @@ let g:lsp_document_highlight_enabled = 0
 if executable('ccls')
    au User lsp_setup call lsp#register_server({
       \ 'name': 'ccls',
+      "\ 'cmd': {server_info->['ccls', '-log-file=/tmp/ccls.log', '-v=1']},
       \ 'cmd': {server_info->['ccls']},
       \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
-      \ 'initialization_options': {'cache': {'directory': expand('~/.cache/ccls'), 'retainInMemory': 0}, 'index': {'threads': 1}},
-      \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp', 'cc', 'h', 'hpp'],
+      \ 'initialization_options': {'cache': {'directory': expand('~/.cache/ccls'), 'retainInMemory': 0}, 'index': {'threads': 1} },
+      \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
       \ })
 endif
 let g:ccls_position = 'botright'
