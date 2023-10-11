@@ -610,7 +610,7 @@ ctrlp切换搜索模式 ctrl+f，其中mru是most recent used文件的意思，�
 在文本中进行替换，一般是:s//命令
 
 ### subsitude预览
-<leader>/  使用one-motion插件的能力，对subsitude命令结果进行预览，非常使用
+<leader>/  使用vim-over插件的能力，对subsitude命令结果进行预览，非常使用
 
 ### vim-far 插件
 far插件可以认为是vim substitute命令的增强。其除了支持subsititute完整的正则表达式替换，替换表达式中\1 \2匹配括号的功
