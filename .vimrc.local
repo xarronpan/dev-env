@@ -256,22 +256,6 @@ function! ExInVerSplit(cmd)
   endif
 endfunction
 
-function! ExInTab(cmd)
-  redir => message
-  silent execute 'g/.*/p'
-  redir END
-  if empty(message)
-    echoerr "no output"
-  else
-    tabnew
-    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
-    silent put=message
-    silent execute '%s/\(^\s*\d\+\)\?//'
-    silent execute a:cmd
-  endif
-endfunction
-
-command! -nargs=+ -complete=command ExInTab call ExInTab(<q-args>)
 command! -nargs=+ -complete=command ExInHorSplit call ExInHorSplit(<q-args>)
 command! -nargs=+ -complete=command ExInVerSplit call ExInVerSplit(<q-args>)
 
