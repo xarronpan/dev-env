@@ -259,6 +259,26 @@ endfunction
 command! -nargs=+ -complete=command ExInHorSplit call ExInHorSplit(<q-args>)
 command! -nargs=+ -complete=command ExInVerSplit call ExInVerSplit(<q-args>)
 
+function! VirtualFunctions()
+  redir => message
+  silent execute 'g/.*/p'
+  redir END
+  if empty(message)
+    echoerr "no output"
+  else
+    sp
+    enew
+    setlocal buftype=nofile bufhidden=wipe ft=cpp noswapfile nobuflisted nomodified
+    silent put=message
+    silent execute '%s/\(^\s*\d\+\)\?//'
+    silent execute "%!pcregrep -M " . shellescape('(^\s*virtual(\n|.)+?\))|(^\s*class\s*\w+)')
+    silent execute '%s/\s*[{:}]\s*//ge'
+    silent execute '%s/)\s*$/);/ge'
+  endif
+endfunction
+
+command! VirtualFunctions call VirtualFunctions()
+
 "abbrevate command configure
 command! -bang -nargs=* CWAg call fzf#vim#ag(expand('<cword>'),s:p(),<bang>0)
 command! -bang -nargs=* CWTags call fzf#vim#tags(expand('<cword>'), fzf#vim#with_preview({ "placeholder": "--tag {2}:{-1}:{3..}" }), <bang>0)',
@@ -363,6 +383,8 @@ cnoreabbrev SAS s/$/\//
 cnoreabbrev SABS s/$/\\/
 "text remove trailing space
 cnoreabbrev SRTS s/\v[ ]+$//
+
+cnoreabbrev VF VirtualFunctions
 
 "key mappings configure
 let mapleader = ","
