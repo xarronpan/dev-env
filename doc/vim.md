@@ -985,7 +985,7 @@ nnoremap <leader>gr :YcmCompleter GoToReferences<CR>:q<CR>:copen<CR>     //反�
                                                                          //所有的语句引用
 nnoremap <leader>fi :YcmCompleter FixIt<CR>                              //自动修正编译错误
 nnoremap <leader>gi :YcmCompleter GoToImplementation<CR>                 //跳转到接口实现功能
-nnoremap <leader>doc :YcmCompleter GetDoc<CR>                            //显示符号文档信息, 按esc键之后，显示符号的窗
+nnoremap <leader>do :YcmCompleter GetDoc<CR>                            //显示符号文档信息, 按esc键之后，显示符号的窗
                                                                          //口不会关闭
 
 实用命令：
@@ -996,7 +996,8 @@ nnoremap <leader>doc :YcmCompleter GetDoc<CR>                            //显�
 :YcmCompleter GoToSymbol '目标符号'                                       //全局查找符号
 :YcmDebugInfo                                                             //ycm调试输出
 
-<leader>pt                                                                //在preview window中打印光标下面符号的代码定义
+<leader>pt                                                                //在preview window中打印光标下面符号的类型定义
+<leader>pd                                                                //在preview window中打印光标下面符号的代码定义
 <leader>pc                                                                //关闭preview windows
 <leader>et                                                                //打印光标下面符号的类型信息
 
