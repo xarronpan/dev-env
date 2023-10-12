@@ -277,8 +277,9 @@ function! VirtualFunctions()
     silent execute "%!pcregrep -M " . shellescape('(^\s*virtual(\n|.)+?\))|(^\s*class\s*\w+)')
     silent execute '%s/:\s*\(private\|public\)\s\+.*$//ge'
     silent execute '%s/{.*//ge'
-    silent execute '%s/\s*[{:}]\s*//ge'
-    silent execute '%s/)\s*$/);/ge'
+    silent execute '%s/\s*[{:;}]\s*//ge'
+    silent execute '%s/)\s*\(\S.*\)/) \/\/\1/ge'
+    silent execute '%s/)/);/ge'
     silent execute 'g/^\s\+$/d'
     silent execute '%s/\s\+$//ge'
   endif
