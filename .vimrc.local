@@ -236,7 +236,7 @@ function! ExInHorSplit(cmd)
     enew
     setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
     silent put=message
-    silent execute '%s/^\s*\d\+//'
+    silent execute '%s/\(^\s*\d\+\)\?//'
     silent execute a:cmd
   endif
 endfunction
@@ -251,7 +251,7 @@ function! ExInVerSplit(cmd)
     vnew
     setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
     silent put=message
-    silent execute '%s/^\s*\d\+//'
+    silent execute '%s/\(^\s*\d\+\)\?//'
     silent execute a:cmd
   endif
 endfunction
@@ -266,7 +266,7 @@ function! ExInTab(cmd)
     tabnew
     setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
     silent put=message
-    silent execute '%s/^\s*\d\+//'
+    silent execute '%s/\(^\s*\d\+\)\?//'
     silent execute a:cmd
   endif
 endfunction
