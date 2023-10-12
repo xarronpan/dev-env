@@ -225,20 +225,55 @@ function! Terminal_MetaMode(mode)
   endif
 endfunc
 
-function! TabMessage(cmd)
+function! ExInHorSplit(cmd)
   redir => message
-  silent execute a:cmd
+  silent execute 'g/.*/p'
   redir END
   if empty(message)
     echoerr "no output"
   else
-    " use "new" instead of "tabnew" below if you prefer split windows instead of tabs
+    sp
+    enew
+    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
+    silent put=message
+    silent execute '%s/^\s*\d\+//'
+    silent execute a:cmd
+  endif
+endfunction
+
+function! ExInVerSplit(cmd)
+  redir => message
+  silent execute 'g/.*/p'
+  redir END
+  if empty(message)
+    echoerr "no output"
+  else
+    vnew
+    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
+    silent put=message
+    silent execute '%s/^\s*\d\+//'
+    silent execute a:cmd
+  endif
+endfunction
+
+function! ExInTab(cmd)
+  redir => message
+  silent execute 'g/.*/p'
+  redir END
+  if empty(message)
+    echoerr "no output"
+  else
     tabnew
     setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
     silent put=message
+    silent execute '%s/^\s*\d\+//'
+    silent execute a:cmd
   endif
 endfunction
-command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
+
+command! -nargs=+ -complete=command ExInTab call ExInTab(<q-args>)
+command! -nargs=+ -complete=command ExInHorSplit call ExInHorSplit(<q-args>)
+command! -nargs=+ -complete=command ExInVerSplit call ExInVerSplit(<q-args>)
 
 "abbrevate command configure
 command! -bang -nargs=* CWAg call fzf#vim#ag(expand('<cword>'),s:p(),<bang>0)
@@ -311,7 +346,9 @@ cnoreabbrev DD DirDiff
 cnoreabbrev PR Rooter
 cnoreabbrev CF CtrlSF
 cnoreabbrev FAR Rooter <bar> Far
-cnoreabbrev TM TabMessage
+cnoreabbrev ET ExInTab
+cnoreabbrev EV ExInVerSplit
+cnoreabbrev EH ExInHorSplit
 cnoreabbrev VSA VSSplitAbove
 cnoreabbrev VSB VSSplitBelow
 cnoreabbrev RT TabooRename
