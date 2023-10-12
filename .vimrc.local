@@ -278,6 +278,8 @@ function! VirtualFunctions()
     silent execute '%s/{.*//ge'
     silent execute '%s/\s*[{:}]\s*//ge'
     silent execute '%s/)\s*$/);/ge'
+    silent execute 'g/^\s\+$/d'
+    silent execute '%s/\s\+$//ge'
   endif
 endfunction
 
