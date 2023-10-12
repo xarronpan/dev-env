@@ -229,6 +229,7 @@ function! ExInHorSplit(cmd)
   redir => message
   silent execute 'g/.*/p'
   redir END
+  silent execute 'norm!``'
   if empty(message)
     echoerr "no output"
   else
@@ -245,6 +246,7 @@ function! ExInVerSplit(cmd)
   redir => message
   silent execute 'g/.*/p'
   redir END
+  silent execute 'norm!``'
   if empty(message)
     echoerr "no output"
   else
@@ -263,6 +265,7 @@ function! VirtualFunctions()
   redir => message
   silent execute 'g/.*/p'
   redir END
+  silent execute 'norm!``'
   if empty(message)
     echoerr "no output"
   else
