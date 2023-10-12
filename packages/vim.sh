@@ -9,6 +9,9 @@ sudo pip install flake8
 
 sudo apt install clang-format
 
+sudo apt install pcre2-utils
+sudo apt install pcregrep
+
 #对airline有一些修改，但是由于成本原因没有做成一个独立的插件, 已覆盖的方式进行配置
 cp vim-airline-themes/solarized_flood.vim ~/.vim/bundle/vim-airline-themes/autoload/airline/themes 
 
