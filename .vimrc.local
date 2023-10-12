@@ -275,6 +275,7 @@ function! VirtualFunctions()
     silent put=message
     silent execute '%s/\(^\s*\d\+\)\?//'
     silent execute "%!pcregrep -M " . shellescape('(^\s*virtual(\n|.)+?\))|(^\s*class\s*\w+)')
+    silent execute '%s/{.*//ge'
     silent execute '%s/\s*[{:}]\s*//ge'
     silent execute '%s/)\s*$/);/ge'
   endif
