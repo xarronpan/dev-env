@@ -1000,6 +1000,8 @@ nnoremap <leader>do :YcmCompleter GetDoc<CR>                            //显示
 <leader>pd                                                                //在preview window中打印光标下面符号的代码定义
 <leader>pc                                                                //关闭preview windows
 <leader>et                                                                //打印光标下面符号的类型信息
+<leader>vf                                                                //在preview window中显式光标下面符号的virtual
+                                                                          //函数, 用于Override函数时使用
 
 #### 编译数据库
 youcompleteme会使得vim变成一个真正的集成开发环境。在编辑c/c++项目时，为了使得clang能够工作，如果是使用make的项目，
