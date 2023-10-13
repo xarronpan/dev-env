@@ -970,6 +970,9 @@ shift+tab: 反方向在语法提示中进行选择
 
 <leader>d 若对应的程序行上有语法错误，显示语法错误细节
 
+signature help, 只要在插入模式下，将光标移动到函数括号中,号的后面，就会浮出来，并且在退出插入模式之前不会消失
+目前在signature help展现出来的时候，通过<C-l>来控制其是否要进行展现
+
 在.vimrc.local 中增加与 ide快捷键配置:
 ctrl+z 强行启动ycm的语义补全。一般ycm的语义补全只有在 -> .等操作后面才会启动。
 nnoremap <leader>gd :YcmCompleter GoTo<CR>                               //普通的跳转功能
