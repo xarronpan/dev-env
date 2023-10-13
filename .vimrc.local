@@ -431,7 +431,8 @@ noremap <silent> <leader>pd :vsplit <CR>:YcmCompleter GoTo<CR><c-w>p
 noremap <silent> <leader>vf :split <CR>:YcmCompleter GoToType<CR>:VirtualFunctions<CR><c-w>p<c-w>c
 noremap <silent> <leader>pc <c-w>p<c-w>c
 imap <silent> <C-k> <ESC>[(b:10split <CR>:YcmCompleter GoTo<CR><c-w>pgi
-imap <silent> <C-l> <ESC>[(b:YcmCompleter GoTo<CR>:q<CR>,,q<c-w>kgi
+imap <silent> <C-l> <ESC>[(b:YcmCompleter GoTo<CR>:q<CR>,Q
+nnoremap <silent> <C-i> :resize 10<CR><c-w>kgi
 nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
 nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-g> :Rooter <bar> CWAg!<CR>
