@@ -16,6 +16,7 @@ highlight ycmwarningsign guibg=#ffffcc
 highlight ycmwarningsection guibg=#ffffcc
 let g:ycm_auto_hover = ''
 let g:ycm_key_invoke_completion = '<c-a>'
+let g:ycm_signature_help_disable_syntax = 1
 noremap <c-a> <NOP>
 let g:comfortable_motion_no_default_key_mappings = 1
 let g:gutentags_ctags_executable = 'ctags-universal'
@@ -427,7 +428,10 @@ nnoremap <silent> <leader>et :YcmCompleter GetType<CR>
 nnoremap <silent> <leader>do :YcmCompleter GetDoc<CR>
 noremap <silent> <leader>pt :vsplit <CR>:YcmCompleter GoToType<CR><c-w>p
 noremap <silent> <leader>pd :vsplit <CR>:YcmCompleter GoTo<CR><c-w>p
+noremap <silent> <leader>vf :split <CR>:YcmCompleter GoToType<CR>:VirtualFunctions<CR><c-w>p<c-w>c
 noremap <silent> <leader>pc <c-w>p<c-w>c
+imap <silent> <C-k> <ESC>[(b:10split <CR>:YcmCompleter GoTo<CR><c-w>pgi
+imap <silent> <C-l> <ESC>[(b:YcmCompleter GoTo<CR>:q<CR>,,q<c-w>kgi
 nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
 nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-g> :Rooter <bar> CWAg!<CR>
