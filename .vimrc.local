@@ -504,8 +504,8 @@ nmap <leader>[[c <plug>(signify-prev-hunk)
 nnoremap <silent> <leader>/ :OverCommandLine<CR>
 nnoremap <leader>j :Rooter<bar>AnyJump<CR>
 xnoremap <leader>j :Rooter<bar>AnyJumpVisual<CR>
-nmap <leader><leader>ds :w !cat > /tmp/vim_delta_buffer<CR>:term ++curwin ++close sh -c "cat /tmp/vim_delta_buffer <bar> delta"<CR>
-nmap <leader><leader>dv :w !cat > /tmp/vim_delta_buffer<CR>:term ++curwin ++close sh -c "cat /tmp/vim_delta_buffer <bar> delta -s"<CR>
+nmap <leader><leader>ds :w !cat > /tmp/vim_delta_buffer<CR>:term ++curwin sh -c "cat /tmp/vim_delta_buffer <bar> delta"<CR>
+nmap <leader><leader>dv :w !cat > /tmp/vim_delta_buffer<CR>:term ++curwin sh -c "cat /tmp/vim_delta_buffer <bar> delta -s"<CR>
 au FileType go nmap <Leader>gd :YcmCompleter GoTo<CR>
 au FileType go nmap <leader>goi <Plug>(go-implements)
 au FileType go nmap <leader>god <Plug>(go-describe)

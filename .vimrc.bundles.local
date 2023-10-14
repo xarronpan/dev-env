@@ -1,6 +1,6 @@
 Bundle 'dense-analysis/ale'
 Bundle 'junegunn/fzf'
-Bundle 'junegunn/fzf.vim'
+Bundle 'xarronpan/fzf.vim'
 Bundle 'xarronpan/fzf-preview.vim'
 Bundle 'xarronpan/fzf-mru.vim'
 Bundle 'roosta/fzf-folds.vim'
