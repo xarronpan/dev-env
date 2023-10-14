@@ -557,6 +557,8 @@ vim +BundleInstall! +BundleClean +q
 
 <learder> Q 对QuickFix窗口进行搜索. 
 <learder> L 对Location窗口搜索. 
+<learder> J 对JumpList进行搜索. 我们只要在fzf 命令行下输入!~, 就可以过滤只涉及当前文件的Jumplist 
+            该功能对于定位当前文件有哪些位置访问非常有用处
 <leader> :  对vim的命令历史进行fzf搜索
 <leader> /  对vim的搜索历史进行fzf搜索
 <leader> H  对vim的全局mru file进行fzf搜索
