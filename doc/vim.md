@@ -184,17 +184,17 @@ jump backward: ctrl+i
 s 启动easy motion，找一个字符, 并跳转到对应的位置中
 <leader> + w 使用easy motion跳转到附近的单词开始。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的
              动作共用。在中文的文档中进行浏览编辑时，这个动作尤其有用
-<leader> <leader> + l 使用easy motion跳转到某行。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动
-                      作共用
-<leader> <leader> + w 使用easy motion后向跳转到附近的单词开始 (与vim w的定义相同)。 这个功能可以在visual模式下启用，
-                      用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
-<leader> <leader> + b 使用easy motion前向跳转到附近的单词结束 (与vim b的定义相同) 。 这个功能可以在visual模式下启用，
-                      用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
-<leader> <leader> + e 使用easy motion后向跳转到附近的单词结束 (与vim b的定义相同) 。 这个功能可以在visual模式下启用，
-                      用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
-<leader> <leader> + j 使用easy motion后向跳转到某行 (与vim j的定义相同)。这个功能可以在visual模式下启用，用于选定文本
-                      ，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
-<leader> <leader> + k 使用easy motion后向跳转到某行 (与vim k的定义相同)。这个功能可以在visual模式下启用，用于选定文本
+<space> + l 使用easy motion跳转到某行。可以跨窗体，能够在特殊的buffer，visual模式下使用。不能与vim的动
+               作共用
+<space> + w 使用easy motion后向跳转到附近的单词开始 (与vim w的定义相同)。 这个功能可以在visual模式下启用，
+               用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
+<space> + b 使用easy motion前向跳转到附近的单词结束 (与vim b的定义相同) 。 这个功能可以在visual模式下启用，
+               用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
+<space> + e 使用easy motion后向跳转到附近的单词结束 (与vim b的定义相同) 。 这个功能可以在visual模式下启用，
+               用于选定文本，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
+<space> + j 使用easy motion后向跳转到某行 (与vim j的定义相同)。这个功能可以在visual模式下启用，用于选定文本
+               ，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
+<space> + k 使用easy motion后向跳转到某行 (与vim k的定义相同)。这个功能可以在visual模式下启用，用于选定文本
                       ，以及在一些特殊的buffer，比如nerdtree中使用。不能跨窗体
 
 
