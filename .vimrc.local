@@ -471,8 +471,10 @@ nnoremap <silent> <leader>C :Commands<CR>
 nnoremap <silent> <leader>W :Windows<CR>
 nnoremap <silent> <leader>: :History:<CR>
 nnoremap <silent> <leader>// :History/<CR>
-nnoremap <silent> <leader>L :FZFLocList!<CR>
-nnoremap <silent> <leader>Q :FZFQuickFix!<CR>
+nnoremap <silent> <leader>L :lclose<CR>:FZFLocList!<CR>
+nnoremap <silent> <leader>l :lclose<CR>:FZFLocList<CR>
+nnoremap <silent> <leader>Q :cclose<CR>:FZFQuickFix!<CR>
+nnoremap <silent> <leader>q :cclose<CR>:FZFQuickFix<CR>
 nnoremap <silent> <leader>F :cd %:p:h <bar> Files<CR>
 nnoremap <silent> <leader>G :cd %:p:h <bar> CWAg!<CR>
 nnoremap <silent> <leader><leader>gd :GenDeclaration<CR>
@@ -487,7 +489,6 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 inoremap <expr> <c-x><c-r> fzf#vim#complete('cat ~/.zsh_history\|cut -c 16-\|tac')
 nmap s <Plug>(easymotion-overwin-f)
 nmap <leader>w <Plug>(easymotion-overwin-w)
-nmap <leader>l <Plug>(easymotion-overwin-line)
 map  <space>w <Plug>(easymotion-bd-w)
 map  <space>W <Plug>(easymotion-bd-W)
 map  <space>e <Plug>(easymotion-bd-e)
