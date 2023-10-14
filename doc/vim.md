@@ -169,6 +169,7 @@ B 上个以space分割的单词开始
 gi 回到同一个文件上一次进入insert mode的位置，并且进入insert mode
    这个动作特别适合拷贝粘贴的场景。本身在某个位置编辑，然后需要到同一个文件的其他地方拷贝
    再跳回来。如果是分屏的情况下做拷贝黏贴，则可以使用窗口的选择操作，即可回到上次的位置
+<c-i> 回到上一个窗口上一次进入insert mode的位置，并且进入insert mode
 
 page up: ctrl+u
 page down: ctrl+d
@@ -546,7 +547,7 @@ vim +BundleInstall! +BundleClean +q
 
 在文件选项中执行ctrl+v，则会打开一个垂直分屏打开文件
 在文件选项中执行ctrl+x，则会打开一个水平分屏打开文件
-在文件选项中执行ctrl+t，则会打开一个tab打开文件
+在文件选项中执行ctrl+t，则会打开一个10行高的水平分屏打开文件 可以用于作为标签预览
 
 注意到当fzf提示有priview windwos时，可通过鼠标滚动，或者atl+j, atl+k来控制preview window所展现的内容
 
