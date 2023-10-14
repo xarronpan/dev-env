@@ -433,17 +433,18 @@ noremap <silent> <leader>pc <c-w>p<c-w>c
 imap <silent> <C-k> <ESC>[(b:10split <CR>:YcmCompleter GoTo<CR>
 imap <silent> <C-l> <ESC>[(b:YcmCompleter GoTo<CR>:q<CR>:FZFQuickFix<CR>
 imap <silent> <C-t> <ESC>[(b:Rooter <bar>CWTags<CR>
-nnoremap <silent> <C-i> <C-w>pgi
+nnoremap <silent> gI <C-w>pgi
 nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
 nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-g> :Rooter <bar> CWAg!<CR>
 nnoremap <silent> <C-]> :Rooter <bar> CWTags!<CR>
 nnoremap <silent> <C-b> :CWBLines!<CR>
-nnoremap <silent> <C-c> :Commands<CR>
 nnoremap <silent> <leader>M :Rooter<bar>FZFMru<CR>
 nnoremap <silent> <leader>R :Rooter<bar>FZFFreshMru<CR>
 nnoremap <silent> <leader>H :History<CR>
 nnoremap <silent> <leader>B :Buffers<CR>
+nnoremap <silent> <leader>J :Rooter <bar> FZFJumps<CR>
+nnoremap <silent> <leader>C :Commands<CR>
 nnoremap <silent> <leader>W :Windows<CR>
 nnoremap <silent> <leader>: :History:<CR>
 nnoremap <silent> <leader>// :History/<CR>
