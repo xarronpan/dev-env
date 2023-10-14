@@ -138,6 +138,29 @@ let g:easyescape_timeout = 200
 let g:doge_mapping = '<Leader><Leader>dg'
 let g:scratch_top = 0
 "let g:cpp_include_log = 1
+let g:SignatureMap = {
+        \ 'Leader'             :  "M",
+        \ 'PlaceNextMark'      :  "M,",
+        \ 'ToggleMarkAtLine'   :  "M.",
+        \ 'PurgeMarksAtLine'   :  "M-",
+        \ 'DeleteMark'         :  "dM",
+        \ 'PurgeMarks'         :  "M<Space>",
+        \ 'PurgeMarkers'       :  "M<BS>",
+        \ 'GotoNextLineAlpha'  :  "']",
+        \ 'GotoPrevLineAlpha'  :  "'[",
+        \ 'GotoNextSpotAlpha'  :  "`]",
+        \ 'GotoPrevSpotAlpha'  :  "`[",
+        \ 'GotoNextLineByPos'  :  "]'",
+        \ 'GotoPrevLineByPos'  :  "['",
+        \ 'GotoNextSpotByPos'  :  "]`",
+        \ 'GotoPrevSpotByPos'  :  "[`",
+        \ 'GotoNextMarker'     :  "]-",
+        \ 'GotoPrevMarker'     :  "[-",
+        \ 'GotoNextMarkerAny'  :  "]=",
+        \ 'GotoPrevMarkerAny'  :  "[=",
+        \ 'ListBufferMarks'    :  "M/",
+        \ 'ListBufferMarkers'  :  "M?"
+        \ }
 
 "vim setting configure
 "set ttymouse=xterm2
@@ -489,7 +512,6 @@ nmap P <plug>(YoinkPaste_P)
 nnoremap m d
 xnoremap m d
 nnoremap mm dd
-nnoremap M m
 nmap <leader>mm <Plug>BookmarkToggle
 nmap <leader>mi <Plug>BookmarkAnnotate
 nmap <leader>ma <Plug>BookmarkShowAll
