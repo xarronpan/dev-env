@@ -439,8 +439,8 @@ nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-g> :Rooter <bar> CWAg!<CR>
 nnoremap <silent> <C-]> :Rooter <bar> CWTags!<CR>
 nnoremap <silent> <C-b> :CWBLines!<CR>
-nnoremap <silent> <leader>M :Rooter<bar>FZFMru<CR>
 nnoremap <silent> <leader>R :Rooter<bar>FZFFreshMru<CR>
+nnoremap <silent> <leader>M :Rooter<bar>FZFMarks<CR>
 nnoremap <silent> <leader>H :History<CR>
 nnoremap <silent> <leader>B :Buffers<CR>
 nnoremap <silent> <leader>J :FZFJumps!<CR>
@@ -489,7 +489,7 @@ nmap P <plug>(YoinkPaste_P)
 nnoremap m d
 xnoremap m d
 nnoremap mm dd
-nnoremap M D
+nnoremap M m
 nmap <leader>mm <Plug>BookmarkToggle
 nmap <leader>mi <Plug>BookmarkAnnotate
 nmap <leader>ma <Plug>BookmarkShowAll
