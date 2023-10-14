@@ -406,12 +406,15 @@ https://github.com/iggredible/Learn-Vim/blob/master/ch17_fold.md
 <leader><leader>f  使用fzf进行folding搜索. 这个功能用于在MardDown文件中搜索title
 
 ## 书签
-### 内置书签功能
-书签: 用于在重要的代码中打标记，然后可以在不同的位置上方便地跳转阅读理解代码
-mA 在当前光标所在位置打标签，并且命名为A。A是全局书签，可以跨多个不同的buffer
-'A 去到A所在的位置
-: marks  命令marks，用于输出当前的所有书签。
-linux内置的书签功能太弱，因而目前使用了bookmark插件。
+### vim-signature
+是vim内置marks功能的增强，能够随时记录阅读不熟悉代码的一些重要位置的代码
+一般的使用方法是使用文件内的标签，先定位到文件之后，再通过mark定位到相关文件
+使用这种标签的主要原因，是我们不需要给标签起名字, 非常地轻便
+mapping:
+M, 将当前行追加到新的标签中
+M. 在当前行中toggle标签
+M/ 在当前buffer中搜索书签
+m<Space> 删除当前buffer中的所有标签
 
 ### vim-bookmark插件
 应使用MattesGroeger/vim-bookmarks来替代vim自带的书签能力。
