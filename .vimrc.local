@@ -433,8 +433,8 @@ noremap <M-j> <C-w>p5<C-e><C-w>p
 noremap <M-k> <C-w>p5<C-y><C-w>p
 vmap <silent> o y<C-w>pp`]
 vmap <silent> O y<C-w>pp`]<C-w>p
-vmap <silent> i y`^p`]
-vmap <silent> I y`^p`]`<
+vmap <silent> ; y`^p`]
+vmap <silent> : y`^p`]`<
 noremap <M-h> :SidewaysLeft<cr>
 noremap <M-l> :SidewaysRight<cr>
 nnoremap <silent> <leader>tn :tabnew<CR>
