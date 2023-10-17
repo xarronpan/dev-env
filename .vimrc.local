@@ -454,6 +454,7 @@ nnoremap <silent> <leader>gi :YcmCompleter GoToImplementation<CR>
 nnoremap <silent> <leader>gt :YcmCompleter GoToType<CR>
 nnoremap <silent> <leader>et :YcmCompleter GetType<CR>
 nnoremap <silent> <leader>do :YcmCompleter GetDoc<CR>
+nmap <silent> <leader>dp <plug>(YCMHover)
 noremap <silent> <leader>pt :vsplit <CR>:YcmCompleter GoToType<CR><c-w>p
 noremap <silent> <leader>pd :vsplit <CR>:YcmCompleter GoTo<CR><c-w>p
 noremap <silent> <leader>vf :split <CR>:YcmCompleter GoToType<CR>:VirtualFunctions<CR><c-w>p<c-w>c
@@ -461,6 +462,7 @@ noremap <silent> <leader>pc <c-w>p<c-w>c
 imap <silent> <C-k> <ESC>[(be:10split <CR>:YcmCompleter GoTo<CR>
 imap <silent> <C-l> <ESC>[(be:YcmCompleter GoTo<CR>:q<CR>:FZFQuickFix<CR>
 imap <silent> <C-t> <ESC>[(be:Rooter <bar>CWTags<CR>
+imap <silent> <C-b> <plug>(YCMToggleSignatureHelp)
 nnoremap <silent> gI <C-w>pgi
 nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
 nnoremap <silent> <C-t> :BTags<CR>
