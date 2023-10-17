@@ -1154,6 +1154,7 @@ Hierarchy命令会启动一个树组件。在树组件中, 输入o会toggle叶�
 <c-k> 若函数没有重载，使用ycm goto定位到签名位置
 <c-l> 若函数有重载，则需要使用fzf定位到签名位置. 这点可以通过ycm的sigature help来区分是否有重载
 <c-t> 若ycm不能正常工作时，比如说因为语法错误太多，此时使用fzf ctags搜索来定位签名的位置
+<c-b> toggle signature help. 主要有时候signature help会挡住代码
 在定位到签名后，若想要回到之前的位置进行编辑，只需要输入gI即可
 
 ## 缩写
