@@ -565,6 +565,8 @@ vim +BundleInstall! +BundleClean +q
 在文件选项中执行ctrl+t，则会打开一个10行高的水平分屏打开文件 可以用于作为标签预览
 
 注意到当fzf提示有priview windwos时，可通过鼠标滚动，或者atl+j, atl+k来控制preview window所展现的内容
+注意上面的搜索功能，在fzf窗口中，基本上都可以通过<tab>键进行多选。在多选结束后，这些备选的项目会被加进quick fix
+window。这样子我们就可以在quick fix window中快速对他们进行来回的检索了
 
 我们绑定了一些快捷键，用于快速触发fzf的功能
 在任意模式下
@@ -578,7 +580,7 @@ vim +BundleInstall! +BundleClean +q
 <leader> /  对vim的搜索历史进行fzf搜索
 <leader> H  对vim的全局mru file进行fzf搜索
 <leader> W  对vim的window进行fzf搜索
-<leader> b  对vim的buffer进行fzf搜索, 主要用途打开无名窗口
+<leader> B  对vim的buffer进行fzf搜索, 主要用途打开无名窗口
 <learder> Z 对folding搜索. 这个功能用于在MardDown文件中搜索title
 
 在insert模式下

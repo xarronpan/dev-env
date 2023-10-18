@@ -438,6 +438,7 @@ vmap <silent> o y<C-w>pp`]
 vmap <silent> O y<C-w>pp`]<C-w>p
 vmap <silent> ; y`^p`]
 vmap <silent> : y`^p`]`<
+noremap <silent> <leader>ps :10split<CR>
 noremap <M-h> :SidewaysLeft<cr>
 noremap <M-l> :SidewaysRight<cr>
 nnoremap <silent> <leader>tn :tabnew<CR>
