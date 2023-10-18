@@ -462,10 +462,9 @@ noremap <silent> <leader>pd :vsplit <CR>:YcmCompleter GoTo<CR><c-w>p
 noremap <silent> <leader>vf :split <CR>:YcmCompleter GoToType<CR>:VirtualFunctions<CR><c-w>p<c-w>c
 noremap <silent> <leader>pc <c-w>p<c-w>c
 imap <silent> <C-k> <ESC>[(be:10split <CR>:YcmCompleter GoTo<CR>
-imap <silent> <C-l> <ESC>[(be:YcmCompleter GoTo<CR>:q<CR>:FZFQuickFix<CR>
-imap <silent> <C-t> <ESC>[(be:Rooter <bar>CWTags<CR>
-imap <silent> <C-b> <plug>(YCMToggleSignatureHelp)
-nnoremap <silent> gI <C-w>pgi
+nnoremap <silent> <leader>ii :cclose<CR><c-w>j:resize 10<CR>:FZFQuickFix<CR>
+imap <silent> <C-l> <ESC>[(be:10split <CR>:Rooter <bar>CWTags<CR>
+imap <silent> <C-t> <plug>(YCMToggleSignatureHelp)
 nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
 nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-g> :Rooter <bar> CWAg!<CR>
