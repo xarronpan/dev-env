@@ -559,6 +559,7 @@ vim +BundleInstall! +BundleClean +q
 :AG keyword //在git项目的根目录搜索代码, 因为有预览窗口，所以比ack.vim要好用
 :History:  //搜索vim命令历史
 :History   //搜索打开过的文件
+上述功能，结束的位置增加'!'号，则表示是全屏的意思
 
 在文件选项中执行ctrl+v，则会打开一个垂直分屏打开文件
 在文件选项中执行ctrl+x，则会打开一个水平分屏打开文件
