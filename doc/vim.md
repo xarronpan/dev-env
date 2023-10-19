@@ -428,6 +428,11 @@ M. 在当前行中toggle标签
 M/ 在当前buffer中搜索书签
 m<Space> 删除当前buffer中的所有标签
 
+注意当前vim对于全局标签(比如说MA命令所生成的标签)的实现是有bug的，清不掉
+要清掉这个标签，只能通过清理viminfo来清理。这个命令也会清理其他的vim状态
+wviminfo!
+所以尽可能不要使用vim的全局标签
+
 ### vim-bookmark插件
 应使用MattesGroeger/vim-bookmarks来替代vim自带的书签能力。
 这是因为vim自带的书签能力太弱，甚至没有标签的展现，以及标签的内容标注，当内容较多是根本无法进行管理。并且没有对标签
