@@ -576,6 +576,8 @@ window。这样子我们就可以在quick fix window中快速对他们进行来�
 
 我们绑定了一些快捷键，用于快速触发fzf的功能
 在任意模式下
+<leader> S  查找snippets进行输入
+insert 模式下<ctrl-e>, 查找snippets进行输入
 <leader> tab 对不同模式下的mapping进行fzf搜索
 
 <learder> Q 对QuickFix窗口进行搜索. 
