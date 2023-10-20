@@ -478,6 +478,7 @@ nnoremap <silent> <leader>B :Buffers<CR>
 nnoremap <silent> <leader>J :FZFJumps!<CR>
 nnoremap <silent> <leader>C :Commands<CR>
 nnoremap <silent> <leader>W :Windows<CR>
+nnoremap <silent> <leader>S :Snippets<CR>
 nnoremap <silent> <leader>: :History:<CR>
 nnoremap <silent> <leader>// :History/<CR>
 nnoremap <silent> <leader>L :lclose<CR>:FZFLocList!<CR>
