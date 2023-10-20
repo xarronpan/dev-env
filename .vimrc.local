@@ -462,9 +462,9 @@ noremap <silent> <leader>pt :vsplit <CR>:YcmCompleter GoToType<CR><c-w>p
 noremap <silent> <leader>pd :vsplit <CR>:YcmCompleter GoTo<CR><c-w>p
 noremap <silent> <leader>vf :split <CR>:YcmCompleter GoToType<CR>:VirtualFunctions<CR><c-w>p<c-w>c
 noremap <silent> <leader>pc <c-w>p<c-w>c
-imap <silent> <C-k> <ESC>[(be:10split <CR>:YcmCompleter GoTo<CR>
+imap <silent> <C-k> <C-c>[(be:10split <CR>:YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>ii :cclose<CR><c-w>j:resize 10<CR>:FZFQuickFix<CR>
-imap <silent> <C-l> <ESC>[(be:10split <CR>:Rooter <bar>CWTags<CR>
+imap <silent> <C-l> <C-c>[(be:10split <CR>:Rooter <bar>CWTags<CR>
 imap <silent> <C-t> <plug>(YCMToggleSignatureHelp)
 nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
 nnoremap <silent> <C-t> :BTags<CR>
@@ -479,6 +479,7 @@ nnoremap <silent> <leader>J :FZFJumps!<CR>
 nnoremap <silent> <leader>C :Commands<CR>
 nnoremap <silent> <leader>W :Windows<CR>
 nnoremap <silent> <leader>S :Snippets<CR>
+imap <silent> <C-e> <C-c>:Snippets<CR>
 nnoremap <silent> <leader>: :History:<CR>
 nnoremap <silent> <leader>// :History/<CR>
 nnoremap <silent> <leader>L :lclose<CR>:FZFLocList!<CR>
