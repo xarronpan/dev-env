@@ -471,6 +471,7 @@ nnoremap <silent> <C-t> :BTags<CR>
 nnoremap <silent> <C-g> :Rooter <bar> CWAg!<CR>
 nnoremap <silent> <C-]> :Rooter <bar> CWTags!<CR>
 nnoremap <silent> <C-b> :CWBLines!<CR>
+nnoremap <silent> <leader>. :Rooter<bar>FZFMru<CR>
 nnoremap <silent> <leader>R :Rooter<bar>FZFFreshMru<CR>
 nnoremap <silent> <leader>M :Rooter<bar>FZFMarks!<CR>
 nnoremap <silent> <leader>H :History<CR>
