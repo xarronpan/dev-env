@@ -603,7 +603,7 @@ insert 模式下<ctrl-e>, 查找snippets进行输入
 https://github.com/xarronpan/fzf-mru.vim
 这个插件实现了一个基于项目的mru。这正是开发项目代码所急需的
 命令:
-<leader>M  启动mru查找文件进行编辑
+<leader>.  启动mru查找文件进行编辑
 <leader>R  刷新mru列表，用于清理被删除的文件
 
 注意若我们的项目跨了几个仓库的情况下，这个插件只搜索当前仓库下的mru，可能使用起来不方便
