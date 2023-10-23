@@ -437,7 +437,7 @@ imap <silent> <C-f> jj,w
 vmap <silent> o y<C-w>pp`]
 vmap <silent> O y<C-w>pp`]<C-w>p
 vmap <silent> ; y`^hp`]
-vmap <silent> : y`^hp`]`<
+vmap <silent> : y`^hp`]li<C-c>`<
 noremap <silent> <leader>ps :10split<CR>
 noremap <M-h> :SidewaysLeft<cr>
 noremap <M-l> :SidewaysRight<cr>
