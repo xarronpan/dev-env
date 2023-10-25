@@ -424,9 +424,9 @@ https://github.com/iggredible/Learn-Vim/blob/master/ch17_fold.md
 进行持久化的能力
 命令:
 <leader>mm增加一个匿名书签. 这项功能可用于在代码中进行快速跳转
-<leader>mi增加一个书签，并且对书签的内容进行标注
+<leader>mt增加一个书签，并且对书签的内容进行标注 (t代表text or tag)
+<leader>m/列出全部的标签. 全部的标签会输入到quick fix窗口。此时可以通过fzf来进行preview, 找到想要的标签
 <leader>mc删除标签
-<leader>ma列出全部的标签. 全部的标签会输入到quick fix窗口。此时可以通过fzf来进行preview, 找到想要的标签
 <leader>mn跳到本文件下一个书签
 <leader>np跳到本文件上一个书签
 :BookmarkSave FILE_PATH 将书签存储备份到某个位置
