@@ -503,8 +503,8 @@ nnoremap m d
 xnoremap m d
 nnoremap mm dd
 nmap <leader>mm <Plug>BookmarkToggle
-nmap <leader>mi <Plug>BookmarkAnnotate
-nmap <leader>ma <Plug>BookmarkShowAll
+nmap <leader>mt <Plug>BookmarkAnnotate
+nmap <leader>m/ <Plug>BookmarkShowAll
 nmap <leader>mn <Plug>BookmarkNext
 nmap <leader>mp <Plug>BookmarkPrev
 nmap <leader>mc <Plug>BookmarkClear
