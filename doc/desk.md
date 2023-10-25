@@ -102,6 +102,11 @@ ssh登录服务器时，需要增加 -X 参数，即可以启动用X11 端口转
 在被登录的服务中，需要设置DISPLAY变量值为: Xserverip:0.0  . 比如windows与ubuntu虚拟机之间局域网的地址是192.168.127.1
 则DISPLAY需要设置为 192.168.127.1:0.0 
 
+## tssh
+为了在tmux中使用sz rz功能, 需要以tssh登录到ubuntu
+安装命令:
+choco install tssh  (以管理员身份运行)
+
 ## XServer
 windows中常用的开源XServer就是XMing。启动XMing时，需要在laucher中设置access control为禁用，则ubuntu通过ssh -X进行X11 
 forwarding

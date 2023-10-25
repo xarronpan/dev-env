@@ -258,3 +258,9 @@ https://github.com/knakayama/tmux-google-translate
 默认会将中文翻译成英文。要启用中文到英文的翻译，需要在shell中输入 :zh
 在tmux的vi-copy-mode下面，选择好了单次之后，再键入 X，即可调出插件进行翻译
 有了这个插件之后，在终端之中遇到不懂的单词，再也不需要到浏览器中找相关的内容，能够加快阅读资料的速度
+
+## trzsz
+在tmux中支持rz sz, 方便文件传输
+trz 从windows下载文件到终端
+tsz 从终端上传文件到windows上
+注意这项功能能工作, 需要在windows terminal中安装tssh，并且在tmux机器上安装trzsz

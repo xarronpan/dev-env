@@ -9,3 +9,9 @@ git clone --depth 1 https://github.com/xarronpan/tmux-butler ~/.tmux-butler
 mkdir -p ~/tmp && cd ~/tmp
 wget https://github.com/knqyf263/pet/releases/download/v0.3.0/pet_0.3.0_linux_amd64.deb
 sudo dpkg -i pet_0.3.0_linux_amd64.deb
+
+gvm use 1.20
+git clone https://github.com/trzsz/trzsz-go.git
+cd trzsz-go
+make
+sudo make install
