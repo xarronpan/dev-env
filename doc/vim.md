@@ -418,36 +418,19 @@ https://github.com/iggredible/Learn-Vim/blob/master/ch17_fold.md
 <leader><leader>f  使用fzf进行folding搜索. 这个功能用于在MardDown文件中搜索title
 
 ## 书签
-### vim-signature
-是vim内置marks功能的增强，能够随时记录阅读不熟悉代码的一些重要位置的代码
-一般的使用方法是使用文件内的标签，先定位到文件之后，再通过mark定位到相关文件
-使用这种标签的主要原因，是我们不需要给标签起名字, 非常地轻便
-mapping:
-M, 将当前行追加到新的标签中
-M. 在当前行中toggle标签
-M/ 在当前buffer中搜索书签
-m<Space> 删除当前buffer中的所有标签
-
-注意当前vim对于全局标签(比如说MA命令所生成的标签)的实现是有bug的，清不掉
-要清掉这个标签，只能通过清理viminfo来清理。这个命令也会清理其他的vim状态
-wviminfo!
-所以尽可能不要使用vim的全局标签
-
 ### vim-bookmark插件
 应使用MattesGroeger/vim-bookmarks来替代vim自带的书签能力。
 这是因为vim自带的书签能力太弱，甚至没有标签的展现，以及标签的内容标注，当内容较多是根本无法进行管理。并且没有对标签
 进行持久化的能力
 命令:
+<leader>mm增加一个匿名书签. 这项功能可用于在代码中进行快速跳转
 <leader>mi增加一个书签，并且对书签的内容进行标注
 <leader>mc删除标签
-<leader>ma列出全部的标签
+<leader>ma列出全部的标签. 全部的标签会输入到quick fix窗口。此时可以通过fzf来进行preview, 找到想要的标签
 <leader>mn跳到本文件下一个书签
 <leader>np跳到本文件上一个书签
 :BookmarkSave FILE_PATH 将书签存储备份到某个位置
 :BookmarkLoad FILE_PATH 读入书签
-当几个项目中的标签数据很多时，可以增加关键字来进行分组。这个插件已经与ctrl-p插件进行了集成，在进入ctrl-p中，
-再按下ctrl-f，会见到标签的选择
-此时就可以根据标签的特征来进行过滤，搜索
 
 ## 文件导航
 ### 目录树导航: nerdtree 插件
@@ -603,8 +586,8 @@ insert 模式下<ctrl-e>, 查找snippets进行输入
 https://github.com/xarronpan/fzf-mru.vim
 这个插件实现了一个基于项目的mru。这正是开发项目代码所急需的
 命令:
-<leader>.  启动mru查找文件进行编辑
-<leader>R  刷新mru列表，用于清理被删除的文件
+<c-p>  启动mru查找文件进行编辑
+<leader>.  刷新mru列表，用于清理被删除的文件
 
 注意若我们的项目跨了几个仓库的情况下，这个插件只搜索当前仓库下的mru，可能使用起来不方便
 此时应该考虑fzf.vim的History命令。目前已经绑定了命令:
