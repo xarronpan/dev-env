@@ -151,6 +151,12 @@ zh 水平左滚屏
 键入ctrl+x 进入窗体调整模式，hjkl用于调整当前获得焦点的窗口
 键入e间后可以调整窗体调整模式。其中window move的模式可以用于调整窗体的位置
 
+### quickfix 窗口行为优化
+https://github.com/yssl/QFEnter 插件解决quickfix窗口行为怪异问题
+<C-o> open, 会在之前focus的window中打开quickfix item
+<C-v> open in new vertical split
+<C-x> open in new horizatal split
+<C-t> open in new tab
 
 ## 光标移动
 ### 内置光标移动
