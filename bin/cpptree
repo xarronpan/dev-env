@@ -1,6 +1,0 @@
-#! /bin/bash
-cpptree.pl "$@"|fzf --ansi --track --no-sort --layout=reverse-list \
-                     --preview 'bat --style=numbers --color=always --line-range \
-                     $(echo {}|grep -oP "(?<=\+)[0-9]+(?=\])"): $(echo {}|grep -oP "(?<=vim ).*(?= \+)")' \
-               |grep -oP '(?<=vim ).*(?=\])'
-
