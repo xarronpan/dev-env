@@ -140,6 +140,11 @@ let g:easyescape_timeout = 200
 let g:doge_mapping = '<Leader><Leader>dg'
 let g:scratch_top = 0
 "let g:cpp_include_log = 1
+let g:qfenter_keymap = {}
+let g:qfenter_keymap.open = ['<C-o>']
+let g:qfenter_keymap.vopen = ['<C-v>']
+let g:qfenter_keymap.hopen = ['<C-x>']
+let g:qfenter_keymap.topen = ['<C-t>']
 
 "vim setting configure
 "set ttymouse=xterm2
