@@ -168,6 +168,7 @@ highlight Cursorline ctermbg=8
 highlight link EasyMotionShade Comment
 highlight Pmenu ctermbg=black ctermfg=15
 highlight PmenuSel ctermbg=red ctermfg=7
+highlight EndOfBuffer ctermfg=NONE
 highlight AnyJumpPlainText ctermbg=yellow ctermfg=15
 highlight AnyJumpHeadingText ctermbg=green ctermfg=15
 highlight AnyJumpHeadingKeyword ctermbg=red ctermfg=15
