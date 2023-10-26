@@ -169,13 +169,13 @@ highlight link EasyMotionShade Comment
 highlight Pmenu ctermbg=black ctermfg=15
 highlight PmenuSel ctermbg=red ctermfg=7
 highlight EndOfBuffer ctermfg=NONE
-highlight AnyJumpPlainText ctermbg=yellow ctermfg=15
-highlight AnyJumpHeadingText ctermbg=green ctermfg=15
-highlight AnyJumpHeadingKeyword ctermbg=red ctermfg=15
-highlight AnyJumpHelp ctermbg=gray ctermfg=15
-highlight AnyJumpResultPath ctermbg=6 ctermfg=15
-highlight AnyJumpPreview ctermbg=black ctermfg=15
-highlight AnyJumpPreviewKeyword ctermbg=red ctermfg=15
+highlight AnyJumpPlainText ctermbg=yellow ctermfg=NONE
+highlight AnyJumpHeadingText ctermbg=green ctermfg=NONE
+highlight AnyJumpHeadingKeyword ctermbg=red ctermfg=NONE
+highlight AnyJumpHelp ctermbg=gray ctermfg=NONE
+highlight AnyJumpResultPath ctermbg=6 ctermfg=NONE
+highlight AnyJumpPreview ctermbg=black ctermfg=NONE
+highlight AnyJumpPreviewKeyword ctermbg=red ctermfg=NONE
 
 autocmd! FileType fzf set laststatus=0 noshowmode noruler
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
