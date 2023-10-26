@@ -190,8 +190,8 @@ pet支持按参数模板来填入参数，而且这个插件能够与tmux-bulder
 比如说vim的mapping之类的。这样子可以节省不少工作量
 
 目前配置的启动快捷键：
-prefix + g   进行命令搜索
-prefix + G   进行tag搜索. 因为命令很多, 需要通过tag来精确地匹配搜索
+prefix + e   进行命令搜索
+prefix + E   进行tag搜索. 因为命令很多, 需要通过tag来精确地匹配搜索
              该命令的结果需要输入到pet上
 ```bash
 pet new  #增加snappet
