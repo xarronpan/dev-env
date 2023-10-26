@@ -1149,9 +1149,9 @@ Hierarchy命令会启动一个树组件。在树组件中, 输入o会toggle叶�
 ### 插入调用函数代码时，该函数签名preview
 在插入模式下编写函数调用的时候，只要光标在函数的()中，有至少一个空格的位置，并且语法格式是正确的(语义内容可以不正确)
 则可以通过打开preview window查看当前输入函数的签名，方便编写函数参数。
-<c-k> 使用ycm goto定位到签名位置. 若函数有重载，则在quickfix window中输入 <leader>ii，则可以对签名进行preview
+<c-k> 使用ycm goto定位到签名位置. 若函数有重载，则在quickfix window中输入 <c-i>，则可以对签名进行preview
 <c-l> 若ycm不能正常工作时，比如说因为语法错误太多，此时使用fzf ctags搜索来定位签名的位置
-<c-b> toggle signature help. 主要有时候signature help会挡住代码
+<c-t> toggle signature help. 主要有时候signature help会挡住代码
 在定位到签名后，若想要回到之前的位置进行编辑，只需要输入<c-k>gi即可
 
 ## 缩写

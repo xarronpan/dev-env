@@ -446,6 +446,10 @@ noremap <silent> <leader>vf :split <CR>:YcmCompleter GoToType<CR>:VirtualFunctio
 noremap <silent> <leader>pc <c-w>p<c-w>c
 imap <silent> <C-k> <C-c>[(be:10split <CR>:YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>ii :cclose<CR><c-w>j:resize 10<CR>:FZFQuickFix<CR>
+augroup QFAutoCmds
+	autocmd!
+	autocmd FileType qf execute 'nnoremap <silent> <buffer> <C-i> :cclose<CR><c-w>j:resize 10<CR>:FZFQuickFix<CR>'
+augroup END
 imap <silent> <C-l> <C-c>[(be:10split <CR>:Rooter <bar>CWTags<CR>
 imap <silent> <C-t> <plug>(YCMToggleSignatureHelp)
 nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
