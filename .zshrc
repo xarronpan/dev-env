@@ -170,6 +170,8 @@ alias sa="$HOME/.tmux-butler/scripts/snippetdb put"
 alias sr="$HOME/bin/snippetdb-remove.sh"
 alias info="info --vi-keys"
 alias vgdiff="git difftool -d -x dirdiff"
+alias sz=tsz
+alias rz=trz
 
 alias strptime="dateutils.strptime"
 alias dtest="dateutils.dtest"
