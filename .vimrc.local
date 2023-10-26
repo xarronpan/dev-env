@@ -445,7 +445,6 @@ noremap <silent> <leader>pd :vsplit <CR>:YcmCompleter GoTo<CR><c-w>p
 noremap <silent> <leader>vf :split <CR>:YcmCompleter GoToType<CR>:VirtualFunctions<CR><c-w>p<c-w>c
 noremap <silent> <leader>pc <c-w>p<c-w>c
 imap <silent> <C-k> <C-c>[(be:10split <CR>:YcmCompleter GoTo<CR>
-nnoremap <silent> <leader>ii :cclose<CR><c-w>j:resize 10<CR>:FZFQuickFix<CR>
 augroup QFAutoCmds
 	autocmd!
 	autocmd FileType qf execute 'nnoremap <silent> <buffer> <C-i> :cclose<CR><c-w>j:resize 10<CR>:FZFQuickFix<CR>'
