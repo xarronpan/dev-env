@@ -261,6 +261,6 @@ https://github.com/knakayama/tmux-google-translate
 
 ## trzsz
 在tmux中支持rz sz, 方便文件传输
-trz 从windows下载文件到终端
-tsz 从终端上传文件到windows上
+trz/rz 从windows下载文件到终端
+tsz/sz 从终端上传文件到windows上
 注意这项功能能工作, 需要在windows terminal中安装tssh，并且在tmux机器上安装trzsz
