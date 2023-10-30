@@ -616,12 +616,6 @@ sudo apt install silversearcher-ag
 tags
 将生成的tag文件给排除在Ag，Ack的搜索结果之外
 
-### 综合搜索:ctrlp插件
-ctrlp最为重要的功能是mru搜索能力。在编写代码进行代码导航时，最为有用的就是这个功能。目前已经绑定了ctrl+k来进行导航
-(fzf中不存在这样子的功能)
-ctrlp中选择完成后打开一个垂直分屏, 使用 ctrl+v
-ctrlp中选择完成后打开一个tab, 使用 ctrl+t
-ctrlp切换搜索模式 ctrl+f，其中mru是most recent used文件的意思，用于寻找最近打开过的文件
 
 ## 文本替换
 在文本中进行替换，一般是:s//命令
