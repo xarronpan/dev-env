@@ -504,6 +504,11 @@ https://github.com/francoiscabrol/ranger.vim
 <leader> + f即可在vim中启用ranger来寻找要打开的文件。从各个方面来讲都秒杀vim-dirvish插件。
 所以在一般情况下需要在vim中寻找非项目中的文件时，直接使用这个插件打开ranger来访问即可
 
+### Renamer
+<leader> + r 打开Renmae窗口
+:RN dir       在dir目录打开Rename窗口
+:Rn           在Rename窗口提交修改
+
 ### 导航远程文件
 在命令行中输入
 `vim scp://<target_host>/<dest_dir>/`
