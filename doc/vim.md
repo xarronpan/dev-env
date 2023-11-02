@@ -1076,6 +1076,11 @@ https://vimzijun.net/2016/10/30/ultisnip/
 
 在vi中输入: UltiSnipsEdit，即可在一个编辑窗口中编辑自动以的snips
 
+### ale
+ale会覆盖很多youcompelteme没有错误检查的地方。比如说shell, python脚本等
+<space>j 找上一个错误
+<space>k 找下一个错误
+
 ### 生成桩代码: vim-gencode-cpp 插件
 使用vim-gencode-cpp插件，通过头文件的定义，自动生成cpp文件中的函数定义
 以及通过cpp文件中的函数定义，自动生成头文件中的声明，避免很多重复体力劳动
