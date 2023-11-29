@@ -388,8 +388,8 @@ vim-yoink插件支持ring paste buffer，每次p后键入下面的命令，就�
 为了简化这些操作，我们在visual mode下面定义了下面的mapping，方便进行拷贝黏贴
 o  将viusal选定的内容，拷贝到之前的窗口的光标位置 (通过<c-w>p), 然后光标去到黏贴位置的最后
 O  将viusal选定的内容，拷贝到之前的窗口的光标位置 (通过<c-w>p), 然后回到当前窗口yank的位置，准备继续选择黏贴内容
-;  将viusal选定的内容，拷贝到当前的窗口最近退出insert的位置 (gi), 然后光标去到黏贴位置的最后
-:  将viusal选定的内容，拷贝到当前的窗口最近退出insert的位置 (gi), 然后光标回到当前yank位置，准备继续选择黏贴内容
+'  将viusal选定的内容，拷贝到当前的窗口最近退出insert的位置 (gi), 然后光标去到黏贴位置的最后
+"  将viusal选定的内容，拷贝到当前的窗口最近退出insert的位置 (gi), 然后光标回到当前yank位置，准备继续选择黏贴内容
 
 在insert mode中定义了下面的快捷键:
 <c-f> 退出insert mode，并且进入easy-motion的word search模式。这样子就从当前编辑位置，快速开始定位需要拷贝的内容
