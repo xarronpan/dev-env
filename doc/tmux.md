@@ -72,6 +72,11 @@ xpanes -ct 'ssh {} tail -f /data/services/cim_fanout_pdc-t02221606.b6b0cd17.r/lo
 这就使得这个工具既能实现多台机器间输入的命令同步，也能使得有时有些机器上面的命令不同于其他命令
 这就意味着这个工具的工作流，就是先打开一堆需要可能进行操作的机器，然后在逐个进行操作，再看是否有需要一起进行操作的内容。
 
+### 设置多个pane sync输入
+sync输入能够保证打开的pane的输入命令是一致的。这点在查找分析日志时很有用
+prefix + ' 打开pane sync
+prefix + " 关闭pane sync
+
 ### 菜单式管理: tmux-fzf插件
 sainnhe/tmux-fzf
 这个插件的主要作用有三：
