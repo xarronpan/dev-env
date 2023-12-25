@@ -43,6 +43,7 @@ cargo install exa
 sudo apt-get install socat
 sudo apt-get install dateutils
 sudo pip install ranger-fm
+sudo pip3 install ansible
 
 mkdir -p ~/tmp && cd ~/tmp
 axel -n 10 https://github.com/sharkdp/bat/releases/download/v0.17.1/bat_0.17.1_amd64.deb
