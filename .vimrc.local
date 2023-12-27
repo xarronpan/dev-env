@@ -462,10 +462,6 @@ noremap <silent> <leader>pd :vsplit <CR>:YcmCompleter GoTo<CR><c-w>p
 noremap <silent> <leader>vf :split <CR>:YcmCompleter GoToType<CR>:VirtualFunctions<CR><c-w>p<c-w>c
 noremap <silent> <leader>pc <c-w>p<c-w>c
 imap <silent> <C-k> <C-c>[(be:10split <CR>:YcmCompleter GoTo<CR>
-augroup QFAutoCmds
-	autocmd!
-	autocmd FileType qf execute 'nnoremap <silent> <buffer> <C-i> :cclose<CR><c-w>j:resize 10<CR>:FZFQuickFix<CR>'
-augroup END
 imap <silent> <C-l> <C-c>[(be:10split <CR>:Rooter <bar>CWTags<CR>
 imap <silent> <C-t> <plug>(YCMToggleSignatureHelp)
 nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
@@ -487,8 +483,8 @@ nnoremap <silent> <leader>: :History:<CR>
 nnoremap <silent> <leader>// :History/<CR>
 nnoremap <silent> <leader>L :lclose<CR>:FZFLocList!<CR>
 nnoremap <silent> <leader>l :lclose<CR>:FZFLocList<CR>
-nnoremap <silent> <leader>Q :cclose<CR>:FZFQuickFix!<CR>
-nnoremap <silent> <leader>q :cclose<CR>:FZFQuickFix<CR>
+nnoremap <silent> <leader>Q <C-w>p:cclose<CR>:FZFQuickFix!<CR>
+nnoremap <silent> <leader>q <C-W>p:cclose<CR>:FZFQuickFix<CR>
 nnoremap <silent> <leader>F :cd %:p:h <bar> Files<CR>
 nnoremap <silent> <leader>G :cd %:p:h <bar> CWAg!<CR>
 nnoremap <silent> <leader><leader>gd :GenDeclaration<CR>
