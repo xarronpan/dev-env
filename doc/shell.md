@@ -59,6 +59,22 @@ grep 'pattern1\|pattern2' ...```
 ```bash 
 sed -n '/pattern1/,/pattern2/p' file```
 
+## 按field left join两个文件
+多个文件按field join的问题，可以通过多次两个文件join的方式来解决
+example:
+```bash
+awk 'NR==FNR {a[$1] = $2; next} {right_field=""; if(a[$2]) field=a[$2]; print $1, $2, right_field}' file_right file_left
+```
+上述脚本，将file_left left join到file_right中。输出的文件已file_left为主。
+使用file_left的第二列$2，file_right的第一列$1作为关联字段进行left join.
+最终的输出，为file_left的一/二列($1, $2字段)，外加原本在file_right中的二列($2)。
+这段脚本使用了一个技巧。'NR==FNR { $file_right_commands ; next} { $file_left_commands }' 这行条件，表示对于
+file_right的内容，只执行 $file_right_commands中的命令, 不执行$file_left_commands的命令。
+对于file_left的内容，不执行 $file_right_commands中的命令, 只执行$file_left_commands的命令。
+变量FNR等于当前读入文件的行号，NR表示awk处理的总行号数。所以 'NR==FNR {$file_right_commands; next}'
+这个条件，只有对file_right中的内容生效。并且next命令会跳过后面的命令，所以当执行了$file_right_commands之后，
+$file_left_commands的命令不会执行
+
 ## sed
 sed是一个流文件的编辑程序，所以其能力很大程度上是基于多个行的。
 其中经常使用的 s// 命令, 使用posix extention进行匹配时，如要进行子括号引用，都是使用 \1 \2来进行表示 (表明这些引用自括号
