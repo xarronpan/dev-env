@@ -224,7 +224,7 @@ sr            #通过fzf选择需要删除的key value对
 ## 自动补全
 ### 使用文件浏览器补全文件名: ranger集成
 当输入一个命令时需要一个文件或者目录作为参数，而这个参数你并不记得具体的名称，更加希望通过file explorer的方式来找到文件，
-此时可以通过键入<prefix> + r启动ranger，选择文件或者目录，最后在ranger中键入Q，然后获取到对应的文件或者目录作为参数
+此时可以通过键入<prefix> + a，选择ranger选项启用，选择文件或者目录，最后在ranger中键入Q，然后获取到对应的文件或者目录作为参数
 这个命令在进行dirdiff，或者在vim键入命令时，需要文件参数时特别有用，能够大幅降低大脑的负担
 
 ### 使用ansible inventory补全ip/group: ansible-inventory集成
