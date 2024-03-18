@@ -304,6 +304,10 @@ cat /proc/sys/kernel/core_pattern ```
 就能知道coredump生成的位置
 https://www.cnblogs.com/Anker/p/6079580.html
 
+## 获取现在正在服务进程的coredump
+使用pstack, 或者可以使用eu-stack来对进程抓取coredump
+https://helpmanual.io/help/eu-stack/
+
 ## coredump分析
 ```bash
 gdb target coredump_file```
