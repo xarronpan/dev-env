@@ -158,9 +158,9 @@ export CHTSH_QUERY_OPTIONS="style=solarized-dark"
 export TZ='Asia/Shanghai'
 export EDITOR='vim'
 #export DISPLAY='192.168.127.1:0.0' #modify to your x11 server ip
-export http_proxy=192.168.127.1:1080 #modify to you ssr ip && port
-export https_proxy=192.168.127.1:1080
-export no_proxy='127.0.0.1'
+export http_proxy=192.168.119.1:7890 #modify to you ssr ip && port
+export https_proxy=192.168.119.1:7890
+export no_proxy='127.0.0.1,192.168.119.128'
 export GOPRIVATE="git.agoralab.co"
 
 alias tmuxn="tmuxinator"
@@ -252,3 +252,19 @@ dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 [[ -s "/home/panxiangrong/.gvm/scripts/gvm" ]] && source "/home/panxiangrong/.gvm/scripts/gvm"
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 [[ /usr/local/bin/helm ]] && source <(helm completion zsh)
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/panxiangrong/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/panxiangrong/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/panxiangrong/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/panxiangrong/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
