@@ -304,6 +304,10 @@ cat /proc/sys/kernel/core_pattern ```
 就能知道coredump生成的位置
 https://www.cnblogs.com/Anker/p/6079580.html
 
+## 获取现在正在服务进程的coredump
+使用pstack, 或者可以使用eu-stack来对进程抓取coredump
+https://helpmanual.io/help/eu-stack/
+
 ## coredump分析
 ```bash
 gdb target coredump_file```
@@ -318,7 +322,9 @@ coredump有时候困难的是准确判断崩溃的位置。一般而言，coredu
 ```bash
 up n
 down n
-info frame    #打印当前栈帧的信息。注意到在栈帧发生移动时，bt命令返回的堆栈结构还是不会发生变化的。```
+info frame    #打印当前栈帧的信息。注意到在栈帧发生移动时，bt命令返回的堆栈结构还是不会发生变化的。
+disas         #打印汇编代码。在崩溃堆栈上打印汇编代码, 能够准确地得知崩溃位置。这点对定位崩溃非常有用
+```
 
 可以在堆栈中进行切换，从而可以结合gdb的表达式，分析不同调用堆栈中的值的情况。这些值在顶层的堆栈中是无法使用gdb的
 expression来进行引用的。

@@ -388,8 +388,8 @@ vim-yoink插件支持ring paste buffer，每次p后键入下面的命令，就�
 为了简化这些操作，我们在visual mode下面定义了下面的mapping，方便进行拷贝黏贴
 o  将viusal选定的内容，拷贝到之前的窗口的光标位置 (通过<c-w>p), 然后光标去到黏贴位置的最后
 O  将viusal选定的内容，拷贝到之前的窗口的光标位置 (通过<c-w>p), 然后回到当前窗口yank的位置，准备继续选择黏贴内容
-;  将viusal选定的内容，拷贝到当前的窗口最近退出insert的位置 (gi), 然后光标去到黏贴位置的最后
-:  将viusal选定的内容，拷贝到当前的窗口最近退出insert的位置 (gi), 然后光标回到当前yank位置，准备继续选择黏贴内容
+'  将viusal选定的内容，拷贝到当前的窗口最近退出insert的位置 (gi), 然后光标去到黏贴位置的最后
+"  将viusal选定的内容，拷贝到当前的窗口最近退出insert的位置 (gi), 然后光标回到当前yank位置，准备继续选择黏贴内容
 
 在insert mode中定义了下面的快捷键:
 <c-f> 退出insert mode，并且进入easy-motion的word search模式。这样子就从当前编辑位置，快速开始定位需要拷贝的内容
@@ -504,6 +504,11 @@ https://github.com/francoiscabrol/ranger.vim
 <leader> + f即可在vim中启用ranger来寻找要打开的文件。从各个方面来讲都秒杀vim-dirvish插件。
 所以在一般情况下需要在vim中寻找非项目中的文件时，直接使用这个插件打开ranger来访问即可
 
+### Renamer
+<leader> + r 打开Renmae窗口
+:RN dir       在dir目录打开Rename窗口
+:Rn           在Rename窗口提交修改
+
 ### 导航远程文件
 在命令行中输入
 `vim scp://<target_host>/<dest_dir>/`
@@ -616,12 +621,6 @@ sudo apt install silversearcher-ag
 tags
 将生成的tag文件给排除在Ag，Ack的搜索结果之外
 
-### 综合搜索:ctrlp插件
-ctrlp最为重要的功能是mru搜索能力。在编写代码进行代码导航时，最为有用的就是这个功能。目前已经绑定了ctrl+k来进行导航
-(fzf中不存在这样子的功能)
-ctrlp中选择完成后打开一个垂直分屏, 使用 ctrl+v
-ctrlp中选择完成后打开一个tab, 使用 ctrl+t
-ctrlp切换搜索模式 ctrl+f，其中mru是most recent used文件的意思，用于寻找最近打开过的文件
 
 ## 文本替换
 在文本中进行替换，一般是:s//命令
@@ -1077,6 +1076,11 @@ https://vimzijun.net/2016/10/30/ultisnip/
 
 在vi中输入: UltiSnipsEdit，即可在一个编辑窗口中编辑自动以的snips
 
+### ale
+ale会覆盖很多youcompelteme没有错误检查的地方。比如说shell, python脚本等
+<space>j 找上一个错误
+<space>k 找下一个错误
+
 ### 生成桩代码: vim-gencode-cpp 插件
 使用vim-gencode-cpp插件，通过头文件的定义，自动生成cpp文件中的函数定义
 以及通过cpp文件中的函数定义，自动生成头文件中的声明，避免很多重复体力劳动
@@ -1149,7 +1153,7 @@ Hierarchy命令会启动一个树组件。在树组件中, 输入o会toggle叶�
 ### 插入调用函数代码时，该函数签名preview
 在插入模式下编写函数调用的时候，只要光标在函数的()中，有至少一个空格的位置，并且语法格式是正确的(语义内容可以不正确)
 则可以通过打开preview window查看当前输入函数的签名，方便编写函数参数。
-<c-k> 使用ycm goto定位到签名位置. 若函数有重载，则在quickfix window中输入 <c-i>，则可以对签名进行preview
+<c-k> 使用ycm goto定位到签名位置. 若函数有重载，则在quickfix window中输入 <leader>q 或 <leader>Q，则可以对签名进行preview
 <c-l> 若ycm不能正常工作时，比如说因为语法错误太多，此时使用fzf ctags搜索来定位签名的位置
 <c-t> toggle signature help. 主要有时候signature help会挡住代码
 在定位到签名后，若想要回到之前的位置进行编辑，只需要输入<c-k>gi即可

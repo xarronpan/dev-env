@@ -72,6 +72,11 @@ xpanes -ct 'ssh {} tail -f /data/services/cim_fanout_pdc-t02221606.b6b0cd17.r/lo
 这就使得这个工具既能实现多台机器间输入的命令同步，也能使得有时有些机器上面的命令不同于其他命令
 这就意味着这个工具的工作流，就是先打开一堆需要可能进行操作的机器，然后在逐个进行操作，再看是否有需要一起进行操作的内容。
 
+### 设置多个pane sync输入
+sync输入能够保证打开的pane的输入命令是一致的。这点在查找分析日志时很有用
+prefix + ' 打开pane sync
+prefix + " 关闭pane sync
+
 ### 菜单式管理: tmux-fzf插件
 sainnhe/tmux-fzf
 这个插件的主要作用有三：
@@ -219,19 +224,17 @@ sr            #通过fzf选择需要删除的key value对
 ## 自动补全
 ### 使用文件浏览器补全文件名: ranger集成
 当输入一个命令时需要一个文件或者目录作为参数，而这个参数你并不记得具体的名称，更加希望通过file explorer的方式来找到文件，
-此时可以通过键入<prefix> + r启动ranger，选择文件或者目录，最后在ranger中键入Q，然后获取到对应的文件或者目录作为参数
+此时可以通过键入<prefix> + a，选择ranger选项启用，选择文件或者目录，最后在ranger中键入Q，然后获取到对应的文件或者目录作为参数
 这个命令在进行dirdiff，或者在vim键入命令时，需要文件参数时特别有用，能够大幅降低大脑的负担
 
 ### 使用ansible inventory补全ip/group: ansible-inventory集成
 当输入一个命令时需要一个ip作为参数时，可以通过键入
-<prefix> + a，通过选择ansbile的inventory来选择对应的ip地址来进行处理。
+<prefix> + a，选择ansilbe-hosts或者ansible-groups选项, 可以通过选择ansbile的inventory来选择对应的ip地址来进行处理。
 在选择groupid时，可以通过tab进行多选，此时的含义是多个groupid求交集得到的ip地址。该功能对于复杂的inventory结果特别有用
-在选择hosts是，可以通过tab进行多选，c-t 来toggle全选。
+在选择hosts时，可以通过tab进行多选，c-t 来toggle全选。
 为了使该系统能够知道系统中所存在的inventory，需要在 $HOME/.inventory目录中建立各个不同的inventory目录的软连接
 每一项软连接称之为一个环境。在使用ansible-inventory进行集成时，首选会选择环境参数
 与此相类似地，当需要一个ansible-group作为参数时，可以通过键入
-当输入一个命令时需要一个ip作为参数时，可以通过键入
-<prefix> + A，通过选择ansbile的inventory来选择对应的group来进行处理。
 
 ### 使用tmux-buffer进行补全: tmux-butler插件
 tmux-bulter插件内置集成了使用tmux-buffer作为补全内容源的功能

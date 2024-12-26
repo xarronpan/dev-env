@@ -93,11 +93,24 @@ let g:ale_linters = {
 \   'c': [],
 \   'python': ['pyflakes'],
 \}
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '>>'
 
 let g:lsp_diagnostics_enabled = 0
 let g:lsp_document_highlight_enabled = 0
 let g:lsp_document_code_action_signs_enabled = 0
 let g:lsp_signature_help_enabled = 0
+let g:lsp_fold_enabled = 0
+let g:lsp_insert_text_enabled = 0
+let g:lsp_text_edit_enabled = 0
+let g:lsp_completion_documentation_enabled = 0
+let g:lsp_diagnostics_float_insert_mode_enabled = 0
+let g:lsp_diagnostics_highlights_enabled = 0
+let g:lsp_diagnostics_highlights_insert_mode_enabled = 0
+let g:lsp_diagnostics_signs_enabled = 0
+let g:lsp_diagnostics_signs_insert_mode_enabled = 0
+let g:lsp_diagnostics_virtual_text_enabled = 0
+let g:lsp_diagnostics_virtual_text_insert_mode_enabled = 0
 if executable('ccls')
    au User lsp_setup call lsp#register_server({
       \ 'name': 'ccls',
@@ -287,7 +300,7 @@ function! VirtualFunctions()
     silent execute "%!pcregrep -M " . shellescape('(^\s*virtual(\n|.)+?\))|(^\s*class\s*\w+)')
     silent execute '%s/:\s*\(private\|public\)\s\+.*$//ge'
     silent execute '%s/{.*//ge'
-    silent execute '%s/\s*[{:;}]\s*//ge'
+    silent execute '%s/\s*[{;}]\s*//ge'
     silent execute '%s/)\s*\(\S.*\)/) \/\/\1/ge'
     silent execute '%s/)/);/ge'
     silent execute 'g/^\s\+$/d'
@@ -394,6 +407,8 @@ cnoreabbrev QCE CclsCallees
 cnoreabbrev QMB CclsMembers
 cnoreabbrev QMF CclsMemberFunctions
 cnoreabbrev QMT CclsMemberTypes
+cnoreabbrev RN Renamer
+cnoreabbrev Rn Ren
 
 "text add slash
 cnoreabbrev SAS s/$/\//
@@ -420,8 +435,8 @@ noremap <M-k> <C-w>p5<C-y><C-w>p
 imap <silent> <C-f> jj,w
 vmap <silent> o y<C-w>pp`]
 vmap <silent> O y<C-w>pp`]<C-w>p
-vmap <silent> ; y`^hp`]
-vmap <silent> : y`^hp`]li<C-c>`<
+vmap <silent> ' y`^hp`]
+vmap <silent> " y`^hp`]li<C-c>`<
 noremap <silent> <leader>ps :10split<CR>
 noremap <M-h> :SidewaysLeft<cr>
 noremap <M-l> :SidewaysRight<cr>
@@ -447,10 +462,6 @@ noremap <silent> <leader>pd :vsplit <CR>:YcmCompleter GoTo<CR><c-w>p
 noremap <silent> <leader>vf :split <CR>:YcmCompleter GoToType<CR>:VirtualFunctions<CR><c-w>p<c-w>c
 noremap <silent> <leader>pc <c-w>p<c-w>c
 imap <silent> <C-k> <C-c>[(be:10split <CR>:YcmCompleter GoTo<CR>
-augroup QFAutoCmds
-	autocmd!
-	autocmd FileType qf execute 'nnoremap <silent> <buffer> <C-i> :cclose<CR><c-w>j:resize 10<CR>:FZFQuickFix<CR>'
-augroup END
 imap <silent> <C-l> <C-c>[(be:10split <CR>:Rooter <bar>CWTags<CR>
 imap <silent> <C-t> <plug>(YCMToggleSignatureHelp)
 nnoremap <silent> <C-f> :Rooter <bar> Files<CR>
@@ -472,8 +483,8 @@ nnoremap <silent> <leader>: :History:<CR>
 nnoremap <silent> <leader>// :History/<CR>
 nnoremap <silent> <leader>L :lclose<CR>:FZFLocList!<CR>
 nnoremap <silent> <leader>l :lclose<CR>:FZFLocList<CR>
-nnoremap <silent> <leader>Q :cclose<CR>:FZFQuickFix!<CR>
-nnoremap <silent> <leader>q :cclose<CR>:FZFQuickFix<CR>
+nnoremap <silent> <leader>Q <C-w>p:cclose<CR>:FZFQuickFix!<CR>
+nnoremap <silent> <leader>q <C-W>p:cclose<CR>:FZFQuickFix<CR>
 nnoremap <silent> <leader>F :cd %:p:h <bar> Files<CR>
 nnoremap <silent> <leader>G :cd %:p:h <bar> CWAg!<CR>
 nnoremap <silent> <leader><leader>gd :GenDeclaration<CR>
@@ -529,6 +540,9 @@ nnoremap <leader>j :Rooter<bar>AnyJump<CR>
 xnoremap <leader>j :Rooter<bar>AnyJumpVisual<CR>
 nmap <leader><leader>ds :w !cat > /tmp/vim_delta_buffer<CR>:term ++curwin sh -c "cat /tmp/vim_delta_buffer <bar> delta"<CR>
 nmap <leader><leader>dv :w !cat > /tmp/vim_delta_buffer<CR>:term ++curwin sh -c "cat /tmp/vim_delta_buffer <bar> delta -s"<CR>
+nmap <Leader>r <Plug>RenamerStart
+nmap <silent> <space>j <Plug>(ale_previous_wrap)
+nmap <silent> <space>k <Plug>(ale_next_wrap)
 au FileType go nmap <Leader>gd :YcmCompleter GoTo<CR>
 au FileType go nmap <leader>goi <Plug>(go-implements)
 au FileType go nmap <leader>god <Plug>(go-describe)
